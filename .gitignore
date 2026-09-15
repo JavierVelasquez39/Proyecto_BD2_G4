@@ -1,0 +1,15 @@
+# Datos crudos descargados de las fuentes (documentados en FUENTES.md,
+# reproducibles desde ahí; demasiado grandes para versionar - ~200MB)
+data_raw/
+
+# Python
+__pycache__/
+*.pyc
+
+# Material interno de trabajo (no es documentación del proyecto)
+CLAUDE.md
+bitacoras/
+prompt_*.md
+
+# Respaldos de la base de datos (binario, no pertenece al repo de código)
+backups/

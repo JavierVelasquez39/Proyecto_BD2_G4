@@ -92,6 +92,18 @@ CREATE TABLE deporte (
 );
 
 -- ----------------------------------------------------------------------------
+-- Tabla de equivalencias para unificar variantes de nombres de deportes entre fuentes
+-- ----------------------------------------------------------------------------
+CREATE TABLE deporte_equivalencia (
+    equivalencia_id SERIAL PRIMARY KEY,
+    nombre_fuente   VARCHAR(150) NOT NULL,
+    deporte_id      INTEGER NOT NULL REFERENCES deporte(deporte_id) ON DELETE CASCADE,
+    fuente_origen   VARCHAR(50),
+    CONSTRAINT uq_deporte_equivalencia UNIQUE (nombre_fuente, fuente_origen)
+);
+CREATE INDEX ix_deporte_equivalencia_deporte ON deporte_equivalencia(deporte_id);
+
+-- ----------------------------------------------------------------------------
 CREATE TABLE evento (
     evento_id  SERIAL PRIMARY KEY,
     nombre     VARCHAR(255) NOT NULL,

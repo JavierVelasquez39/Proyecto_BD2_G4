@@ -766,36 +766,65 @@ def _canon_f3_event(event_text: str):
 
 
 def extend_deporte_evento_f3(deporte_df: pd.DataFrame, evento_df: pd.DataFrame,
-                              deporte_id_by_name: dict, evento_id_by_key: dict,
-                              f3_2024: pd.DataFrame):
-    """Agrega a DEPORTE/EVENTO lo necesario para París 2024. Antes de crear un
-    DEPORTE nuevo, intenta reusar uno ya existente de fuente 1 comparando el
-    nombre 'base' (fuente 1 sufija con '(GrupoPadre)', ej. 'Cycling Road
-    (Cycling)'; fuente 3 no)."""
+                             deporte_id_by_name: dict, evento_id_by_key: dict,
+                             f3_2024: pd.DataFrame):
+    """Agrega a DEPORTE/EVENTO lo necesario para París 2024 y gestiona la tabla de equivalencias.
+    
+    Ajuste de mapeo (Punto 2.B):
+    - Se crea el deporte general 'Equestrian' para no forzar la equitación de 2024 a una sub-disciplina específica.
+    - Se registran equivalencias explícitas en 'deporte_equivalencia'.
+    """
     base_name_to_id = dict(deporte_id_by_name)
     for nombre, did in deporte_id_by_name.items():
         base = re.sub(r"\s*\([^)]*\)\s*$", "", nombre).strip()
         base_name_to_id.setdefault(base, did)
 
+    # 1. Asegurar la existencia de 'Equestrian' genérico
+    next_deporte_id = int(deporte_df["deporte_id"].max()) + 1
+    nuevos_deportes = []
+    
+    if "Equestrian" not in deporte_id_by_name and "Equestrian" not in base_name_to_id:
+        deporte_id_by_name["Equestrian"] = next_deporte_id
+        base_name_to_id["Equestrian"] = next_deporte_id
+        nuevos_deportes.append((next_deporte_id, "Equestrian"))
+        next_deporte_id += 1
+
+    # 2. Definir equivalencias mapeadas manualmente (Fuente 3 -> Deporte Canónico)
+    equivalencias_raw = [
+        ("Equestrian", deporte_id_by_name["Equestrian"], "f3"),
+        ("Trampoline Gymnastics", base_name_to_id.get("Trampolining (Gymnastics)"), "f3")
+    ]
+    
+    equivalencias_rows = []
+    equivalencia_map = {}
+    eq_id = 1
+    for nombre_fuente, did, f_origen in equivalencias_raw:
+        if did is not None:
+            equivalencias_rows.append((eq_id, nombre_fuente, did, f_origen))
+            equivalencia_map[nombre_fuente] = did
+            eq_id += 1
+
     df = f3_2024.copy()
     df["sport_resuelto"] = df.apply(_resolve_f3_sport, axis=1)
 
-    nuevos_deportes = []
-    next_deporte_id = int(deporte_df["deporte_id"].max()) + 1
+    # 3. Procesar deportes de Fuente 3 usando tabla de equivalencias primero
     for sport in sorted(df["sport_resuelto"].unique()):
-        if sport in base_name_to_id:
+        if sport in equivalencia_map:
+            deporte_id_by_name[sport] = equivalencia_map[sport]
+        elif sport in base_name_to_id:
             deporte_id_by_name[sport] = base_name_to_id[sport]  # alias, mismo id
-            continue
-        deporte_id_by_name[sport] = next_deporte_id
-        nuevos_deportes.append((next_deporte_id, sport))
-        next_deporte_id += 1
+        else:
+            deporte_id_by_name[sport] = next_deporte_id
+            nuevos_deportes.append((next_deporte_id, sport))
+            next_deporte_id += 1
+
     nuevos_deporte_df = pd.DataFrame(nuevos_deportes, columns=["deporte_id", "nombre"])
+    equivalencia_df = pd.DataFrame(equivalencias_rows, columns=["equivalencia_id", "nombre_fuente", "deporte_id", "fuente_origen"])
 
     df["deporte_id_resuelto"] = df["sport_resuelto"].map(deporte_id_by_name)
 
-    # --- índice canónico de eventos YA existentes (fuente 1), para reusar
-    # evento_id en vez de crear duplicados por convención de redacción ---
-    f1_canon_index = {}  # (deporte_id, genero, descriptor) -> (evento_id, es_olympic)
+    # --- índice canónico de eventos YA existentes (fuente 1) ---
+    f1_canon_index = {}
     n_ambiguos_f1 = 0
     for (event_text, discipline_raw), eid in evento_id_by_key.items():
         did = deporte_id_by_name.get(discipline_raw)
@@ -808,9 +837,9 @@ def extend_deporte_evento_f3(deporte_df: pd.DataFrame, evento_df: pd.DataFrame,
         if prev is None:
             f1_canon_index[key] = (eid, es_olympic)
         elif es_olympic and not prev[1]:
-            f1_canon_index[key] = (eid, es_olympic)  # preferir "(Olympic)" sobre "(Intercalated)"/otros
+            f1_canon_index[key] = (eid, es_olympic)
         elif prev[1] == es_olympic:
-            n_ambiguos_f1 += 1  # dos eventos F1 con la misma forma canónica y misma preferencia
+            n_ambiguos_f1 += 1
 
     nuevos_eventos = []
     next_evento_id = int(evento_df["evento_id"].max()) + 1
@@ -820,7 +849,7 @@ def extend_deporte_evento_f3(deporte_df: pd.DataFrame, evento_df: pd.DataFrame,
     for r in ev_unique.itertuples():
         key = (r.Event, r.sport_resuelto)
         if key in evento_id_by_key:
-            continue  # ya existe con esta clave exacta (no debería pasar para 2024, pero por si acaso)
+            continue
         genero, desc = _canon_f3_event(r.Event)
         canon_key = (r.deporte_id_resuelto, genero, desc)
         canon_hit = f1_canon_index.get(canon_key)
@@ -836,27 +865,12 @@ def extend_deporte_evento_f3(deporte_df: pd.DataFrame, evento_df: pd.DataFrame,
     df["evento_id"] = list(zip(df["Event"], df["sport_resuelto"]))
     df["evento_id"] = df["evento_id"].map(evento_id_by_key)
 
-    n_reused = len(df["sport_resuelto"].unique()) - len(nuevos_deportes)
     REPORT.note(
-        f"DEPORTE (extensión fuente 3): {len(nuevos_deporte_df)} disciplinas nuevas en 2024 "
-        f"(ej. 'Breaking', debut olímpico), {n_reused} reusan el deporte_id de una disciplina "
-        f"ya existente de fuente 1 comparando por nombre base sin el sufijo '(GrupoPadre)'."
+        f"DEPORTE_EQUIVALENCIA: {len(equivalencia_df)} equivalencias cargadas "
+        f"(ej. 'Equestrian' -> Deporte General 'Equestrian', 'Trampoline Gymnastics' -> 'Trampolining (Gymnastics)')."
     )
-    REPORT.note(
-        f"EVENTO (extensión fuente 3): {len(ev_unique)} eventos distintos en 2024. "
-        f"{n_reused_canon} se emparejaron con un evento ya existente de fuente 1 por forma "
-        f"canónica exacta (mismo deporte_id + género + descriptor normalizado, ej. "
-        f"'Javelin Throw, Men (Olympic)' <-> \"Men's Javelin Throw\") -- resultado de la "
-        f"auditoría del 2026-09-13 (ver DECISIONES.md), que encontró que el desajuste de "
-        f"nombres no se limitaba a Equestrian/Trampoline sino a decenas de eventos comunes "
-        f"entre atletismo, natación, remo, ciclismo, gimnasia, esgrima, etc. "
-        f"{len(nuevos_evento_df)} se cargan como eventos nuevos (genuinamente nuevos en 2024, "
-        f"o variantes de redacción que esta normalización no logró resolver -- ver "
-        f"DECISIONES.md para el detalle y las limitaciones conocidas del método). "
-        f"{n_ambiguos_f1} claves canónicas de fuente 1 quedaron ambiguas incluso tras preferir "
-        f"'(Olympic)' sobre '(Intercalated)'/otros (no participaron en ningún reuso)."
-    )
-    return nuevos_deporte_df, nuevos_evento_df, deporte_id_by_name, evento_id_by_key, df
+
+    return nuevos_deporte_df, nuevos_evento_df, equivalencia_df, deporte_id_by_name, evento_id_by_key, df
 
 
 def build_participacion_resultado_f3(df_f3_resolved: pd.DataFrame, atleta_id_by_player: dict,
@@ -1149,7 +1163,7 @@ def copy_df(cur, df: pd.DataFrame, table: str, columns: list):
 def load(conn, tables: dict):
     with conn.cursor() as cur:
         cur.execute("SET search_path TO olimpiadas")
-        cur.execute("TRUNCATE TABLE resultado, participacion, evento, deporte, "
+        cur.execute("TRUNCATE TABLE resultado, participacion, evento, deporte_equivalencia, deporte, "
                     "edicion_olimpica, atleta, sede, noc, poblacion_pais, pais RESTART IDENTITY CASCADE")
         copy_df(cur, tables["pais"], "pais", ["pais_id", "nombre"])
         copy_df(cur, tables["poblacion"], "poblacion_pais", ["poblacion_id", "pais_id", "anio", "cantidad"])
@@ -1160,6 +1174,8 @@ def load(conn, tables: dict):
             "fecha_nacimiento", "ciudad_nacimiento", "pais_nacimiento", "fecha_fallecimiento"])
         copy_df(cur, tables["edicion"], "edicion_olimpica", ["edicion_id", "anio", "tipo", "sede_id"])
         copy_df(cur, tables["deporte"], "deporte", ["deporte_id", "nombre"])
+        copy_df(cur, tables["deporte_equivalencia"], "deporte_equivalencia", [
+            "equivalencia_id", "nombre_fuente", "deporte_id", "fuente_origen"])
         copy_df(cur, tables["evento"], "evento", ["evento_id", "nombre", "deporte_id"])
         copy_df(cur, tables["participacion"], "participacion", [
             "participacion_id", "atleta_id", "edicion_id", "evento_id", "codigo_noc",
@@ -1170,7 +1186,8 @@ def load(conn, tables: dict):
         pk_cols = {
             "pais": "pais_id", "poblacion_pais": "poblacion_id", "sede": "sede_id",
             "atleta": "atleta_id", "edicion_olimpica": "edicion_id", "deporte": "deporte_id",
-            "evento": "evento_id", "participacion": "participacion_id", "resultado": "resultado_id",
+            "deporte_equivalencia": "equivalencia_id", "evento": "evento_id",
+            "participacion": "participacion_id", "resultado": "resultado_id",
         }
         for t, pk in pk_cols.items():
             cur.execute(
@@ -1189,7 +1206,6 @@ CONTEOS_CORRIDA_ANTERIOR = {
     "edicion_olimpica": 53, "deporte": 93, "evento": 1904,
     "participacion": 299216, "resultado": 299731,
 }
-
 
 def main():
     ap = argparse.ArgumentParser()
@@ -1235,7 +1251,7 @@ def main():
 
     cross_check_fuente2(atleta_df, athlete_events)
 
-    # --- extensión con fuente 3 (solo edición 2024) ---
+    # --- extensión con fuente 3 (solo edición 2024) y tabla de equivalencias ---
     nuevos_atletas_df, atleta_id_by_player = build_atleta_extension_f3(
         atleta_df, olympics_f3_2024, noc_region_display)
     atleta_cols_final = ["atleta_id", "nombre_completo", "nombre_usado", "sexo", "nacionalidad",
@@ -1244,7 +1260,7 @@ def main():
     atleta_df_final = pd.concat(
         [atleta_df[atleta_cols_final], nuevos_atletas_df], ignore_index=True)
 
-    nuevos_deporte_df, nuevos_evento_df, deporte_id_by_name, evento_id_by_key, f3_resolved = (
+    nuevos_deporte_df, nuevos_evento_df, equivalencia_df, deporte_id_by_name, evento_id_by_key, f3_resolved = (
         extend_deporte_evento_f3(deporte_df, evento_df, deporte_id_by_name, evento_id_by_key,
                                   olympics_f3_2024)
     )
@@ -1263,8 +1279,9 @@ def main():
     conteos_final = {
         "pais": len(pais_df), "poblacion_pais": len(poblacion_df), "noc": len(noc_df),
         "sede": len(sede_df), "atleta": len(atleta_df_final), "edicion_olimpica": len(edicion_df),
-        "deporte": len(deporte_df_final), "evento": len(evento_df_final),
-        "participacion": len(participacion_df_final), "resultado": len(resultado_df_final),
+        "deporte": len(deporte_df_final), "deporte_equivalencia": len(equivalencia_df),
+        "evento": len(evento_df_final), "participacion": len(participacion_df_final),
+        "resultado": len(resultado_df_final),
     }
     for k, v in conteos_final.items():
         REPORT.count(k.upper(), v)
@@ -1278,22 +1295,19 @@ def main():
     hoy = date.today().isoformat()
     REPORT.section(
         f"Corrida {hoy}: estado final (fuente 1 + fuente 2 sedes + fuente 3 2024, con "
-        f"auditoría de emparejamiento)",
+        f"auditoría de emparejamiento y equivalencias de deportes)",
         "Se reemplaza `reference_editions.csv` como fuente primaria de SEDE/EDICION_OLIMPICA "
         "por columnas `City` reales de fuente 2 (1896-2016) y fuente 3 (2024); solo 3 "
         "ediciones (2018 Invierno, 2020 Verano, 2022 Invierno) siguen viniendo del archivo "
         "manual porque ninguna fuente real trae `City` para esos años. Se agrega la edición "
         "2024 Verano (París) cargando fuente 3 filtrada a `Year==2024`. Esta corrida incluye "
         "además la corrección del criterio de emparejamiento de atletas (nombre plegando "
-        "tildes + vivo + nacionalidad consistente, en vez de nombre exacto simple) y la "
-        "canonicalización de EVENTO/DEPORTE entre fuente 1 y fuente 3, ambas resultado de la "
-        "auditoría del 2026-09-13 documentada en DECISIONES.md. Frente a la integración "
-        "inicial de fuente 2/3 (sin auditar, `atleta`=153,869 y `evento`=2,236), esta corrida "
-        "queda en `atleta`=" + str(conteos_final["atleta"]) + " y `evento`=" +
-        str(conteos_final["evento"]) + " tras corregir falsos positivos/negativos "
-        "verificados a mano. Ver detalle completo en las secciones de arriba (SEDE/"
-        "EDICION_OLIMPICA, ATLETA extensión fuente 3, DEPORTE/EVENTO extensión fuente 3, "
-        "PARTICIPACION/RESULTADO fuente 3, reconciliación NOC, cross-check fuente 2).\n\n"
+        "tildes + vivo + nacionalidad consistente, en vez de nombre exacto simple), la "
+        "canonicalización de EVENTO/DEPORTE entre fuente 1 y fuente 3, y la incorporación de "
+        "la tabla `deporte_equivalencia` para mapear disciplinas genéricas o renombradas. "
+        "Ver detalle completo en las secciones de arriba (SEDE/EDICION_OLIMPICA, ATLETA "
+        "extensión fuente 3, DEPORTE/EVENTO extensión fuente 3, PARTICIPACION/RESULTADO "
+        "fuente 3, reconciliación NOC, cross-check fuente 2).\n\n"
         + comparacion
     )
 
@@ -1303,8 +1317,8 @@ def main():
             load(conn, {
                 "pais": pais_df, "poblacion": poblacion_df, "noc": noc_df, "sede": sede_df,
                 "atleta": atleta_df_final, "edicion": edicion_df, "deporte": deporte_df_final,
-                "evento": evento_df_final, "participacion": participacion_df_final,
-                "resultado": resultado_df_final,
+                "deporte_equivalencia": equivalencia_df, "evento": evento_df_final,
+                "participacion": participacion_df_final, "resultado": resultado_df_final,
             })
             REPORT.note("Carga a PostgreSQL completada y confirmada (COMMIT).")
         except Exception:

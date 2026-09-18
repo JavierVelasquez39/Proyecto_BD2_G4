@@ -24,6 +24,24 @@
 
 SET search_path TO olimpiadas;
 
+
+-- ----------------------------------------------------------------------------
+-- Sembrado de seguridad para equivalencias de deportes (Incisos A y B)
+-- ----------------------------------------------------------------------------
+INSERT INTO olimpiadas.deporte (nombre, descripcion)
+VALUES ('Equestrian', 'Deporte ecuestre (agregado genérico)')
+ON CONFLICT (nombre) DO NOTHING;
+
+INSERT INTO olimpiadas.deporte_equivalencia (nombre_fuente, deporte_id, fuente_origen)
+SELECT 'Equestrian', d.deporte_id, 'f3'
+FROM olimpiadas.deporte d WHERE d.nombre = 'Equestrian'
+ON CONFLICT (nombre_fuente, fuente_origen) DO NOTHING;
+
+INSERT INTO olimpiadas.deporte_equivalencia (nombre_fuente, deporte_id, fuente_origen)
+SELECT 'Trampoline Gymnastics', d.deporte_id, 'f3'
+FROM olimpiadas.deporte d WHERE d.nombre = 'Trampolining (Gymnastics)'
+ON CONFLICT (nombre_fuente, fuente_origen) DO NOTHING;
+
 -- ----------------------------------------------------------------------------
 -- Infraestructura: normalización de texto (acentos/mayúsculas)
 -- ----------------------------------------------------------------------------

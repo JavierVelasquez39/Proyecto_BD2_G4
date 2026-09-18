@@ -6,7 +6,7 @@
 - POBLACION_PAIS: 13026
 - NOC: 236
 - SEDE: 43
-- ATLETA: 153473
+- ATLETA: 153443
 - EDICION_OLIMPICA: 55
 - DEPORTE: 96
 - EVENTO: 2103
@@ -32,7 +32,7 @@
 - altura_cm/peso_kg en PARTICIPACION se toman del valor único registrado en bios por atleta (la fuente no trae biometría por participación puntual; se asume constante a lo largo de la carrera). Simplificación documentada.
 - Deduplicación de clave natural (atleta_id, edicion_id, evento_id): 428 grupos con más de una fila en results.csv (943 filas en total, ver caso Polo 1900 en DECISIONES.md) colapsados a 1 fila de PARTICIPACION cada uno; se preserva 1 fila de RESULTADO por cada resultado (lugar/medalla/empate) distinto que traía la fuente. En 162 de esos grupos el valor de 'equipo' difiere entre las filas de origen y en 0 difiere codigo_noc; en ambos casos se retiene el valor de la primera fila (orden de aparición en results.csv) para PARTICIPACION.
 - PARTICIPACION: 299216 filas (una por combinación única atleta+edición+evento); RESULTADO: 299731 filas, de 308408 filas originales en results.csv (8677 rechazadas antes de deduplicar, ver detalle arriba; 515 filas adicionales colapsadas en PARTICIPACION por la deduplicación de clave natural, pero conservadas 1:1 en RESULTADO).
-- ATLETA (extensión fuente 3, solo 2024): 11113 atletas distintos en París 2024; 3140 calzaron (nombre normalizado + vivo + nacionalidad consistente con el NOC de fuente 3, o nacionalidad desconocida con candidato único); 7973 se cargan como nuevos. De los rechazos: 30 candidatos descartados por estar fallecidos en fuente 1 (no pueden competir en 2024), 81 rechazados por nacionalidad inconsistente con el NOC de fuente 3 (único candidato vivo, pero de otro país -- probable homónimo), 48 rechazados por ambigüedad (más de un candidato vivo con ese nombre). Ver auditoría manual y criterio revisado en DECISIONES.md.
+- ATLETA (extensión fuente 3, solo 2024): 11113 atletas distintos en París 2024; 3170 calzaron (nombre normalizado + vivo + nacionalidad consistente con el NOC de fuente 3, o nacionalidad desconocida con candidato único); 7943 se cargan como nuevos. De los rechazos: 30 candidatos descartados por estar fallecidos en fuente 1 (no pueden competir en 2024), 81 rechazados por nacionalidad inconsistente con el NOC de fuente 3 (único candidato vivo, pero de otro país -- probable homónimo), 48 rechazados por ambigüedad (más de un candidato vivo con ese nombre). Ver auditoría manual y criterio revisado en DECISIONES.md.
 - DEPORTE (extensión fuente 3): 3 disciplinas nuevas en 2024 (ej. 'Breaking', debut olímpico), 42 reusan el deporte_id de una disciplina ya existente de fuente 1 comparando por nombre base sin el sufijo '(GrupoPadre)'.
 - EVENTO (extensión fuente 3): 332 eventos distintos en 2024. 133 se emparejaron con un evento ya existente de fuente 1 por forma canónica exacta (mismo deporte_id + género + descriptor normalizado, ej. 'Javelin Throw, Men (Olympic)' <-> "Men's Javelin Throw") -- resultado de la auditoría del 2026-09-13 (ver DECISIONES.md), que encontró que el desajuste de nombres no se limitaba a Equestrian/Trampoline sino a decenas de eventos comunes entre atletismo, natación, remo, ciclismo, gimnasia, esgrima, etc. 199 se cargan como eventos nuevos (genuinamente nuevos en 2024, o variantes de redacción que esta normalización no logró resolver -- ver DECISIONES.md para el detalle y las limitaciones conocidas del método). 5 claves canónicas de fuente 1 quedaron ambiguas incluso tras preferir '(Olympic)' sobre '(Intercalated)'/otros (no participaron en ningún reuso).
 - PARTICIPACION/RESULTADO (fuente 3, solo edición 2024): 14892 filas de origen -> 14892 filas de PARTICIPACION (0 colapsadas por deduplicación de clave natural) y 14892 filas de RESULTADO. `edad`, `altura_cm`, `peso_kg` y `lugar` quedan NULL para todas estas filas: fuente 3 no trae esas columnas (limitación conocida, documentada).
@@ -77,7 +77,7 @@ Fuente 2 (`athlete_events.csv`, 271,116 filas, 1896-2016) se usa únicamente par
 
 - **Patrón multi-NOC:** agrupando por `ID` (columna propia de fuente 2, distinta del `athlete_id` de fuente 1) y contando `NOC` distintos, **1570 atletas** de fuente 2 compitieron bajo más de un NOC. Esto confirma cualitativamente el mismo patrón que fuente 1 (1,834 atletas, ver `DECISIONES.md`); los conteos no son directamente comparables 1:1 porque fuente 2 solo llega a 2016 (menos ediciones = menos oportunidades de cambio de NOC) y usa una numeración de atleta propia.
 
-- **Consistencia de Height/Weight:** de 135571 atletas distintos en fuente 2, 98733 calzaron por nombre normalizado exacto con un atleta ya cargado de fuente 1. De los que tienen altura registrada en ambas fuentes (75929 personas), 623 difieren. De los que tienen peso registrado en ambas (73709 personas), 610 difieren. Las diferencias no se investigaron caso por caso en esta corrida (quedan registradas, no resueltas, según lo pedido).
+- **Consistencia de Height/Weight:** de 135571 atletas distintos en fuente 2, 98740 calzaron por nombre normalizado exacto con un atleta ya cargado de fuente 1. De los que tienen altura registrada en ambas fuentes (75935 personas), 623 difieren. De los que tienen peso registrado en ambas (73715 personas), 610 difieren. Las diferencias no se investigaron caso por caso en esta corrida (quedan registradas, no resueltas, según lo pedido).
 
 ## Historial de corridas
 
@@ -134,6 +134,24 @@ Se reemplaza `reference_editions.csv` como fuente primaria de SEDE/EDICION_OLIMP
 | noc | 235 | 236 | +1 |
 | sede | 43 | 43 | +0 |
 | atleta | 145500 | 153473 | +7973 |
+| edicion_olimpica | 53 | 55 | +2 |
+| deporte | 93 | 96 | +3 |
+| evento | 1904 | 2103 | +199 |
+| participacion | 299216 | 314108 | +14892 |
+| resultado | 299731 | 314623 | +14892 |
+
+
+## Corrida 2026-09-18: estado final (fuente 1 + fuente 2 sedes + fuente 3 2024, con auditoría de emparejamiento)
+
+Se reemplaza `reference_editions.csv` como fuente primaria de SEDE/EDICION_OLIMPICA por columnas `City` reales de fuente 2 (1896-2016) y fuente 3 (2024); solo 3 ediciones (2018 Invierno, 2020 Verano, 2022 Invierno) siguen viniendo del archivo manual porque ninguna fuente real trae `City` para esos años. Se agrega la edición 2024 Verano (París) cargando fuente 3 filtrada a `Year==2024`. Esta corrida incluye además la corrección del criterio de emparejamiento de atletas (nombre plegando tildes + vivo + nacionalidad consistente, en vez de nombre exacto simple) y la canonicalización de EVENTO/DEPORTE entre fuente 1 y fuente 3, ambas resultado de la auditoría del 2026-09-13 documentada en DECISIONES.md. Frente a la integración inicial de fuente 2/3 (sin auditar, `atleta`=153,869 y `evento`=2,236), esta corrida queda en `atleta`=153443 y `evento`=2103 tras corregir falsos positivos/negativos verificados a mano. Ver detalle completo en las secciones de arriba (SEDE/EDICION_OLIMPICA, ATLETA extensión fuente 3, DEPORTE/EVENTO extensión fuente 3, PARTICIPACION/RESULTADO fuente 3, reconciliación NOC, cross-check fuente 2).
+
+| Tabla | Corrida solo fuente 1 (2026-09-12 mañana) | Esta corrida | Diferencia |
+|---|---:|---:|---:|
+| pais | 204 | 204 | +0 |
+| poblacion_pais | 13026 | 13026 | +0 |
+| noc | 235 | 236 | +1 |
+| sede | 43 | 43 | +0 |
+| atleta | 145500 | 153443 | +7943 |
 | edicion_olimpica | 53 | 55 | +2 |
 | deporte | 93 | 96 | +3 |
 | evento | 1904 | 2103 | +199 |

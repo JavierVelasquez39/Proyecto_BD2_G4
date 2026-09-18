@@ -134,15 +134,25 @@ COMMENT ON FUNCTION olimpiadas.fn_noc_por_pais(TEXT) IS
 -- elige uno arbitrariamente -- devuelve la lista de candidatos (modo
 -- 'CANDIDATO') con datos para distinguirlos. Se puede pasar p_atleta_id
 -- para ir directo al detalle (modo 'DETALLE').
+-- ============================================================================
+-- Inciso d) Información de un atleta por nombre
+-- ============================================================================
+-- Homónimos: si el nombre da más de un atleta_id, la función devuelve la lista
+-- de candidatos (modo 'CANDIDATO') con datos para distinguirlos. Se puede pasar
+-- p_atleta_id para ir directo al detalle (modo 'DETALLE').
+-- Soporta el parámetro p_incluir_yog para filtrar o incluir participaciones YOG.
+-- ============================================================================
+
 CREATE OR REPLACE FUNCTION olimpiadas.fn_atleta_info(
-    p_nombre    TEXT,
-    p_atleta_id INTEGER DEFAULT NULL,
-    p_deporte   TEXT    DEFAULT NULL,
-    p_pais      TEXT    DEFAULT NULL,
-    p_anio      SMALLINT DEFAULT NULL
+    p_nombre      TEXT,
+    p_atleta_id   INTEGER  DEFAULT NULL,
+    p_deporte     TEXT     DEFAULT NULL,
+    p_pais        TEXT     DEFAULT NULL,
+    p_anio        SMALLINT DEFAULT NULL,
+    p_incluir_yog BOOLEAN  DEFAULT FALSE
 ) RETURNS TABLE (
-    modo                VARCHAR,  -- 'CANDIDATO' | 'DETALLE' | 'SIN_COINCIDENCIAS'
-    atleta_id           INTEGER,
+    modo                 VARCHAR,  -- 'CANDIDATO' | 'DETALLE' | 'SIN_COINCIDENCIAS'
+    atleta_id            INTEGER,
     nombre_completo      VARCHAR,
     nombre_usado         VARCHAR,
     sexo                 CHAR(1),
@@ -222,9 +232,8 @@ BEGIN
         RETURN;
     END IF;
 
-    -- Detalle: exactamente un atleta (por atleta_id explícito o único match
-    -- por nombre). LEFT JOIN para que el atleta siempre aparezca aunque los
-    -- filtros opcionales (deporte/país/año) excluyan todas sus participaciones.
+    -- Detalle: exactamente un atleta (por atleta_id explícito o único match por nombre).
+    -- LEFT JOIN para que el atleta siempre aparezca aunque los filtros opcionales excluyan sus participaciones.
     RETURN QUERY
     SELECT 'DETALLE'::VARCHAR, a.atleta_id, a.nombre_completo, a.nombre_usado, a.sexo,
            a.nacionalidad, a.fecha_nacimiento, a.pais_nacimiento,
@@ -244,6 +253,7 @@ BEGIN
         AND (p_pais IS NULL OR part.codigo_noc IN (
             SELECT np.codigo_noc FROM olimpiadas.fn_noc_por_pais(p_pais) np WHERE np.codigo_noc IS NOT NULL))
     LEFT JOIN olimpiadas.edicion_olimpica e ON e.edicion_id = part.edicion_id
+        AND (p_incluir_yog IS TRUE OR e.tipo NOT LIKE '%YOG%')
     LEFT JOIN olimpiadas.evento ev ON ev.evento_id = part.evento_id
     LEFT JOIN olimpiadas.deporte d ON d.deporte_id = ev.deporte_id
     LEFT JOIN olimpiadas.resultado r ON r.participacion_id = part.participacion_id
@@ -252,31 +262,30 @@ BEGIN
 END;
 $$;
 
-COMMENT ON FUNCTION olimpiadas.fn_atleta_info(TEXT, INTEGER, TEXT, TEXT, SMALLINT) IS
+COMMENT ON FUNCTION olimpiadas.fn_atleta_info(TEXT, INTEGER, TEXT, TEXT, SMALLINT, BOOLEAN) IS
     'Inciso d). Uso: SELECT * FROM fn_atleta_info(''Jack Robinson''). Si hay '
-    'homónimos devuelve modo=CANDIDATO (sin elegir uno); pasar atleta_id '
-    'para ir directo a modo=DETALLE (participaciones+resultados+medallas).';
+    'homónimos devuelve modo=CANDIDATO; pasar atleta_id para modo=DETALLE. '
+    'Por defecto excluye YOG salvo que p_incluir_yog = TRUE.';
 
--- Procedure delgado (letra del enunciado): envuelve fn_atleta_info con un
--- refcursor INOUT, ya que un PROCEDURE de Postgres no puede devolver un
--- result set tabular directamente.
+-- Procedure delgado (letra del enunciado): envuelve fn_atleta_info con refcursor.
 CREATE OR REPLACE PROCEDURE olimpiadas.pr_atleta_info(
-    IN p_nombre       TEXT,
-    IN p_atleta_id    INTEGER  DEFAULT NULL,
-    IN p_deporte      TEXT     DEFAULT NULL,
-    IN p_pais         TEXT     DEFAULT NULL,
-    IN p_anio         SMALLINT DEFAULT NULL,
-    INOUT p_cursor    refcursor DEFAULT 'cur_atleta_info'
+    IN p_nombre      TEXT,
+    IN p_atleta_id   INTEGER  DEFAULT NULL,
+    IN p_deporte     TEXT     DEFAULT NULL,
+    IN p_pais        TEXT     DEFAULT NULL,
+    IN p_anio        SMALLINT DEFAULT NULL,
+    IN p_incluir_yog BOOLEAN  DEFAULT FALSE,
+    INOUT p_cursor   refcursor DEFAULT 'cur_atleta_info'
 )
 LANGUAGE plpgsql
 AS $$
 BEGIN
     OPEN p_cursor FOR
-        SELECT * FROM olimpiadas.fn_atleta_info(p_nombre, p_atleta_id, p_deporte, p_pais, p_anio);
+        SELECT * FROM olimpiadas.fn_atleta_info(p_nombre, p_atleta_id, p_deporte, p_pais, p_anio, p_incluir_yog);
 END;
 $$;
 
-COMMENT ON PROCEDURE olimpiadas.pr_atleta_info(TEXT, INTEGER, TEXT, TEXT, SMALLINT, refcursor) IS
+COMMENT ON PROCEDURE olimpiadas.pr_atleta_info(TEXT, INTEGER, TEXT, TEXT, SMALLINT, BOOLEAN, refcursor) IS
     'Uso: BEGIN; CALL pr_atleta_info(''Jack Robinson''); '
     'FETCH ALL FROM cur_atleta_info; COMMIT;';
 
@@ -287,18 +296,22 @@ COMMENT ON PROCEDURE olimpiadas.pr_atleta_info(TEXT, INTEGER, TEXT, TEXT, SMALLI
 -- asociados al país (ver fn_noc_por_pais arriba), y resuelve sede vía
 -- PAIS -> SEDE -> EDICION_OLIMPICA. Distingue explícitamente "nunca fue
 -- sede" (país válido, 0 filas de sede) de "país no encontrado".
+-- ============================================================================
+-- Inciso e) Información de un país (na-update para iti YOG)
+-- ============================================================================
 CREATE OR REPLACE FUNCTION olimpiadas.fn_pais_info(
-    p_pais TEXT,
-    p_anio SMALLINT DEFAULT NULL,
-    p_deporte TEXT DEFAULT NULL
+    p_pais        TEXT,
+    p_anio        SMALLINT DEFAULT NULL,
+    p_deporte     TEXT     DEFAULT NULL,
+    p_incluir_yog BOOLEAN  DEFAULT FALSE
 ) RETURNS TABLE (
-    seccion       VARCHAR,  -- 'PAIS_NO_ENCONTRADO' | 'NOC_ASOCIADO' | 'PARTICIPACION'
+    seccion        VARCHAR,  -- 'PAIS_NO_ENCONTRADO' | 'NOC_ASOCIADO' | 'PARTICIPACION'
                              -- | 'RESUMEN_MEDALLAS' | 'SEDE' | 'NUNCA_SEDE'
-    codigo_noc    VARCHAR,
-    nombre_region VARCHAR,
-    categoria_noc VARCHAR,  -- solo en NOC_ASOCIADO: PAIS_ACTUAL / ENTIDAD_HISTORICA_NO_ATRIBUIDA
-    edicion_anio  SMALLINT,
-    edicion_tipo  VARCHAR,
+    codigo_noc     VARCHAR,
+    nombre_region  VARCHAR,
+    categoria_noc  VARCHAR,  -- solo en NOC_ASOCIADO: PAIS_ACTUAL / ENTIDAD_HISTORICA_NO_ATRIBUIDA
+    edicion_anio   SMALLINT,
+    edicion_tipo   VARCHAR,
     deporte_nombre VARCHAR,
     evento_nombre  VARCHAR,
     atleta_id      INTEGER,
@@ -307,10 +320,11 @@ CREATE OR REPLACE FUNCTION olimpiadas.fn_pais_info(
     empatado       BOOLEAN,
     medalla        VARCHAR,
     sede_ciudad    VARCHAR,
-    cantidad       BIGINT   -- solo en RESUMEN_MEDALLAS
+    cantidad       BIGINT    -- solo en RESUMEN_MEDALLAS
 ) LANGUAGE plpgsql STABLE AS $$
 DECLARE
-    v_pais_id INTEGER;
+    v_pais_id  INTEGER;
+    v_fue_sede BOOLEAN := FALSE;
 BEGIN
     SELECT pais_id INTO v_pais_id FROM olimpiadas.fn_noc_por_pais(p_pais) LIMIT 1;
 
@@ -346,6 +360,7 @@ BEGIN
             SELECT np.codigo_noc FROM olimpiadas.fn_noc_por_pais(p_pais) np WHERE np.codigo_noc IS NOT NULL)
       AND (p_anio IS NULL OR e.anio = p_anio)
       AND (p_deporte IS NULL OR olimpiadas.f_normalizar(d.nombre) = olimpiadas.f_normalizar(p_deporte))
+      AND (p_incluir_yog IS TRUE OR e.tipo NOT LIKE '%YOG%')
     ORDER BY e.anio, ev.nombre;
 
     -- Sección 3: resumen de medallero agregado (todos los NOC del país juntos)
@@ -363,21 +378,29 @@ BEGIN
       AND r.medalla IS NOT NULL
       AND (p_anio IS NULL OR e.anio = p_anio)
       AND (p_deporte IS NULL OR olimpiadas.f_normalizar(d.nombre) = olimpiadas.f_normalizar(p_deporte))
+      AND (p_incluir_yog IS TRUE OR e.tipo NOT LIKE '%YOG%')
     GROUP BY r.medalla;
 
     -- Sección 4: sede -- PAIS -> SEDE -> EDICION_OLIMPICA
-    RETURN QUERY
-    SELECT 'SEDE'::VARCHAR, NULL::VARCHAR, NULL::VARCHAR, NULL::VARCHAR,
-        e.anio, e.tipo, NULL::VARCHAR, NULL::VARCHAR, NULL::INTEGER, NULL::VARCHAR,
-        NULL::INTEGER, NULL::BOOLEAN, NULL::VARCHAR, s.ciudad, NULL::BIGINT
-    FROM olimpiadas.sede s
-    JOIN olimpiadas.edicion_olimpica e ON e.sede_id = s.sede_id
-    WHERE s.pais_id = v_pais_id
-    ORDER BY e.anio;
+    SELECT EXISTS (
+        SELECT 1 
+        FROM olimpiadas.sede s
+        JOIN olimpiadas.edicion_olimpica e ON e.sede_id = s.sede_id
+        WHERE s.pais_id = v_pais_id
+          AND (p_incluir_yog IS TRUE OR e.tipo NOT LIKE '%YOG%')
+    ) INTO v_fue_sede;
 
-    IF NOT FOUND THEN
-        -- País válido pero nunca fue sede: se marca explícitamente, no se
-        -- deja como lista vacía sin explicación.
+    IF v_fue_sede THEN
+        RETURN QUERY
+        SELECT 'SEDE'::VARCHAR, NULL::VARCHAR, NULL::VARCHAR, NULL::VARCHAR,
+            e.anio, e.tipo, NULL::VARCHAR, NULL::VARCHAR, NULL::INTEGER, NULL::VARCHAR,
+            NULL::INTEGER, NULL::BOOLEAN, NULL::VARCHAR, s.ciudad, NULL::BIGINT
+        FROM olimpiadas.sede s
+        JOIN olimpiadas.edicion_olimpica e ON e.sede_id = s.sede_id
+        WHERE s.pais_id = v_pais_id
+          AND (p_incluir_yog IS TRUE OR e.tipo NOT LIKE '%YOG%')
+        ORDER BY e.anio;
+    ELSE
         RETURN QUERY SELECT 'NUNCA_SEDE'::VARCHAR,
             NULL::VARCHAR, NULL::VARCHAR, NULL::VARCHAR, NULL::SMALLINT, NULL::VARCHAR,
             NULL::VARCHAR, NULL::VARCHAR, NULL::INTEGER, NULL::VARCHAR, NULL::INTEGER,
@@ -386,29 +409,30 @@ BEGIN
 END;
 $$;
 
-COMMENT ON FUNCTION olimpiadas.fn_pais_info(TEXT, SMALLINT, TEXT) IS
+COMMENT ON FUNCTION olimpiadas.fn_pais_info(TEXT, SMALLINT, TEXT, BOOLEAN) IS
     'Inciso e). Uso: SELECT * FROM fn_pais_info(''Germany''). pais.nombre '
     'sigue convención Banco Mundial en inglés (ej. "Russian Federation", '
     'no "Rusia"); la búsqueda es insensible a acentos/mayúsculas y admite '
-    'coincidencia parcial, pero no traduce gentilicios en español.';
+    'coincidencia parcial. Por defecto excluye YOG salvo que p_incluir_yog = TRUE.';
 
--- Procedure delgado (letra del enunciado): mismo patrón de refcursor.
+-- Procedure delgado (letra del enunciado): envuelve fn_pais_info con refcursor.
 CREATE OR REPLACE PROCEDURE olimpiadas.pr_pais_info(
-    IN p_pais      TEXT,
-    IN p_anio      SMALLINT DEFAULT NULL,
-    IN p_deporte   TEXT     DEFAULT NULL,
-    INOUT p_cursor refcursor DEFAULT 'cur_pais_info'
+    IN p_pais        TEXT,
+    IN p_anio        SMALLINT DEFAULT NULL,
+    IN p_deporte     TEXT     DEFAULT NULL,
+    IN p_incluir_yog BOOLEAN  DEFAULT FALSE,
+    INOUT p_cursor   refcursor DEFAULT 'cur_pais_info'
 )
 LANGUAGE plpgsql
 AS $$
 BEGIN
     OPEN p_cursor FOR
-        SELECT * FROM olimpiadas.fn_pais_info(p_pais, p_anio, p_deporte);
+        SELECT * FROM olimpiadas.fn_pais_info(p_pais, p_anio, p_deporte, p_incluir_yog);
 END;
 $$;
 
-COMMENT ON PROCEDURE olimpiadas.pr_pais_info(TEXT, SMALLINT, TEXT, refcursor) IS
-    'Uso: BEGIN; CALL pr_pais_info(''Germany''); '
+COMMENT ON PROCEDURE olimpiadas.pr_pais_info(TEXT, SMALLINT, TEXT, BOOLEAN, refcursor) IS
+    'Uso: BEGIN; CALL pr_pais_info(''Germany'', p_incluir_yog := TRUE); '
     'FETCH ALL FROM cur_pais_info; COMMIT;';
 
 -- ============================================================================

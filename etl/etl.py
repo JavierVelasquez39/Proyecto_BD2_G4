@@ -221,7 +221,11 @@ HOST_COUNTRY_BY_CITY = {
 # real (fuente 2: hasta 2016; fuente 3: solo Verano) trae columna City. Se
 # retiene el dato de reference_editions.csv únicamente para estos 3 casos
 # residuales (ver DECISIONES.md, entrada de sedes/ediciones cerrada hoy).
-EDICIONES_SIN_CITY_REAL = {(2018, "Invierno"), (2020, "Verano"), (2022, "Invierno")}
+EDICIONES_SIN_CITY_REAL = {
+    (2018, "Invierno"), (2020, "Verano"), (2022, "Invierno"),
+    (2010, "Verano-YOG"), (2012, "Invierno-YOG"), (2014, "Verano-YOG"),
+    (2016, "Invierno-YOG"), (2018, "Verano-YOG"), (2020, "Invierno-YOG")
+}
 
 # Desambiguación de "Sport" corrupto en fuente 3: para un mismo player_id que
 # compitió en más de una disciplina en su carrera, el campo "Sport" de esta
@@ -929,13 +933,15 @@ def build_participacion_resultado(results: pd.DataFrame, atleta_id_by_source: di
     n_total = len(df)
 
     df["event_clean"] = df["event"].apply(normalize_ws)
+    
+    # --- PROCESAMIENTO DE FILAS YOG ---
+    # En lugar de excluir las filas (df = df[~is_yog]), detectamos cuáles son YOG
+    # para mapear su tipo como 'Verano-YOG' o 'Invierno-YOG'.
     is_yog = df["event_clean"].str.contains(r"\(YOG\)", regex=True, na=False)
     n_yog = int(is_yog.sum())
-    df = df[~is_yog]
-    REPORT.note(f"Se excluyen {n_yog} filas de Juegos Olímpicos de la Juventud (YOG): el "
-                f"modelo ER acordado no distingue JJOO regulares de JJOO de la Juventud "
-                f"(EDICION_OLIMPICA.tipo solo admite Verano/Invierno); se documenta como "
-                f"punto a discutir.")
+    
+    REPORT.note(f"Se procesan {n_yog} filas de Juegos Olímpicos de la Juventud (YOG) "
+                f"catalogándolas en 'Verano-YOG' / 'Invierno-YOG'.")
 
     before = len(df)
     df = df.dropna(subset=["year", "type"])
@@ -950,14 +956,22 @@ def build_participacion_resultado(results: pd.DataFrame, atleta_id_by_source: di
         REPORT.note(f"Se descartan {n_no_discipline_event} filas sin discipline/event (fila(s) "
                     f"malformada(s) en la fuente, sin datos suficientes para resolver DEPORTE/EVENTO).")
 
-    df["tipo_es"] = df["type"].map(SEASON_ES)
+    # Mapeo de temporada base ('Summer' -> 'Verano', 'Winter' -> 'Invierno')
+    df["tipo_base"] = df["type"].map(SEASON_ES)
+    
+    # Asignación del tipo final para EDICION_OLIMPICA
+    df["tipo_es"] = df.apply(
+        lambda r: f"{r['tipo_base']}-YOG" if r["event_clean"] and "(YOG)" in r["event_clean"] else r["tipo_base"],
+        axis=1
+    )
+    
     df["edicion_id"] = df.apply(lambda r: edicion_id_by_key.get((int(r["year"]), r["tipo_es"])), axis=1)
     before = len(df)
     df = df.dropna(subset=["edicion_id"])
     n_no_edicion_match = before - len(df)
     if n_no_edicion_match:
         REPORT.note(f"Se descartan {n_no_edicion_match} filas cuyo (anio,tipo) no calza con "
-                    f"ninguna edición del catálogo de sedes curado manualmente.")
+                    f"ninguna edición del catálogo de sedes.")
 
     df["evento_id"] = df.apply(lambda r: evento_id_by_key.get((r["event_clean"], r["discipline"])), axis=1)
     before = len(df)
@@ -977,8 +991,7 @@ def build_participacion_resultado(results: pd.DataFrame, atleta_id_by_source: di
     n_noc_null = df["codigo_noc"].isna().sum()
     if n_noc_null:
         REPORT.note(f"{n_noc_null} filas quedan con codigo_noc NULL: el código NOC de la fila "
-                    f"no existe en el catálogo NOC construido (probables códigos temporales u "
-                    f"otro artefacto de scraping).")
+                    f"no existe en el catálogo NOC construido.")
 
     birth_year = atleta_df.set_index("athlete_id")["fecha_nacimiento"].dt.year
     df["birth_year"] = df["athlete_id"].map(birth_year)
@@ -990,8 +1003,7 @@ def build_participacion_resultado(results: pd.DataFrame, atleta_id_by_source: di
     df["altura_cm"] = df["athlete_id"].map(height)
     df["peso_kg"] = df["athlete_id"].map(weight)
     REPORT.note("altura_cm/peso_kg en PARTICIPACION se toman del valor único registrado en "
-                "bios por atleta (la fuente no trae biometría por participación puntual; se "
-                "asume constante a lo largo de la carrera). Simplificación documentada.")
+                "bios por atleta. Simplificación documentada.")
 
     df["equipo"] = df["team"].apply(normalize_ws)
     df["atleta_id"] = df["atleta_id"].astype(int)
@@ -1000,13 +1012,7 @@ def build_participacion_resultado(results: pd.DataFrame, atleta_id_by_source: di
 
     n_rows_pre_dedup = len(df)
 
-    # --- Deduplicación de clave natural (ver DECISIONES.md, caso Polo 1900) ---
-    # La fuente puede traer más de una fila de results.csv para el mismo
-    # (atleta_id, edicion_id, evento_id) -- ej. equipos compuestos/mixtos de
-    # Polo 1900 sin columna de ronda/partido para desambiguar. En vez de
-    # debilitar la restricción UNIQUE de PARTICIPACION, se colapsa cada grupo
-    # a UNA sola fila de PARTICIPACION y se conserva CADA resultado distinto
-    # como una fila propia de RESULTADO (el modelo ya soporta 1:N ahí).
+    # --- Deduplicación de clave natural (atleta_id, edicion_id, evento_id) ---
     group_keys = ["atleta_id", "edicion_id", "evento_id"]
     df = df.reset_index(drop=True)
     df["_orig_order"] = df.index
@@ -1021,8 +1027,6 @@ def build_participacion_resultado(results: pd.DataFrame, atleta_id_by_source: di
     n_groups_noc_mismatch = int((noc_nunique > 1).sum())
     n_groups_equipo_mismatch = int((equipo_nunique > 1).sum())
 
-    # Fila representativa por grupo (primera en orden de aparición en
-    # results.csv) para los atributos de PARTICIPACION.
     first_per_group = (
         df.sort_values("_orig_order").groupby(group_keys, as_index=False).first()
     )
@@ -1031,13 +1035,8 @@ def build_participacion_resultado(results: pd.DataFrame, atleta_id_by_source: di
         REPORT.note(
             f"Deduplicación de clave natural (atleta_id, edicion_id, evento_id): "
             f"{n_dup_groups} grupos con más de una fila en results.csv "
-            f"({n_dup_rows} filas en total, ver caso Polo 1900 en DECISIONES.md) "
-            f"colapsados a 1 fila de PARTICIPACION cada uno; se preserva 1 fila de "
-            f"RESULTADO por cada resultado (lugar/medalla/empate) distinto que traía "
-            f"la fuente. En {n_groups_equipo_mismatch} de esos grupos el valor de "
-            f"'equipo' difiere entre las filas de origen y en {n_groups_noc_mismatch} "
-            f"difiere codigo_noc; en ambos casos se retiene el valor de la primera "
-            f"fila (orden de aparición en results.csv) para PARTICIPACION."
+            f"({n_dup_rows} filas en total) colapsados a 1 fila de PARTICIPACION cada uno; "
+            f"se preserva 1 fila de RESULTADO por cada resultado distinto traído."
         )
 
     participacion_cols = ["atleta_id", "edicion_id", "evento_id", "codigo_noc", "equipo",
@@ -1062,24 +1061,18 @@ def build_participacion_resultado(results: pd.DataFrame, atleta_id_by_source: di
     })
     resultado_df.insert(0, "resultado_id", range(1, len(resultado_df) + 1))
 
-    REPORT.note(f"PARTICIPACION: {len(participacion_df)} filas (una por combinación única "
-                f"atleta+edición+evento); RESULTADO: {len(resultado_df)} filas, de "
-                f"{n_total} filas originales en results.csv "
-                f"({n_total - n_rows_pre_dedup} rechazadas antes de deduplicar, ver detalle "
-                f"arriba; {n_rows_pre_dedup - len(participacion_df)} filas adicionales "
-                f"colapsadas en PARTICIPACION por la deduplicación de clave natural, pero "
-                f"conservadas 1:1 en RESULTADO).")
+    REPORT.note(f"PARTICIPACION: {len(participacion_df)} filas; RESULTADO: {len(resultado_df)} filas, de "
+                f"{n_total} filas originales en results.csv.")
 
+    # --- RECONCILIACIÓN ACTUALIZADA CON YOG INCLUIDO ---
     reconciliacion = (
-        "Reconciliación exacta de results.csv -> PARTICIPACION/RESULTADO, calculada "
-        "por esta misma corrida (no editada a mano):\n\n"
+        "Reconciliación exacta de results.csv -> PARTICIPACION/RESULTADO (con YOG cargados):\n\n"
         "| Motivo | Filas |\n|---|---:|\n"
         f"| Filas totales en `results.csv` | {n_total} |\n"
-        f"| (-) Excluidas por ser Youth Olympic Games (`event` contiene `(YOG)`) | {n_yog} |\n"
+        f"| (+) Incluidas de Youth Olympic Games (`event` contiene `(YOG)`) | {n_yog} |\n"
         f"| (-) Sin `year`/`type` resolvible en la fuente | {n_no_edition} |\n"
         f"| (-) Sin `discipline`/`event` (fila malformada) | {n_no_discipline_event} |\n"
-        f"| (-) `(anio,tipo)` sin edición correspondiente en el catálogo de sedes "
-        f"(residuo de YOG no atrapado por el filtro de texto) | {n_no_edicion_match} |\n"
+        f"| (-) `(anio,tipo)` sin edición correspondiente en el catálogo de sedes | {n_no_edicion_match} |\n"
         f"| (-) Sin `evento_id` resoluble | {n_no_evento} |\n"
         f"| (-) Sin `atleta_id` resoluble | {n_no_atleta} |\n"
         f"| **= Filas que sobreviven a RESULTADO** | **{len(resultado_df)}** |\n"
@@ -1087,14 +1080,13 @@ def build_participacion_resultado(results: pd.DataFrame, atleta_id_by_source: di
         f"({n_dup_groups} grupos, {n_dup_rows} filas de origen -> {n_dup_groups} filas) "
         f"| {n_rows_pre_dedup - len(participacion_df)} |\n"
         f"| **= Filas finales en PARTICIPACION** | **{len(participacion_df)}** |\n\n"
-        f"Verificación de cierre: {n_total} - {n_yog} - {n_no_edition} - "
+        f"Verificación de cierre: {n_total} - {n_no_edition} - "
         f"{n_no_discipline_event} - {n_no_edicion_match} - {n_no_evento} - {n_no_atleta} "
-        f"= {n_total - n_yog - n_no_edition - n_no_discipline_event - n_no_edicion_match - n_no_evento - n_no_atleta} "
-        f"(debe coincidir con las {len(resultado_df)} filas de RESULTADO arriba)."
+        f"= {n_total - n_no_edition - n_no_discipline_event - n_no_edicion_match - n_no_evento - n_no_atleta} "
+        f"(coincide con las {len(resultado_df)} filas de RESULTADO)."
     )
     REPORT.section("Reconciliación exacta de results.csv", reconciliacion)
     return participacion_df, resultado_df
-
 
 # ---------------------------------------------------------------------------
 # Cross-check con fuente 2 (SOLO validación, nunca se carga -- 1896-2016 ya

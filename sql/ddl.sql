@@ -16,9 +16,10 @@
 --     verificación empírica en el reporte del ETL).
 -- ============================================================================
 
-CREATE SCHEMA IF NOT EXISTS olimpiadas;
+-- RECREACIÓN LIMPIA DEL ESQUEMA (Elimina el esquema anterior si existe)
+DROP SCHEMA IF EXISTS olimpiadas CASCADE;
+CREATE SCHEMA olimpiadas;
 SET search_path TO olimpiadas;
-
 -- ----------------------------------------------------------------------------
 CREATE TABLE pais (
     pais_id     SERIAL PRIMARY KEY,
@@ -76,7 +77,7 @@ CREATE TABLE atleta (
 CREATE TABLE edicion_olimpica (
     edicion_id SERIAL PRIMARY KEY,
     anio       SMALLINT NOT NULL CHECK (anio BETWEEN 1896 AND 2100),
-    tipo       VARCHAR(10) NOT NULL CHECK (tipo IN ('Verano','Invierno')),
+    tipo       VARCHAR(15) NOT NULL CHECK (tipo IN ('Verano', 'Invierno', 'Verano-YOG', 'Invierno-YOG')),
     sede_id    INTEGER REFERENCES sede(sede_id) ON DELETE SET NULL,
     CONSTRAINT uq_edicion_anio_tipo UNIQUE (anio, tipo)
 );

@@ -5,33 +5,33 @@
 - PAIS: 204
 - POBLACION_PAIS: 13026
 - NOC: 236
-- SEDE: 43
+- SEDE: 47
 - ATLETA: 153443
-- EDICION_OLIMPICA: 55
+- EDICION_OLIMPICA: 61
 - DEPORTE: 96
 - EVENTO: 2103
-- PARTICIPACION: 314108
-- RESULTADO: 314623
+- PARTICIPACION: 319950
+- RESULTADO: 320465
 
 ## Detalle / decisiones (esta corrida)
 
-- Fuente 1 cargada: bios_clean=145500, bios_raw=145500, noc_regions=230, populations=266, results=308408, editions(ref, fallback residual)=53
+- Fuente 1 cargada: bios_clean=145500, bios_raw=145500, noc_regions=230, populations=266, results=308408, editions(ref, fallback residual)=59
 - Fuente 2 cargada (solo para derivar SEDE/EDICION_OLIMPICA y para cross-check, NO se cargan sus participaciones): athlete_events=271116, noc_regions=230.
 - Fuente 3 cargada: olympics_dataset.csv=252565 filas totales (1896-2024, todas las temporadas); se filtra a solo lo necesario más abajo.
 - PAIS construido: 204 países (unión NOC vigentes + sedes).
 - POBLACION_PAIS: 13026 filas cargadas de 16930 disponibles en populations.csv; 3904 filas descartadas por pertenecer a países/agregados del Banco Mundial que ningún NOC ni sede representa (ej. regiones agregadas 'World', 'OECD members', etc.).
 - NOC construido: 236 códigos (16 con pais_id NULL: equipos históricos/mixtos, refugiados, atletas individuales, códigos sin país actual reconocible).
 - Fuente 3: se retienen solo 14892 filas de Year==2024 de 252565 totales (1896-2024). Regla aplicada: se toma de fuente 3 únicamente el/los año(s) que NO aparecen ya en el catálogo de ediciones cargado desde fuente 1 (1896-2022) -- en la práctica, solo 2024 (París). El resto (1896-2020 Verano) se descarta explícitamente para no duplicar PARTICIPACION contra lo ya cargado de fuente 1. Al ser fuente 3 de licencia CC BY-NC-SA (más restrictiva que la CC0 de fuente 2), se usa solo para esto -- no como fuente de validación cruzada general -- para minimizar cuánto del dataset final hereda esa licencia (ver DECISIONES.md y FUENTES.md).
-- SEDE: 43 sedes; EDICION_OLIMPICA: 55 ediciones. Ciudad real derivada de columna City: 51 ediciones de fuente 2 (1896-2016) + 1 de fuente 3 (2024 Verano). Solo 3 ediciones ([(2018, 'Invierno'), (2020, 'Verano'), (2022, 'Invierno')]) siguen viniendo de reference_editions.csv porque ninguna fuente real trae City para esos años (fuente 2 no llega, fuente 3 es solo Verano); ver DECISIONES.md.
+- SEDE: 47 sedes; EDICION_OLIMPICA: 61 ediciones. Ciudad real derivada de columna City: 51 ediciones de fuente 2 (1896-2016) + 1 de fuente 3 (2024 Verano). Solo 9 ediciones ([(2010, 'Verano-YOG'), (2012, 'Invierno-YOG'), (2014, 'Verano-YOG'), (2016, 'Invierno-YOG'), (2018, 'Invierno'), (2018, 'Verano-YOG'), (2020, 'Invierno-YOG'), (2020, 'Verano'), (2022, 'Invierno')]) siguen viniendo de reference_editions.csv porque ninguna fuente real trae City para esos años (fuente 2 no llega, fuente 3 es solo Verano); ver DECISIONES.md.
 - ATLETA: 145500 personas cargadas desde bios (incluye roles no competitivos: coach/referee/administrator, ya que la fuente no separa esa información en un archivo distinto). 0 sin sexo registrado.
 - DEPORTE: 93 disciplinas; EVENTO: 1904 eventos distintos (nombre, deporte).
-- Se excluyen 5842 filas de Juegos Olímpicos de la Juventud (YOG): el modelo ER acordado no distingue JJOO regulares de JJOO de la Juventud (EDICION_OLIMPICA.tipo solo admite Verano/Invierno); se documenta como punto a discutir.
+- Se procesan 5842 filas de Juegos Olímpicos de la Juventud (YOG) catalogándolas en 'Verano-YOG' / 'Invierno-YOG'.
 - Se descartan 2601 filas sin year/type resolvible en la fuente (no se puede construir la FK a EDICION_OLIMPICA).
 - Se descartan 1 filas sin discipline/event (fila(s) malformada(s) en la fuente, sin datos suficientes para resolver DEPORTE/EVENTO).
-- Se descartan 233 filas cuyo (anio,tipo) no calza con ninguna edición del catálogo de sedes curado manualmente.
-- altura_cm/peso_kg en PARTICIPACION se toman del valor único registrado en bios por atleta (la fuente no trae biometría por participación puntual; se asume constante a lo largo de la carrera). Simplificación documentada.
-- Deduplicación de clave natural (atleta_id, edicion_id, evento_id): 428 grupos con más de una fila en results.csv (943 filas en total, ver caso Polo 1900 en DECISIONES.md) colapsados a 1 fila de PARTICIPACION cada uno; se preserva 1 fila de RESULTADO por cada resultado (lugar/medalla/empate) distinto que traía la fuente. En 162 de esos grupos el valor de 'equipo' difiere entre las filas de origen y en 0 difiere codigo_noc; en ambos casos se retiene el valor de la primera fila (orden de aparición en results.csv) para PARTICIPACION.
-- PARTICIPACION: 299216 filas (una por combinación única atleta+edición+evento); RESULTADO: 299731 filas, de 308408 filas originales en results.csv (8677 rechazadas antes de deduplicar, ver detalle arriba; 515 filas adicionales colapsadas en PARTICIPACION por la deduplicación de clave natural, pero conservadas 1:1 en RESULTADO).
+- Se descartan 233 filas cuyo (anio,tipo) no calza con ninguna edición del catálogo de sedes.
+- altura_cm/peso_kg en PARTICIPACION se toman del valor único registrado en bios por atleta. Simplificación documentada.
+- Deduplicación de clave natural (atleta_id, edicion_id, evento_id): 428 grupos con más de una fila en results.csv (943 filas en total) colapsados a 1 fila de PARTICIPACION cada uno; se preserva 1 fila de RESULTADO por cada resultado distinto traído.
+- PARTICIPACION: 305058 filas; RESULTADO: 305573 filas, de 308408 filas originales en results.csv.
 - ATLETA (extensión fuente 3, solo 2024): 11113 atletas distintos en París 2024; 3170 calzaron (nombre normalizado + vivo + nacionalidad consistente con el NOC de fuente 3, o nacionalidad desconocida con candidato único); 7943 se cargan como nuevos. De los rechazos: 30 candidatos descartados por estar fallecidos en fuente 1 (no pueden competir en 2024), 81 rechazados por nacionalidad inconsistente con el NOC de fuente 3 (único candidato vivo, pero de otro país -- probable homónimo), 48 rechazados por ambigüedad (más de un candidato vivo con ese nombre). Ver auditoría manual y criterio revisado en DECISIONES.md.
 - DEPORTE (extensión fuente 3): 3 disciplinas nuevas en 2024 (ej. 'Breaking', debut olímpico), 42 reusan el deporte_id de una disciplina ya existente de fuente 1 comparando por nombre base sin el sufijo '(GrupoPadre)'.
 - EVENTO (extensión fuente 3): 332 eventos distintos en 2024. 133 se emparejaron con un evento ya existente de fuente 1 por forma canónica exacta (mismo deporte_id + género + descriptor normalizado, ej. 'Javelin Throw, Men (Olympic)' <-> "Men's Javelin Throw") -- resultado de la auditoría del 2026-09-13 (ver DECISIONES.md), que encontró que el desajuste de nombres no se limitaba a Equestrian/Trampoline sino a decenas de eventos comunes entre atletismo, natación, remo, ciclismo, gimnasia, esgrima, etc. 199 se cargan como eventos nuevos (genuinamente nuevos en 2024, o variantes de redacción que esta normalización no logró resolver -- ver DECISIONES.md para el detalle y las limitaciones conocidas del método). 5 claves canónicas de fuente 1 quedaron ambiguas incluso tras preferir '(Olympic)' sobre '(Intercalated)'/otros (no participaron en ningún reuso).
@@ -54,22 +54,22 @@ De los 5 códigos agregados para fuente 1 (LBN, SGP, ROC, EOR, COR), se verific�
 
 ## Reconciliación exacta de results.csv
 
-Reconciliación exacta de results.csv -> PARTICIPACION/RESULTADO, calculada por esta misma corrida (no editada a mano):
+Reconciliación exacta de results.csv -> PARTICIPACION/RESULTADO (con YOG cargados):
 
 | Motivo | Filas |
 |---|---:|
 | Filas totales en `results.csv` | 308408 |
-| (-) Excluidas por ser Youth Olympic Games (`event` contiene `(YOG)`) | 5842 |
+| (+) Incluidas de Youth Olympic Games (`event` contiene `(YOG)`) | 5842 |
 | (-) Sin `year`/`type` resolvible en la fuente | 2601 |
 | (-) Sin `discipline`/`event` (fila malformada) | 1 |
-| (-) `(anio,tipo)` sin edición correspondiente en el catálogo de sedes (residuo de YOG no atrapado por el filtro de texto) | 233 |
+| (-) `(anio,tipo)` sin edición correspondiente en el catálogo de sedes | 233 |
 | (-) Sin `evento_id` resoluble | 0 |
 | (-) Sin `atleta_id` resoluble | 0 |
-| **= Filas que sobreviven a RESULTADO** | **299731** |
+| **= Filas que sobreviven a RESULTADO** | **305573** |
 | (-) Colapsadas por deduplicación de clave natural (428 grupos, 943 filas de origen -> 428 filas) | 515 |
-| **= Filas finales en PARTICIPACION** | **299216** |
+| **= Filas finales en PARTICIPACION** | **305058** |
 
-Verificación de cierre: 308408 - 5842 - 2601 - 1 - 233 - 0 - 0 = 299731 (debe coincidir con las 299731 filas de RESULTADO arriba).
+Verificación de cierre: 308408 - 2601 - 1 - 233 - 0 - 0 = 305573 (coincide con las 305573 filas de RESULTADO).
 
 ## Cross-check con fuente 2 (validación, NO se carga a la BD)
 
@@ -150,11 +150,11 @@ Se reemplaza `reference_editions.csv` como fuente primaria de SEDE/EDICION_OLIMP
 | pais | 204 | 204 | +0 |
 | poblacion_pais | 13026 | 13026 | +0 |
 | noc | 235 | 236 | +1 |
-| sede | 43 | 43 | +0 |
+| sede | 43 | 47 | +4 |
 | atleta | 145500 | 153443 | +7943 |
-| edicion_olimpica | 53 | 55 | +2 |
+| edicion_olimpica | 53 | 61 | +8 |
 | deporte | 93 | 96 | +3 |
 | evento | 1904 | 2103 | +199 |
-| participacion | 299216 | 314108 | +14892 |
-| resultado | 299731 | 314623 | +14892 |
+| participacion | 299216 | 319950 | +20734 |
+| resultado | 299731 | 320465 | +20734 |
 

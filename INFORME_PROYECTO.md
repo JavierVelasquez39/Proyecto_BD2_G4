@@ -2,6 +2,13 @@
 
 Sistemas de Bases de Datos 2, Universidad de San Carlos de Guatemala.
 
+## Integrantes: grupo 4
+
+- 202307775: Javier Andrés Velásquez Bonilla
+- 202203805: Kimberly Alejandra Miranda Macario 
+- 202308940: Katheryn Gabriela Tziná Paz
+
+
 > Documento único que reúne el modelo de datos, las fuentes utilizadas,
 > el proceso de extracción y carga, las decisiones tomadas durante la
 > integración, el estado final de la base y el diseño de los stored
@@ -64,14 +71,26 @@ de las fuentes externas (`athlete_id`, código ISO de país, etc.); el
 ETL mantiene internamente el mapeo entre el identificador de cada
 fuente y la llave surrogate correspondiente.
 
-![Diagrama entidad-relación del modelo](images/ER_MODEL.png)
+**Historial del diagrama y resolución de la discrepancia anterior.**
+Existen dos versiones del diagrama entidad-relación:
 
-Discrepancia conocida entre el diagrama y el esquema real, marcada
-aquí de forma explícita en vez de dejarla en silencio: el diagrama no
-incluye todavía la entidad `DEPORTE_EQUIVALENCIA`, agregada al esquema
-el 2026-09-18 (ver más abajo y la sección 5). El diagrama refleja el
-modelo de 10 entidades vigente hasta esa fecha; queda pendiente
-actualizarlo para agregar la entidad número 11.
+- `images/ER_MODEL_v1.png`: la primera versión, entregada en la
+  primera entrega del proyecto (2026-09-02). Tiene 10 entidades y no
+  incluye `DEPORTE_EQUIVALENCIA`, porque esa tabla todavía no existía
+  en esa fecha. Se conserva como referencia histórica, no como el
+  modelo vigente.
+- `images/Modelo_ER_v2.png`: el diagrama actualizado y completo, con
+  las 11 entidades del esquema final (incluida `DEPORTE_EQUIVALENCIA`,
+  conectada 1:N a `DEPORTE`). Es el diagrama que corresponde al DDL
+  vigente descrito en esta sección y coincide exacto con
+  `sql/ddl.sql`.
+
+![Diagrama entidad-relación del modelo, versión 2 (vigente)](images/Modelo_ER_v2.png)
+
+La discrepancia señalada en una versión anterior de este informe (el
+diagrama no incluía `DEPORTE_EQUIVALENCIA`) queda resuelta con
+`Modelo_ER_v2.png`: ya no hay diferencia entre el diagrama y el
+esquema real.
 
 ```
 PAIS(pais_id PK, nombre)

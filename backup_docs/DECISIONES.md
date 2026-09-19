@@ -88,6 +88,52 @@ los Juegos "reales".
 alcance que el enunciado no cubre explícitamente. Mientras no haya
 respuesta, se mantiene la exclusión total de YOG.
 
+**Actualización [2026-09-18], resuelto en reunión de equipo.** El equipo
+discutió el punto y decidió implementar la alternativa (a) descrita
+arriba: ampliar `EDICION_OLIMPICA.tipo` en vez de seguir excluyendo YOG.
+Cambios aplicados:
+
+- `sql/ddl.sql`: `CHECK (tipo IN ('Verano','Invierno','Verano-YOG','Invierno-YOG'))`.
+- `etl/etl.py` (`build_participacion_resultado`): ya no descarta las
+  filas con `(YOG)` en `event`; las clasifica como `Verano-YOG` /
+  `Invierno-YOG` según la temporada base. Se cargan las 5,842 filas que
+  antes se excluían.
+- `etl/reference_editions.csv`: se agregaron a mano las 6 ediciones YOG
+  históricas (Singapur 2010, Innsbruck 2012, Nanjing 2014, Lillehammer
+  2016, Buenos Aires 2018, Lausana 2020) porque ninguna de las 4 fuentes
+  oficiales trae sede/ciudad anfitriona de YOG; ver declaración completa
+  más abajo ("Fuente manual de sedes de los Juegos Olímpicos de la
+  Juventud").
+- `sql/procedures.sql`: `fn_atleta_info`/`pr_atleta_info` y
+  `fn_pais_info`/`pr_pais_info` reciben `p_incluir_yog BOOLEAN DEFAULT
+  FALSE`. Por defecto el medallero y las participaciones que devuelven
+  son solo de Juegos adultos; hay que pedir explícitamente
+  `p_incluir_yog := TRUE` para incluir YOG. Se decidió `FALSE` por
+  defecto porque el COI y los medalleros oficiales tratan ambos eventos
+  como series separadas.
+
+**Corrección aplicada durante esta misma revisión:** al implementar el
+filtro `p_incluir_yog` en `fn_atleta_info` (modo `DETALLE`), la condición
+quedó puesta en el `ON` del `LEFT JOIN` hacia `edicion_olimpica`, un paso
+posterior en la cadena de joins a `evento`/`deporte`/`resultado` (que se
+unen contra `participacion`, no contra `edicion_olimpica`). Efecto
+real: con `p_incluir_yog = FALSE` (el default), una participación YOG
+igual aparecía en el detalle del atleta, solo con `edicion_anio`/
+`edicion_tipo` en `NULL`, en vez de excluirse por completo. Se corrigió
+moviendo la condición de YOG al `ON` del primer `LEFT JOIN` (el de
+`participacion`), junto a `p_anio`/`p_deporte`/`p_pais`, que es el mismo
+patrón que ya usaban esos tres filtros. Verificado tras la corrección
+(ver sección de pruebas en `etl/REPORTE.md`/bitácora de esta revisión).
+
+**Alternativas consideradas (2026-09-18):** dejar la exclusión total
+(rechazada: el equipo prefirió tener el dato completo con un flag
+opcional, en vez de perder 5,842 filas reales de la fuente); crear una
+tabla `EDICION_JUVENIL` separada de `EDICION_OLIMPICA` (rechazada: mismo
+motivo del análisis original, duplica el catálogo de ediciones y
+complica los `JOIN` de todas las consultas existentes).
+
+**Estado:** Resuelto.
+
 ---
 
 ## [2026-09-12] Referencia manual de sedes/ediciones (`reference_editions.csv`)
@@ -551,6 +597,50 @@ nivel `DEPORTE` sigue pendiente de confirmar con el profesor (sin
 cambios respecto al 2026-09-12). Los 199 eventos "nuevos" restantes
 quedan como limitación conocida, no como pendiente de acción bloqueante.
 
+**Actualización [2026-09-18], resuelto en reunión de equipo: se
+implementa la tabla de equivalencias antes descartada.** El equipo
+revisó específicamente el caso `Equestrian`/`Trampoline Gymnastics` (el
+único de los dos pendientes que quedaba, ya que el patrón sistemático de
+`EVENTO` ya estaba resuelto) y decidió construir la tabla
+`deporte_equivalencia` que la entrada original de arriba había
+descartado como alternativa ("no escala, propensa a quedar
+incompleta"). La diferencia frente al 2026-09-13: en ese momento se
+evaluó construir un diccionario completo cubriendo los 93 nombres de
+fuente 1; ahora se limita el alcance a mapear explícitamente **solo**
+los 2 casos ya identificados y confirmados (`Equestrian` -> deporte
+genérico nuevo `Equestrian`; `Trampoline Gymnastics` -> deporte ya
+existente `Trampolining (Gymnastics)`), sin intentar generalizar a
+casos no auditados.
+
+**Decisión:** se agregó `sql/ddl.sql: CREATE TABLE
+deporte_equivalencia(equivalencia_id PK, nombre_fuente, deporte_id
+FK->DEPORTE, fuente_origen, UNIQUE(nombre_fuente, fuente_origen))`. En
+`etl/etl.py` (`extend_deporte_evento_f3`), antes de crear un `DEPORTE`
+nuevo para un nombre de fuente 3, se consulta primero esta tabla de
+equivalencias; si hay match, se reutiliza el `deporte_id` canónico en
+vez de crear una fila duplicada. Efecto medido en la corrida completa:
+`DEPORTE` pasa de 96 (93 fuente 1 + 3 nuevas: Breaking, Equestrian,
+Trampoline Gymnastics como filas separadas) a 95 (93 + 2: Breaking y
+el nuevo `Equestrian` genérico; `Trampoline Gymnastics` ya no crea fila
+propia, se resuelve por la tabla de equivalencias al `deporte_id` de
+`Trampolining (Gymnastics)`). Ver detalle de diseño y justificación
+completa en `TablaEquivalencia.md` (documento del compañero de equipo
+que implementó el cambio; se conserva porque describe correctamente la
+solución, aunque no reemplaza este registro de decisiones).
+
+**Alternativas consideradas (2026-09-18):** (a) mantener la duplicación
+tal como estaba (rechazada: el equipo prefirió eliminar el duplicado
+semántico conocido ahora que hay una solución acotada y de bajo riesgo);
+(b) fusionar retroactivamente las 5 disciplinas ecuestres de fuente 1 en
+una sola fila `DEPORTE` (rechazada, mismo motivo que las entradas
+anteriores: cambiaría datos ya cargados de fuente 1 con consecuencias
+más amplias); (c) generalizar la tabla de equivalencias a los 93 nombres
+de fuente 1 (rechazada por alcance: son solo 2 casos confirmados, no se
+audita el resto para no introducir mapeos sin verificar contra datos
+reales, violando la regla 6 de `CLAUDE.md`).
+
+**Estado:** Resuelto.
+
 ## [2026-09-14] Function vs. Procedure para incisos d) y e) (`sql/procedures.sql`)
 
 **Contexto:** El enunciado del proyecto pide "stored procedure" para los
@@ -959,3 +1049,64 @@ revisión.
 **Estado:** Resuelto. `poblacion_pais` está correctamente cargada; de
 ahora en adelante los resúmenes de conteo de este proyecto incluyen las
 10 tablas completas, no solo un subconjunto.
+
+## [2026-09-18] Fuente manual de sedes de los Juegos Olímpicos de la Juventud
+
+**Contexto:** Al decidir incluir YOG en la carga (ver actualización de la
+entrada "Exclusión de 5,842 filas de Youth Olympic Games" arriba),
+ninguna de las 4 fuentes oficiales del enunciado trae ciudad/país
+anfitrión de las ediciones YOG (mismo problema que ya existía para las
+ediciones adultas, ver entrada "Referencia manual de sedes/ediciones").
+
+**Decisión:** se agregaron a mano 6 filas a `etl/reference_editions.csv`
+con las sedes YOG conocidas de dominio público: (2010, Verano-YOG,
+Singapur, Singapur), (2012, Invierno-YOG, Innsbruck, Austria), (2014,
+Verano-YOG, Nanjing, China), (2016, Invierno-YOG, Lillehammer, Noruega),
+(2018, Verano-YOG, Buenos Aires, Argentina), (2020, Invierno-YOG,
+Lausana, Suiza). Esta fuente **no es ninguna de las 4 del enunciado** y
+se declara explícitamente aquí, en `FUENTES.md` y en `etl/REPORTE.md`,
+igual que ya se hizo con las filas originales de este mismo archivo.
+
+**Alternativas consideradas:** dejar `sede_id` NULL para las 6 ediciones
+YOG (rechazada: mismo motivo que la decisión original de 2026-09-12,
+rompe la relación EDICION_OLIMPICA->SEDE sin necesidad para un dato de
+bajo riesgo de error y dominio público).
+
+**Estado:** Resuelto.
+
+## [2026-09-18] Recreación destructiva del esquema al inicio de `sql/ddl.sql`
+
+**Contexto:** `sql/ddl.sql` pasó de `CREATE SCHEMA IF NOT EXISTS
+olimpiadas;` a `DROP SCHEMA IF EXISTS olimpiadas CASCADE; CREATE SCHEMA
+olimpiadas;`. El motivo práctico es que el script original no era
+re-ejecutable sobre un esquema ya poblado (las tablas no usan `CREATE
+TABLE IF NOT EXISTS`), lo que obligaba a borrar objetos a mano durante
+el desarrollo iterativo. El efecto real: correr `sql/ddl.sql` contra la
+base del proyecto (que ya tiene datos reales cargados, incluida la
+fusión de 30 atletas duplicados aplicada el 2026-09-14) destruye todo su
+contenido sin pedir confirmación.
+
+**Decisión:** se mantiene el `DROP SCHEMA ... CASCADE`, mismo criterio
+que la entrada del `2026-09-14` sobre "cambios en vivo requieren
+autorización explícita": el `DROP` en sí no ejecuta contra la base real
+por su propia cuenta, solo cuando alguien corre el script a propósito.
+Se documenta aquí para que quede explícito que el script de esquema del
+proyecto es destructivo por diseño (pensado para reconstruir el proyecto
+completo desde cero corriendo `ddl.sql` -> `etl.py` -> `procedures.sql`
+en secuencia), y no algo a correr sin más contra una base con datos que
+se quieran conservar. Antes de correr `ddl.sql` contra la base compartida
+del proyecto, se debe sacar un respaldo con `pg_dump` (ver
+`backups/`, gitignored).
+
+**Alternativas consideradas:** (a) volver a `CREATE SCHEMA IF NOT
+EXISTS` sin `DROP` (rechazada: reintroduce el problema original de no
+poder re-ejecutar el script sobre un esquema ya poblado); (b) agregar
+`CREATE TABLE IF NOT EXISTS` a cada tabla en vez de recrear el esquema
+completo (rechazada por el equipo: no resuelve los casos donde cambia
+una restricción `CHECK`/`UNIQUE` de una tabla ya existente, como pasó
+justo en esta misma revisión con `edicion_olimpica.tipo`; `DROP
+SCHEMA CASCADE` es más simple y ya es la práctica que se venía usando
+de facto en desarrollo).
+
+**Estado:** Resuelto. Comportamiento intencional, documentado para que
+no sorprenda a quien corra el script contra una base con datos.

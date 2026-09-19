@@ -1,0 +1,60 @@
+anio,tipo,ciudad,pais_sede
+1896,Verano,Athens,Greece
+1900,Verano,Paris,France
+1904,Verano,St. Louis,United States
+1908,Verano,London,United Kingdom
+1912,Verano,Stockholm,Sweden
+1920,Verano,Antwerp,Belgium
+1924,Verano,Paris,France
+1924,Invierno,Chamonix,France
+1928,Verano,Amsterdam,Netherlands
+1928,Invierno,St. Moritz,Switzerland
+1932,Verano,Los Angeles,United States
+1932,Invierno,Lake Placid,United States
+1936,Verano,Berlin,Germany
+1936,Invierno,Garmisch-Partenkirchen,Germany
+1948,Verano,London,United Kingdom
+1948,Invierno,St. Moritz,Switzerland
+1952,Verano,Helsinki,Finland
+1952,Invierno,Oslo,Norway
+1956,Verano,Melbourne,Australia
+1956,Invierno,Cortina d'Ampezzo,Italy
+1960,Verano,Rome,Italy
+1960,Invierno,Squaw Valley,United States
+1964,Verano,Tokyo,Japan
+1964,Invierno,Innsbruck,Austria
+1968,Verano,Mexico City,Mexico
+1968,Invierno,Grenoble,France
+1972,Verano,Munich,Germany
+1972,Invierno,Sapporo,Japan
+1976,Verano,Montreal,Canada
+1976,Invierno,Innsbruck,Austria
+1980,Verano,Moscow,Russian Federation
+1980,Invierno,Lake Placid,United States
+1984,Verano,Los Angeles,United States
+1984,Invierno,Sarajevo,Bosnia and Herzegovina
+1988,Verano,Seoul,"Korea, Rep."
+1988,Invierno,Calgary,Canada
+1992,Verano,Barcelona,Spain
+1992,Invierno,Albertville,France
+1994,Invierno,Lillehammer,Norway
+1996,Verano,Atlanta,United States
+1998,Invierno,Nagano,Japan
+2000,Verano,Sydney,Australia
+2002,Invierno,Salt Lake City,United States
+2004,Verano,Athens,Greece
+2006,Invierno,Turin,Italy
+2008,Verano,Beijing,China
+2010,Invierno,Vancouver,Canada
+2012,Verano,London,United Kingdom
+2014,Invierno,Sochi,Russian Federation
+2016,Verano,Rio de Janeiro,Brazil
+2018,Invierno,Pyeongchang,"Korea, Rep."
+2020,Verano,Tokyo,Japan
+2022,Invierno,Beijing,China
+2010,Verano-YOG,Singapore,Singapore
+2012,Invierno-YOG,Innsbruck,Austria
+2014,Verano-YOG,Nanjing,China
+2016,Invierno-YOG,Lillehammer,Norway
+2018,Verano-YOG,Buenos Aires,Argentina
+2020,Invierno-YOG,Lausanne,Switzerland

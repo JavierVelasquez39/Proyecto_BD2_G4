@@ -20,6 +20,9 @@ EDICION_OLIMPICA(edicion_id PK, anio, tipo, sede_id FK→SEDE)
 
 DEPORTE(deporte_id PK, nombre, descripcion)
 
+DEPORTE_EQUIVALENCIA(equivalencia_id PK, nombre_fuente, deporte_id FK→DEPORTE,
+                      fuente_origen)
+
 EVENTO(evento_id PK, nombre, deporte_id FK→DEPORTE)
 
 PARTICIPACION(participacion_id PK, atleta_id FK→ATLETA, edicion_id FK→EDICION_OLIMPICA,
@@ -41,6 +44,7 @@ RESULTADO(resultado_id PK, participacion_id FK→PARTICIPACION, lugar, empatado,
 | ATLETA | PARTICIPACION | atleta_id | historial de participaciones de un atleta |
 | EDICION_OLIMPICA | PARTICIPACION | edicion_id | participaciones dentro de una edición |
 | DEPORTE | EVENTO | deporte_id | un deporte agrupa varios eventos |
+| DEPORTE | DEPORTE_EQUIVALENCIA | deporte_id | mapea nombres de deporte de una fuente secundaria (ej. `Equestrian`, `Trampoline Gymnastics` de fuente 3) al `deporte_id` canónico ya cargado, sin crear una fila `DEPORTE` duplicada por diferencia de nomenclatura/granularidad entre fuentes. Agregada 2026-09-18, ver `DECISIONES.md`. |
 | EVENTO | PARTICIPACION | evento_id | evento específico en el que compitió el atleta |
 | PARTICIPACION | RESULTADO | participacion_id | resultado(s)/medalla obtenida en esa participación. **Cardinalidad 1:N confirmada con datos reales**, no solo teórica: en la carga de fuente 1 hay 428 participaciones (ej. Polo 1900, equipos compuestos/mixtos sin columna de ronda en la fuente) con más de un resultado, hasta 12 resultados para una misma participación. Ver `DECISIONES.md`. |
 
@@ -48,6 +52,7 @@ RESULTADO(resultado_id PK, participacion_id FK→PARTICIPACION, lugar, empatado,
 
 - **PARTICIPACION** es la entidad "puente" central: conecta ATLETA, EDICION_OLIMPICA, EVENTO y NOC. Ahí se guardan atributos que varían por participación (equipo, edad, altura, peso).
 - **RESULTADO** separa el resultado/medalla de la participación (permite múltiples resultados o desempates, campo `empatado`). Esto no es solo una posibilidad teórica del modelo: la carga real de fuente 1 la ejercita (428 participaciones con múltiples resultados, caso Polo 1900 como ejemplo documentado en `DECISIONES.md`).
-- **EDICION_OLIMPICA** distingue `tipo` (Verano/Invierno). El modelo actual no distingue Juegos Olímpicos de la Juventud (YOG); fuente 1 sí los incluye mezclados con los Juegos regulares, y se excluyen de la carga hasta nueva decisión. **Pendiente de confirmar con el profesor** (ver `DECISIONES.md`).
+- **EDICION_OLIMPICA** distingue `tipo` (`Verano`, `Invierno`, `Verano-YOG`, `Invierno-YOG`). Desde 2026-09-18 el modelo sí distingue Juegos Olímpicos de la Juventud (YOG) de los Juegos regulares dentro del mismo catálogo de ediciones, en vez de excluirlos; las funciones de consulta (`fn_atleta_info`, `fn_pais_info`) reciben un parámetro opcional `p_incluir_yog` (default `FALSE`) para no mezclar medallero adulto y juvenil salvo pedido explícito. Ver `DECISIONES.md`.
+- **DEPORTE_EQUIVALENCIA** (agregada 2026-09-18): tabla de traducción N:1 para nombres de deporte de fuentes secundarias que no calzan textualmente con el catálogo canónico de fuente 1 por diferencia de granularidad (`Equestrian` de fuente 3 agrupa lo que fuente 1 separa en 5 disciplinas) o de redacción (`Trampoline Gymnastics` vs `Trampolining (Gymnastics)`). Ver `DECISIONES.md`.
 - **NOC↔ATLETA:** resuelto, ver tabla de relaciones arriba y `DECISIONES.md`.
 - **DEPORTE/EVENTO:** fuente 1 y fuente 3 nombran los mismos deportes/eventos con convenciones de texto distintas (ej. "Javelin Throw, Men (Olympic)" vs "Men's Javelin Throw"). Una auditoría sistemática (2026-09-13) encontró ~133 eventos y 2 deportes (Equestrian, Trampoline Gymnastics) que habrían quedado duplicados de no normalizarse; se implementó una canonicalización que reutiliza el `evento_id`/`deporte_id` existente cuando la forma normalizada calza exacto. Aun así, 199 eventos de 2024 quedan como filas nuevas (mezcla de eventos genuinamente nuevos y variantes de redacción no resueltas). Ver `DECISIONES.md`.

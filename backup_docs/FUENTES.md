@@ -110,6 +110,23 @@
 - **Estado de carga:** no cargada; no prevista para cargarse mientras se
   mantenga como redundante de la fuente 2.
 
+## Fuente manual: sedes de los Juegos Olímpicos de la Juventud (YOG)
+
+- **Origen real:** ninguna de las 4 fuentes oficiales trae ciudad/país
+  anfitrión de las ediciones YOG (mismo problema que ya existía para
+  las ediciones adultas antes de reemplazarse parcialmente por columnas
+  `City` de fuente 2/3, ver más arriba). Se agregaron a mano 6 filas a
+  `etl/reference_editions.csv` con datos de dominio público:
+  Singapur 2010, Innsbruck 2012, Nanjing 2014, Lillehammer 2016, Buenos
+  Aires 2018 y Lausana 2020.
+- **Licencia:** no aplica (no es un dataset de terceros, es conocimiento
+  histórico público de sedes olímpicas, igual que el resto de
+  `reference_editions.csv`).
+- **Estado de carga (2026-09-18):** cargada, ver `DECISIONES.md` (entrada
+  "Fuente manual de sedes de los Juegos Olímpicos de la Juventud").
+- **Texto de atribución:** no aplica (dato de dominio público, no de un
+  dataset con licencia de terceros).
+
 ## Detalle: los 6 códigos NOC agregados manualmente en el ETL
 
 `noc_regions.csv` (230 filas, idéntico en fuente 1 y fuente 2, ver

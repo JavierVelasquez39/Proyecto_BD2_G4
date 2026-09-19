@@ -29,7 +29,6 @@ Sistemas de Bases de Datos 2, Universidad de San Carlos de Guatemala.
 7. [Stored procedures (incisos d y e)](#7-stored-procedures-incisos-d-y-e)
 8. [Limitaciones conocidas](#8-limitaciones-conocidas)
 9. [Uso de herramientas de inteligencia artificial en el desarrollo del proyecto](#9-uso-de-herramientas-de-inteligencia-artificial-en-el-desarrollo-del-proyecto)
-10. [Puntos a confirmar con el profesor](#10-puntos-a-confirmar-con-el-profesor)
 
 ---
 

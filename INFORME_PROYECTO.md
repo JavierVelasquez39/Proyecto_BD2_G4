@@ -1173,26 +1173,3 @@ este informe:
   y verificados contra la base real, no solo revisados en el código.
 
 ---
-
-## 10. Puntos a confirmar con el profesor
-
-Las siguientes dos decisiones están **resueltas técnicamente** (el
-código y el esquema ya las implementan y están verificadas contra
-datos reales), pero siguen pendientes de validación formal con el
-profesor porque son desviaciones de alcance que el enunciado no cubre
-explícitamente:
-
-1. **Inclusión de los Juegos Olímpicos de la Juventud (YOG).** El
-   equipo decidió ampliar `EDICION_OLIMPICA.tipo` para incluirlos en
-   vez de seguir excluyéndolos, con un parámetro `p_incluir_yog` en los
-   stored procedures para no mezclar medalleros por defecto (ver
-   sección 5). Falta confirmar con el profesor si este criterio es
-   aceptable o si el enunciado esperaba mantener la exclusión
-   original.
-2. **Tabla `deporte_equivalencia` para `Equestrian`/`Trampoline
-   Gymnastics`.** El equipo decidió unificar estos 2 casos puntuales de
-   desajuste de nomenclatura entre fuente 1 y fuente 3 mediante una
-   tabla de traducción, en vez de aceptar la duplicación de `DEPORTE`
-   (ver sección 5). Falta confirmar con el profesor si prefiere esta
-   solución o si la duplicación puntual (2 de 96 filas) era aceptable
-   tal cual.

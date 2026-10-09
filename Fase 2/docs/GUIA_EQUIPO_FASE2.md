@@ -506,7 +506,7 @@ echo "Inicio: $(date '+%F %T %Z')" | tee -a "$LOG"
 INI=$(date '+%Y-%m-%dT%H:%M:%S.%3N%:z'); t0=$(date +%s.%N)
 pg_basebackup -D "$DEST" -Fp -Xs -c fast -l "full_${TIPO}_${P}" -v -P 2>&1 | tee -a "$LOG"
 FIN=$(date '+%Y-%m-%dT%H:%M:%S.%3N%:z'); t1=$(date +%s.%N)
-SEG=$(printf '%.3f' "$(echo "$t1 - $t0" | bc)")
+SEG=$(awk "BEGIN{printf \"%.3f\", $t1-$t0}")
 BYTES=$(du -sb "$DEST" | cut -f1)
 # Guarda los conteos al momento del respaldo para compararlos al restaurar
 psql -d olimpiadas -At -f /fase2/04_restauracion/conteos.sql > /backups/conteos_full.txt
@@ -514,7 +514,7 @@ echo "Fin: $(date '+%F %T %Z')  segundos=$SEG  bytes=$BYTES" | tee -a "$LOG"
 # Agregar fila (paso 02, backup_full, n_cadena 0, etapa basebackup, repeticion 1) según la sección 4.10
 ```
 
-`[PENDIENTE]` confirmar en el ensayo que `bc` existe en la imagen; si no, calcular con `awk "BEGIN{printf \"%.3f\", $t1-$t0}"`. `conteos.sql` es parte de `validar.sql` (lo entrega C): una sola consulta con el COUNT de las 11 tablas.
+Verificado en la imagen `postgres:17`: `bc` no existe, por eso los segundos se calculan con `awk`; `date` con `%3N` sí funciona (GNU coreutils 9.7). `conteos.sql` es parte de `validar.sql` (lo entrega C): una sola consulta con el COUNT de las 11 tablas.
 
 `backup_incremental.sh <tipo> <persona> <n>`: igual que el anterior, pero:
 

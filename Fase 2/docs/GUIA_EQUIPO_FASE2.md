@@ -408,7 +408,7 @@ El repo tiene las ramas `main` y `develop` (locales y en `origin`); los commits 
 | Cadena de incrementales rota | `summarize_wal=on` desde el arranque; no borrar ni mover respaldos hasta cerrar el miércoles 14; restaurar en orden |
 | Tiempos sin registrar | Los scripts escriben `tiempos_*.csv`; revisar que tenga filas después de cada paso |
 | Uso accidental de `pg_dump` | Prohibido en scripts y prompts; revisión cruzada lo verifica |
-| ER desalineado con el DDL | C lo corrige antes del domingo 11 (ver apéndice) |
+| ER desalineado con el DDL | Resuelto: ER alineado con el DDL en `Fase 2/07_documentacion/modelo_er/` (ver apéndice 6.1) |
 | `lugar` NULL en todo 2024 | Documentarlo como limitación de la fuente 3 |
 | `ddl.sql` empieza con `DROP SCHEMA ... CASCADE` | Ejecutarlo solo dentro de `fase2_<tipo>` con `docker compose exec` |
 | Ensayo deja datos en la instancia | Antes de la corrida oficial: `docker compose -p fase2_<tipo> down -v` (solo con `-p fase2_...`) |
@@ -893,8 +893,8 @@ Verificado el 8 de octubre de 2026 en una instancia temporal de PostgreSQL 17 (v
 
 **C3. ER y DDL + documentación técnica**
 
-1. Corregir el modelo ER (`docs/Modelo_ER_actualizado.xml`, se abre en draw.io) para que refleje el DDL real; la lista de diferencias está en el apéndice. Decidir con el equipo si se corrige el ER o se documenta la diferencia. Exportar el PNG final a `07_documentacion/`.
-2. Ajustar el comentario de `Fase 1/sql/ddl.sql:152` en la copia `01_ddl/01_esquema.sql` si contradice el ER final.
+1. Hecho: el modelo ER se alineó con el DDL real (el DDL es la fuente de verdad). A partir de `Fase 2/docs/Modelo_ER_actualizado.xml` se generó `Fase 2/07_documentacion/modelo_er/Modelo_ER_fase2.xml` (draw.io); la matriz de diferencias está en `DISCREPANCIAS_ER_DDL.md` y la versión Mermaid en `modelo_er.mmd`, en la misma carpeta. `[PENDIENTE: exportar desde draw.io a PNG/PDF]` el diagrama final hacia `07_documentacion/`.
+2. `[PENDIENTE]` A aplica en la copia `01_ddl/01_esquema.sql` el texto propuesto para el comentario de `Fase 1/sql/ddl.sql:152-156` (está en `DISCREPANCIAS_ER_DDL.md`). `Fase 1/sql/ddl.sql` no se modifica.
 3. Estructura del PDF (rúbrica 1.1 y entregables 4.4):
    1. Introducción y objetivo.
    2. Metodología (fases y cronograma real).
@@ -1062,18 +1062,20 @@ Redactadas para enviar tal cual:
 
 ### 6.1 Modelo ER contra DDL real
 
-El modelo ER (`docs/Modelo_ER_actualizado.xml`, 11 entidades) coincide con `Fase 1/sql/ddl.sql` en tablas y nombres de atributos. Diferencias:
+Estado: alineado. El modelo ER original (`Fase 2/docs/Modelo_ER_actualizado.xml`, 11 entidades) coincidía con `Fase 1/sql/ddl.sql` en tablas y nombres de atributos, pero no en relaciones ni marcas de FK. Se corrigió el diagrama, no el DDL: el resultado es `Fase 2/07_documentacion/modelo_er/Modelo_ER_fase2.xml`, con la matriz completa (16 puntos) y el cruce FK contra aristas en `DISCREPANCIAS_ER_DDL.md` y una versión Mermaid en `modelo_er.mmd`.
 
-| # | Elemento | Modelo ER | DDL / BD real |
-|---|---|---|---|
-| 1 | PARTICIPACION → RESULTADO | 1 a 0..1 | 1:N (sin `UNIQUE(participacion_id)`); la BD tiene 320,465 resultados contra 319,950 participaciones |
-| 2 | NOC → ATLETA | Relación dibujada | No hay FK; ATLETA no tiene `codigo_noc` (decisión documentada en `Fase 1/sql/ddl.sql:13-16`) |
-| 3 | `edicion_olimpica.anio` | Marcado FK | No es FK |
-| 4 | `sede.pais_id` | Sin marca FK | Es FK a `pais` |
-| 5 | `participacion.codigo_noc` | Obligatoria | NULLABLE, `ON DELETE SET NULL` |
-| 6 | `edicion_olimpica.sede_id` | Obligatoria | NULLABLE |
-| 7 | Comentario `Fase 1/sql/ddl.sql:152` | | Dice que el ER declara 1 a N; el ER actualizado dice 0..1 |
-| 8 | Tipos, UNIQUE, CHECK, índices | No aparecen en el diagrama | Definidos en el DDL; no se pueden comparar |
+| # | Elemento | Modelo ER original | DDL / BD real | Estado |
+|---|---|---|---|---|
+| 1 | PARTICIPACION → RESULTADO | 1 a 0..1 | 1:N (sin `UNIQUE(participacion_id)`); la BD tiene 320,465 resultados contra 319,950 participaciones | Corregido: 1 a 0..N |
+| 2 | NOC → ATLETA | Relación dibujada | No hay FK; ATLETA no tiene `codigo_noc` (decisión documentada en `Fase 1/sql/ddl.sql:13-16`) | Corregido: arista eliminada, explicado en la leyenda |
+| 3 | `edicion_olimpica.anio` | Marcado FK | No es FK | Corregido |
+| 4 | `sede.pais_id` | Sin marca FK | Es FK a `pais` | Corregido |
+| 5 | `participacion.codigo_noc` | Obligatoria | NULLABLE, `ON DELETE SET NULL` | Corregido: extremo 0..1 del lado NOC |
+| 6 | `edicion_olimpica.sede_id` | Obligatoria | NULLABLE | Corregido: extremo 0..1 del lado SEDE |
+| 7 | Comentario `Fase 1/sql/ddl.sql:152` | | Dice que el ER declara 1 a N (coincide con el ER corregido), pero afirma que la fuente 1 es 1:1, lo que ya no es cierto | `[PENDIENTE]` texto propuesto en `DISCREPANCIAS_ER_DDL.md`, a aplicar en `01_ddl/01_esquema.sql` |
+| 8 | Tipos, UNIQUE, CHECK, índices | No aparecen en el diagrama | Definidos en el DDL | Documentado en `DISCREPANCIAS_ER_DDL.md` y en `modelo_er.mmd` |
+
+Además se corrigieron `noc.pais_id` y `sede.pais_id` (también admiten NULL), la cardinalidad PAIS → POBLACION_PAIS, tres aristas que no estaban conectadas a sus tablas y cuatro que salían o llegaban a columnas equivocadas.
 
 ### 6.2 Verificado el 7 de octubre de 2026 (solo lectura)
 

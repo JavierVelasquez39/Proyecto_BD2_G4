@@ -283,14 +283,14 @@ El número de paso es el que va en el nombre de capturas y logs (1.8). `<P>` es 
 | 04 | INCR 1 | `backup_incremental.sh <tipo> <persona> 1` | Captura; log; tamaño; fila en `tiempos` |
 | 05 / 06 | Ronda 2 / INCR 2 | igual | igual |
 | 07 / 08 | Ronda 3 / INCR 3 | igual | igual |
-| 09 | Fragmentación previa | `psql -f /fase2/04_restauracion/fragmentacion.sql` | Captura + CSV |
+| 09 | Fragmentación previa | `psql -f /fase2/04_restauracion/fragmentacion_tablas.sql` y `fragmentacion_indices.sql` | Captura + CSV |
 | 10 | Eliminar la BD | `DROP DATABASE olimpiadas;` desde la BD `postgres`, luego `\l` | Captura con `\l` sin `olimpiadas` |
 | 11 | Detener y vaciar PGDATA | `docker compose -p <P> stop db`; el script de restauración borra `$PGDATA` y lo lista vacío | Captura |
 | 12 | Restaurar FULL | `restaurar.sh <tipo> <persona> 0` | Captura con tiempos y COUNT; log; fila en `tiempos` |
 | 13 | Restaurar FULL + INCR 1 | `restaurar.sh <tipo> <persona> 1` | igual |
 | 14 | Restaurar hasta INCR 2 | `restaurar.sh <tipo> <persona> 2` | igual |
 | 15 | Restaurar hasta INCR 3 | `restaurar.sh <tipo> <persona> 3` | igual; los COUNT deben coincidir con el paso 07 |
-| 16 | Fragmentación posterior | `docker compose -p <P> start db`; `fragmentacion.sql` | Captura + CSV; debe coincidir con el paso 09 |
+| 16 | Fragmentación posterior | `docker compose -p <P> start db`; `fragmentacion_tablas.sql` y `fragmentacion_indices.sql` | Captura + CSV; debe coincidir con el paso 09 |
 
 Ejecución de la restauración (con `db` detenido, PowerShell):
 
@@ -300,7 +300,7 @@ docker compose -p fase2_anio run --rm --no-deps -u postgres --entrypoint bash db
 
 Medición del tiempo: la toma el **script**, no una persona. Cada restauración registra tres etapas (combinar/copiar, arranque hasta aceptar conexiones, validación) y el total.
 
-Recomendado si alcanza el tiempo: repetir cada restauración 3 veces y reportar la mediana (solo la primera necesita capturas; las demás quedan en el log).
+Cada restauración se repite 3 veces, cada una desde PGDATA vacío, y se reporta la mediana. La repetición 1 lleva captura; las demás quedan en el log.
 
 ### 1.7 Decisiones de trabajo del equipo
 
@@ -336,7 +336,7 @@ Fase 2/
       deportista/       r1_atenas2004/, r2_pekin2008/, r3_londres2012/
     cargar_ronda.sh
   03_backup/            backup_full.sh, backup_incremental.sh
-  04_restauracion/      restaurar.sh, validar.sql, fragmentacion.sql
+  04_restauracion/      restaurar.sh, conteos.sql, validar.sql, fragmentacion_tablas.sql, fragmentacion_indices.sql, README_04.md
   05_logs/
     {tipo}_{persona}/   logs de esa corrida
     tiempos_{tipo}_{persona}.csv
@@ -387,7 +387,7 @@ El repo tiene las ramas `main` y `develop` (locales y en `origin`); los commits 
 | Fecha | Hito | Quién |
 |---|---|---|
 | Jue 8 (mañana) | `docker-compose.yml` publicado | A |
-| Jue 8 (noche) | `validar.sql`, `fragmentacion.sql` y convención de nombres publicados | C |
+| Jue 8 (noche) | `validar.sql`, `fragmentacion_tablas.sql`, `fragmentacion_indices.sql` y convención de nombres publicados | C |
 | Vie 9 | Scripts de backup y restauración publicados | A |
 | Vie 9 | CSV de base y de las 9 rondas, `cargar_ronda.sh` publicados | B |
 | Sáb 10 | **Ensayo con Bolt** en las 3 máquinas; reportar fallos en el grupo | Todos |
@@ -408,7 +408,7 @@ El repo tiene las ramas `main` y `develop` (locales y en `origin`); los commits 
 | Cadena de incrementales rota | `summarize_wal=on` desde el arranque; no borrar ni mover respaldos hasta cerrar el miércoles 14; restaurar en orden |
 | Tiempos sin registrar | Los scripts escriben `tiempos_*.csv`; revisar que tenga filas después de cada paso |
 | Uso accidental de `pg_dump` | Prohibido en scripts y prompts; revisión cruzada lo verifica |
-| ER desalineado con el DDL | C lo corrige antes del domingo 11 (ver apéndice) |
+| ER desalineado con el DDL | Resuelto: ER alineado con el DDL en `Fase 2/07_documentacion/modelo_er/` (ver apéndice 6.1) |
 | `lugar` NULL en todo 2024 | Documentarlo como limitación de la fuente 3 |
 | `ddl.sql` empieza con `DROP SCHEMA ... CASCADE` | Ejecutarlo solo dentro de `fase2_<tipo>` con `docker compose exec` |
 | Ensayo deja datos en la instancia | Antes de la corrida oficial: `docker compose -p fase2_<tipo> down -v` (solo con `-p fase2_...`) |
@@ -490,7 +490,7 @@ Rúbrica 8.2 (100 pts): Documentación técnica 15, Manual de usuario 10, Códig
 Todos los scripts corren **dentro del contenedor** como `postgres`, con `set -euo pipefail`, y escriben:
 
 - un log en `/fase2/05_logs/<tipo>_<persona>/`, con `date "+%F %T %Z"` al inicio y al final;
-- una fila en `/fase2/05_logs/tiempos_<tipo>_<persona>.csv` con las columnas definidas por C (sección 4.10).
+- una fila en `/fase2/05_logs/tiempos_<tipo>_<persona>.csv` con el formato final de la sección 4.10 (el script escribe el encabezado si el archivo no existe).
 
 `backup_full.sh <tipo> <persona>`, esqueleto:
 
@@ -503,17 +503,18 @@ LOGDIR=/fase2/05_logs/${TIPO}_${P}; mkdir -p "$LOGDIR"
 LOG=$LOGDIR/${TIPO}_${P}_02_backup_full.log
 DEST=/backups/full
 echo "Inicio: $(date '+%F %T %Z')" | tee -a "$LOG"
-t0=$(date +%s.%N)
+INI=$(date '+%Y-%m-%dT%H:%M:%S.%3N%:z'); t0=$(date +%s.%N)
 pg_basebackup -D "$DEST" -Fp -Xs -c fast -l "full_${TIPO}_${P}" -v -P 2>&1 | tee -a "$LOG"
-t1=$(date +%s.%N)
+FIN=$(date '+%Y-%m-%dT%H:%M:%S.%3N%:z'); t1=$(date +%s.%N)
+SEG=$(awk "BEGIN{printf \"%.3f\", $t1-$t0}")
 BYTES=$(du -sb "$DEST" | cut -f1)
 # Guarda los conteos al momento del respaldo para compararlos al restaurar
 psql -d olimpiadas -At -f /fase2/04_restauracion/conteos.sql > /backups/conteos_full.txt
-echo "Fin: $(date '+%F %T %Z')  segundos=$(echo "$t1 - $t0" | bc)  bytes=$BYTES" | tee -a "$LOG"
-# Agregar fila a tiempos_${TIPO}_${P}.csv con el formato de la sección 4.10
+echo "Fin: $(date '+%F %T %Z')  segundos=$SEG  bytes=$BYTES" | tee -a "$LOG"
+# Agregar fila (paso 02, backup_full, n_cadena 0, etapa basebackup, repeticion 1) según la sección 4.10
 ```
 
-`[PENDIENTE]` confirmar en el ensayo que `bc` existe en la imagen; si no, calcular con `awk "BEGIN{print $t1-$t0}"`. `conteos.sql` es parte de `validar.sql` (lo entrega C): una sola consulta con el COUNT de las 11 tablas.
+Verificado en la imagen `postgres:17`: `bc` no existe, por eso los segundos se calculan con `awk`; `date` con `%3N` sí funciona (GNU coreutils 9.7). `conteos.sql` es parte de `validar.sql` (lo entrega C): una sola consulta con el COUNT de las 11 tablas.
 
 `backup_incremental.sh <tipo> <persona> <n>`: igual que el anterior, pero:
 
@@ -530,7 +531,7 @@ echo "Fin: $(date '+%F %T %Z')  segundos=$(echo "$t1 - $t0" | bc)  bytes=$BYTES"
 3. Etapa **combinar**: medir `pg_combinebackup /backups/full [/backups/incr1 ... incrN] -o "$PGDATA"` (o `cp -a` si el `[PENDIENTE]` (b) de 1.4 falla con un solo FULL); luego `chmod 700 "$PGDATA"`.
 4. Etapa **arranque**: medir `pg_ctl -D "$PGDATA" -l /tmp/pg_restore.log -w -t 900 -o "-c listen_addresses=''" start`.
 5. Etapa **validación**: medir `psql -d olimpiadas -f /fase2/04_restauracion/validar.sql`.
-6. Comparar `conteos.sql` contra `/backups/conteos_full.txt` o `conteos_incr$n.txt`; imprimir `VALIDACION OK` o `ALERTA: conteos distintos` y salir con código distinto de 0 si no coinciden.
+6. Comparar `conteos.sql` contra `/backups/conteos_full.txt` o `conteos_incr$n.txt`; imprimir `VALIDACION OK` o `ALERTA: conteos distintos`. Si no coinciden, escribir antes sus filas en `tiempos` con `ALERTA` y luego salir con código distinto de 0.
 7. `pg_ctl -D "$PGDATA" -m fast stop`.
 8. Escribir 4 filas en `tiempos` (combinar, arranque, validación, total) y el log `<tipo>_<persona>_<12..15>_restore_*.log`.
 
@@ -562,7 +563,8 @@ docker compose -p fase2_anio run --rm --no-deps -u postgres --entrypoint bash db
 docker compose -p fase2_anio run --rm --no-deps -u postgres --entrypoint bash db /fase2/04_restauracion/restaurar.sh anio pa 2
 docker compose -p fase2_anio run --rm --no-deps -u postgres --entrypoint bash db /fase2/04_restauracion/restaurar.sh anio pa 3
 docker compose -p fase2_anio start db
-docker compose -p fase2_anio exec -u postgres db psql -d olimpiadas -f /fase2/04_restauracion/fragmentacion.sql
+docker compose -p fase2_anio exec -u postgres db psql -d olimpiadas -f /fase2/04_restauracion/fragmentacion_tablas.sql
+docker compose -p fase2_anio exec -u postgres db psql -d olimpiadas -f /fase2/04_restauracion/fragmentacion_indices.sql
 ```
 
 **A4. Repo:** README de `Fase 2/` con el índice de carpetas (1.8), el orden de ejecución y un enlace al manual. Revisar que no queden archivos sueltos fuera de la estructura.
@@ -587,7 +589,7 @@ docker compose -p fase2_anio exec -u postgres db psql -d olimpiadas -f /fase2/04
 
 | Recibe | De quién | Cuándo |
 |---|---|---|
-| `validar.sql`, `conteos.sql`, `fragmentacion.sql`, columnas de `tiempos` | C | Jue 8 noche |
+| `validar.sql`, `conteos.sql`, `fragmentacion_tablas.sql`, `fragmentacion_indices.sql`, columnas de `tiempos` | C | Jue 8 noche |
 | CSV y `cargar_ronda.sh` | B | Vie 9 |
 
 ### 2.6 Corrida oficial y referencia
@@ -834,7 +836,7 @@ Validación especial: el evento siempre es 1025 (1 fila en `evento` en las 3 ron
 
 | # | Tarea | Horas | Entregable | Fecha límite |
 |---|---|---:|---|---|
-| C1 | `validar.sql`, `conteos.sql`, `fragmentacion.sql`, columnas de `tiempos`, convención de nombres | 1.0 | `04_restauracion/*.sql`, sección 1.8 confirmada | Jue 8 noche |
+| C1 | `validar.sql`, `conteos.sql`, `fragmentacion_tablas.sql`, `fragmentacion_indices.sql`, columnas de `tiempos`, convención de nombres | 1.0 | `04_restauracion/*.sql`, sección 1.8 confirmada | Jue 8 noche |
 | C2 | Corrida oficial por deportista (también es la referencia común) | 2.0 | `05_logs/deportista_pc/`, `06_evidencias/deportista_pc/`, `05_logs/tiempos_deportista_pc.csv` | Lun 12 |
 | C3 | Alinear ER y DDL + compilar la documentación técnica | 2.0 | ER corregido; `07_documentacion/Documentacion_Tecnica.pdf` | ER: dom 11; PDF: vie 16 temprano |
 | C4 | Análisis comparativo: tablas y gráficos | 1.5 | `05_logs/tiempos.csv`, `07_documentacion/graficos/` | Jue 15 |
@@ -867,49 +869,32 @@ UNION ALL SELECT 'resultado', count(*) FROM olimpiadas.resultado;
 
 1. `SELECT now();` y el prompt con hora.
 2. `\i /fase2/04_restauracion/conteos.sql`.
-3. `SELECT * FROM olimpiadas.<tabla> ORDER BY 1 LIMIT 10;` para cada una de las 11 tablas. `[PENDIENTE]` pregunta 4: si el auxiliar exige `SELECT *` sin límite, la salida completa va al log y la captura muestra el inicio y el final.
+3. `SELECT * FROM olimpiadas.<tabla> ORDER BY <pk> LIMIT :limite;` para cada una de las 11 tablas. La variable se pasa con `-v limite=10` (captura) o `-v limite=ALL` (log completo); si no se define, vale 10. `[PENDIENTE]` pregunta 4: si el auxiliar exige `SELECT *` sin límite, la salida completa va al log y la captura muestra el inicio y el final.
 4. Consultas de muestra con sentido: Bolt con sus 7 participaciones, el top 3 de 100 m femenino por edición, el medallero por NOC de la edición cargada.
 5. Opcional: `pg_amcheck -d olimpiadas` (alertas de integridad).
 
-`04_restauracion/fragmentacion.sql`:
+Fragmentación, en dos archivos de una sola consulta cada uno (pensados para `psql --csv`; el SQL y los comandos completos están en `04_restauracion/README_04.md`):
 
-```sql
-\set PROMPT1 '%`date "+%F %T"` %n@%/%R%# '
-SELECT now() AS medido_en;
-SELECT c.relname AS tabla, s.table_len, s.tuple_count, s.tuple_percent,
-       s.dead_tuple_count, s.dead_tuple_percent, s.free_space, s.free_percent
-FROM pg_class c
-JOIN pg_namespace n ON n.oid = c.relnamespace
-CROSS JOIN LATERAL pgstattuple(c.oid::regclass) s
-WHERE n.nspname = 'olimpiadas' AND c.relkind = 'r'
-ORDER BY 1;
+- `04_restauracion/fragmentacion_tablas.sql`: `pgstattuple` por tabla del esquema `olimpiadas` (`table_len`, `tuple_count`, `tuple_percent`, `dead_tuple_count`, `dead_tuple_percent`, `free_space`, `free_percent`).
+- `04_restauracion/fragmentacion_indices.sql`: `pgstatindex` por índice B-tree (`tree_level`, `index_size`, `avg_leaf_density`, `leaf_fragmentation`).
 
-SELECT c.relname AS indice, s.avg_leaf_density, s.leaf_fragmentation
-FROM pg_class c
-JOIN pg_namespace n ON n.oid = c.relnamespace
-JOIN pg_am am ON am.oid = c.relam AND am.amname = 'btree'
-CROSS JOIN LATERAL pgstatindex(c.oid::regclass) s
-WHERE n.nspname = 'olimpiadas' AND c.relkind = 'i'
-ORDER BY 1;
-
-SELECT relname, n_live_tup, n_dead_tup, last_autovacuum, last_autoanalyze
-FROM pg_stat_user_tables WHERE schemaname = 'olimpiadas' ORDER BY 1;
-```
+Ninguno incluye la hora de medición, para que las salidas de los pasos 09 y 16 se puedan comparar con `diff`.
 
 Guardar la salida también como CSV para el análisis:
 
 ```powershell
-docker compose -p fase2_deportista exec -u postgres db bash -c "psql -d olimpiadas -At -F, -f /fase2/04_restauracion/fragmentacion.sql > /fase2/05_logs/deportista_pc/deportista_pc_09_fragmentacion.csv"
+docker compose -p fase2_deportista exec -u postgres db bash -c "psql -X -d olimpiadas --csv -f /fase2/04_restauracion/fragmentacion_tablas.sql > /fase2/05_logs/deportista_pc/deportista_pc_09_fragmentacion_tablas.csv"
+docker compose -p fase2_deportista exec -u postgres db bash -c "psql -X -d olimpiadas --csv -f /fase2/04_restauracion/fragmentacion_indices.sql > /fase2/05_logs/deportista_pc/deportista_pc_09_fragmentacion_indices.csv"
 ```
 
-`[PENDIENTE]` probar en el ensayo que `pgstattuple(c.oid::regclass)` y `pgstatindex` funcionan con índices vacíos (tablas en 0 después del FULL).
+Verificado el 8 de octubre de 2026 en una instancia temporal de PostgreSQL 17 (ver `05_logs/c1_prueba_instancia_temporal.md`): con las tablas vacías, `pgstattuple` devuelve ceros y `pgstatindex` devuelve `NaN` en `avg_leaf_density` y `leaf_fragmentation`, sin error.
 
 **C2. Corrida oficial por deportista:** el ciclo de 1.6 con `fase2_deportista`, `deportista pc` y las carpetas `deportista/r1_atenas2004`, `r2_pekin2008`, `r3_londres2012`. Los comandos son los de A3 cambiando `anio`/`pa` por `deportista`/`pc`.
 
 **C3. ER y DDL + documentación técnica**
 
-1. Corregir el modelo ER (`docs/Modelo_ER_actualizado.xml`, se abre en draw.io) para que refleje el DDL real; la lista de diferencias está en el apéndice. Decidir con el equipo si se corrige el ER o se documenta la diferencia. Exportar el PNG final a `07_documentacion/`.
-2. Ajustar el comentario de `Fase 1/sql/ddl.sql:152` en la copia `01_ddl/01_esquema.sql` si contradice el ER final.
+1. Hecho: el modelo ER se alineó con el DDL real (el DDL es la fuente de verdad). A partir de `Fase 2/docs/Modelo_ER_actualizado.xml` se generó `Fase 2/07_documentacion/modelo_er/Modelo_ER_fase2.xml` (draw.io); la matriz de diferencias está en `DISCREPANCIAS_ER_DDL.md` y la versión Mermaid en `modelo_er.mmd`, en la misma carpeta. `[PENDIENTE: exportar desde draw.io a PNG/PDF]` el diagrama final hacia `07_documentacion/`.
+2. `[PENDIENTE]` A aplica en la copia `01_ddl/01_esquema.sql` el texto propuesto para el comentario de `Fase 1/sql/ddl.sql:152-156` (está en `DISCREPANCIAS_ER_DDL.md`). `Fase 1/sql/ddl.sql` no se modifica.
 3. Estructura del PDF (rúbrica 1.1 y entregables 4.4):
    1. Introducción y objetivo.
    2. Metodología (fases y cronograma real).
@@ -928,7 +913,7 @@ docker compose -p fase2_deportista exec -u postgres db bash -c "psql -d olimpiad
 
 | Tarea | Terminado cuando |
 |---|---|
-| C1 | `conteos.sql`, `validar.sql` y `fragmentacion.sql` corren sin error en una instancia vacía y en una con datos |
+| C1 | `conteos.sql`, `validar.sql`, `fragmentacion_tablas.sql` y `fragmentacion_indices.sql` corren sin error en una instancia vacía y en una con datos |
 | C2 | Los 17 pasos con captura y log; COUNT iguales a 1.2 (deportista); `tiempos_deportista_pc.csv` completo |
 | C3 | El ER y el DDL ya no se contradicen (o la diferencia está explicada); el PDF tiene todas las secciones de la rúbrica 1.1 |
 | C4 | `tiempos.csv` consolidado sin huecos; tablas y gráficos de 4.10 generados; cada conclusión cita un número |
@@ -937,7 +922,7 @@ docker compose -p fase2_deportista exec -u postgres db bash -c "psql -d olimpiad
 
 | Entrega | A quién | Cuándo |
 |---|---|---|
-| `conteos.sql`, `validar.sql`, `fragmentacion.sql`, columnas de `tiempos` | A y B | Jue 8 noche |
+| `conteos.sql`, `validar.sql`, `fragmentacion_tablas.sql`, `fragmentacion_indices.sql`, columnas de `tiempos` | A y B | Jue 8 noche |
 | Convención de nombres confirmada (1.8) | A y B | Jue 8 |
 | CSV extraídos con `exportar_rondas.sh` desde `olimpiadas_pg` (propuesta, `[PENDIENTE]` confirmar) | B (Katherine) para verificar filas | Vie 9 mañana |
 | ER corregido | Todos | Dom 11 |
@@ -985,36 +970,66 @@ C también dirige el **ensayo del sábado 10** (todos corren Bolt en su máquina
 
 ### 4.10 Análisis comparativo
 
-**Columnas de `tiempos_{tipo}_{persona}.csv`** (las mismas en las 3 máquinas; C las fija el jueves 8):
+**Formato final de `tiempos_{tipo_carga}_{persona}.csv`** (el mismo en las 3 máquinas; detalle y antecedentes en `PROPUESTA_C1_tiempos.md`).
 
-| Columna | Ejemplo | Descripción |
-|---|---|---|
-| `corrida` | `anio_pa` | `{tipo}_{persona}` |
-| `maquina` | `pa-laptop` | Identificador de la máquina |
-| `paso` | `13` | Paso de 1.6 |
-| `operacion` | `restore` | `backup_full`, `backup_incr`, `restore` |
-| `n_cadena` | `1` | 0 = solo FULL; 1 a 3 = INCR incluidos |
-| `etapa` | `combinar` | `total` en respaldos; `combinar`, `arranque`, `validacion`, `total` en restauraciones |
-| `inicio` / `fin` | `2026-10-12 15:30:01.123` | Hora local |
-| `segundos` | `4.812` | `fin - inicio` |
-| `bytes` | `51234816` | Tamaño del respaldo (en respaldos) o de PGDATA restaurado |
-| `validacion` | `OK` | `OK` o `ALERTA` |
-| `repeticion` | `1` | Si se repiten restauraciones |
+Encabezado (14 columnas):
+
+```text
+persona,tipo_carga,maquina,paso,operacion,n_cadena,etapa,inicio_iso,fin_iso,segundos,bytes,validacion,repeticion,observacion
+```
+
+| Columna | Regla |
+|---|---|
+| `persona` | `pa`, `pb` o `pc` |
+| `tipo_carga` | `anio`, `deporte` o `deportista` |
+| `maquina` | `{persona}-{alias}`, fijo en todas las corridas (ej. `pc-laptop`) |
+| `paso` | Texto de dos dígitos (`02`, `13`). Solo generan filas los pasos de respaldo y restauración: `02`, `04`, `06`, `08`, `12` a `15`. Leerlo como texto al analizar. |
+| `operacion` | `backup_full`, `backup_incr` o `restore` |
+| `n_cadena` | Respaldos: `0` para el FULL y `n` para el INCR n. Restauraciones: cuántos INCR se combinaron (0 a 3). |
+| `etapa` | Respaldos: `basebackup`. Restauraciones: `combinar`, `arranque`, `validacion`, `total`. |
+| `inicio_iso`, `fin_iso` | ISO 8601 con zona y milisegundos, generado con `date '+%Y-%m-%dT%H:%M:%S.%3N%:z'` |
+| `segundos` | `fin - inicio`, 3 decimales |
+| `bytes` | Respaldos: `du -sb` del directorio de ese respaldo (no acumulado), incluyendo `pg_wal`. Restauraciones: `du -sb $PGDATA` después de `combinar`, solo en las filas `combinar` y `total`. Vacío en el resto. |
+| `validacion` | `OK` o `ALERTA`, solo en las filas `validacion` y `total`. Vacío en las demás. `OK` = el diff de `conteos.sql` coincide con el del paso de carga correspondiente. |
+| `repeticion` | Solo las restauraciones se repiten (3 veces, cada una desde PGDATA vacío). Los respaldos llevan siempre `1`. |
+| `observacion` | Vacía, o texto opcional que el script recibe como argumento. Sin comas ni saltos de línea. |
+
+Reglas de formato y de scripts:
+
+1. UTF-8 sin BOM, fin de línea LF, separador coma, punto decimal.
+2. El script escribe el encabezado si el archivo no existe y agrega las filas. Nadie las llena a mano. Las notas manuales van al log con `# NOTA:`.
+3. Ruta: `05_logs/tiempos_{tipo_carga}_{persona}.csv`, según la convención 1.8.
+4. `total` es un agregado: va del inicio de `combinar` al fin de `validacion` y excluye el `rm -rf` de PGDATA y el `pg_ctl stop`. Nunca se suma con las otras etapas. Los gráficos apilados lo excluyen. La pregunta "tiempo según longitud de cadena" usa solo `etapa=='total'`.
+5. Si un paso falla, el script escribe su fila con `ALERTA` antes de salir con código distinto de 0.
+6. Se reporta la mediana de las 3 repeticiones. La repetición 1 es la que lleva captura. En el PDF se aclara que la caché del sistema operativo puede favorecer a las repeticiones posteriores.
+7. Una sola etapa `arranque` en el ciclo oficial (`pg_ctl -w start` ya incluye la recuperación). `recovery` separada queda como medición informativa opcional del ensayo, leída del log del servidor, y nunca se suma.
+
+Filas de EJEMPLO (datos ficticios):
+
+```text
+pc,deportista,pc-laptop,02,backup_full,0,basebackup,2026-10-12T15:00:01.000-06:00,2026-10-12T15:00:04.512-06:00,3.512,47185920,,1,
+pc,deportista,pc-laptop,13,restore,1,combinar,2026-10-12T15:25:00.000-06:00,2026-10-12T15:25:02.600-06:00,2.600,47448064,,1,
+pc,deportista,pc-laptop,13,restore,1,arranque,2026-10-12T15:25:02.650-06:00,2026-10-12T15:25:03.950-06:00,1.300,,,1,
+pc,deportista,pc-laptop,13,restore,1,validacion,2026-10-12T15:25:03.970-06:00,2026-10-12T15:25:04.450-06:00,0.480,,OK,1,
+pc,deportista,pc-laptop,13,restore,1,total,2026-10-12T15:25:00.000-06:00,2026-10-12T15:25:04.450-06:00,4.450,47448064,OK,1,
+```
+
+Conteo: por repetición, 4 filas de respaldo y 16 de restauración (4 restauraciones por 4 etapas); con 3 repeticiones de las restauraciones son 52 filas por corrida.
 
 **Tablas que debe tener el PDF:**
 
 1. Por corrida: tamaño y tiempo de cada respaldo (FULL, INCR 1 a 3).
-2. Por corrida: tiempo de cada restauración (n = 0 a 3) desglosado por etapa.
-3. **Razones dentro de cada corrida:** `restore(n) / restore(0)` e `incr(n).bytes / full.bytes`.
+2. Por corrida: tiempo de cada restauración (n = 0 a 3) desglosado por etapa (`combinar`, `arranque`, `validacion`; sin `total`), mediana de las 3 repeticiones.
+3. **Razones dentro de cada corrida:** `restore(n) / restore(0)` e `incr(n).bytes / full.bytes`; las de restauración usan solo `etapa=='total'` y la mediana.
 4. Comparación de máquinas con Bolt (`deportista_pa`, `deportista_pb`, `deportista_pc`): mismas razones; los segundos absolutos solo como referencia.
 5. Fragmentación antes (paso 09) y después (paso 16): debe ser idéntica porque la copia física conserva las páginas.
 6. Especificaciones de cada máquina.
 
 **Gráficos mínimos** (`07_documentacion/graficos/`):
 
-1. Barras apiladas por etapa: restauración FULL contra cadenas 1, 2 y 3, uno por corrida.
+1. Barras apiladas por etapa: restauración FULL contra cadenas 1, 2 y 3, uno por corrida (excluye `total`).
 2. Barras: tamaño de cada respaldo por corrida.
-3. Líneas: razón `restore(n) / restore(0)` contra n, una línea por corrida.
+3. Líneas: razón `restore(n) / restore(0)` contra n (`etapa=='total'`), una línea por corrida.
 4. Barras: Bolt en las 3 máquinas (razones).
 
 **Cómo redactar las conclusiones:**
@@ -1047,18 +1062,20 @@ Redactadas para enviar tal cual:
 
 ### 6.1 Modelo ER contra DDL real
 
-El modelo ER (`docs/Modelo_ER_actualizado.xml`, 11 entidades) coincide con `Fase 1/sql/ddl.sql` en tablas y nombres de atributos. Diferencias:
+Estado: alineado. El modelo ER original (`Fase 2/docs/Modelo_ER_actualizado.xml`, 11 entidades) coincidía con `Fase 1/sql/ddl.sql` en tablas y nombres de atributos, pero no en relaciones ni marcas de FK. Se corrigió el diagrama, no el DDL: el resultado es `Fase 2/07_documentacion/modelo_er/Modelo_ER_fase2.xml`, con la matriz completa (16 puntos) y el cruce FK contra aristas en `DISCREPANCIAS_ER_DDL.md` y una versión Mermaid en `modelo_er.mmd`.
 
-| # | Elemento | Modelo ER | DDL / BD real |
-|---|---|---|---|
-| 1 | PARTICIPACION → RESULTADO | 1 a 0..1 | 1:N (sin `UNIQUE(participacion_id)`); la BD tiene 320,465 resultados contra 319,950 participaciones |
-| 2 | NOC → ATLETA | Relación dibujada | No hay FK; ATLETA no tiene `codigo_noc` (decisión documentada en `Fase 1/sql/ddl.sql:13-16`) |
-| 3 | `edicion_olimpica.anio` | Marcado FK | No es FK |
-| 4 | `sede.pais_id` | Sin marca FK | Es FK a `pais` |
-| 5 | `participacion.codigo_noc` | Obligatoria | NULLABLE, `ON DELETE SET NULL` |
-| 6 | `edicion_olimpica.sede_id` | Obligatoria | NULLABLE |
-| 7 | Comentario `Fase 1/sql/ddl.sql:152` | | Dice que el ER declara 1 a N; el ER actualizado dice 0..1 |
-| 8 | Tipos, UNIQUE, CHECK, índices | No aparecen en el diagrama | Definidos en el DDL; no se pueden comparar |
+| # | Elemento | Modelo ER original | DDL / BD real | Estado |
+|---|---|---|---|---|
+| 1 | PARTICIPACION → RESULTADO | 1 a 0..1 | 1:N (sin `UNIQUE(participacion_id)`); la BD tiene 320,465 resultados contra 319,950 participaciones | Corregido: 1 a 0..N |
+| 2 | NOC → ATLETA | Relación dibujada | No hay FK; ATLETA no tiene `codigo_noc` (decisión documentada en `Fase 1/sql/ddl.sql:13-16`) | Corregido: arista eliminada, explicado en la leyenda |
+| 3 | `edicion_olimpica.anio` | Marcado FK | No es FK | Corregido |
+| 4 | `sede.pais_id` | Sin marca FK | Es FK a `pais` | Corregido |
+| 5 | `participacion.codigo_noc` | Obligatoria | NULLABLE, `ON DELETE SET NULL` | Corregido: extremo 0..1 del lado NOC |
+| 6 | `edicion_olimpica.sede_id` | Obligatoria | NULLABLE | Corregido: extremo 0..1 del lado SEDE |
+| 7 | Comentario `Fase 1/sql/ddl.sql:152` | | Dice que el ER declara 1 a N (coincide con el ER corregido), pero afirma que la fuente 1 es 1:1, lo que ya no es cierto | `[PENDIENTE]` texto propuesto en `DISCREPANCIAS_ER_DDL.md`, a aplicar en `01_ddl/01_esquema.sql` |
+| 8 | Tipos, UNIQUE, CHECK, índices | No aparecen en el diagrama | Definidos en el DDL | Documentado en `DISCREPANCIAS_ER_DDL.md` y en `modelo_er.mmd` |
+
+Además se corrigieron `noc.pais_id` y `sede.pais_id` (también admiten NULL), la cardinalidad PAIS → POBLACION_PAIS, tres aristas que no estaban conectadas a sus tablas y cuatro que salían o llegaban a columnas equivocadas.
 
 ### 6.2 Verificado el 7 de octubre de 2026 (solo lectura)
 
@@ -1074,7 +1091,7 @@ El modelo ER (`docs/Modelo_ER_actualizado.xml`, 11 entidades) coincide con `Fase
 - `[PENDIENTE]` `pg_verifybackup` sobre directorios incrementales.
 - `[PENDIENTE]` Propietario y permisos del volumen `/backups` y del montaje `/fase2` en cada máquina.
 - `[PENDIENTE]` Disponibilidad de `bc` en la imagen `postgres:17`.
-- `[PENDIENTE]` Comportamiento de `pgstattuple`/`pgstatindex` sobre tablas vacías.
+- Verificado el 8 de octubre de 2026: `pgstattuple`/`pgstatindex` sobre tablas vacías no fallan (ceros y `NaN`; ver `05_logs/c1_prueba_instancia_temporal.md`).
 - `[PENDIENTE]` Atletas distintos en deporte r2 y r3 por ronda (no acumulados).
 - `[PENDIENTE]` Especificaciones de las máquinas de los otros dos integrantes, y si tienen la BD de la Fase 1 con los mismos IDs.
 - `[PENDIENTE]` Respaldo adicional o migración del volumen anónimo de `olimpiadas_pg` (decisión de Javier, en cuya máquina está).

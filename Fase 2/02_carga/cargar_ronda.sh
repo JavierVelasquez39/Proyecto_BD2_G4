@@ -13,7 +13,7 @@
 #
 # Que hace:
 #   * Por cada tabla, en el orden de las llaves foraneas, y solo si existe su CSV:
-#     COPY a una tabla temporal (staging) -> INSERT ... ON CONFLICT DO NOTHING.
+#     COPY a una tabla temporal (staging) -> INSERT ... ON CONFLICT (pk) DO NOTHING.
 #   * Todo en UNA transaccion (psql -1 con ON_ERROR_STOP): si algo falla, no se
 #     carga nada de esa ronda.
 #   * Imprime por tabla en_csv (filas del CSV) e insertadas. Si insertadas < en_csv
@@ -60,7 +60,7 @@ fi
 TABLAS=(
   pais:pais_id
   poblacion_pais:poblacion_id
-  noc:
+  noc:codigo_noc
   sede:sede_id
   edicion_olimpica:edicion_id
   deporte:deporte_id
@@ -85,14 +85,16 @@ fi
 generar_sql() {
   local par t pk
   for par in "${TABLAS[@]}"; do
-    t="${par%%:*}"
+    t="${par%%:*}"; pk="${par#*:}"
     [ -f "$DIR/$t.csv" ] || continue
+    # ON CONFLICT solo sobre la PK: una fila con otro ID y la misma clave
+    # natural viola su uq_* y revierte la ronda en vez de descartarse.
     cat <<SQL
 \echo '--- $t ---'
 CREATE TEMP TABLE stg_$t (LIKE olimpiadas.$t) ON COMMIT DROP;
 COPY stg_$t FROM '$DIR/$t.csv' WITH (FORMAT csv, HEADER true);
 WITH ins AS (
-  INSERT INTO olimpiadas.$t SELECT * FROM stg_$t ON CONFLICT DO NOTHING RETURNING 1
+  INSERT INTO olimpiadas.$t SELECT * FROM stg_$t ON CONFLICT ($pk) DO NOTHING RETURNING 1
 )
 SELECT '$t' AS tabla, (SELECT count(*) FROM stg_$t) AS en_csv, count(*) AS insertadas FROM ins;
 SQL
@@ -102,7 +104,8 @@ SQL
   for par in "${TABLAS[@]}"; do
     t="${par%%:*}"; pk="${par#*:}"
     [ -f "$DIR/$t.csv" ] || continue
-    [ -n "$pk" ] || continue
+    # noc usa codigo_noc (texto) como PK, no tiene secuencia
+    [ "$t" = noc ] && continue
     # is_called = false si la tabla esta vacia, para que el siguiente ID sea 1
     cat <<SQL
 SELECT '$t' AS tabla, setval(pg_get_serial_sequence('olimpiadas.$t','$pk'), COALESCE(max($pk),1), max($pk) IS NOT NULL) AS ultimo_id FROM olimpiadas.$t;

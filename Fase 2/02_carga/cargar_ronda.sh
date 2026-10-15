@@ -144,17 +144,22 @@ main() {
 LOGDIR="$FASE2_DIR/05_logs/${TIPO}_${PERSONA}"
 LOG="$LOGDIR/${TIPO}_${PERSONA}_${PASO}_carga_${CARPETA}.log"
 
-set +e
-if mkdir -p "$LOGDIR" 2>/dev/null && : >> "$LOG" 2>/dev/null; then
-  main 2>&1 | tee -a "$LOG"
-  rc="${PIPESTATUS[0]}"
-else
-  echo "AVISO: no puedo escribir el log en $LOG (permisos del montaje)." >&2
-  echo "       La salida va solo a pantalla; redirigela desde el host." >&2
-  main 2>&1
-  rc=$?
+# Sin log no hay evidencia: se aborta antes de tocar la base.
+if ! { mkdir -p "$LOGDIR" && : >> "$LOG"; } 2>/dev/null; then
+  echo "CARGA FALLIDA: no se puede crear o escribir el log en $LOG (permisos del montaje). No se cargo nada."
+  exit 1
 fi
+
+set +e
+main 2>&1 | tee -a "$LOG"
+st=("${PIPESTATUS[@]}")
 set -e
+rc="${st[0]}"; rc_tee="${st[1]}"
+
+if [ "$rc" -eq 0 ] && [ "$rc_tee" -ne 0 ]; then
+  echo "CARGA FALLIDA (codigo $rc_tee): los datos si se cargaron, pero el log $LOG quedo incompleto."
+  exit "$rc_tee"
+fi
 
 if [ "$rc" -ne 0 ]; then
   echo "CARGA FALLIDA (codigo $rc). La transaccion se revirtio: no se cargo nada de esta ronda."

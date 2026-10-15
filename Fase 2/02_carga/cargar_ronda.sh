@@ -22,6 +22,8 @@
 #   * Sincroniza las secuencias (se insertan los IDs originales).
 #   * Al final imprime la fecha y los conteos de las 11 tablas (conteos.sql de C).
 #   * Guarda el log en 05_logs/<tipo>_<persona>/<tipo>_<persona>_<paso>_carga_<carpeta>.log
+#     (uno por ejecucion; el anterior se renombra a <nombre>.<AAAAMMDD_HHMMSS>.log).
+#     Si el log no se puede escribir, imprime CARGA FALLIDA y no carga nada.
 #
 # Variables opcionales: FASE2_DIR (por defecto /fase2), DB (por defecto olimpiadas),
 # DRY_RUN=1 (solo imprime el SQL que se ejecutaria, sin tocar la base).
@@ -144,14 +146,18 @@ main() {
 LOGDIR="$FASE2_DIR/05_logs/${TIPO}_${PERSONA}"
 LOG="$LOGDIR/${TIPO}_${PERSONA}_${PASO}_carga_${CARPETA}.log"
 
+# Un log por ejecucion: si ya existe, el anterior se renombra con la hora
+# local (<nombre>.<AAAAMMDD_HHMMSS>.log) para no mezclar corridas.
 # Sin log no hay evidencia: se aborta antes de tocar la base.
-if ! { mkdir -p "$LOGDIR" && : >> "$LOG"; } 2>/dev/null; then
+if ! { mkdir -p "$LOGDIR" &&
+       { [ ! -e "$LOG" ] || mv "$LOG" "${LOG%.log}.$(date '+%Y%m%d_%H%M%S').log"; } &&
+       : > "$LOG"; } 2>/dev/null; then
   echo "CARGA FALLIDA: no se puede crear o escribir el log en $LOG (permisos del montaje). No se cargo nada."
   exit 1
 fi
 
 set +e
-main 2>&1 | tee -a "$LOG"
+main 2>&1 | tee "$LOG"
 st=("${PIPESTATUS[@]}")
 set -e
 rc="${st[0]}"; rc_tee="${st[1]}"

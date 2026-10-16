@@ -1,0 +1,318 @@
+evento_id,nombre,deporte_id
+1,"Singles, Men (Olympic)",85
+2,"Doubles, Men (Olympic)",85
+3,"Doubles, Mixed (Olympic)",85
+4,"Singles, Men (Olympic)",83
+8,"Épée, Individual, Men (Olympic)",39
+24,"Singles, Men (Olympic)",10
+26,"Singles, Women (Olympic)",85
+27,"Doubles, Women (Olympic)",85
+28,"Doubles, Women (Olympic)",10
+29,"Doubles, Mixed (Olympic)",10
+31,"Singles, Women (Olympic)",83
+33,"Singles, Women (Olympic)",10
+34,"Doubles, Men (Olympic)",10
+37,"Team, Women (Olympic)",83
+39,"Hockey, Men (Olympic)",46
+43,"100 metres, Men (Olympic)",8
+44,"400 metres, Men (Olympic)",8
+45,"800 metres, Men (Olympic)",8
+46,"110 metres Hurdles, Men (Olympic)",8
+47,"High Jump, Men (Olympic)",8
+48,"Pole Vault, Men (Olympic)",8
+49,"Long Jump, Men (Olympic)",8
+50,"Triple Jump, Men (Olympic)",8
+54,"Team, Men (Olympic)",83
+68,"Individual, Men (Olympic)",57
+70,"Individual, Men (Olympic)",4
+71,"Individual, Women (Olympic)",4
+72,"Team, Women (Olympic)",4
+73,"Team, Men (Olympic)",4
+95,"1,500 metres, Men (Olympic)",8
+96,"Marathon, Men (Olympic)",8
+101,"Welterweight, Men (Olympic)",20
+102,"Light-Heavyweight, Men (Olympic)",20
+104,"Light-Welterweight, Men (Olympic)",20
+105,"Flyweight, Men (Olympic)",20
+106,"Lightweight, Men (Olympic)",20
+107,"Heavyweight, Men (Olympic)",20
+108,"Bantamweight, Men (Olympic)",20
+109,"Light-Flyweight, Men (Olympic)",20
+110,"Middleweight, Men (Olympic)",20
+112,"Super-Heavyweight, Men (Olympic)",20
+131,"Individual, Men (Olympic)",44
+150,"Basketball, Men (Olympic)",14
+151,"Road Race, Individual, Men (Olympic)",31
+152,"Basketball, Women (Olympic)",14
+153,"Triple Jump, Women (Olympic)",8
+154,"Handball, Women (Olympic)",45
+157,"Decathlon, Men (Olympic)",8
+167,"Kayak Doubles, 500 metres, Women (Olympic)",23
+168,"Kayak Singles, 500 metres, Women (Olympic)",23
+170,"Kayak Fours, 1,000 metres, Men (Olympic)",23
+172,"Kayak Doubles, 1,000 metres, Men (Olympic)",23
+173,"Kayak Singles, 1,000 metres, Men (Olympic)",23
+174,"Kayak Singles, Slalom, Men (Olympic)",22
+175,"Kayak Fours, 500 metres, Women (Olympic)",23
+176,"Kayak Singles, Slalom, Women (Olympic)",22
+178,"Canadian Singles, Slalom, Men (Olympic)",22
+182,"Canadian Doubles, Slalom, Men (Olympic)",22
+183,"Canadian Singles, 1,000 metres, Men (Olympic)",23
+185,"Canadian Doubles, 1,000 metres, Men (Olympic)",23
+198,"Single Sculls, Women (Olympic)",65
+199,"Team Pursuit, 4,000 metres, Men (Olympic)",32
+204,"Eights, Men (Olympic)",65
+205,"Individual, Open (Olympic)",34
+206,"Team, Open (Olympic)",34
+207,"Team, Open (Olympic)",36
+208,"Individual, Open (Olympic)",36
+209,"Individual, Open (Olympic)",37
+210,"Team, Open (Olympic)",37
+214,"Springboard, Women (Olympic)",33
+241,"Sabre, Individual, Men (Olympic)",39
+244,"Sprint, Men (Olympic)",32
+245,Cycling Track (Cycling),31
+246,"Sprint, Men (Olympic)",31
+249,"Road Race, Individual, Women (Olympic)",31
+250,Cycling Mountain Bike (Cycling),31
+251,"Cross-Country, Women (Olympic)",31
+252,"Cross-Country, Women (Olympic)",30
+255,"Individual Time Trial, Women (Olympic)",31
+258,"Team Pursuit, Women (Olympic)",31
+259,"Sprint, Women (Olympic)",32
+266,"Keirin, Women (Olympic)",32
+267,"Team Sprint, Women (Olympic)",32
+279,"Individual Time Trial, Men (Olympic)",31
+285,"Cross-Country, Men (Olympic)",30
+288,"Team Sprint, Men (Olympic)",32
+299,"Keirin, Men (Olympic)",32
+301,"Omnium, Men (Olympic)",32
+303,"Football, Men (Olympic)",41
+314,"Cross-Country, Men (Olympic)",31
+338,"Hockey, Women (Olympic)",46
+339,"400 metres, Women (Olympic)",8
+340,"4 × 400 metres Relay, Women (Olympic)",8
+349,"Individual, Women (Olympic)",44
+358,"Foil, Individual, Men (Olympic)",39
+383,"Shot Put, Men (Olympic)",8
+393,"Discus Throw, Men (Olympic)",8
+395,"Hammer Throw, Men (Olympic)",8
+398,"Javelin Throw, Men (Olympic)",8
+400,"4 × 100 metres Relay, Men (Olympic)",8
+406,"Foil, Individual, Women (Olympic)",39
+408,"Épée, Individual, Women (Olympic)",39
+409,"Épée, Team, Women (Olympic)",39
+410,"Foil, Team, Men (Olympic)",39
+411,"Épée, Team, Men (Olympic)",39
+412,"100 metres Freestyle, Men (Olympic)",82
+418,"400 metres Freestyle, Men (Olympic)",82
+467,"200 metres, Men (Olympic)",8
+468,"Football, Women (Olympic)",41
+469,"Platform, Women (Olympic)",33
+470,"Synchronized Platform, Women (Olympic)",33
+471,"Platform, Men (Olympic)",33
+472,"Synchronized Platform, Men (Olympic)",33
+476,"4 × 400 metres Relay, Men (Olympic)",8
+479,"Individual All-Around, Women (Olympic)",6
+480,"Floor Exercise, Women (Olympic)",6
+481,"Horse Vault, Women (Olympic)",6
+482,"Uneven Bars, Women (Olympic)",6
+483,"Balance Beam, Women (Olympic)",6
+484,"Team All-Around, Women (Olympic)",6
+485,"Individual, Women (Olympic)",62
+487,"Group, Women (Olympic)",62
+488,"Individual All-Around, Men (Olympic)",6
+489,"Team All-Around, Men (Olympic)",6
+490,"Floor Exercise, Men (Olympic)",6
+491,"Horse Vault, Men (Olympic)",6
+492,"Parallel Bars, Men (Olympic)",6
+493,"Horizontal Bar, Men (Olympic)",6
+494,"Rings, Men (Olympic)",6
+495,"Pommelled Horse, Men (Olympic)",6
+496,"Pole Vault, Women (Olympic)",8
+500,"Featherweight, Men (Olympic)",91
+583,"Handball, Men (Olympic)",45
+588,"Half-Middleweight, Women (Olympic)",50
+589,"Lightweight, Women (Olympic)",50
+590,"Heavyweight, Women (Olympic)",50
+592,"Half-Heavyweight, Women (Olympic)",50
+594,"Extra-Lightweight, Women (Olympic)",50
+595,"Middleweight, Women (Olympic)",50
+597,"Half-Lightweight, Women (Olympic)",50
+601,"Heavyweight, Freestyle, Women (Olympic)",93
+603,"Lightweight, Men (Olympic)",50
+604,"Half-Middleweight, Men (Olympic)",50
+605,"Half-Lightweight, Men (Olympic)",50
+607,"Extra-Lightweight, Men (Olympic)",50
+608,"Middleweight, Men (Olympic)",50
+609,"Half-Heavyweight, Men (Olympic)",50
+610,"Heavyweight, Men (Olympic)",50
+611,"Welterweight, Greco-Roman, Men (Olympic)",93
+612,"Welterweight, Freestyle, Men (Olympic)",93
+624,"Rapid-Fire Pistol, 25 metres, Men (Olympic)",70
+626,"Double Sculls, Women (Olympic)",65
+627,"Coxless Pairs, Women (Olympic)",65
+628,"Lightweight Double Sculls, Women (Olympic)",65
+630,"Coxless Pairs, Men (Olympic)",65
+631,"Coxless Fours, Men (Olympic)",65
+633,"Quadruple Sculls, Men (Olympic)",65
+634,"Single Sculls, Men (Olympic)",65
+635,"Double Sculls, Men (Olympic)",65
+636,"Lightweight Coxless Fours, Men (Olympic)",65
+637,"Lightweight Double Sculls, Men (Olympic)",65
+639,"Eights, Women (Olympic)",65
+641,"Quadruple Sculls, Women (Olympic)",65
+649,"Water Polo, Men (Olympic)",90
+656,"200 metres Breaststroke, Men (Olympic)",82
+668,"Air Rifle, 10 metres, Women (Olympic)",70
+670,"Trap, Men (Olympic)",70
+671,"Double Trap, Men (Olympic)",70
+672,"Air Pistol, 10 metres, Women (Olympic)",70
+673,"Sporting Pistol, 25 metres, Women (Olympic)",70
+675,"Small-Bore Rifle, Three Positions, 50 metres, Women (Olympic)",70
+676,"Free Pistol, 50 metres, Men (Olympic)",70
+677,"Small-Bore Rifle, Prone, 50 metres, Men (Olympic)",70
+678,"Small-Bore Rifle, Three Positions, 50 metres, Men (Olympic)",70
+681,"Skeet, Men (Olympic)",70
+684,"Air Rifle, 10 metres, Men (Olympic)",70
+685,"Air Pistol, 10 metres, Men (Olympic)",70
+687,"Trap, Women (Olympic)",70
+724,"Skeet, Women (Olympic)",70
+755,"Team, Women (Olympic)",7
+775,"100 metres Backstroke, Women (Olympic)",82
+777,"Duet, Women (Olympic)",7
+778,"50 metres Freestyle, Men (Olympic)",82
+779,"200 metres Freestyle, Men (Olympic)",82
+780,"100 metres Breaststroke, Men (Olympic)",82
+781,"4 × 200 metres Freestyle Relay, Men (Olympic)",82
+782,"1,500 metres Freestyle, Men (Olympic)",82
+783,"100 metres Butterfly, Men (Olympic)",82
+784,"200 metres Butterfly, Men (Olympic)",82
+785,"200 metres Individual Medley, Women (Olympic)",82
+786,"100 metres Breaststroke, Women (Olympic)",82
+787,"200 metres Breaststroke, Women (Olympic)",82
+788,"100 metres Freestyle, Women (Olympic)",82
+789,"50 metres Freestyle, Women (Olympic)",82
+790,"100 metres Butterfly, Women (Olympic)",82
+791,"4 × 100 metres Medley Relay, Men (Olympic)",82
+792,"100 metres Backstroke, Men (Olympic)",82
+793,"4 × 200 metres Freestyle Relay, Women (Olympic)",82
+794,"4 × 100 metres Medley Relay, Women (Olympic)",82
+795,"400 metres Individual Medley, Women (Olympic)",82
+796,"400 metres Freestyle, Women (Olympic)",82
+797,"800 metres Freestyle, Women (Olympic)",82
+798,"4 × 100 metres Freestyle Relay, Women (Olympic)",82
+799,"200 metres Backstroke, Women (Olympic)",82
+800,"200 metres Freestyle, Women (Olympic)",82
+801,"200 metres Butterfly, Women (Olympic)",82
+802,"200 metres Backstroke, Men (Olympic)",82
+803,"200 metres Individual Medley, Men (Olympic)",82
+804,"400 metres Individual Medley, Men (Olympic)",82
+809,"Synchronized Springboard, Women (Olympic)",33
+810,"4 × 100 metres Freestyle Relay, Men (Olympic)",82
+818,"Springboard, Men (Olympic)",33
+837,"Synchronized Springboard, Men (Olympic)",33
+885,"Olympic Distance, Women (Olympic)",87
+899,"Individual, Women (Olympic)",57
+906,"Beach Volleyball, Men (Olympic)",16
+907,"Beach Volleyball, Women (Olympic)",16
+908,"Volleyball, Women (Olympic)",89
+909,"Volleyball, Men (Olympic)",89
+918,"Bantamweight, Men (Olympic)",91
+919,"Middle-Heavyweight, Men (Olympic)",91
+920,"Lightweight, Men (Olympic)",91
+921,"Middleweight, Men (Olympic)",91
+922,"Light-Heavyweight, Men (Olympic)",91
+925,"Heavyweight, Men (Olympic)",91
+926,"Super-Heavyweight, Men (Olympic)",91
+927,"Long Jump, Women (Olympic)",8
+928,"4 × 100 metres Relay, Women (Olympic)",8
+934,"Light-Heavyweight, Freestyle, Men (Olympic)",93
+936,"20 kilometres Race Walk, Women (Olympic)",8
+937,"Featherweight, Greco-Roman, Men (Olympic)",93
+942,"Featherweight, Freestyle, Men (Olympic)",93
+946,"Middleweight, Freestyle, Men (Olympic)",93
+948,"Heavyweight, Freestyle, Men (Olympic)",93
+949,"Middleweight, Greco-Roman, Men (Olympic)",93
+950,"Super-Heavyweight, Greco-Roman, Men (Olympic)",93
+951,"Super-Heavyweight, Freestyle, Men (Olympic)",93
+952,"Heavyweight, Greco-Roman, Men (Olympic)",93
+953,"Light-Heavyweight, Greco-Roman, Men (Olympic)",93
+980,"Two Person Dinghy, Women (Olympic)",68
+981,"Windsurfer, Women (Olympic)",68
+982,"One Person Dinghy, Women (Olympic)",68
+989,"Windsurfer, Men (Olympic)",68
+990,"One Person Dinghy, Men (Olympic)",68
+991,"One Person Heavyweight Dinghy, Men (Olympic)",68
+997,"Two Person Dinghy, Men (Olympic)",68
+1012,"Multihull, Mixed (Olympic)",68
+1013,"400 metres Hurdles, Men (Olympic)",8
+1014,"200 metres, Women (Olympic)",8
+1015,"800 metres, Women (Olympic)",8
+1016,"1,500 metres, Women (Olympic)",8
+1017,"Javelin Throw, Women (Olympic)",8
+1018,"Heptathlon, Women (Olympic)",8
+1019,"3,000 metres Steeplechase, Men (Olympic)",8
+1020,"5,000 metres, Men (Olympic)",8
+1021,"20 kilometres Race Walk, Men (Olympic)",8
+1022,"50 kilometres Race Walk, Men (Olympic)",8
+1023,"10,000 metres, Men (Olympic)",8
+1024,"High Jump, Women (Olympic)",8
+1025,"100 metres, Women (Olympic)",8
+1026,"Discus Throw, Women (Olympic)",8
+1027,"100 metres Hurdles, Women (Olympic)",8
+1028,"10,000 metres, Women (Olympic)",8
+1029,"Marathon, Women (Olympic)",8
+1030,"Shot Put, Women (Olympic)",8
+1032,"Hammer Throw, Women (Olympic)",8
+1033,"5,000 metres, Women (Olympic)",8
+1035,"400 metres Hurdles, Women (Olympic)",8
+1079,"Heavyweight, Women (Olympic)",91
+1084,"3,000 metres Steeplechase, Women (Olympic)",8
+1377,"Kayak Singles, 200 metres, Women (Olympic)",23
+1378,"Kayak Singles, 200 metres, Men (Olympic)",23
+1379,"Kayak Doubles, 200 metres, Men (Olympic)",23
+1381,"Omnium, Women (Olympic)",32
+1382,"BMX, Men (Olympic)",29
+1383,"Individual, Men (Olympic)",86
+1384,"Individual, Women (Olympic)",86
+1386,"Lightweight, Freestyle, Women (Olympic)",93
+1390,Marathon Swimming (Aquatics),82
+1391,"10 kilometres Open Water, Women (Olympic)",82
+1392,"10 kilometres Open Water, Women (Olympic)",54
+1393,"10 kilometres Open Water, Men (Olympic)",82
+1394,"10 kilometres Open Water, Men (Olympic)",54
+1395,"Featherweight, Men (Olympic)",84
+1396,"Flyweight, Men (Olympic)",84
+1397,"Flyweight, Women (Olympic)",84
+1398,"Featherweight, Women (Olympic)",84
+1399,"Welterweight, Men (Olympic)",84
+1401,"Welterweight, Women (Olympic)",84
+1402,"Heavyweight, Men (Olympic)",84
+1403,"Heavyweight, Women (Olympic)",84
+1409,"Olympic Distance, Men (Olympic)",87
+1412,"Water Polo, Women (Olympic)",90
+1413,"Light-Heavyweight, Women (Olympic)",91
+1414,"Lightweight, Women (Olympic)",91
+1415,"Middleweight, Women (Olympic)",91
+1416,"Super-Heavyweight, Women (Olympic)",91
+1417,"Featherweight, Women (Olympic)",91
+1418,"Flyweight, Women (Olympic)",91
+1468,"Skiff, Women (Olympic)",68
+1469,"Skiff, Men (Olympic)",68
+1471,"Canadian Singles, 200 metres, Men (Olympic)",23
+1472,"Sabre, Individual, Women (Olympic)",39
+1473,"Sabre, Team, Women (Olympic)",39
+1475,"Team Pursuit, Women (Olympic)",32
+1476,"Keirin, Men (Olympic)",31
+1478,"Flyweight, Freestyle, Women (Olympic)",93
+1479,"Featherweight, Freestyle, Women (Olympic)",93
+1480,"Middleweight, Freestyle, Women (Olympic)",93
+1497,"BMX, Women (Olympic)",29
+1498,"Team Sprint, Men (Olympic)",31
+1522,"Light-Heavyweight, Freestyle, Women (Olympic)",93
+1548,"Lightweight, Women (Olympic)",20
+1549,"Flyweight, Women (Olympic)",20
+1550,"Middleweight, Women (Olympic)",20
+1692,"Rugby Sevens, Women (Olympic)",67
+1731,"Rugby Sevens, Men (Olympic)",67

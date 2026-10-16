@@ -1,0 +1,333 @@
+evento_id,nombre,deporte_id
+1,"Singles, Men (Olympic)",85
+2,"Doubles, Men (Olympic)",85
+3,"Doubles, Mixed (Olympic)",85
+4,"Singles, Men (Olympic)",83
+8,"Épée, Individual, Men (Olympic)",39
+24,"Singles, Men (Olympic)",10
+26,"Singles, Women (Olympic)",85
+27,"Doubles, Women (Olympic)",85
+28,"Doubles, Women (Olympic)",10
+29,"Doubles, Mixed (Olympic)",10
+31,"Singles, Women (Olympic)",83
+33,"Singles, Women (Olympic)",10
+34,"Doubles, Men (Olympic)",10
+37,"Team, Women (Olympic)",83
+43,"100 metres, Men (Olympic)",8
+44,"400 metres, Men (Olympic)",8
+45,"800 metres, Men (Olympic)",8
+46,"110 metres Hurdles, Men (Olympic)",8
+47,"High Jump, Men (Olympic)",8
+48,"Pole Vault, Men (Olympic)",8
+49,"Long Jump, Men (Olympic)",8
+50,"Triple Jump, Men (Olympic)",8
+54,"Team, Men (Olympic)",83
+68,"Individual, Men (Olympic)",57
+70,"Individual, Men (Olympic)",4
+71,"Individual, Women (Olympic)",4
+72,"Team, Women (Olympic)",4
+73,"Team, Men (Olympic)",4
+96,"Marathon, Men (Olympic)",8
+116,"Team, Mixed (Olympic)",4
+153,"Triple Jump, Women (Olympic)",8
+157,"Decathlon, Men (Olympic)",8
+198,"Single Sculls, Women (Olympic)",65
+228,"Sabre, Team, Men (Olympic)",39
+241,"Sabre, Individual, Men (Olympic)",39
+244,"Sprint, Men (Olympic)",32
+252,"Cross-Country, Women (Olympic)",30
+255,"Individual Time Trial, Women (Olympic)",31
+259,"Sprint, Women (Olympic)",32
+266,"Keirin, Women (Olympic)",32
+267,"Team Sprint, Women (Olympic)",32
+272,"Madison, Men (Olympic)",32
+279,"Individual Time Trial, Men (Olympic)",31
+285,"Cross-Country, Men (Olympic)",30
+288,"Team Sprint, Men (Olympic)",32
+299,"Keirin, Men (Olympic)",32
+301,"Omnium, Men (Olympic)",32
+339,"400 metres, Women (Olympic)",8
+358,"Foil, Individual, Men (Olympic)",39
+383,"Shot Put, Men (Olympic)",8
+393,"Discus Throw, Men (Olympic)",8
+395,"Hammer Throw, Men (Olympic)",8
+398,"Javelin Throw, Men (Olympic)",8
+406,"Foil, Individual, Women (Olympic)",39
+407,"Foil, Team, Women (Olympic)",39
+408,"Épée, Individual, Women (Olympic)",39
+409,"Épée, Team, Women (Olympic)",39
+410,"Foil, Team, Men (Olympic)",39
+411,"Épée, Team, Men (Olympic)",39
+412,"100 metres Freestyle, Men (Olympic)",82
+418,"400 metres Freestyle, Men (Olympic)",82
+467,"200 metres, Men (Olympic)",8
+480,"Floor Exercise, Women (Olympic)",6
+482,"Uneven Bars, Women (Olympic)",6
+483,"Balance Beam, Women (Olympic)",6
+490,"Floor Exercise, Men (Olympic)",6
+492,"Parallel Bars, Men (Olympic)",6
+493,"Horizontal Bar, Men (Olympic)",6
+494,"Rings, Men (Olympic)",6
+496,"Pole Vault, Women (Olympic)",8
+626,"Double Sculls, Women (Olympic)",65
+633,"Quadruple Sculls, Men (Olympic)",65
+634,"Single Sculls, Men (Olympic)",65
+635,"Double Sculls, Men (Olympic)",65
+641,"Quadruple Sculls, Women (Olympic)",65
+656,"200 metres Breaststroke, Men (Olympic)",82
+775,"100 metres Backstroke, Women (Olympic)",82
+778,"50 metres Freestyle, Men (Olympic)",82
+779,"200 metres Freestyle, Men (Olympic)",82
+780,"100 metres Breaststroke, Men (Olympic)",82
+783,"100 metres Butterfly, Men (Olympic)",82
+784,"200 metres Butterfly, Men (Olympic)",82
+785,"200 metres Individual Medley, Women (Olympic)",82
+786,"100 metres Breaststroke, Women (Olympic)",82
+787,"200 metres Breaststroke, Women (Olympic)",82
+788,"100 metres Freestyle, Women (Olympic)",82
+789,"50 metres Freestyle, Women (Olympic)",82
+790,"100 metres Butterfly, Women (Olympic)",82
+792,"100 metres Backstroke, Men (Olympic)",82
+795,"400 metres Individual Medley, Women (Olympic)",82
+796,"400 metres Freestyle, Women (Olympic)",82
+797,"800 metres Freestyle, Women (Olympic)",82
+799,"200 metres Backstroke, Women (Olympic)",82
+800,"200 metres Freestyle, Women (Olympic)",82
+801,"200 metres Butterfly, Women (Olympic)",82
+802,"200 metres Backstroke, Men (Olympic)",82
+803,"200 metres Individual Medley, Men (Olympic)",82
+804,"400 metres Individual Medley, Men (Olympic)",82
+899,"Individual, Women (Olympic)",57
+927,"Long Jump, Women (Olympic)",8
+1012,"Multihull, Mixed (Olympic)",68
+1013,"400 metres Hurdles, Men (Olympic)",8
+1014,"200 metres, Women (Olympic)",8
+1015,"800 metres, Women (Olympic)",8
+1017,"Javelin Throw, Women (Olympic)",8
+1018,"Heptathlon, Women (Olympic)",8
+1023,"10,000 metres, Men (Olympic)",8
+1024,"High Jump, Women (Olympic)",8
+1025,"100 metres, Women (Olympic)",8
+1026,"Discus Throw, Women (Olympic)",8
+1027,"100 metres Hurdles, Women (Olympic)",8
+1028,"10,000 metres, Women (Olympic)",8
+1029,"Marathon, Women (Olympic)",8
+1030,"Shot Put, Women (Olympic)",8
+1032,"Hammer Throw, Women (Olympic)",8
+1035,"400 metres Hurdles, Women (Olympic)",8
+1381,"Omnium, Women (Olympic)",32
+1468,"Skiff, Women (Olympic)",68
+1469,"Skiff, Men (Olympic)",68
+1472,"Sabre, Individual, Women (Olympic)",39
+1473,"Sabre, Team, Women (Olympic)",39
+1474,"Relay, Mixed (Olympic)",87
+1475,"Team Pursuit, Women (Olympic)",32
+1477,"Doubles, Mixed (Olympic)",83
+1496,"Team, Mixed (Olympic)",50
+1584,"800 metres Freestyle, Men (Olympic)",82
+1602,"Madison, Women (Olympic)",32
+1679,"Park, Men (Olympic)",72
+1881,"Park, Women (Olympic)",28
+1885,"Street, Women (Olympic)",72
+1886,"Park, Women (Olympic)",72
+1888,"Park, Men (Olympic)",28
+1891,"Street, Men (Olympic)",72
+1905,Men's Greco-Roman 97kg,93
+1906,Men's Greco-Roman 77kg,93
+1907,Men's Greco-Roman 67kg,93
+1908,Men's Freestyle 57kg,93
+1909,Men's Freestyle 65kg,93
+1910,Women's 20km Race Walk,8
+1911,Marathon Race Walk Relay Mixed,8
+1912,Men -60 kg,50
+1913,Women's Individual,87
+1914,Men's Individual,87
+1915,Team,7
+1916,Duet,7
+1917,Men -81 kg,50
+1918,Men's +102kg,91
+1919,Men's 5000m,8
+1920,Women's 5000m,8
+1921,Men's Kayak Single,22
+1922,Men's Kayak Cross,22
+1923,Men's 63.5kg,20
+1924,Men's 71kg,20
+1925,Men's 20km Race Walk,8
+1926,Women's Dinghy,68
+1927,Women's Windsurfing,68
+1928,Lightweight Men's Double Sculls,65
+1929,Women,6
+1930,Women's All-Around,6
+1931,Women's Vault,6
+1932,Men's 10m Platform,33
+1933,Men's Synchronised 10m Platform,33
+1934,Women's 10m Platform,33
+1935,Women's Synchronised 10m Platform,33
+1936,Men's 3m Springboard,33
+1937,Men's Synchronised 3m Springboard,33
+1938,Jumping Individual,94
+1939,Jumping Team,94
+1940,Group All-Around,62
+1941,Men +80kg,84
+1942,Women -49kg,84
+1943,Men,81
+1944,Men -90 kg,50
+1945,Men -100 kg,50
+1946,Men +100 kg,50
+1947,Women -52 kg,50
+1948,Men -73 kg,50
+1949,Women's Road Race,31
+1950,10m Air Rifle Men,70
+1951,10m Air Rifle Mixed Team,70
+1952,Skeet Women,70
+1953,10m Air Pistol Women,70
+1954,25m Pistol Women,70
+1955,50m Rifle 3 Positions Men,70
+1956,Women's Kayak Single,22
+1957,Women's Kayak Cross,22
+1958,Women's Kayak Single 500m,23
+1959,Women's Kayak Double 500m,23
+1960,Women's Freestyle 76kg,93
+1961,Women's 60kg,20
+1962,Women's 57kg,20
+1963,Men's Kite,68
+1964,Men,41
+1965,Men's Dinghy,68
+1966,Women's 4 x 100m Medley Relay,82
+1967,10m Air Pistol Men,70
+1968,Dressage Individual,94
+1969,Men -80kg,84
+1970,Women -57kg,84
+1971,Men's 10km,54
+1972,Women's 10km,54
+1973,Women's 3m Springboard,33
+1974,Men's Speed,80
+1975,Women +78 kg,50
+1976,Men's Individual Stroke Play,44
+1977,Men's 1500m,8
+1978,Women's Individual Stroke Play,44
+1979,Men's Road Race,31
+1980,Men's 89kg,91
+1981,Women's 1500m,8
+1982,Men's Kayak Single 1000m,23
+1983,Women's 49kg,91
+1984,Women's 59kg,91
+1985,Women -63 kg,50
+1986,Men's Canoe Single 1000m,23
+1987,Women -67kg,84
+1988,Trap Men,70
+1989,Men -68kg,84
+1990,Women's 3000m Steeplechase,8
+1991,Men's 4 x 100m Relay,8
+1992,Men's 102kg,91
+1993,Skeet Men,70
+1994,10m Air Rifle Women,70
+1995,Men's Windsurfing,68
+1996,Women's Kite,68
+1997,Skeet Mixed Team,70
+1998,50m Rifle 3 Positions Women,70
+1999,Trap Women,70
+2000,10m Air Pistol Mixed Team,70
+2001,Women,46
+2002,Men,46
+2003,Lightweight Women's Double Sculls,65
+2004,Women's 4 x 100m Relay,8
+2005,Men,6
+2006,Men's Vault,6
+2007,Men,29
+2008,25m Rapid Fire Pistol Men,70
+2009,Men -66 kg,50
+2010,Men,67
+2011,Women's 66kg,20
+2012,Women's 4 x 100m Freestyle Relay,82
+2013,Relay Only Athlete,82
+2014,Men's 4 x 100m Medley Relay,82
+2015,Men's 1500m Freestyle,82
+2016,Men's Pommel Horse,6
+2017,Women's Pair,65
+2018,Women's Four,65
+2019,Men,45
+2020,Men's Greco-Roman 130kg,93
+2021,Men's Greco-Roman 60kg,93
+2022,Women's Freestyle 53kg,93
+2023,Women's Freestyle 62kg,93
+2024,Men's Freestyle 97kg,93
+2025,Men's 61kg,91
+2026,Men's +92kg,20
+2027,Women's 50kg,20
+2028,Women's Canoe Single 200m,23
+2029,Women,29
+2030,Women's 54kg,20
+2031,Men's 57kg,20
+2032,Individual All-Around,62
+2033,Men's Canoe Double 500m,23
+2034,Women +67kg,84
+2035,B-Boys,95
+2036,B-Girls,95
+2037,Women's 81kg,91
+2038,Men's Freestyle 125kg,93
+2039,Men's Greco-Roman 87kg,93
+2040,Women's 75kg,20
+2041,4 x 400m Relay Mixed,8
+2042,Women's 4 x 400m Relay,8
+2043,Women,67
+2044,Men's Pair,65
+2045,Men,86
+2046,Men's 73kg,91
+2047,Women's 71kg,91
+2048,Women -48 kg,50
+2049,Women's +81kg,91
+2050,Men's Boulder & Lead,80
+2051,Women's Boulder & Lead,80
+2052,Men's 4 x 400m Relay,8
+2053,Men's 3000m Steeplechase,8
+2054,Men's Canoe Single,22
+2055,Men's Freestyle 86kg,93
+2056,Men's Freestyle 74kg,93
+2057,Women's Freestyle 50kg,93
+2058,Women's Freestyle 57kg,93
+2059,Women -57 kg,50
+2060,Women -78 kg,50
+2061,Men's 92kg,20
+2062,Women,16
+2063,Men -58kg,84
+2064,Men's Four,65
+2065,Men's Eight,65
+2066,Women's Eight,65
+2067,Men,16
+2068,Women,14
+2069,Women -70 kg,50
+2070,Women's Team,6
+2071,Men's 51kg,20
+2072,Women's Canoe Double 500m,23
+2073,Women's Canoe Single,22
+2074,Men's All-Around,6
+2075,Men's Team,6
+2076,Women,86
+2077,Women's Speed,80
+2078,Women,45
+2079,Eventing Individual,94
+2080,Eventing Team,94
+2081,Women's 1500m Freestyle,82
+2082,Men's 80kg,20
+2083,Men,90
+2084,Women,81
+2085,Mixed Dinghy,68
+2086,Men,14
+2087,Men,89
+2088,Women's Freestyle 68kg,93
+2089,Women's Kayak Four 500m,23
+2090,Men's Kayak Four 500m,23
+2091,Men,2
+2092,Men's Kayak Double 500m,23
+2093,Women,2
+2094,Men's 4 x 100m Freestyle Relay,82
+2095,Mixed 4 x 100m Medley Relay,82
+2096,Women,89
+2097,Dressage Team,94
+2098,Men's Team Pursuit,32
+2099,Women,41
+2100,Women's 4 x 200m Freestyle Relay,82
+2101,Men's 4 x 200m Freestyle Relay,82
+2102,Women's Synchronised 3m Springboard,33
+2103,Women,90

@@ -1,0 +1,92 @@
+%% Modelo ER del esquema olimpiadas, alineado con Fase 1/sql/ddl.sql.
+%% Misma información que Modelo_ER_fase2.xml (draw.io).
+%% Notación: || exactamente uno, |o cero o uno, o{ cero o muchos.
+%% El lado izquierdo de cada relación es la tabla padre (referenciada).
+%% Una FK que admite NULL se dibuja con |o del lado padre.
+%% UK marca solo las columnas UNIQUE por sí solas; las UNIQUE compuestas van
+%% en el comentario de cada columna. Detalle en DISCREPANCIAS_ER_DDL.md.
+erDiagram
+    PAIS ||--o{ POBLACION_PAIS : "pais_id"
+    PAIS |o--o{ NOC : "pais_id (admite NULL)"
+    PAIS |o--o{ SEDE : "pais_id (admite NULL)"
+    SEDE |o--o{ EDICION_OLIMPICA : "sede_id (admite NULL)"
+    DEPORTE ||--o{ DEPORTE_EQUIVALENCIA : "deporte_id"
+    DEPORTE ||--o{ EVENTO : "deporte_id"
+    ATLETA ||--o{ PARTICIPACION : "atleta_id"
+    EDICION_OLIMPICA ||--o{ PARTICIPACION : "edicion_id"
+    EVENTO ||--o{ PARTICIPACION : "evento_id"
+    NOC |o--o{ PARTICIPACION : "codigo_noc (admite NULL)"
+    PARTICIPACION ||--o{ RESULTADO : "participacion_id"
+
+    PAIS {
+        int pais_id PK "serial"
+        varchar nombre UK "150, not null"
+    }
+    POBLACION_PAIS {
+        int poblacion_id PK "serial"
+        int pais_id FK "not null, UK con anio, on delete cascade"
+        smallint anio "not null, 1800 a 2100"
+        bigint cantidad "not null, mayor o igual a 0"
+    }
+    NOC {
+        varchar codigo_noc PK "6, llave natural"
+        varchar nombre_region "150, not null"
+        varchar notas "255"
+        int pais_id FK "null, on delete set null"
+    }
+    SEDE {
+        int sede_id PK "serial"
+        varchar ciudad "150, not null, UK con pais_id"
+        int pais_id FK "null, on delete set null"
+    }
+    EDICION_OLIMPICA {
+        int edicion_id PK "serial"
+        smallint anio "not null, 1896 a 2100, UK con tipo"
+        varchar tipo "15, not null, Verano Invierno Verano-YOG Invierno-YOG"
+        int sede_id FK "null, on delete set null"
+    }
+    DEPORTE {
+        int deporte_id PK "serial"
+        varchar nombre UK "150, not null"
+        text descripcion
+    }
+    DEPORTE_EQUIVALENCIA {
+        int equivalencia_id PK "serial"
+        varchar nombre_fuente "150, not null, UK con fuente_origen"
+        int deporte_id FK "not null, on delete cascade"
+        varchar fuente_origen "50"
+    }
+    EVENTO {
+        int evento_id PK "serial"
+        varchar nombre "255, not null, UK con deporte_id"
+        int deporte_id FK "not null, on delete restrict"
+    }
+    ATLETA {
+        int atleta_id PK "serial"
+        varchar nombre_completo "300"
+        varchar nombre_usado "200, not null"
+        char sexo "1, M o F"
+        varchar nacionalidad "150, texto sin FK"
+        date fecha_nacimiento
+        varchar ciudad_nacimiento "150"
+        varchar pais_nacimiento "150, texto sin FK"
+        date fecha_fallecimiento "mayor o igual a fecha_nacimiento"
+    }
+    PARTICIPACION {
+        bigint participacion_id PK "bigserial"
+        int atleta_id FK "not null, UK con edicion_id y evento_id, on delete cascade"
+        int edicion_id FK "not null, on delete restrict"
+        int evento_id FK "not null, on delete restrict"
+        varchar codigo_noc FK "6, null, on delete set null"
+        varchar equipo "150"
+        smallint edad "0 a 120"
+        numeric altura_cm "5,1, mayor que 0"
+        numeric peso_kg "5,1, mayor que 0"
+    }
+    RESULTADO {
+        int resultado_id PK "serial"
+        bigint participacion_id FK "not null, sin UNIQUE, on delete cascade"
+        int lugar "mayor que 0"
+        boolean empatado "not null, default false"
+        varchar medalla "10, Oro Plata Bronce"
+    }

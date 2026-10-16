@@ -1,0 +1,5 @@
+# Fin de línea LF en el repositorio y en la copia de trabajo
+*.sh  text eol=lf
+*.sql text eol=lf
+*.csv text eol=lf
+*.md  text eol=lf

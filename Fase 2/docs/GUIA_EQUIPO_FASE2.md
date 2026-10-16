@@ -990,7 +990,7 @@ persona,tipo_carga,maquina,paso,operacion,n_cadena,etapa,inicio_iso,fin_iso,segu
 | `inicio_iso`, `fin_iso` | ISO 8601 con zona y milisegundos, generado con `date '+%Y-%m-%dT%H:%M:%S.%3N%:z'` |
 | `segundos` | `fin - inicio`, 3 decimales |
 | `bytes` | Respaldos: `du -sb` del directorio de ese respaldo (no acumulado), incluyendo `pg_wal`. Restauraciones: `du -sb $PGDATA` después de `combinar`, solo en las filas `combinar` y `total`. Vacío en el resto. |
-| `validacion` | `OK` o `ALERTA`, solo en las filas `validacion` y `total`. Vacío en las demás. `OK` = el diff de `conteos.sql` coincide con el del paso de carga correspondiente. |
+| `validacion` | `OK` o `ALERTA`, solo en las filas `validacion` y `total`. Vacío en las demás. `OK` = el diff de `conteos.sql` coincide con el del paso de carga correspondiente. Excepción: una fila escrita por un fallo (regla 5) lleva `ALERTA` aunque sea de otra etapa, incluida la fila `basebackup` de un respaldo. |
 | `repeticion` | Solo las restauraciones se repiten (3 veces, cada una desde PGDATA vacío). Los respaldos llevan siempre `1`. |
 | `observacion` | Vacía, o texto opcional que el script recibe como argumento. Sin comas ni saltos de línea. |
 
@@ -1000,9 +1000,10 @@ Reglas de formato y de scripts:
 2. El script escribe el encabezado si el archivo no existe y agrega las filas. Nadie las llena a mano. Las notas manuales van al log con `# NOTA:`.
 3. Ruta: `05_logs/tiempos_{tipo_carga}_{persona}.csv`, según la convención 1.8.
 4. `total` es un agregado: va del inicio de `combinar` al fin de `validacion` y excluye el `rm -rf` de PGDATA y el `pg_ctl stop`. Nunca se suma con las otras etapas. Los gráficos apilados lo excluyen. La pregunta "tiempo según longitud de cadena" usa solo `etapa=='total'`.
-5. Si un paso falla, el script escribe su fila con `ALERTA` antes de salir con código distinto de 0.
+5. Si un paso falla, el script escribe su fila con `ALERTA` antes de salir con código distinto de 0 (`trap ... ERR` en `03_backup/lib_tiempos.sh`). Respaldo: una fila `basebackup` con `ALERTA` y `bytes` vacío; cubre también el fallo de `pg_verifybackup` y de los conteos. Restauración: la fila de la etapa que falló y una fila `total` con `ALERTA`, ambas con `bytes` vacío; si falla `pg_verifybackup` (entre `combinar` y `arranque`) solo se escribe `total`. Las filas de una corrida con `ALERTA` no entran en las medianas.
 6. Se reporta la mediana de las 3 repeticiones. La repetición 1 es la que lleva captura. En el PDF se aclara que la caché del sistema operativo puede favorecer a las repeticiones posteriores.
 7. Una sola etapa `arranque` en el ciclo oficial (`pg_ctl -w start` ya incluye la recuperación). `recovery` separada queda como medición informativa opcional del ensayo, leída del log del servidor, y nunca se suma.
+8. `pg_verifybackup` corre fuera de la etapa medida en los respaldos y, en la restauración, entre `combinar` y `arranque`, así que queda dentro de `total`; sus segundos van solo al log. En el ensayo de deportista pesó cerca del 3 % del `total`.
 
 Filas de EJEMPLO (datos ficticios):
 

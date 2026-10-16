@@ -1,22 +1,38 @@
 #!/usr/bin/env bash
-# RestauraciÃ³n de cadena fÃ­sica PostgreSQL 17 con pg_combinebackup y registro de tiempos
-# Uso: restaurar.sh <tipo> <persona> <n_cadena> (0=FULL, 1=FULL+INCR1, 2=FULL+INCR1+INCR2, 3=Cadena completa)
-set -euo pipefail
+# Restauración de cadena física PostgreSQL 17 con pg_combinebackup y registro de tiempos
+# Uso: restaurar.sh <tipo> <persona> <n_cadena> [repeticion] [observacion]
+#   n_cadena: 0=FULL, 1=FULL+INCR1, 2=FULL+INCR1+INCR2, 3=Cadena completa
+#   repeticion: 1 a 3 (por defecto 1); cada repetición parte de PGDATA vacío
+set -Eeuo pipefail
 
 TIPO=$1
 P=$2
 N=$3
+REP=${4:-1}
+OBS=${5:-}
+FASE2_DIR="${FASE2_DIR:-/fase2}"
+source "$FASE2_DIR/03_backup/lib_tiempos.sh"
 
-LOGDIR=/fase2/05_logs/${TIPO}_${P}
-mkdir -p "$LOGDIR"
-
+LOGDIR=$FASE2_DIR/05_logs/${TIPO}_${P}
 PASO=$((12 + N))
 PASO_STR=$(printf "%02d" "$PASO")
-LOG=$LOGDIR/${TIPO}_${P}_${PASO_STR}_restore_cadena${N}.log
-CSV=/fase2/05_logs/tiempos_${TIPO}_${P}.csv
-MAQUINA="${P}-laptop"
+LOG=$LOGDIR/${TIPO}_${P}_${PASO_STR}_restore_cadena${N}_rep${REP}.log
+LOG_SRV=$LOGDIR/${TIPO}_${P}_${PASO_STR}_restore_cadena${N}_rep${REP}_servidor.log
+CSV=$FASE2_DIR/05_logs/tiempos_${TIPO}_${P}.csv
+MAQUINA=$(maquina_de "$P")
+PERSONA=$P; PASO=$PASO_STR; OPERACION=restore; N_CADENA=$N; REPETICION=$REP
+log_nuevo "$LOG"
+log_nuevo "$LOG_SRV"
 
-echo "=== Inicio de RestauraciÃ³n Cadena N=$N: $(date '+%F %T %Z') ===" | tee -a "$LOG"
+# Si algo falla con el servidor arriba, se detiene antes de salir
+al_fallar_extra() {
+  if pg_ctl -D "$PGDATA" status > /dev/null 2>&1; then
+    pg_ctl -D "$PGDATA" -m fast stop 2>&1 | tee -a "$LOG"
+  fi
+}
+trap 'alerta_al_fallar $LINENO' ERR
+
+echo "=== Inicio de Restauración Cadena N=$N repetición $REP: $(date '+%F %T %Z') ===" | tee -a "$LOG"
 
 # 1. Abortar si el servidor sigue corriendo
 if [ -f "$PGDATA/postmaster.pid" ]; then
@@ -24,15 +40,16 @@ if [ -f "$PGDATA/postmaster.pid" ]; then
   exit 1
 fi
 
-# 2. Limpiar $PGDATA
+# 2. Vaciar $PGDATA (incluye archivos ocultos; el directorio se conserva)
 echo "Limpiando directorio $PGDATA..." | tee -a "$LOG"
-rm -rf "${PGDATA:?}"/*
+find "$PGDATA" -mindepth 1 -delete
 ls -la "$PGDATA" | tee -a "$LOG"
 
 # 3. Etapa COMBINAR (pg_combinebackup)
 echo "Etapa 1: Combinando respaldos (pg_combinebackup)..." | tee -a "$LOG"
-INI_COMB=$(date '+%Y-%m-%dT%H:%M:%S.%3N%:z')
-t0=$(date +%s.%N)
+ETAPA=combinar; ETAPA_INI=$(ahora_iso); ETAPA_T0=$(ahora_seg)
+TOTAL_INI=$ETAPA_INI; TOTAL_T0=$ETAPA_T0
+INI_COMB=$ETAPA_INI; t0=$ETAPA_T0
 
 if [ "$N" -eq 0 ]; then
   cp -a /backups/full/. "$PGDATA"/ 2>&1 | tee -a "$LOG"
@@ -45,29 +62,35 @@ else
 fi
 
 chmod 700 "$PGDATA"
-FIN_COMB=$(date '+%Y-%m-%dT%H:%M:%S.%3N%:z')
-t1=$(date +%s.%N)
-SEG_COMB=$(awk "BEGIN{printf \"%.3f\", $t1-$t0}")
-BYTES=$(du -sb "$PGDATA" | cut -f1)
+FIN_COMB=$(ahora_iso)
+t1=$(ahora_seg)
+SEG_COMB=$(segundos_entre "$t0" "$t1")
+BYTES=$(bytes_de "$PGDATA")
+
+# Verificación del directorio combinado, antes de arrancar (queda dentro de total)
+ETAPA=verificacion; ETAPA_T0=
+v0=$(ahora_seg)
+pg_verifybackup "$PGDATA" 2>&1 | tee -a "$LOG"
+echo "pg_verifybackup: $(segundos_entre "$v0" "$(ahora_seg)") s" | tee -a "$LOG"
 
 # 4. Etapa ARRANQUE (pg_ctl start)
 echo "Etapa 2: Arrancando servidor PostgreSQL (pg_ctl)..." | tee -a "$LOG"
-INI_ARR=$(date '+%Y-%m-%dT%H:%M:%S.%3N%:z')
-t2=$(date +%s.%N)
+ETAPA=arranque; ETAPA_INI=$(ahora_iso); ETAPA_T0=$(ahora_seg)
+INI_ARR=$ETAPA_INI; t2=$ETAPA_T0
 
-pg_ctl -D "$PGDATA" -l /tmp/pg_restore.log -w -t 900 -o "-c listen_addresses=''" start 2>&1 | tee -a "$LOG"
+pg_ctl -D "$PGDATA" -l "$LOG_SRV" -w -t 900 -o "-c listen_addresses=''" start 2>&1 | tee -a "$LOG"
 
-FIN_ARR=$(date '+%Y-%m-%dT%H:%M:%S.%3N%:z')
-t3=$(date +%s.%N)
-SEG_ARR=$(awk "BEGIN{printf \"%.3f\", $t3-$t2}")
+FIN_ARR=$(ahora_iso)
+t3=$(ahora_seg)
+SEG_ARR=$(segundos_entre "$t2" "$t3")
 
-# 5. Etapa VALIDACIÃ“N (validar.sql y comparaciÃ³n de conteos)
+# 5. Etapa VALIDACIÓN (validar.sql y comparación de conteos)
 echo "Etapa 3: Validando datos restaurados..." | tee -a "$LOG"
-INI_VAL=$(date '+%Y-%m-%dT%H:%M:%S.%3N%:z')
-t4=$(date +%s.%N)
+ETAPA=validacion; ETAPA_INI=$(ahora_iso); ETAPA_T0=$(ahora_seg)
+INI_VAL=$ETAPA_INI; t4=$ETAPA_T0
 
-psql -d olimpiadas -v limite=10 -f /fase2/04_restauracion/validar.sql 2>&1 | tee -a "$LOG"
-psql -d olimpiadas -At -f /fase2/04_restauracion/conteos.sql > /tmp/conteos_actual.txt
+psql -d olimpiadas -v limite=10 -f "$FASE2_DIR/04_restauracion/validar.sql" 2>&1 | tee -a "$LOG"
+psql -d olimpiadas -At -f "$FASE2_DIR/04_restauracion/conteos.sql" > /tmp/conteos_actual.txt
 
 IF_FILE="/backups/conteos_full.txt"
 if [ "$N" -gt 0 ]; then
@@ -82,26 +105,23 @@ else
   echo "VALIDACION OK: Los conteos coinciden perfectamente." | tee -a "$LOG"
 fi
 
-FIN_VAL=$(date '+%Y-%m-%dT%H:%M:%S.%3N%:z')
-t5=$(date +%s.%N)
-SEG_VAL=$(awk "BEGIN{printf \"%.3f\", $t5-$t4}")
+FIN_VAL=$(ahora_iso)
+t5=$(ahora_seg)
+SEG_VAL=$(segundos_entre "$t4" "$t5")
+
+# 6. Filas en tiempos (combinar, arranque, validacion, total)
+SEG_TOTAL=$(segundos_entre "$t0" "$t5")
+ETAPA=detener; ETAPA_T0=; TOTAL_T0=
+
+tiempos_fila "$CSV" "$P" "$TIPO" "$MAQUINA" "$PASO_STR" restore "$N" combinar "$INI_COMB" "$FIN_COMB" "$SEG_COMB" "$BYTES" "" "$REP" "$OBS"
+tiempos_fila "$CSV" "$P" "$TIPO" "$MAQUINA" "$PASO_STR" restore "$N" arranque "$INI_ARR" "$FIN_ARR" "$SEG_ARR" "" "" "$REP" "$OBS"
+tiempos_fila "$CSV" "$P" "$TIPO" "$MAQUINA" "$PASO_STR" restore "$N" validacion "$INI_VAL" "$FIN_VAL" "$SEG_VAL" "" "$STATUS_VAL" "$REP" "$OBS"
+tiempos_fila "$CSV" "$P" "$TIPO" "$MAQUINA" "$PASO_STR" restore "$N" total "$INI_COMB" "$FIN_VAL" "$SEG_TOTAL" "$BYTES" "$STATUS_VAL" "$REP" "$OBS"
 
 # Apagar servidor para dejar el entorno listo
 pg_ctl -D "$PGDATA" -m fast stop 2>&1 | tee -a "$LOG"
 
-# 6. Escribir filas en tiempos.csv si la tabla existe/es requerida
-SEG_TOTAL=$(awk "BEGIN{printf \"%.3f\", $t5-$t0}")
-
-if [ ! -f "$CSV" ]; then
-  echo "persona,tipo_carga,maquina,paso,operacion,n_cadena,etapa,inicio_iso,fin_iso,segundos,bytes,validacion,repeticion,observacion" > "$CSV"
-fi
-
-echo "${P},${TIPO},${MAQUINA},${PASO_STR},restore,${N},combinar,${INI_COMB},${FIN_COMB},${SEG_COMB},${BYTES},,1," >> "$CSV"
-echo "${P},${TIPO},${MAQUINA},${PASO_STR},restore,${N},arranque,${INI_ARR},${FIN_ARR},${SEG_ARR},,,1," >> "$CSV"
-echo "${P},${TIPO},${MAQUINA},${PASO_STR},restore,${N},validacion,${INI_VAL},${FIN_VAL},${SEG_VAL},,${STATUS_VAL},1," >> "$CSV"
-echo "${P},${TIPO},${MAQUINA},${PASO_STR},restore,${N},total,${INI_COMB},${FIN_VAL},${SEG_TOTAL},${BYTES},${STATUS_VAL},1," >> "$CSV"
-
-echo "=== RestauraciÃ³n N=$N finalizada con estado: $STATUS_VAL (Total: ${SEG_TOTAL} s) ===" | tee -a "$LOG"
+echo "=== Restauración N=$N repetición $REP finalizada con estado: $STATUS_VAL (Total: ${SEG_TOTAL} s) ===" | tee -a "$LOG"
 
 if [ "$STATUS_VAL" != "OK" ]; then
   exit 1

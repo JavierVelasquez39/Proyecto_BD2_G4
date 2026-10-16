@@ -1,0 +1,21 @@
+              now              
+-------------------------------
+ 2026-10-15 21:07:44.807666-06
+(1 row)
+
+       ?column?       | count 
+----------------------+-------
+ pais                 |     0
+ poblacion_pais       |     0
+ noc                  |     0
+ sede                 |     0
+ edicion_olimpica     |     0
+ deporte              |     0
+ deporte_equivalencia |     0
+ evento               |     0
+ atleta               |     0
+ participacion        |     0
+ resultado            |     0
+(11 rows)
+
+Restauración N=0 finalizada con estado: OK (Total: 1.91674 s)

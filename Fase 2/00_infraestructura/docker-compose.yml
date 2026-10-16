@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_PASSWORD: fase2
+      POSTGRES_DB: olimpiadas
+      POSTGRES_INITDB_ARGS: "--data-checksums"
+      PGDATA: /var/lib/postgresql/data/pgdata
+      TZ: ${TZ_LOCAL:-America/Guatemala}
+      PGTZ: ${TZ_LOCAL:-America/Guatemala}
+    command:
+      - postgres
+      - -c
+      - summarize_wal=on
+      - -c
+      - timezone=${TZ_LOCAL:-America/Guatemala}
+      - -c
+      - log_timezone=${TZ_LOCAL:-America/Guatemala}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d olimpiadas"]
+      interval: 5s
+      retries: 20
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - backups:/backups
+      - ../:/fase2
+volumes:
+  pgdata:
+  backups:

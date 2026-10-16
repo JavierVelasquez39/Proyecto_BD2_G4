@@ -1,0 +1,6 @@
+anio_pa,6e3f397465c0,02,backup_full,0,total,2026-10-15 21:01:26,1.89778,48334686,OK,1
+anio_pa,93a286802c7c,02,backup_full,0,total,2026-10-15 21:07:28,1.90459,48252766,OK,1
+anio_pa,a88f64af9a1a,12,restore,0,combinar,2026-10-15 21:07:45,0.249062,0,OK,1
+anio_pa,a88f64af9a1a,12,restore,0,arranque,2026-10-15 21:07:45,1.43729,0,OK,1
+anio_pa,a88f64af9a1a,12,restore,0,validacion,2026-10-15 21:07:45,0.23039,0,OK,1
+anio_pa,a88f64af9a1a,12,restore,0,total,2026-10-15 21:07:45,1.91674,0,OK,1

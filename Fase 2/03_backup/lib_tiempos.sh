@@ -54,3 +54,31 @@ log_nuevo() {
   [ ! -e "$log" ] || mv "$log" "${log%.log}.$(date '+%Y%m%d_%H%M%S').log"
   : > "$log"
 }
+
+# Fila ALERTA ante cualquier error (trap ERR). Cada script mantiene:
+#   CSV PERSONA TIPO MAQUINA PASO OPERACION N_CADENA REPETICION OBS LOG
+#   ETAPA ETAPA_INI ETAPA_T0   etapa en curso, su inicio ISO y su marca
+#   TOTAL_INI TOTAL_T0         (solo restauracion) inicio de la etapa combinar
+# Si existe la funcion al_fallar_extra (ej. detener el servidor), se llama.
+alerta_al_fallar() {
+  local rc=$? linea=$1
+  # En subshells (sustitucion de comandos) solo se sale: la fila la escribe
+  # el proceso principal cuando le llega el error.
+  [ "$BASHPID" = "$$" ] || exit "$rc"
+  trap - ERR
+  set +e
+  local fin t
+  fin=$(ahora_iso); t=$(ahora_seg)
+  echo "ALERTA: fallo en la etapa ${ETAPA} (linea ${linea}, codigo ${rc}) $(date '+%F %T %Z')" | tee -a "$LOG" >&2
+  if [ -n "${ETAPA_T0:-}" ]; then
+    tiempos_fila "$CSV" "$PERSONA" "$TIPO" "$MAQUINA" "$PASO" "$OPERACION" "$N_CADENA" \
+      "$ETAPA" "$ETAPA_INI" "$fin" "$(segundos_entre "$ETAPA_T0" "$t")" "" ALERTA "$REPETICION" "$OBS"
+  fi
+  if [ -n "${TOTAL_T0:-}" ]; then
+    tiempos_fila "$CSV" "$PERSONA" "$TIPO" "$MAQUINA" "$PASO" "$OPERACION" "$N_CADENA" \
+      total "$TOTAL_INI" "$fin" "$(segundos_entre "$TOTAL_T0" "$t")" "" ALERTA "$REPETICION" "$OBS"
+  fi
+  if declare -F al_fallar_extra > /dev/null; then al_fallar_extra; fi
+  [ "$rc" -ne 0 ] || rc=1
+  exit "$rc"
+}

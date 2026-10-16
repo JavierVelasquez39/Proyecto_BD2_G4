@@ -3,7 +3,7 @@
 # Uso: restaurar.sh <tipo> <persona> <n_cadena> [repeticion] [observacion]
 #   n_cadena: 0=FULL, 1=FULL+INCR1, 2=FULL+INCR1+INCR2, 3=Cadena completa
 #   repeticion: 1 a 3 (por defecto 1); cada repetición parte de PGDATA vacío
-set -euo pipefail
+set -Eeuo pipefail
 
 TIPO=$1
 P=$2
@@ -24,6 +24,13 @@ PERSONA=$P; PASO=$PASO_STR; OPERACION=restore; N_CADENA=$N; REPETICION=$REP
 log_nuevo "$LOG"
 log_nuevo "$LOG_SRV"
 
+# Si algo falla con el servidor arriba, se detiene antes de salir
+al_fallar_extra() {
+  if pg_ctl -D "$PGDATA" status > /dev/null 2>&1; then
+    pg_ctl -D "$PGDATA" -m fast stop 2>&1 | tee -a "$LOG"
+  fi
+}
+trap 'alerta_al_fallar $LINENO' ERR
 
 echo "=== Inicio de Restauración Cadena N=$N repetición $REP: $(date '+%F %T %Z') ===" | tee -a "$LOG"
 

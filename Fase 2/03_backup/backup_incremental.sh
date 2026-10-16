@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Respaldo INCR fisico encadenado al anterior. Uso: backup_incremental.sh <tipo> <persona> <n> [observacion]
-set -euo pipefail
+set -Eeuo pipefail
 TIPO=$1; P=$2; N=$3; OBS=${4:-}
 FASE2_DIR="${FASE2_DIR:-/fase2}"
 source "$FASE2_DIR/03_backup/lib_tiempos.sh"
@@ -13,6 +13,7 @@ CSV="$FASE2_DIR/05_logs/tiempos_${TIPO}_${P}.csv"
 DEST="/backups/incr${N}"
 PERSONA=$P; MAQUINA=$(maquina_de "$P"); PASO=$PASO_FMT; OPERACION=backup_incr; N_CADENA=$N; REPETICION=1
 log_nuevo "$LOG"
+trap 'alerta_al_fallar $LINENO' ERR
 
 if [ "$N" -eq 1 ]; then
   BASE="/backups/full"

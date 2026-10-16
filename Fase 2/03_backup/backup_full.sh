@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Respaldo FULL fisico con pg_basebackup. Uso: backup_full.sh <tipo> <persona> [observacion]
-set -euo pipefail
+set -Eeuo pipefail
 TIPO=$1; P=$2; OBS=${3:-}
 FASE2_DIR="${FASE2_DIR:-/fase2}"
 source "$FASE2_DIR/03_backup/lib_tiempos.sh"
@@ -11,6 +11,7 @@ CSV="$FASE2_DIR/05_logs/tiempos_${TIPO}_${P}.csv"
 DEST="/backups/full"
 PERSONA=$P; MAQUINA=$(maquina_de "$P"); PASO=02; OPERACION=backup_full; N_CADENA=0; REPETICION=1
 log_nuevo "$LOG"
+trap 'alerta_al_fallar $LINENO' ERR
 
 echo "Inicio: $(date '+%F %T %Z')" | tee -a "$LOG"
 ETAPA=basebackup; ETAPA_INI=$(ahora_iso); ETAPA_T0=$(ahora_seg)

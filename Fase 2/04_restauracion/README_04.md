@@ -64,6 +64,26 @@ Para la captura se corre el mismo comando sin `--csv` ni redirección.
 diff 05_logs/deportista_pc/deportista_pc_09_fragmentacion_tablas.csv 05_logs/deportista_pc/deportista_pc_16_fragmentacion_tablas.csv
 ```
 
+**Restauración (pasos 12 a 15), 3 repeticiones por cadena:**
+
+`restaurar.sh <tipo> <persona> <n_cadena> [repeticion] [observacion]`. Cada
+repetición vacía `$PGDATA` (también los archivos ocultos), combina, corre
+`pg_verifybackup` sobre el resultado, arranca, valida y apaga. Escribe 4 filas
+en `05_logs/tiempos_<tipo>_<persona>.csv` y su log en
+`05_logs/<tipo>_<persona>/<tipo>_<persona>_<paso>_restore_cadena<n>_rep<r>.log`,
+con el log del servidor al lado (`..._servidor.log`). Con `db` detenido:
+
+```powershell
+foreach ($n in 0..3) { foreach ($r in 1..3) {
+  docker compose -p fase2_deportista run --rm --no-deps -u postgres --entrypoint bash db /fase2/04_restauracion/restaurar.sh deportista pc $n $r
+} }
+```
+
+La columna `maquina` es `{persona}-laptop`; para otro alias se pasa
+`-e MAQUINA_ALIAS=<alias>` en `run`/`exec` (el mismo en respaldos y
+restauraciones). Si un paso falla, el script escribe la fila con `ALERTA` y sale
+con código distinto de 0.
+
 ## Salida esperada
 
 `conteos.sql` imprime 11 líneas `tabla|filas`. Con la base vacía todas valen 0;

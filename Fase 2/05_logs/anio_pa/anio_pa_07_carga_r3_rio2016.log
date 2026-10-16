@@ -1,0 +1,88 @@
+============================================================
+cargar_ronda.sh  tipo=anio  persona=pa  carpeta=r3_rio2016  paso=07
+Inicio: 2026-10-16 11:30:03 CST
+Origen: /fase2/02_carga/datos/anio/r3_rio2016
+============================================================
+--- sede ---
+ tabla | en_csv | insertadas 
+-------+--------+------------
+ sede  |      1 |          1
+(1 row)
+
+--- edicion_olimpica ---
+      tabla       | en_csv | insertadas 
+------------------+--------+------------
+ edicion_olimpica |      1 |          1
+(1 row)
+
+--- evento ---
+ tabla  | en_csv | insertadas 
+--------+--------+------------
+ evento |    317 |         20
+(1 row)
+
+--- atleta ---
+ tabla  | en_csv | insertadas 
+--------+--------+------------
+ atleta |  11197 |       7438
+(1 row)
+
+--- participacion ---
+     tabla     | en_csv | insertadas 
+---------------+--------+------------
+ participacion |  13742 |      13742
+(1 row)
+
+--- resultado ---
+   tabla   | en_csv | insertadas 
+-----------+--------+------------
+ resultado |  13742 |      13742
+(1 row)
+
+--- sincronizar secuencias ---
+ tabla | ultimo_id 
+-------+-----------
+ sede  |        44
+(1 row)
+
+      tabla       | ultimo_id 
+------------------+-----------
+ edicion_olimpica |        61
+(1 row)
+
+ tabla  | ultimo_id 
+--------+-----------
+ evento |      2103
+(1 row)
+
+ tabla  | ultimo_id 
+--------+-----------
+ atleta |    153443
+(1 row)
+
+     tabla     | ultimo_id 
+---------------+-----------
+ participacion |    319950
+(1 row)
+
+   tabla   | ultimo_id 
+-----------+-----------
+ resultado |    320465
+(1 row)
+
+
+== Conteos de las 11 tablas despues de la carga ==
+Fecha: 2026-10-16 11:30:05 CST
+pais|204
+poblacion_pais|13026
+noc|236
+sede|3
+edicion_olimpica|3
+deporte|95
+deporte_equivalencia|2
+evento|566
+atleta|26625
+participacion|42584
+resultado|42585
+Fin: 2026-10-16 11:30:05 CST
+CARGA OK

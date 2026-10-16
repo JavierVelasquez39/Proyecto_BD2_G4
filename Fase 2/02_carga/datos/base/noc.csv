@@ -1,0 +1,237 @@
+codigo_noc,nombre_region,notas,pais_id
+AFG,Afghanistan,,1
+AHO,Curacao,Netherlands Antilles,50
+AIN,Individual Neutral Athletes,"Atletas neutrales individuales (Rusia/Bielorrusia bajo sanción, Paris 2024), código nuevo en fuente 3, no presente en noc_regions.csv de fuente 1/2",
+ALB,Albania,,2
+ALG,Algeria,,3
+AND,Andorra,,5
+ANG,Angola,,6
+ANT,Antigua,Antigua and Barbuda,7
+ANZ,Australia,Australasia; Australasia (equipo conjunto Australia+Nueva Zelanda),
+ARG,Argentina,,8
+ARM,Armenia,,9
+ARU,Aruba,,10
+ASA,American Samoa,,4
+AUS,Australia,,11
+AUT,Austria,,12
+AZE,Azerbaijan,,13
+BAH,Bahamas,,14
+BAN,Bangladesh,,16
+BAR,Barbados,,17
+BDI,Burundi,,32
+BEL,Belgium,,19
+BEN,Benin,,21
+BER,Bermuda,,22
+BHU,Bhutan,,23
+BIH,Bosnia and Herzegovina,,25
+BIZ,Belize,,20
+BLR,Belarus,,18
+BOH,Czech Republic,Bohemia; Bohemia (entidad histórica pre-Checoslovaquia),
+BOL,Boliva,,24
+BOT,Botswana,,26
+BRA,Brazil,,27
+BRN,Bahrain,,15
+BRU,Brunei,,29
+BUL,Bulgaria,,30
+BUR,Burkina Faso,,31
+CAF,Central African Republic,,38
+CAM,Cambodia,,34
+CAN,Canada,,36
+CAY,Cayman Islands,,37
+CGO,Republic of Congo,,45
+CHA,Chad,,39
+CHI,Chile,,40
+CHN,China,,41
+CIV,Ivory Coast,,47
+CMR,Cameroon,,35
+COD,Democratic Republic of the Congo,,44
+COK,Cook Islands,Islas Cook (no reconocidas como país independiente por el Banco Mundial),
+COL,Colombia,,42
+COM,Comoros,,43
+COR,Corea unificada,Equipo conjunto Corea del Norte + Corea del Sur,
+CPV,Cape Verde,,33
+CRC,Costa Rica,,46
+CRO,Croatia,,48
+CRT,Greece,Crete,73
+CUB,Cuba,,49
+CYP,Cyprus,,51
+CZE,Czech Republic,,52
+DEN,Denmark,,53
+DJI,Djibouti,,54
+DMA,Dominica,,55
+DOM,Dominican Republic,,56
+ECU,Ecuador,,57
+EGY,Egypt,,58
+EOR,Refugee Olympic Team,Acrónimo francés (Équipe Olympique des Réfugiés),
+ERI,Eritrea,,61
+ESA,El Salvador,,59
+ESP,Spain,,169
+EST,Estonia,,62
+ETH,Ethiopia,,64
+EUN,Russia,"Equipo Unificado 1992 (ex-URSS, 12 países)",
+FIJ,Fiji,,65
+FIN,Finland,,66
+FRA,France,,67
+FRG,Germany,,71
+FSM,Micronesia,,121
+GAB,Gabon,,68
+GAM,Gambia,,69
+GBR,UK,,193
+GBS,Guinea-Bissau,,78
+GDR,Germany,,71
+GEO,Georgia,,70
+GEQ,Equatorial Guinea,,60
+GER,Germany,,71
+GHA,Ghana,,72
+GRE,Greece,,73
+GRN,Grenada,,74
+GUA,Guatemala,,76
+GUI,Guinea,,77
+GUM,Guam,,75
+GUY,Guyana,,79
+HAI,Haiti,,80
+HKG,China,Hong Kong,41
+HON,Honduras,,81
+HUN,Hungary,,82
+INA,Indonesia,,85
+IND,India,,84
+IOA,Individual Olympic Athletes,Individual Olympic Athletes; Atletas Olímpicos Individuales,
+IRI,Iran,,86
+IRL,Ireland,,88
+IRQ,Iraq,,87
+ISL,Iceland,,83
+ISR,Israel,,89
+ISV,"Virgin Islands, US",Virgin Islands,200
+ITA,Italy,,90
+IVB,"Virgin Islands, British",,28
+JAM,Jamaica,,91
+JOR,Jordan,,93
+JPN,Japan,,92
+KAZ,Kazakhstan,,94
+KEN,Kenya,,95
+KGZ,Kyrgyzstan,,101
+KIR,Kiribati,,96
+KOR,South Korea,,98
+KOS,Kosovo,,99
+KSA,Saudi Arabia,,157
+KUW,Kuwait,,100
+LAO,Laos,,102
+LAT,Latvia,,103
+LBA,Libya,,107
+LBN,Lebanon,Alias moderno de LIB (Lebanon) no presente en noc_regions.csv,104
+LBR,Liberia,,106
+LCA,Saint Lucia,,172
+LES,Lesotho,,105
+LIB,Lebanon,,104
+LIE,Liechtenstein,,108
+LTU,Lithuania,,109
+LUX,Luxembourg,,110
+MAD,Madagascar,,111
+MAL,Malaysia,,113
+MAR,Morocco,,126
+MAS,Malaysia,,113
+MAW,Malawi,,112
+MDA,Moldova,,122
+MDV,Maldives,,114
+MEX,Mexico,,120
+MGL,Mongolia,,124
+MHL,Marshall Islands,,117
+MKD,Macedonia,,137
+MLI,Mali,,115
+MLT,Malta,,116
+MNE,Montenegro,,125
+MON,Monaco,,123
+MOZ,Mozambique,,127
+MRI,Mauritius,,119
+MTN,Mauritania,,118
+MYA,Myanmar,,128
+NAM,Namibia,,129
+NBO,Malaysia,North Borneo,113
+NCA,Nicaragua,,134
+NED,Netherlands,,132
+NEP,Nepal,,131
+NFL,Canada,Newfoundland,36
+NGR,Nigeria,,136
+NIG,Niger,,135
+NOR,Norway,,138
+NRU,Nauru,,130
+NZL,New Zealand,,133
+OMA,Oman,,139
+PAK,Pakistan,,140
+PAN,Panama,,142
+PAR,Paraguay,,144
+PER,Peru,,145
+PHI,Philippines,,146
+PLE,Palestine,,201
+PLW,Palau,,141
+PNG,Papua New Guinea,,143
+POL,Poland,,147
+POR,Portugal,,148
+PRK,North Korea,,97
+PUR,Puerto Rico,,149
+QAT,Qatar,,150
+RHO,Zimbabwe,,204
+ROC,Russian Olympic Committee,Equipo bajo sanción (Tokyo 2020 / Beijing 2022),
+ROT,ROT,Refugee Olympic Team; Refugee Olympic Team,
+ROU,Romania,,151
+RSA,South Africa,,167
+RUS,Russia,,152
+RWA,Rwanda,,153
+SAA,Germany,,71
+SAM,Samoa,,154
+SCG,Serbia,Serbia and Montenegro; Serbia y Montenegro (disuelta),
+SEN,Senegal,,158
+SEY,Seychelles,,160
+SGP,Singapore,Alias moderno de SIN (Singapore) no presente en noc_regions.csv,162
+SIN,Singapore,,162
+SKN,Saint Kitts,Turks and Caicos Islands,171
+SLE,Sierra Leone,,161
+SLO,Slovenia,,164
+SMR,San Marino,,155
+SOL,Solomon Islands,,165
+SOM,Somalia,,166
+SRB,Serbia,,159
+SRI,Sri Lanka,,170
+SSD,South Sudan,,168
+STP,Sao Tome and Principe,,156
+SUD,Sudan,,174
+SUI,Switzerland,,177
+SUR,Suriname,,175
+SVK,Slovakia,,163
+SWE,Sweden,,176
+SWZ,Swaziland,,63
+SYR,Syria,,178
+TAN,Tanzania,,180
+TCH,Czech Republic,Checoslovaquia (disuelta),
+TGA,Tonga,,184
+THA,Thailand,,181
+TJK,Tajikistan,,179
+TKM,Turkmenistan,,188
+TLS,Timor-Leste,,182
+TOG,Togo,,183
+TPE,Taiwan,Taiwán / Chinese Taipei (sin entrada propia en el catálogo del Banco Mundial),
+TTO,Trinidad,Trinidad and Tobago,185
+TUN,Tunisia,,186
+TUR,Turkey,,187
+TUV,Tuvalu,Tuvalu,189
+UAE,United Arab Emirates,,192
+UAR,Syria,United Arab Republic,178
+UGA,Uganda,,190
+UKR,Ukraine,,191
+UNK,UNK,Unknown; Desconocido,
+URS,Russia,Unión Soviética (disuelta en 15 países),
+URU,Uruguay,,195
+USA,USA,,194
+UZB,Uzbekistan,,196
+VAN,Vanuatu,,197
+VEN,Venezuela,,198
+VIE,Vietnam,,199
+VIN,Saint Vincent,,173
+VNM,Vietnam,,199
+WIF,Trinidad,West Indies Federation,185
+YAR,Yemen,North Yemen,202
+YEM,Yemen,,202
+YMD,Yemen,South Yemen,202
+YUG,Serbia,Yugoslavia; Yugoslavia (disuelta),
+ZAM,Zambia,,203
+ZIM,Zimbabwe,,204

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Restauración de cadena física PostgreSQL 17 con pg_combinebackup y registro de tiempos
+# RestauraciÃ³n de cadena fÃ­sica PostgreSQL 17 con pg_combinebackup y registro de tiempos
 # Uso: restaurar.sh <tipo> <persona> <n_cadena> (0=FULL, 1=FULL+INCR1, 2=FULL+INCR1+INCR2, 3=Cadena completa)
 set -euo pipefail
 
@@ -16,7 +16,7 @@ LOG=$LOGDIR/${TIPO}_${P}_${PASO_STR}_restore_cadena${N}.log
 CSV=/fase2/05_logs/tiempos_${TIPO}_${P}.csv
 MAQUINA="${P}-laptop"
 
-echo "=== Inicio de Restauración Cadena N=$N: $(date '+%F %T %Z') ===" | tee -a "$LOG"
+echo "=== Inicio de RestauraciÃ³n Cadena N=$N: $(date '+%F %T %Z') ===" | tee -a "$LOG"
 
 # 1. Abortar si el servidor sigue corriendo
 if [ -f "$PGDATA/postmaster.pid" ]; then
@@ -61,7 +61,7 @@ FIN_ARR=$(date '+%Y-%m-%dT%H:%M:%S.%3N%:z')
 t3=$(date +%s.%N)
 SEG_ARR=$(awk "BEGIN{printf \"%.3f\", $t3-$t2}")
 
-# 5. Etapa VALIDACIÓN (validar.sql y comparación de conteos)
+# 5. Etapa VALIDACIÃ“N (validar.sql y comparaciÃ³n de conteos)
 echo "Etapa 3: Validando datos restaurados..." | tee -a "$LOG"
 INI_VAL=$(date '+%Y-%m-%dT%H:%M:%S.%3N%:z')
 t4=$(date +%s.%N)
@@ -101,7 +101,7 @@ echo "${P},${TIPO},${MAQUINA},${PASO_STR},restore,${N},arranque,${INI_ARR},${FIN
 echo "${P},${TIPO},${MAQUINA},${PASO_STR},restore,${N},validacion,${INI_VAL},${FIN_VAL},${SEG_VAL},,${STATUS_VAL},1," >> "$CSV"
 echo "${P},${TIPO},${MAQUINA},${PASO_STR},restore,${N},total,${INI_COMB},${FIN_VAL},${SEG_TOTAL},${BYTES},${STATUS_VAL},1," >> "$CSV"
 
-echo "=== Restauración N=$N finalizada con estado: $STATUS_VAL (Total: ${SEG_TOTAL} s) ===" | tee -a "$LOG"
+echo "=== RestauraciÃ³n N=$N finalizada con estado: $STATUS_VAL (Total: ${SEG_TOTAL} s) ===" | tee -a "$LOG"
 
 if [ "$STATUS_VAL" != "OK" ]; then
   exit 1

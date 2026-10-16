@@ -1,0 +1,4 @@
+participacion_id,atleta_id,edicion_id,evento_id,codigo_noc,equipo,edad,altura_cm,peso_kg
+225061,104492,51,43,JAM,,26,196.0,95.0
+225062,104492,51,400,JAM,Jamaica,26,196.0,95.0
+225063,104492,51,467,JAM,,26,196.0,95.0

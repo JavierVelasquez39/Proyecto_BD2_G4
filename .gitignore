@@ -1,0 +1,4 @@
+# Carpetas de configuración local de editores y herramientas
+.claude/
+.vscode/
+.idea/

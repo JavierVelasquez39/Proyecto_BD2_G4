@@ -1,0 +1,10 @@
+# Tabla (b): restauración por etapa, mediana de las repeticiones
+
+Sin la etapa `total`. Cada columna es la mediana de esa etapa por separado. La suma de las tres no es igual al `total`: el `total` incluye además `pg_verifybackup` y el tiempo entre etapas, y la mediana de una suma no es la suma de las medianas.
+
+| corrida | maquina | n | repeticiones | combinar_s | arranque_s | validacion_s |
+|---|---|---:|---:|---:|---:|---:|
+| deportista_pc | pc-laptop | 0 | 3 | 0.249 | 0.736 | 0.152 |
+| deportista_pc | pc-laptop | 1 | 3 | 0.713 | 0.533 | 0.162 |
+| deportista_pc | pc-laptop | 2 | 3 | 0.753 | 0.532 | 0.157 |
+| deportista_pc | pc-laptop | 3 | 3 | 0.761 | 0.629 | 0.15 |

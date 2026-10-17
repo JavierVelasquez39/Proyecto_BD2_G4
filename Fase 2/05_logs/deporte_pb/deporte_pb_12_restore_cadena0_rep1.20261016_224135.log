@@ -1,0 +1,32 @@
+=== Inicio de Restauración Cadena N=0 repetición 1: 2026-10-16 22:39:33 CST ===
+Limpiando directorio /var/lib/postgresql/data/pgdata...
+total 0
+drwxr-xr-x. 1 root     root      0 Oct 16 22:39 .
+drwxrwxrwt. 1 postgres postgres 12 Oct 16 22:39 ..
+Etapa 1: Combinando respaldos (pg_combinebackup)...
+cp: cannot create directory '/var/lib/postgresql/data/pgdata/./pg_wal': Permission denied
+cp: cannot create regular file '/var/lib/postgresql/data/pgdata/./backup_label': Permission denied
+cp: cannot create directory '/var/lib/postgresql/data/pgdata/./global': Permission denied
+cp: cannot create directory '/var/lib/postgresql/data/pgdata/./pg_commit_ts': Permission denied
+cp: cannot create directory '/var/lib/postgresql/data/pgdata/./pg_dynshmem': Permission denied
+cp: cannot create directory '/var/lib/postgresql/data/pgdata/./pg_notify': Permission denied
+cp: cannot create directory '/var/lib/postgresql/data/pgdata/./pg_serial': Permission denied
+cp: cannot create directory '/var/lib/postgresql/data/pgdata/./pg_snapshots': Permission denied
+cp: cannot create directory '/var/lib/postgresql/data/pgdata/./pg_subtrans': Permission denied
+cp: cannot create directory '/var/lib/postgresql/data/pgdata/./pg_twophase': Permission denied
+cp: cannot create directory '/var/lib/postgresql/data/pgdata/./pg_multixact': Permission denied
+cp: cannot create directory '/var/lib/postgresql/data/pgdata/./base': Permission denied
+cp: cannot create directory '/var/lib/postgresql/data/pgdata/./pg_replslot': Permission denied
+cp: cannot create directory '/var/lib/postgresql/data/pgdata/./pg_tblspc': Permission denied
+cp: cannot create directory '/var/lib/postgresql/data/pgdata/./pg_stat': Permission denied
+cp: cannot create directory '/var/lib/postgresql/data/pgdata/./pg_stat_tmp': Permission denied
+cp: cannot create directory '/var/lib/postgresql/data/pgdata/./pg_xact': Permission denied
+cp: cannot create directory '/var/lib/postgresql/data/pgdata/./pg_logical': Permission denied
+cp: cannot create regular file '/var/lib/postgresql/data/pgdata/./PG_VERSION': Permission denied
+cp: cannot create regular file '/var/lib/postgresql/data/pgdata/./postgresql.conf': Permission denied
+cp: cannot create regular file '/var/lib/postgresql/data/pgdata/./postgresql.auto.conf': Permission denied
+cp: cannot create regular file '/var/lib/postgresql/data/pgdata/./pg_hba.conf': Permission denied
+cp: cannot create regular file '/var/lib/postgresql/data/pgdata/./pg_ident.conf': Permission denied
+cp: cannot create regular file '/var/lib/postgresql/data/pgdata/./backup_manifest': Permission denied
+cp: preserving times for '/var/lib/postgresql/data/pgdata/.': Operation not permitted
+ALERTA: fallo en la etapa combinar (linea 55, codigo 1) 2026-10-16 22:39:33 CST

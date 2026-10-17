@@ -1,0 +1,18 @@
+2026-10-17 00:25:36.780 CST [70] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-17 00:25:36.782 CST [70] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-10-17 00:25:36.788 CST [73] LOG:  database system was interrupted; last known up at 2026-10-16 18:26:14 CST
+2026-10-17 00:25:39.799 CST [73] LOG:  starting backup recovery with redo LSN 0/9000028, checkpoint LSN 0/9000080, on timeline ID 1
+2026-10-17 00:25:39.804 CST [73] LOG:  redo starts at 0/9000028
+2026-10-17 00:25:39.806 CST [73] LOG:  completed backup recovery with redo LSN 0/9000028 and end LSN 0/9000120
+2026-10-17 00:25:39.806 CST [73] LOG:  consistent recovery state reached at 0/9000120
+2026-10-17 00:25:39.806 CST [73] LOG:  redo done at 0/9000120 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2026-10-17 00:25:39.818 CST [71] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-10-17 00:25:39.831 CST [71] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.003 s, total=0.015 s; sync files=2, longest=0.002 s, average=0.002 s; distance=16384 kB, estimate=16384 kB; lsn=0/A000028, redo lsn=0/A000028
+2026-10-17 00:25:39.836 CST [70] LOG:  database system is ready to accept connections
+2026-10-17 00:25:39.967 CST [70] LOG:  received fast shutdown request
+2026-10-17 00:25:39.977 CST [70] LOG:  aborting any active transactions
+2026-10-17 00:25:39.979 CST [70] LOG:  background worker "logical replication launcher" (PID 76) exited with exit code 1
+2026-10-17 00:25:39.980 CST [71] LOG:  shutting down
+2026-10-17 00:25:39.981 CST [71] LOG:  checkpoint starting: shutdown immediate
+2026-10-17 00:25:40.109 CST [71] LOG:  checkpoint complete: wrote 13 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.117 s, total=0.130 s; sync files=5, longest=0.112 s, average=0.024 s; distance=90 kB, estimate=14754 kB; lsn=0/A016958, redo lsn=0/A016958
+2026-10-17 00:25:40.116 CST [70] LOG:  database system is shut down

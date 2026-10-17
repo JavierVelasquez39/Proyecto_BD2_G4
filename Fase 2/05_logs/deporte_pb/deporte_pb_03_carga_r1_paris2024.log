@@ -1,0 +1,88 @@
+============================================================
+cargar_ronda.sh  tipo=deporte  persona=pb  carpeta=r1_paris2024  paso=03
+Inicio: 2026-10-16 17:56:24 CST
+Origen: /fase2/02_carga/datos/deporte/r1_paris2024
+============================================================
+--- sede ---
+ tabla | en_csv | insertadas 
+-------+--------+------------
+ sede  |      1 |          1
+(1 row)
+
+--- edicion_olimpica ---
+      tabla       | en_csv | insertadas 
+------------------+--------+------------
+ edicion_olimpica |      1 |          1
+(1 row)
+
+--- evento ---
+ tabla  | en_csv | insertadas 
+--------+--------+------------
+ evento |      1 |          1
+(1 row)
+
+--- atleta ---
+ tabla  | en_csv | insertadas 
+--------+--------+------------
+ atleta |     91 |         91
+(1 row)
+
+--- participacion ---
+     tabla     | en_csv | insertadas 
+---------------+--------+------------
+ participacion |     91 |         91
+(1 row)
+
+--- resultado ---
+   tabla   | en_csv | insertadas 
+-----------+--------+------------
+ resultado |     91 |         91
+(1 row)
+
+--- sincronizar secuencias ---
+ tabla | ultimo_id 
+-------+-----------
+ sede  |         2
+(1 row)
+
+      tabla       | ultimo_id 
+------------------+-----------
+ edicion_olimpica |        61
+(1 row)
+
+ tabla  | ultimo_id 
+--------+-----------
+ evento |      1025
+(1 row)
+
+ tabla  | ultimo_id 
+--------+-----------
+ atleta |    153440
+(1 row)
+
+     tabla     | ultimo_id 
+---------------+-----------
+ participacion |    319947
+(1 row)
+
+   tabla   | ultimo_id 
+-----------+-----------
+ resultado |    320461
+(1 row)
+
+
+== Conteos de las 11 tablas despues de la carga ==
+Fecha: 2026-10-16 17:56:24 CST
+pais|204
+poblacion_pais|13026
+noc|236
+sede|1
+edicion_olimpica|1
+deporte|95
+deporte_equivalencia|2
+evento|1
+atleta|91
+participacion|91
+resultado|91
+Fin: 2026-10-16 17:56:24 CST
+CARGA OK

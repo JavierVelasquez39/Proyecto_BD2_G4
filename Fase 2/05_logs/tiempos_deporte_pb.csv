@@ -1,5 +1,4 @@
 persona,tipo_carga,maquina,paso,operacion,n_cadena,etapa,inicio_iso,fin_iso,segundos,bytes,validacion,repeticion,observacion
-pb,deporte,pb-laptop,02,backup_full,0,basebackup,2026-10-16T17:53:09.015-06:00,2026-10-16T17:53:09.052-06:00,0.037,,ALERTA,1,
 pb,deporte,pb-laptop,02,backup_full,0,basebackup,2026-10-16T17:55:07.507-06:00,2026-10-16T17:55:09.537-06:00,2.030,50088413,,1,
 pb,deporte,pb-laptop,04,backup_incr,1,basebackup,2026-10-16T17:58:36.113-06:00,2026-10-16T17:58:38.074-06:00,1.961,21869697,,1,
 pb,deporte,pb-laptop,06,backup_incr,2,basebackup,2026-10-16T18:20:26.178-06:00,2026-10-16T18:20:28.149-06:00,1.971,21804934,,1,
@@ -20,10 +19,6 @@ pb,deporte,pb-laptop,15,restore,3,combinar,2026-10-16T18:40:24.928-06:00,2026-10
 pb,deporte,pb-laptop,15,restore,3,arranque,2026-10-16T18:40:25.213-06:00,2026-10-16T18:40:26.928-06:00,1.715,,,1,
 pb,deporte,pb-laptop,15,restore,3,validacion,2026-10-16T18:40:26.936-06:00,2026-10-16T18:40:27.033-06:00,0.098,,OK,1,
 pb,deporte,pb-laptop,15,restore,3,total,2026-10-16T18:40:24.928-06:00,2026-10-16T18:40:27.033-06:00,2.107,50498624,OK,1,
-pb,deporte,pb-laptop,12,restore,0,combinar,2026-10-17T00:10:29.268-06:00,2026-10-17T00:10:29.273-06:00,0.006,,ALERTA,2,
-pb,deporte,pb-laptop,12,restore,0,total,2026-10-17T00:10:29.268-06:00,2026-10-17T00:10:29.273-06:00,0.006,,ALERTA,2,
-pb,deporte,pb-laptop,12,restore,0,arranque,2026-10-17T00:24:29.529-06:00,2026-10-17T00:24:29.534-06:00,0.005,,ALERTA,2,
-pb,deporte,pb-laptop,12,restore,0,total,2026-10-17T00:24:29.088-06:00,2026-10-17T00:24:29.534-06:00,0.446,,ALERTA,2,
 pb,deporte,pb-laptop,12,restore,0,combinar,2026-10-17T00:24:49.351-06:00,2026-10-17T00:24:49.477-06:00,0.126,50088413,,2,
 pb,deporte,pb-laptop,12,restore,0,arranque,2026-10-17T00:24:49.775-06:00,2026-10-17T00:24:49.992-06:00,0.217,,,2,
 pb,deporte,pb-laptop,12,restore,0,validacion,2026-10-17T00:24:50.000-06:00,2026-10-17T00:24:50.098-06:00,0.097,,OK,2,

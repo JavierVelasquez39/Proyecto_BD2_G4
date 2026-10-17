@@ -1,0 +1,16 @@
+Inicio: 2026-10-16 17:58:36 CST
+pg_basebackup: initiating base backup, waiting for checkpoint to complete
+pg_basebackup: checkpoint completed
+pg_basebackup: write-ahead log start point: 0/5000028 on timeline 1
+pg_basebackup: starting background WAL receiver
+pg_basebackup: created temporary replication slot "pg_basebackup_4676"
+ 5888/33242 kB (17%), 0/1 tablespace (/backups/incr1/global/pg_control   )
+ 5888/33242 kB (100%), 1/1 tablespace                                         
+pg_basebackup: write-ahead log end point: 0/5000120
+pg_basebackup: waiting for background process to finish streaming ...
+pg_basebackup: syncing data to disk ...
+pg_basebackup: renaming backup_manifest.tmp to backup_manifest
+pg_basebackup: base backup completed
+backup successfully verified
+pg_verifybackup: 0.031 s
+Fin: 2026-10-16 17:58:38 CST segundos=1.961 bytes=21869697

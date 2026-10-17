@@ -1,0 +1,8 @@
+=== Inicio de RestauraciÃ³n Cadena N=0 repeticiÃ³n 2: 2026-10-17 00:10:29 CST ===
+Limpiando directorio /var/lib/postgresql/data/pgdata...
+total 0
+drwx------. 1 postgres root      0 Oct 17 00:10 .
+drwxrwxrwt. 1 postgres postgres 12 Oct 16 23:55 ..
+Etapa 1: Combinando respaldos (pg_combinebackup)...
+cp: cannot stat '/backups/full/.': No such file or directory
+ALERTA: fallo en la etapa combinar (linea 55, codigo 1) 2026-10-17 00:10:29 CST

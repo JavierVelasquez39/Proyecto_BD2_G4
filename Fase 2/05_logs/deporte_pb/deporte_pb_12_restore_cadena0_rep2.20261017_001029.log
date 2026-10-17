@@ -1,0 +1,2 @@
+=== Inicio de RestauraciÃ³n Cadena N=0 repeticiÃ³n 2: 2026-10-17 00:09:26 CST ===
+ERROR: PostgreSQL sigue activo en /var/lib/postgresql/data/pgdata (postmaster.pid existe).

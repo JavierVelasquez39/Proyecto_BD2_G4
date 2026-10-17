@@ -1,0 +1,3 @@
+Inicio: 2026-10-16 17:53:09 CST
+pg_basebackup: error: could not create directory "/backups/full": Permission denied
+ALERTA: fallo en la etapa basebackup (linea 18, codigo 1) 2026-10-16 17:53:09 CST

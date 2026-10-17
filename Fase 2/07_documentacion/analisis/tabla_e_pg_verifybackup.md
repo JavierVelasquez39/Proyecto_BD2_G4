@@ -8,6 +8,10 @@ Segundos leídos de la línea `pg_verifybackup: X s` de cada log de restauració
 | anio_pa | 1 | 0.095 | 3.393 | 2.8 |
 | anio_pa | 2 | 0.098 | 3.447 | 2.8 |
 | anio_pa | 3 | 0.095 | 3.43 | 2.7 |
+| deporte_pc | 0 | 0.094 | 1.837 | 5.3 |
+| deporte_pc | 1 | 0.058 | 1.898 | 3.0 |
+| deporte_pc | 2 | 0.065 | 1.96 | 3.3 |
+| deporte_pc | 3 | 0.06 | 1.764 | 3.2 |
 | deportista_pc | 0 | 0.055 | 1.267 | 4.3 |
 | deportista_pc | 1 | 0.055 | 1.524 | 3.6 |
 | deportista_pc | 2 | 0.055 | 1.551 | 3.5 |

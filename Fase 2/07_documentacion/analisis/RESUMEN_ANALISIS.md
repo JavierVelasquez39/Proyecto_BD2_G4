@@ -6,6 +6,7 @@ Generado por `07_documentacion/analisis/analizar.py` a partir de `05_logs/tiempo
 
 - `tiempos_anio_pa.csv`: válido (formato y cruce con logs).
 - `tiempos_deporte_pb.csv`: **excluido** (4 motivos, todos en `ESTADO_CSV.md`). Primero: fila 9 (restore n=0 rep 1, total 0.741 s, inicio 18:39:29.179): no coincide con `deporte_pb_12_restore_cadena0_rep1.log` (Total 2.444 s, inicio 2026-10-16 22:48:23); solo coincide con el log rotado `deporte_pb_12_restore_cadena0_rep1.20261016_222939.log`.
+- `tiempos_deporte_pc.csv`: válido (formato y cruce con logs).
 - `tiempos_deportista_pc.csv`: válido (formato y cruce con logs).
 - `tiempos_deportista_pa.csv`: no existe. [PENDIENTE]
 - `tiempos_deportista_pb.csv`: no existe. [PENDIENTE]
@@ -14,7 +15,9 @@ Detalle en `ESTADO_CSV.md`.
 
 **Advertencia:** las máquinas del equipo son distintas. Entre máquinas se comparan razones (por ejemplo restore(n)/restore(0)), no segundos. Los segundos absolutos solo sirven dentro de una misma corrida.
 
-Las corridas válidas (anio_pa, deportista_pc) difieren a la vez en el tipo de carga y en la máquina (pa-laptop, pc-laptop). Entre ellas solo se comparan razones, y aun así no se puede separar el efecto de la carga del de la máquina.
+En `pc-laptop` hay 2 corridas (deporte_pc, deportista_pc): entre ellas la máquina es la misma, así que la diferencia de tiempos se atribuye al tipo de carga y sí se pueden comparar segundos, con la salvedad de la caché del sistema operativo.
+
+Las corridas en máquinas distintas (anio_pa en pa-laptop, deporte_pc en pc-laptop, deportista_pc en pc-laptop) solo se comparan por razones; entre ellas no se puede separar el efecto de la carga del de la máquina.
 
 ## Medido
 
@@ -55,6 +58,44 @@ Restauración, `total` (mediana) y razón restore(n) / restore(0):
 - n=3: mediana 0.095 s, 2.7 % del total.
 
 `pg_verifybackup` de los respaldos (fuera del tiempo medido, solo informativo): FULL 0.083 s, INCR 1 0.081 s, INCR 2 0.081 s, INCR 3 0.078 s.
+
+### Corrida `deporte_pc` (máquina `pc-laptop`)
+
+Respaldos (etapa `basebackup`):
+
+- FULL: 1.516 s, 49973476 bytes (49.97 MB).
+- INCR 1: 0.845 s, 21730223 bytes (21.73 MB).
+- INCR 2: 0.948 s, 21730975 bytes (21.73 MB).
+- INCR 3: 0.921 s, 21747383 bytes (21.75 MB).
+
+Razón de tamaño incr(n).bytes / full.bytes:
+
+- INCR 1: 21730223 / 49973476 = 0.435.
+- INCR 2: 21730975 / 49973476 = 0.435.
+- INCR 3: 21747383 / 49973476 = 0.435.
+
+Restauración, mediana de 3 repeticiones por etapa (sin `total`):
+
+- n=0: combinar 0.351 s, arranque 0.980 s, validacion 0.287 s.
+- n=1: combinar 0.854 s, arranque 0.731 s, validacion 0.187 s.
+- n=2: combinar 0.937 s, arranque 0.639 s, validacion 0.193 s.
+- n=3: combinar 0.809 s, arranque 0.634 s, validacion 0.190 s.
+
+Restauración, `total` (mediana) y razón restore(n) / restore(0):
+
+- n=0: 1.837 s, razón 1.000.
+- n=1: 1.898 s, razón 1.033.
+- n=2: 1.960 s, razón 1.067.
+- n=3: 1.764 s, razón 0.960.
+
+`pg_verifybackup` dentro de `total` (de los logs de restauración):
+
+- n=0: mediana 0.094 s, 5.3 % del total.
+- n=1: mediana 0.058 s, 3.0 % del total.
+- n=2: mediana 0.065 s, 3.3 % del total.
+- n=3: mediana 0.060 s, 3.2 % del total.
+
+`pg_verifybackup` de los respaldos (fuera del tiempo medido, solo informativo): FULL 0.066 s, INCR 1 0.047 s, INCR 2 0.092 s, INCR 3 0.079 s.
 
 ### Corrida `deportista_pc` (máquina `pc-laptop`)
 
@@ -101,6 +142,7 @@ Restauración, `total` (mediana) y razón restore(n) / restore(0):
 ### Gráficos
 
 - `graficos/grafico1_etapas_restauracion_anio_pa.png`
+- `graficos/grafico1_etapas_restauracion_deporte_pc.png`
 - `graficos/grafico1_etapas_restauracion_deportista_pc.png`
 - `graficos/grafico2_tamano_respaldos.png`
 - `graficos/grafico3_razon_restauracion.png`
@@ -116,6 +158,12 @@ Esta sección interpreta los números de arriba. No son mediciones nuevas.
 - **Restauración.** La cadena completa (n=3) tomó 1.53 veces lo que el FULL. `combinar` pasa de 0.272 s con n=0 a 1.566 a 1.601 s con n=1 a 3, y `arranque` pasa de 1.549 s a 1.346 a 1.366 s. Con n=0 `restaurar.sh` copia el FULL con `cp -a`; con n mayor o igual a 1 usa `pg_combinebackup`, así que n=0 y n=1 no miden la misma herramienta. Entre n=1 y n=3 el `total` va de 3.393 a 3.430 s.
 - **Escala.** El tiempo medido más largo de la corrida es 3.447 s (respaldos y `total` mediano).
 
+### `deporte_pc`
+
+- **Tamaño de los respaldos.** Cada INCR pesa 0.435 veces el FULL (21.73 a 21.75 MB, FULL 49.97 MB). La parte del INCR que corresponde a datos nuevos y la que corresponde al piso fijo (WAL y archivos del sistema) no se pueden separar con estos números. Falta medir `pg_wal` dentro de cada respaldo para confirmarlo. [PENDIENTE]
+- **Restauración.** La cadena completa (n=3) tomó 0.96 veces lo que el FULL. `combinar` pasa de 0.351 s con n=0 a 0.809 a 0.937 s con n=1 a 3, y `arranque` pasa de 0.980 s a 0.634 a 0.731 s. Con n=0 `restaurar.sh` copia el FULL con `cp -a`; con n mayor o igual a 1 usa `pg_combinebackup`, así que n=0 y n=1 no miden la misma herramienta. Entre n=1 y n=3 el `total` va de 1.898 a 1.764 s. Las 3 repeticiones de n=0 (1.580 a 1.926 s) y de n=3 (1.741 a 1.916 s) se solapan: la diferencia entre el FULL y la cadena completa está dentro de la variación entre repeticiones y no se interpreta.
+- **Escala.** El tiempo medido más largo de la corrida es 1.960 s (respaldos y `total` mediano).
+
 ### `deportista_pc`
 
 - **Tamaño de los respaldos.** Cada INCR pesa entre 0.436 y 0.441 veces el FULL (21.82 a 22.03 MB, FULL 50.01 MB). Las rondas de Bolt agregan muy pocas filas, así que la hipótesis de la 4.10 es que ese tamaño lo domina un piso fijo (al menos un segmento de WAL de 16 MB y archivos del sistema) y no los datos nuevos. Falta medir `pg_wal` dentro de cada respaldo para confirmarlo. [PENDIENTE]
@@ -125,8 +173,8 @@ Esta sección interpreta los números de arriba. No son mediciones nuevas.
 ### Alcance
 
 - Se reporta la mediana de 3 repeticiones. La caché del sistema operativo puede favorecer a las repeticiones 2 y 3.
-- Estos números no bastan para concluir en general si conviene el FULL frecuente, el incremental o el diferencial: las corridas válidas difieren en carga y en máquina a la vez, y el piso fijo de cada respaldo (`pg_wal`) no está medido. [PENDIENTE]
-- `pg_verifybackup` pesó entre 2.7 % y 4.3 % del `total` de restauración (mediana por n) en anio_pa, deportista_pc.
+- Estos números no bastan para concluir en general si conviene el FULL frecuente, el incremental o el diferencial: las cargas medidas son pequeñas (los tiempos son de pocos segundos), las corridas en máquinas distintas no se comparan en segundos y el piso fijo de cada respaldo (`pg_wal`) no está medido. [PENDIENTE]
+- `pg_verifybackup` pesó entre 2.7 % y 5.3 % del `total` de restauración (mediana por n) en anio_pa, deporte_pc, deportista_pc.
 
 ## Pendiente
 

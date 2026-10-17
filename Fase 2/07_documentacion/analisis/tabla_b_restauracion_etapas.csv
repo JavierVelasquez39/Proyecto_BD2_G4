@@ -3,6 +3,10 @@ anio_pa,pa-laptop,0,3,0.272,1.549,0.25
 anio_pa,pa-laptop,1,3,1.566,1.347,0.291
 anio_pa,pa-laptop,2,3,1.601,1.346,0.311
 anio_pa,pa-laptop,3,3,1.58,1.366,0.318
+deporte_pc,pc-laptop,0,3,0.351,0.98,0.287
+deporte_pc,pc-laptop,1,3,0.854,0.731,0.187
+deporte_pc,pc-laptop,2,3,0.937,0.639,0.193
+deporte_pc,pc-laptop,3,3,0.809,0.634,0.19
 deportista_pc,pc-laptop,0,3,0.249,0.736,0.152
 deportista_pc,pc-laptop,1,3,0.713,0.533,0.162
 deportista_pc,pc-laptop,2,3,0.753,0.532,0.157

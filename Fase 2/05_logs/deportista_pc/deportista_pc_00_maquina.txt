@@ -1,0 +1,29 @@
+
+
+CsName                      : CUBE_V2
+CsProcessors                : {AMD Ryzen 7 5700U with Radeon Graphics         }
+CsNumberOfLogicalProcessors : 16
+CsTotalPhysicalMemory       : 14870306816
+OsName                      : Microsoft Windows 11 Home
+OsVersion                   : 10.0.26300
+OsBuildNumber               : 26300
+
+
+
+
+
+FriendlyName                  MediaType BusType         Size
+------------                  --------- -------         ----
+WD PC SN740 SDDPMQD-512G-1101 SSD       NVMe    512110190592
+
+
+
+
+Name Used (GB) Free (GB) Provider   Root                                                                              CurrentLocation
+---- --------- --------- --------   ----                                                                              ---------------
+C       282.99     69.66 FileSystem C:\  Users\javie\OneDrive\Desktop\Segundo Semestre 2026\BASES2\Proyecto\Fase 2\00_infraestructura
+
+
+
+Docker cliente 29.5.2 / servidor 29.5.2
+CPUs=16 Mem=7187136512 Kernel=6.6.87.2-microsoft-standard-WSL2 SO=Docker Desktop

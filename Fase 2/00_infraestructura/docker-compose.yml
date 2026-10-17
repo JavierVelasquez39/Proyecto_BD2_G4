@@ -22,9 +22,8 @@ services:
       retries: 20
     volumes:
       - pgdata:/var/lib/postgresql/data
-      - fase2_deporte_backups:/backups
-      - ../:/fase2:Z
+      - backups:/backups
+      - ../:/fase2
 volumes:
   pgdata:
-  fase2_deporte_backups:
-    external: true
+  backups:

@@ -49,7 +49,7 @@ Para **cada tipo de carga** (año, deporte, deportista), en una instancia nueva:
 7. Validar después de cada restauración con SELECT y COUNT.
 8. Análisis comparativo de tiempos y conclusión sobre qué estrategia conviene.
 
-Fuente del enunciado: `docs/proyecto_2_respaldo_y_restauracion.md`, secciones 4.2, 6 y 8. Fase 1: `docs/Enunciado_proyecto_1.pdf`. Modelo ER: `docs/Modelo_ER_actualizado.xml` (draw.io). Ponderación: 24 pts. Rúbrica: 100 pts (ver 1.12 y secciones de persona).
+Fuente del enunciado: `Fase 2/docs/proyecto_2_respaldo_y_restauracion.md`, secciones 4.2, 6 y 8. Fase 1: `Fase 2/docs/Enunciado_proyecto_1.pdf`. Modelo ER: `Fase 2/docs/Modelo_ER_actualizado.xml` (draw.io). Ponderación: 24 pts. Rúbrica: 100 pts (ver 1.12 y secciones de persona).
 
 > La interpretación "carga base + 3 rondas = 1 FULL + 3 INCR" es una propuesta del equipo: `[PENDIENTE]` confirmar con el auxiliar (pregunta 1 de la sección 5). Si dice que la carga inicial es la ronda 1, el ciclo queda 1 FULL + 2 INCR y se omite la carga base como paso separado (la base se carga junto con la ronda 1).
 
@@ -813,9 +813,9 @@ UNION ALL SELECT 'resultado', count(*) FROM olimpiadas.resultado;
 `04_restauracion/validar.sql`:
 
 1. `SELECT now();` y el prompt con hora.
-2. `\i /fase2/04_restauracion/conteos.sql`.
+2. `\ir conteos.sql` (ruta relativa al directorio de `validar.sql`).
 3. `SELECT * FROM olimpiadas.<tabla> ORDER BY <pk> LIMIT :limite;` para cada una de las 11 tablas. La variable se pasa con `-v limite=10` (captura) o `-v limite=ALL` (log completo); si no se define, vale 10. `[PENDIENTE]` pregunta 4: si el auxiliar exige `SELECT *` sin límite, la salida completa va al log y la captura muestra el inicio y el final.
-4. Consultas de muestra con sentido: Bolt con sus 7 participaciones, el top 3 de 100 m femenino por edición, el medallero por NOC de la edición cargada.
+4. Consultas de muestra con sentido: Bolt con sus 7 participaciones, el podio por medalla del 100 m femenino por edición, el medallero por NOC de la edición cargada.
 5. Opcional: `pg_amcheck -d olimpiadas` (alertas de integridad).
 
 Fragmentación, en dos archivos de una sola consulta cada uno (pensados para `psql --csv`; el SQL y los comandos completos están en `04_restauracion/README_04.md`):
@@ -838,7 +838,7 @@ Verificado el 8 de octubre de 2026 en una instancia temporal de PostgreSQL 17 (v
 
 **C3. ER y DDL + documentación técnica**
 
-1. Hecho: el modelo ER se alineó con el DDL real (el DDL es la fuente de verdad). A partir de `Fase 2/docs/Modelo_ER_actualizado.xml` se generó `Fase 2/07_documentacion/modelo_er/Modelo_ER_fase2.xml` (draw.io); la matriz de diferencias está en `DISCREPANCIAS_ER_DDL.md` y la versión Mermaid en `modelo_er.mmd`, en la misma carpeta. `[PENDIENTE: exportar desde draw.io a PNG/PDF]` el diagrama final hacia `07_documentacion/`.
+1. Hecho: el modelo ER se alineó con el DDL real (el DDL es la fuente de verdad). A partir de `Fase 2/docs/Modelo_ER_actualizado.xml` se generó `Fase 2/07_documentacion/modelo_er/Modelo_ER_fase2.xml` (draw.io); la matriz de diferencias está en `DISCREPANCIAS_ER_DDL.md` y la versión Mermaid en `modelo_er.mmd`, en la misma carpeta. El PNG ya está en `Fase 2/07_documentacion/modelo_er/Modelo_ER_fase2.png`. `[PENDIENTE: exportar a PDF]` si el PDF técnico lo requiere.
 2. `[PENDIENTE]` A aplica en la copia `01_ddl/01_esquema.sql` el texto propuesto para el comentario de `Fase 1/sql/ddl.sql:152-156` (está en `DISCREPANCIAS_ER_DDL.md`). `Fase 1/sql/ddl.sql` no se modifica.
 3. Estructura del PDF (rúbrica 1.1 y entregables 4.4):
    1. Introducción y objetivo.
@@ -1034,4 +1034,4 @@ Además se corrigieron `noc.pais_id` y `sede.pais_id` (también admiten NULL), l
 - `[PENDIENTE]` Especificaciones de las máquinas de los otros dos integrantes, y si tienen la BD de la Fase 1 con los mismos IDs.
 - `[PENDIENTE]` Respaldo adicional o migración del volumen anónimo de `olimpiadas_pg` (decisión de Javier, en cuya máquina está).
 - `[PENDIENTE]` Quién hace el merge final `develop` → `main`.
-- Documentos de referencia en `docs/`: `proyecto_2_respaldo_y_restauracion.md` (Fase 2), `Enunciado_proyecto_1.pdf` (Fase 1, solo existe en PDF) y `Modelo_ER_actualizado.xml` (draw.io).
+- Documentos de referencia en `Fase 2/docs/`: `proyecto_2_respaldo_y_restauracion.md` (Fase 2), `Enunciado_proyecto_1.pdf` (Fase 1, solo existe en PDF) y `Modelo_ER_actualizado.xml` (draw.io).

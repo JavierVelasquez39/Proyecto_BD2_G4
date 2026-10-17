@@ -232,11 +232,13 @@ def tabla_b(df):
 
 def tabla_c_restore(df):
     t = df[(df["operacion"] == "restore") & (df["etapa"] == "total")]
-    med = t.groupby(["corrida", "maquina", "n_cadena"])["segundos"].median().reset_index()
+    med = (t.groupby(["corrida", "maquina", "n_cadena"])["segundos"]
+           .agg(segundos="median", total_min_s="min", total_max_s="max").reset_index())
     base = med[med["n_cadena"] == 0].set_index("corrida")["segundos"]
     med["razon_vs_n0"] = med.apply(lambda x: x["segundos"] / base[x["corrida"]], axis=1).round(3)
-    med["segundos"] = med["segundos"].round(3)
-    return med.rename(columns={"n_cadena": "n", "segundos": "total_mediana_s"})
+    med = med.round({"segundos": 3, "total_min_s": 3, "total_max_s": 3})
+    med = med.rename(columns={"n_cadena": "n", "segundos": "total_mediana_s"})
+    return med[["corrida", "maquina", "n", "total_mediana_s", "total_min_s", "total_max_s", "razon_vs_n0"]]
 
 
 def tabla_c_bytes(df):
@@ -482,10 +484,14 @@ def resumen(estado, faltantes, a, b, c, cb, e, e_sin_logs, vr, maquinas, g1, g2,
           "razones (por ejemplo restore(n)/restore(0)), no segundos. Los segundos absolutos "
           "solo sirven dentro de una misma corrida.", ""]
     maq_por_corrida = a.drop_duplicates("corrida").set_index("corrida")["maquina"]
-    if len(corridas) > 1 and maq_por_corrida.nunique() > 1:
-        L += [f"Las corridas válidas ({', '.join(corridas)}) difieren a la vez en el tipo de carga "
-              f"y en la máquina ({', '.join(maq_por_corrida[c] for c in corridas)}). Entre ellas solo "
-              "se comparan razones, y aun así no se puede separar el efecto de la carga del de la máquina.", ""]
+    for maq, grupo in maq_por_corrida.groupby(maq_por_corrida):
+        if len(grupo) > 1:
+            L += [f"En `{maq}` hay {len(grupo)} corridas ({', '.join(grupo.index)}): entre ellas la máquina "
+                  "es la misma, así que la diferencia de tiempos se atribuye al tipo de carga y sí se pueden "
+                  "comparar segundos, con la salvedad de la caché del sistema operativo.", ""]
+    if maq_por_corrida.nunique() > 1:
+        L += [f"Las corridas en máquinas distintas ({', '.join(f'{c} en {maq_por_corrida[c]}' for c in corridas)}) "
+              "solo se comparan por razones; entre ellas no se puede separar el efecto de la carga del de la máquina.", ""]
 
     L += ["## Medido", ""]
     for corrida in corridas:
@@ -537,8 +543,9 @@ def resumen(estado, faltantes, a, b, c, cb, e, e_sin_logs, vr, maquinas, g1, g2,
         bb = b[b["corrida"] == corrida].set_index("n")
         resto = bb[bb.index > 0]
         L += [f"### `{corrida}`", ""]
-        tamano = (f"- **Tamaño de los respaldos.** Cada INCR pesa entre {cbb['razon_incr_vs_full'].min():.3f} y "
-                  f"{cbb['razon_incr_vs_full'].max():.3f} veces el FULL "
+        rmin, rmax = cbb["razon_incr_vs_full"].min(), cbb["razon_incr_vs_full"].max()
+        razon_txt = f"{rmin:.3f}" if rmin == rmax else f"entre {rmin:.3f} y {rmax:.3f}"
+        tamano = (f"- **Tamaño de los respaldos.** Cada INCR pesa {razon_txt} veces el FULL "
                   f"({aa['MB'].iloc[1:].min():.2f} a {aa['MB'].iloc[1:].max():.2f} MB, FULL {aa['MB'].iloc[0]:.2f} MB). ")
         if corrida.startswith("deportista_"):
             tamano += ("Las rondas de Bolt agregan muy pocas filas, así que la hipótesis de la 4.10 es que ese "
@@ -556,7 +563,12 @@ def resumen(estado, faltantes, a, b, c, cb, e, e_sin_logs, vr, maquinas, g1, g2,
             f"{resto['arranque_s'].max():.3f} s. Con n=0 `restaurar.sh` copia el FULL con `cp -a`; con n "
             "mayor o igual a 1 usa `pg_combinebackup`, así que n=0 y n=1 no miden la misma herramienta. "
             f"Entre n=1 y n=3 el `total` va de {cc.loc[1, 'total_mediana_s']:.3f} a "
-            f"{cc.loc[3, 'total_mediana_s']:.3f} s.")
+            f"{cc.loc[3, 'total_mediana_s']:.3f} s." + (
+                f" Las 3 repeticiones de n=0 ({cc.loc[0, 'total_min_s']:.3f} a {cc.loc[0, 'total_max_s']:.3f} s) "
+                f"y de n=3 ({cc.loc[3, 'total_min_s']:.3f} a {cc.loc[3, 'total_max_s']:.3f} s) se solapan: "
+                "la diferencia entre el FULL y la cadena completa está dentro de la variación entre "
+                "repeticiones y no se interpreta."
+                if cc.loc[3, "total_min_s"] <= cc.loc[0, "total_max_s"] else ""))
         maximo = max(aa["segundos"].max(), cc["total_mediana_s"].max())
         escala = (f"- **Escala.** El tiempo medido más largo de la corrida es {maximo:.3f} s (respaldos y "
                   "`total` mediano).")
@@ -571,8 +583,9 @@ def resumen(estado, faltantes, a, b, c, cb, e, e_sin_logs, vr, maquinas, g1, g2,
           "- Estos números no bastan para concluir en general si conviene el FULL frecuente, el incremental "
           "o el diferencial: " + (
               "solo hay una corrida válida." if len(corridas) == 1 else
-              "las corridas válidas difieren en carga y en máquina a la vez, y el piso fijo de cada "
-              "respaldo (`pg_wal`) no está medido.") + f" {PENDIENTE}"]
+              "las cargas medidas son pequeñas (los tiempos son de pocos segundos), las corridas en "
+              "máquinas distintas no se comparan en segundos y el piso fijo de cada respaldo "
+              "(`pg_wal`) no está medido.") + f" {PENDIENTE}"]
     if e is not None:
         L.append(f"- `pg_verifybackup` pesó entre {e['pct_mediana'].min():.1f} % y {e['pct_mediana'].max():.1f} % "
                  f"del `total` de restauración (mediana por n) en {', '.join(e['corrida'].unique())}.")

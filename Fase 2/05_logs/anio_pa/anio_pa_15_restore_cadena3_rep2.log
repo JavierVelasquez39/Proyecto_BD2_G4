@@ -1,9 +1,11 @@
-=== Inicio de RestauraciÃ³n Cadena N=2: 2026-10-16 11:39:41 CST ===
+=== Inicio de RestauraciÃ³n Cadena N=3 repeticiÃ³n 2: 2026-10-16 23:10:18 CST ===
 Limpiando directorio /var/lib/postgresql/data/pgdata...
 total 8
-drwx------ 2 postgres postgres 4096 Oct 16 11:39 .
-drwxrwxrwt 3 postgres postgres 4096 Oct 16 11:21 ..
+drwx------ 2 postgres postgres 4096 Oct 16 23:10 .
+drwxrwxrwt 3 postgres postgres 4096 Oct 16 23:08 ..
 Etapa 1: Combinando respaldos (pg_combinebackup)...
+backup successfully verified
+pg_verifybackup: 0.094 s
 Etapa 2: Arrancando servidor PostgreSQL (pg_ctl)...
 waiting for server to start..... done
 server started
@@ -13,7 +15,7 @@ Etapa 3: Validando datos restaurados...
 ==================================================================
       fecha_hora_servidor      |   zona_horaria    |    base    |             version             
 -------------------------------+-------------------+------------+---------------------------------
- 2026-10-16 11:39:45.267966-06 | America/Guatemala | olimpiadas | 17.11 (Debian 17.11-1.pgdg13+2)
+ 2026-10-16 23:10:21.799433-06 | America/Guatemala | olimpiadas | 17.11 (Debian 17.11-1.pgdg13+2)
 (1 row)
 
 
@@ -23,14 +25,14 @@ Etapa 3: Validando datos restaurados...
  pais                 |   204
  poblacion_pais       | 13026
  noc                  |   236
- sede                 |     2
- edicion_olimpica     |     2
+ sede                 |     3
+ edicion_olimpica     |     3
  deporte              |    95
  deporte_equivalencia |     2
- evento               |   546
- atleta               | 19187
- participacion        | 28842
- resultado            | 28843
+ evento               |   566
+ atleta               | 26625
+ participacion        | 42584
+ resultado            | 42585
 (11 rows)
 
 
@@ -81,18 +83,20 @@ Etapa 3: Validando datos restaurados...
 (10 rows)
 
 >>> sede
- sede_id | ciudad | pais_id 
----------+--------+---------
-       2 | Paris  |      67
-      21 | Tokyo  |      92
-(2 rows)
+ sede_id |     ciudad     | pais_id 
+---------+----------------+---------
+       2 | Paris          |      67
+      21 | Tokyo          |      92
+      44 | Rio de Janeiro |      27
+(3 rows)
 
 >>> edicion_olimpica
  edicion_id | anio |  tipo  | sede_id 
 ------------+------+--------+---------
+         55 | 2016 | Verano |      44
          59 | 2020 | Verano |      21
          61 | 2024 | Verano |       2
-(2 rows)
+(3 rows)
 
 >>> deporte
  deporte_id |              nombre              | descripcion 
@@ -132,81 +136,87 @@ Etapa 3: Validando datos restaurados...
 (10 rows)
 
 >>> atleta
- atleta_id |           nombre_completo            |        nombre_usado        | sexo |  nacionalidad  | fecha_nacimiento |   ciudad_nacimiento   | pais_nacimiento | fecha_fallecimiento 
------------+--------------------------------------+----------------------------+------+----------------+------------------+-----------------------+-----------------+---------------------
-      1011 | Olufunke "Funke" Oshonaike (-Irabor) | Funke Oshonaike            | F    | Nigeria        | 1975-10-28       | Lagos                 | Nigeria         | 
-      2060 | Sławomir Kazimierz Napłoszek         | Sławomir Napłoszek         | M    | Poland         | 1968-07-29       | Warszawa (Warsaw)     | Poland          | 
-      2853 | Rafael Lozano Muñoz                  | Rafael Lozano              | M    | Spain          | 1970-01-25       | Córdoba               | Spain           | 
-      5442 | Adriana Aparecida dos Santos         | Adriana                    | F    | Brazil         | 1971-01-18       | São Bernardo do Campo | Brazil          | 
-      6285 | Adel Ibrahim Ismail                  | Adel Ibrahim               | M    | Egypt          | 1951-03-28       |                       |                 | 
-      9343 | Petr Fuksa                           | Petr Fuksa                 | M    | Czech Republic | 1969-09-28       | Nymburk               | Czech Republic  | 
-     11202 | Malin Birgitta Baryard-Johnsson      | Malin Baryard-Johnsson     | F    | Sweden         | 1975-04-10       | Söderköping           | Sweden          | 
-     11255 | Karin Donckers                       | Karin Donckers             | F    | Belgium        | 1971-05-28       | Hoogstraten           | Belgium         | 
-     11266 | Beatriz Ferrer-Salat Serra de Migni  | Beatriz Ferrer-Salat Serra | F    | Spain          | 1966-03-11       | Barcelona             | Spain           | 
-     11290 | Mary Hanna (Sutherland-)             | Mary Hanna                 | F    | Australia      | 1954-12-01       | Melbourne             | Australia       | 
+ atleta_id |           nombre_completo            |      nombre_usado      | sexo | nacionalidad | fecha_nacimiento |   ciudad_nacimiento   | pais_nacimiento | fecha_fallecimiento 
+-----------+--------------------------------------+------------------------+------+--------------+------------------+-----------------------+-----------------+---------------------
+       287 | Leander Adrian Paes                  | Leander Paes           | M    | India        | 1973-06-17       | Kolkata (Calcutta)    | India           | 
+       691 | Uladzimir Viktaravich Samsonau       | Uladzimir Samsonau     | M    | Belarus      | 1976-04-17       | Minsk                 | Belarus         | 
+       754 | Daniel Mark Nestor                   | Daniel Nestor          | M    | Canada       | 1972-09-04       | Beograd (Belgrade)    | Serbia          | 
+      1011 | Olufunke "Funke" Oshonaike (-Irabor) | Funke Oshonaike        | F    | Nigeria      | 1975-10-28       | Lagos                 | Nigeria         | 
+      1023 | Segun Moses Toriola                  | Segun Toriola          | M    | Nigeria      | 1974-09-18       | Ilorin                | Nigeria         | 
+      2060 | Sławomir Kazimierz Napłoszek         | Sławomir Napłoszek     | M    | Poland       | 1968-07-29       | Warszawa (Warsaw)     | Poland          | 
+      2552 | Martina Hingis (-Hutin, -Leeman)     | Martina Hingis         | F    | Switzerland  | 1980-09-30       | Košice                | Slovakia        | 
+      2809 | Aleksandar Karakašević               | Aleksandar Karakašević | M    | Serbia       | 1975-12-09       | Zemun                 | Serbia          | 
+      2853 | Rafael Lozano Muñoz                  | Rafael Lozano          | M    | Spain        | 1970-01-25       | Córdoba               | Spain           | 
+      5442 | Adriana Aparecida dos Santos         | Adriana                | F    | Brazil       | 1971-01-18       | São Bernardo do Campo | Brazil          | 
 (10 rows)
 
 >>> participacion
- participacion_id | atleta_id | edicion_id | evento_id | codigo_noc |       equipo        | edad | altura_cm | peso_kg 
-------------------+-----------+------------+-----------+------------+---------------------+------+-----------+---------
-             2548 |      1011 |         59 |        31 | NGR        |                     |   45 |     167.0 |    59.0
-             4099 |      2060 |         59 |        70 | POL        |                     |   52 |     185.0 |    82.0
-             4100 |      2060 |         59 |       116 | POL        | Sylwia Zyzańska     |   52 |     185.0 |    82.0
-            18050 |     11202 |         59 |       209 | SWE        | Indiana             |   45 |     172.0 |    52.0
-            18051 |     11202 |         59 |       210 | SWE        | Sweden              |   45 |     172.0 |    52.0
-            18189 |     11266 |         59 |       205 | ESP        | Elegance            |   54 |     176.0 |    58.0
-            18190 |     11266 |         59 |       206 | ESP        | Elegance / Spain    |   54 |     176.0 |    58.0
-            18255 |     11290 |         59 |       205 | AUS        | Calanta             |   66 |     173.0 |    63.0
-            18256 |     11290 |         59 |       206 | AUS        | Calanta / Australia |   66 |     173.0 |    63.0
-            18286 |     11300 |         59 |       205 | IRL        | Sambuca             |   49 |     170.0 |    60.0
+ participacion_id | atleta_id | edicion_id | evento_id | codigo_noc |      equipo      | edad | altura_cm | peso_kg 
+------------------+-----------+------------+-----------+------------+------------------+------+-----------+---------
+              813 |       287 |         55 |         2 | IND        | Rohan Bopanna    |   43 |     178.0 |    77.0
+             1717 |       691 |         55 |         4 | BLR        |                  |   40 |     189.0 |    83.0
+             1898 |       754 |         55 |         2 | CAN        | Vasek Pospisil   |   44 |     191.0 |    87.0
+             2547 |      1011 |         55 |        31 | NGR        |                  |   41 |     167.0 |    59.0
+             2548 |      1011 |         59 |        31 | NGR        |                  |   45 |     167.0 |    59.0
+             2583 |      1023 |         55 |         4 | NGR        |                  |   42 |     182.0 |    70.0
+             2584 |      1023 |         55 |        54 | NGR        | Nigeria          |   42 |     182.0 |    70.0
+             4099 |      2060 |         59 |        70 | POL        |                  |   52 |     185.0 |    82.0
+             4100 |      2060 |         59 |       116 | POL        | Sylwia Zyzańska  |   52 |     185.0 |    82.0
+             5255 |      2552 |         55 |        27 | SUI        | Timea Bacsinszky |   36 |     170.0 |    59.0
 (10 rows)
 
 >>> resultado
  resultado_id | participacion_id | lugar | empatado | medalla 
 --------------+------------------+-------+----------+---------
+          817 |              813 |    17 | t        | 
+         1721 |             1717 |     4 | f        | 
+         1902 |             1898 |     4 | f        | 
+         2551 |             2547 |    49 | t        | 
          2552 |             2548 |    65 | t        | 
+         2587 |             2583 |    33 | t        | 
+         2588 |             2584 |     9 | t        | 
          4103 |             4100 |    24 | f        | 
          4104 |             4099 |    33 | t        | 
-        18082 |            18050 |     5 | f        | 
-        18083 |            18051 |     1 | f        | Oro
-        18224 |            18189 |    17 | f        | 
-        18225 |            18190 |     7 | f        | 
-        18290 |            18255 |    40 | f        | 
-        18291 |            18256 |    13 | f        | 
-        18321 |            18286 |    37 | f        | 
+         5259 |             5255 |     2 | f        | Plata
 (10 rows)
 
 
 --- 3. Consultas de muestra ---------------------------------------
 >>> 3.1 Usain Bolt (atleta_id 104492): participaciones cargadas
- anio | evento | codigo_noc | lugar | medalla 
-------+--------+------------+-------+---------
-(0 rows)
+ anio |               evento                | codigo_noc | lugar | medalla 
+------+-------------------------------------+------------+-------+---------
+ 2016 | 100 metres, Men (Olympic)           | JAM        |     1 | Oro
+ 2016 | 200 metres, Men (Olympic)           | JAM        |     1 | Oro
+ 2016 | 4 × 100 metres Relay, Men (Olympic) | JAM        |     1 | Oro
+(3 rows)
 
 >>> 3.2 100 m femenino (evento_id 1025): podio por edicion
  anio | medalla |         atleta          | codigo_noc | lugar | empatado 
 ------+---------+-------------------------+------------+-------+----------
+ 2016 | Oro     | Elaine Thompson-Herah   | JAM        |     1 | f
+ 2016 | Plata   | Tori Bowie              | USA        |     2 | f
+ 2016 | Bronce  | Shelly-Ann Fraser-Pryce | JAM        |     3 | f
  2020 | Oro     | Elaine Thompson-Herah   | JAM        |     1 | f
  2020 | Plata   | Shelly-Ann Fraser-Pryce | JAM        |     2 | f
  2020 | Bronce  | Shericka Jackson        | JAM        |     3 | f
  2024 | Oro     | Julien Alfred           | LCA        |       | f
  2024 | Plata   | Sha'carri Richardson    | USA        |       | f
  2024 | Bronce  | Melissa Jefferson       | USA        |       | f
-(6 rows)
+(9 rows)
 
 >>> 3.3 Medallero por NOC (top 10 de lo cargado)
  codigo_noc | oro | plata | bronce | total 
 ------------+-----+-------+--------+-------
- USA        | 238 |   202 |    164 |   604
- CHN        | 124 |   102 |     77 |   303
- FRA        | 117 |   137 |     70 |   324
- NED        |  97 |    46 |     43 |   186
- JPN        |  93 |    69 |     44 |   206
- GBR        |  78 |    75 |    129 |   282
- AUS        |  65 |    68 |    109 |   242
- NZL        |  54 |    45 |     15 |   114
- CAN        |  48 |    44 |     44 |   136
- ITA        |  48 |    42 |     56 |   146
+ USA        | 377 |   256 |    235 |   868
+ CHN        | 170 |   132 |    114 |   416
+ GBR        | 142 |   130 |    155 |   427
+ FRA        | 137 |   192 |     91 |   420
+ JPN        | 110 |    82 |     78 |   270
+ NED        | 106 |    71 |     56 |   233
+ GER        |  88 |   117 |    142 |   347
+ AUS        |  88 |   102 |    134 |   324
+ BRA        |  69 |    52 |     49 |   170
+ NZL        |  60 |    70 |     20 |   150
 (10 rows)
 
 
@@ -215,10 +225,10 @@ Etapa 3: Validando datos restaurados...
 ==================================================================
               fin              
 -------------------------------
- 2026-10-16 11:39:45.326727-06
+ 2026-10-16 23:10:21.915998-06
 (1 row)
 
 VALIDACION OK: Los conteos coinciden perfectamente.
 waiting for server to shut down.... done
 server stopped
-=== RestauraciÃ³n N=2 finalizada con estado: OK (Total: 3.839 s) ===
+=== RestauraciÃ³n N=3 repeticiÃ³n 2 finalizada con estado: OK (Total: 3.419 s) ===

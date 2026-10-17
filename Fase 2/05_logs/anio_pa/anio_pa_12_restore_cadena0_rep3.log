@@ -1,9 +1,11 @@
-=== Inicio de RestauraciÃ³n Cadena N=0: 2026-10-16 11:34:37 CST ===
+=== Inicio de RestauraciÃ³n Cadena N=0 repeticiÃ³n 3: 2026-10-16 23:09:34 CST ===
 Limpiando directorio /var/lib/postgresql/data/pgdata...
 total 8
-drwx------ 2 postgres root     4096 Oct 16 11:34 .
-drwxrwxrwt 3 postgres postgres 4096 Oct 16 11:21 ..
+drwx------ 2 postgres postgres 4096 Oct 16 23:09 .
+drwxrwxrwt 3 postgres postgres 4096 Oct 16 23:08 ..
 Etapa 1: Combinando respaldos (pg_combinebackup)...
+backup successfully verified
+pg_verifybackup: 0.163 s
 Etapa 2: Arrancando servidor PostgreSQL (pg_ctl)...
 waiting for server to start..... done
 server started
@@ -13,7 +15,7 @@ Etapa 3: Validando datos restaurados...
 ==================================================================
       fecha_hora_servidor      |   zona_horaria    |    base    |             version             
 -------------------------------+-------------------+------------+---------------------------------
- 2026-10-16 11:34:38.667692-06 | America/Guatemala | olimpiadas | 17.11 (Debian 17.11-1.pgdg13+2)
+ 2026-10-16 23:09:36.472841-06 | America/Guatemala | olimpiadas | 17.11 (Debian 17.11-1.pgdg13+2)
 (1 row)
 
 
@@ -153,12 +155,12 @@ Etapa 3: Validando datos restaurados...
 ==================================================================
  FIN DE LA VALIDACION
 ==================================================================
-              fin              
--------------------------------
- 2026-10-16 11:34:38.697776-06
+             fin             
+-----------------------------
+ 2026-10-16 23:09:36.5121-06
 (1 row)
 
 VALIDACION OK: Los conteos coinciden perfectamente.
 waiting for server to shut down.... done
 server stopped
-=== RestauraciÃ³n N=0 finalizada con estado: OK (Total: 1.625 s) ===
+=== RestauraciÃ³n N=0 repeticiÃ³n 3 finalizada con estado: OK (Total: 2.224 s) ===

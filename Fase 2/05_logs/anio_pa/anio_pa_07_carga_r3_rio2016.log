@@ -1,6 +1,6 @@
 ============================================================
 cargar_ronda.sh  tipo=anio  persona=pa  carpeta=r3_rio2016  paso=07
-Inicio: 2026-10-16 11:30:03 CST
+Inicio: 2026-10-16 23:09:15 CST
 Origen: /fase2/02_carga/datos/anio/r3_rio2016
 ============================================================
 --- sede ---
@@ -72,7 +72,7 @@ Origen: /fase2/02_carga/datos/anio/r3_rio2016
 
 
 == Conteos de las 11 tablas despues de la carga ==
-Fecha: 2026-10-16 11:30:05 CST
+Fecha: 2026-10-16 23:09:17 CST
 pais|204
 poblacion_pais|13026
 noc|236
@@ -84,5 +84,5 @@ evento|566
 atleta|26625
 participacion|42584
 resultado|42585
-Fin: 2026-10-16 11:30:05 CST
+Fin: 2026-10-16 23:09:17 CST
 CARGA OK

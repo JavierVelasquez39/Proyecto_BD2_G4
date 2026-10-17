@@ -1,0 +1,234 @@
+=== Inicio de RestauraciÃ³n Cadena N=3 repeticiÃ³n 3: 2026-10-16 23:10:24 CST ===
+Limpiando directorio /var/lib/postgresql/data/pgdata...
+total 8
+drwx------ 2 postgres postgres 4096 Oct 16 23:10 .
+drwxrwxrwt 3 postgres postgres 4096 Oct 16 23:08 ..
+Etapa 1: Combinando respaldos (pg_combinebackup)...
+backup successfully verified
+pg_verifybackup: 0.096 s
+Etapa 2: Arrancando servidor PostgreSQL (pg_ctl)...
+waiting for server to start..... done
+server started
+Etapa 3: Validando datos restaurados...
+==================================================================
+ VALIDACION DE LA BASE olimpiadas
+==================================================================
+      fecha_hora_servidor      |   zona_horaria    |    base    |             version             
+-------------------------------+-------------------+------------+---------------------------------
+ 2026-10-16 23:10:27.772556-06 | America/Guatemala | olimpiadas | 17.11 (Debian 17.11-1.pgdg13+2)
+(1 row)
+
+
+--- 1. Conteo de filas por tabla -----------------------------------
+        tabla         | filas 
+----------------------+-------
+ pais                 |   204
+ poblacion_pais       | 13026
+ noc                  |   236
+ sede                 |     3
+ edicion_olimpica     |     3
+ deporte              |    95
+ deporte_equivalencia |     2
+ evento               |   566
+ atleta               | 26625
+ participacion        | 42584
+ resultado            | 42585
+(11 rows)
+
+
+--- 2. SELECT * de cada tabla, LIMIT 10
+>>> pais
+ pais_id |       nombre        
+---------+---------------------
+       1 | Afghanistan
+       2 | Albania
+       3 | Algeria
+       4 | American Samoa
+       5 | Andorra
+       6 | Angola
+       7 | Antigua and Barbuda
+       8 | Argentina
+       9 | Armenia
+      10 | Aruba
+(10 rows)
+
+>>> poblacion_pais
+ poblacion_id | pais_id | anio | cantidad 
+--------------+---------+------+----------
+            1 |      10 | 1960 |    54608
+            2 |       1 | 1960 |  8622466
+            3 |       6 | 1960 |  5357195
+            4 |       2 | 1960 |  1608800
+            5 |       5 | 1960 |     9443
+            6 |     192 | 1960 |   133426
+            7 |       8 | 1960 | 20349744
+            8 |       9 | 1960 |  1904148
+            9 |       4 | 1960 |    20085
+           10 |       7 | 1960 |    55342
+(10 rows)
+
+>>> noc
+ codigo_noc |        nombre_region        |                                                                        notas                                                                        | pais_id 
+------------+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+---------
+ AFG        | Afghanistan                 |                                                                                                                                                     |       1
+ AHO        | Curacao                     | Netherlands Antilles                                                                                                                                |      50
+ AIN        | Individual Neutral Athletes | Atletas neutrales individuales (Rusia/Bielorrusia bajo sanción, Paris 2024), código nuevo en fuente 3, no presente en noc_regions.csv de fuente 1/2 |        
+ ALB        | Albania                     |                                                                                                                                                     |       2
+ ALG        | Algeria                     |                                                                                                                                                     |       3
+ AND        | Andorra                     |                                                                                                                                                     |       5
+ ANG        | Angola                      |                                                                                                                                                     |       6
+ ANT        | Antigua                     | Antigua and Barbuda                                                                                                                                 |       7
+ ANZ        | Australia                   | Australasia; Australasia (equipo conjunto Australia+Nueva Zelanda)                                                                                  |        
+ ARG        | Argentina                   |                                                                                                                                                     |       8
+(10 rows)
+
+>>> sede
+ sede_id |     ciudad     | pais_id 
+---------+----------------+---------
+       2 | Paris          |      67
+      21 | Tokyo          |      92
+      44 | Rio de Janeiro |      27
+(3 rows)
+
+>>> edicion_olimpica
+ edicion_id | anio |  tipo  | sede_id 
+------------+------+--------+---------
+         55 | 2016 | Verano |      44
+         59 | 2020 | Verano |      21
+         61 | 2024 | Verano |       2
+(3 rows)
+
+>>> deporte
+ deporte_id |              nombre              | descripcion 
+------------+----------------------------------+-------------
+          1 | 3-on-3 Ice Hockey (Ice Hockey)   | 
+          2 | 3x3 Basketball (Basketball)      | 
+          3 | Alpine Skiing (Skiing)           | 
+          4 | Archery                          | 
+          5 | Art Competitions                 | 
+          6 | Artistic Gymnastics (Gymnastics) | 
+          7 | Artistic Swimming (Aquatics)     | 
+          8 | Athletics                        | 
+          9 | Australian Rules Football        | 
+         10 | Badminton                        | 
+(10 rows)
+
+>>> deporte_equivalencia
+ equivalencia_id |     nombre_fuente     | deporte_id | fuente_origen 
+-----------------+-----------------------+------------+---------------
+               1 | Equestrian            |         94 | f3
+               2 | Trampoline Gymnastics |         86 | f3
+(2 rows)
+
+>>> evento
+ evento_id |             nombre              | deporte_id 
+-----------+---------------------------------+------------
+         1 | Singles, Men (Olympic)          |         85
+         2 | Doubles, Men (Olympic)          |         85
+         3 | Doubles, Mixed (Olympic)        |         85
+         4 | Singles, Men (Olympic)          |         83
+         8 | Épée, Individual, Men (Olympic) |         39
+        24 | Singles, Men (Olympic)          |         10
+        26 | Singles, Women (Olympic)        |         85
+        27 | Doubles, Women (Olympic)        |         85
+        28 | Doubles, Women (Olympic)        |         10
+        29 | Doubles, Mixed (Olympic)        |         10
+(10 rows)
+
+>>> atleta
+ atleta_id |           nombre_completo            |      nombre_usado      | sexo | nacionalidad | fecha_nacimiento |   ciudad_nacimiento   | pais_nacimiento | fecha_fallecimiento 
+-----------+--------------------------------------+------------------------+------+--------------+------------------+-----------------------+-----------------+---------------------
+       287 | Leander Adrian Paes                  | Leander Paes           | M    | India        | 1973-06-17       | Kolkata (Calcutta)    | India           | 
+       691 | Uladzimir Viktaravich Samsonau       | Uladzimir Samsonau     | M    | Belarus      | 1976-04-17       | Minsk                 | Belarus         | 
+       754 | Daniel Mark Nestor                   | Daniel Nestor          | M    | Canada       | 1972-09-04       | Beograd (Belgrade)    | Serbia          | 
+      1011 | Olufunke "Funke" Oshonaike (-Irabor) | Funke Oshonaike        | F    | Nigeria      | 1975-10-28       | Lagos                 | Nigeria         | 
+      1023 | Segun Moses Toriola                  | Segun Toriola          | M    | Nigeria      | 1974-09-18       | Ilorin                | Nigeria         | 
+      2060 | Sławomir Kazimierz Napłoszek         | Sławomir Napłoszek     | M    | Poland       | 1968-07-29       | Warszawa (Warsaw)     | Poland          | 
+      2552 | Martina Hingis (-Hutin, -Leeman)     | Martina Hingis         | F    | Switzerland  | 1980-09-30       | Košice                | Slovakia        | 
+      2809 | Aleksandar Karakašević               | Aleksandar Karakašević | M    | Serbia       | 1975-12-09       | Zemun                 | Serbia          | 
+      2853 | Rafael Lozano Muñoz                  | Rafael Lozano          | M    | Spain        | 1970-01-25       | Córdoba               | Spain           | 
+      5442 | Adriana Aparecida dos Santos         | Adriana                | F    | Brazil       | 1971-01-18       | São Bernardo do Campo | Brazil          | 
+(10 rows)
+
+>>> participacion
+ participacion_id | atleta_id | edicion_id | evento_id | codigo_noc |      equipo      | edad | altura_cm | peso_kg 
+------------------+-----------+------------+-----------+------------+------------------+------+-----------+---------
+              813 |       287 |         55 |         2 | IND        | Rohan Bopanna    |   43 |     178.0 |    77.0
+             1717 |       691 |         55 |         4 | BLR        |                  |   40 |     189.0 |    83.0
+             1898 |       754 |         55 |         2 | CAN        | Vasek Pospisil   |   44 |     191.0 |    87.0
+             2547 |      1011 |         55 |        31 | NGR        |                  |   41 |     167.0 |    59.0
+             2548 |      1011 |         59 |        31 | NGR        |                  |   45 |     167.0 |    59.0
+             2583 |      1023 |         55 |         4 | NGR        |                  |   42 |     182.0 |    70.0
+             2584 |      1023 |         55 |        54 | NGR        | Nigeria          |   42 |     182.0 |    70.0
+             4099 |      2060 |         59 |        70 | POL        |                  |   52 |     185.0 |    82.0
+             4100 |      2060 |         59 |       116 | POL        | Sylwia Zyzańska  |   52 |     185.0 |    82.0
+             5255 |      2552 |         55 |        27 | SUI        | Timea Bacsinszky |   36 |     170.0 |    59.0
+(10 rows)
+
+>>> resultado
+ resultado_id | participacion_id | lugar | empatado | medalla 
+--------------+------------------+-------+----------+---------
+          817 |              813 |    17 | t        | 
+         1721 |             1717 |     4 | f        | 
+         1902 |             1898 |     4 | f        | 
+         2551 |             2547 |    49 | t        | 
+         2552 |             2548 |    65 | t        | 
+         2587 |             2583 |    33 | t        | 
+         2588 |             2584 |     9 | t        | 
+         4103 |             4100 |    24 | f        | 
+         4104 |             4099 |    33 | t        | 
+         5259 |             5255 |     2 | f        | Plata
+(10 rows)
+
+
+--- 3. Consultas de muestra ---------------------------------------
+>>> 3.1 Usain Bolt (atleta_id 104492): participaciones cargadas
+ anio |               evento                | codigo_noc | lugar | medalla 
+------+-------------------------------------+------------+-------+---------
+ 2016 | 100 metres, Men (Olympic)           | JAM        |     1 | Oro
+ 2016 | 200 metres, Men (Olympic)           | JAM        |     1 | Oro
+ 2016 | 4 × 100 metres Relay, Men (Olympic) | JAM        |     1 | Oro
+(3 rows)
+
+>>> 3.2 100 m femenino (evento_id 1025): podio por edicion
+ anio | medalla |         atleta          | codigo_noc | lugar | empatado 
+------+---------+-------------------------+------------+-------+----------
+ 2016 | Oro     | Elaine Thompson-Herah   | JAM        |     1 | f
+ 2016 | Plata   | Tori Bowie              | USA        |     2 | f
+ 2016 | Bronce  | Shelly-Ann Fraser-Pryce | JAM        |     3 | f
+ 2020 | Oro     | Elaine Thompson-Herah   | JAM        |     1 | f
+ 2020 | Plata   | Shelly-Ann Fraser-Pryce | JAM        |     2 | f
+ 2020 | Bronce  | Shericka Jackson        | JAM        |     3 | f
+ 2024 | Oro     | Julien Alfred           | LCA        |       | f
+ 2024 | Plata   | Sha'carri Richardson    | USA        |       | f
+ 2024 | Bronce  | Melissa Jefferson       | USA        |       | f
+(9 rows)
+
+>>> 3.3 Medallero por NOC (top 10 de lo cargado)
+ codigo_noc | oro | plata | bronce | total 
+------------+-----+-------+--------+-------
+ USA        | 377 |   256 |    235 |   868
+ CHN        | 170 |   132 |    114 |   416
+ GBR        | 142 |   130 |    155 |   427
+ FRA        | 137 |   192 |     91 |   420
+ JPN        | 110 |    82 |     78 |   270
+ NED        | 106 |    71 |     56 |   233
+ GER        |  88 |   117 |    142 |   347
+ AUS        |  88 |   102 |    134 |   324
+ BRA        |  69 |    52 |     49 |   170
+ NZL        |  60 |    70 |     20 |   150
+(10 rows)
+
+
+==================================================================
+ FIN DE LA VALIDACION
+==================================================================
+              fin              
+-------------------------------
+ 2026-10-16 23:10:27.877507-06
+(1 row)
+
+VALIDACION OK: Los conteos coinciden perfectamente.
+waiting for server to shut down.... done
+server stopped
+=== RestauraciÃ³n N=3 repeticiÃ³n 3 finalizada con estado: OK (Total: 3.638 s) ===

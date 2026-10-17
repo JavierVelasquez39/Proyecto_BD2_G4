@@ -1,6 +1,6 @@
 ============================================================
 cargar_ronda.sh  tipo=anio  persona=pa  carpeta=base  paso=01
-Inicio: 2026-10-16 11:22:36 CST
+Inicio: 2026-10-16 23:09:00 CST
 Origen: /fase2/02_carga/datos/base
 ============================================================
 --- pais ---
@@ -56,7 +56,7 @@ Origen: /fase2/02_carga/datos/base
 
 
 == Conteos de las 11 tablas despues de la carga ==
-Fecha: 2026-10-16 11:22:36 CST
+Fecha: 2026-10-16 23:09:01 CST
 pais|204
 poblacion_pais|13026
 noc|236
@@ -68,5 +68,5 @@ evento|0
 atleta|0
 participacion|0
 resultado|0
-Fin: 2026-10-16 11:22:36 CST
+Fin: 2026-10-16 23:09:01 CST
 CARGA OK

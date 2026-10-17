@@ -3,19 +3,25 @@
 Uso, desde cualquier carpeta:
     python "Fase 2/07_documentacion/analisis/analizar.py"
 
-Lee (solo lectura) 05_logs/tiempos_*.csv y los logs de restauración de
-05_logs/<tipo>_<persona>/. Escribe:
+Lee (solo lectura) 05_logs/tiempos_*.csv y los logs de 05_logs/<tipo>_<persona>/.
+Escribe (y reemplaza en cada ejecución):
     07_documentacion/analisis/ESTADO_CSV.md
     07_documentacion/analisis/tabla_*.csv y tabla_*.md
     07_documentacion/analisis/RESUMEN_ANALISIS.md
     07_documentacion/graficos/grafico*.png
 
-Un CSV entra al análisis solo si valida: encabezado de 14 columnas de la 4.10,
-53 líneas (encabezado y 52 filas), 14 campos en todas las líneas, 0 ALERTA y
-`paso` de dos dígitos leído como texto.
+Un CSV entra al análisis solo si pasa dos validaciones:
+1. Formato de la 4.10: encabezado de 14 columnas, 53 líneas (encabezado y 52
+   filas), 14 campos en todas las líneas, UTF-8 sin BOM, LF, 0 ALERTA y `paso`
+   de dos dígitos leído como texto.
+2. Cruce con los logs actuales de la corrida (no los rotados): cada respaldo
+   coincide en `segundos` y `bytes` con su log, y cada fila `total` de
+   restauración coincide con la línea `Total:` de su log y empieza a lo sumo
+   8 s después de la hora de inicio del log.
 """
 
 from pathlib import Path
+import datetime as dt
 import re
 
 import matplotlib
@@ -31,11 +37,15 @@ GRAFICOS = FASE2 / "07_documentacion" / "graficos"
 
 ENCABEZADO = ("persona,tipo_carga,maquina,paso,operacion,n_cadena,etapa,inicio_iso,"
               "fin_iso,segundos,bytes,validacion,repeticion,observacion")
-COLUMNAS = ENCABEZADO.split(",")
 LINEAS_ESPERADAS = 53
 ETAPAS = ["combinar", "arranque", "validacion"]
 PASOS_VALIDOS = {"02", "04", "06", "08", "12", "13", "14", "15"}
+# Corridas oficiales (1.6) y corridas de Bolt en otras máquinas (tabla d)
+ESPERADOS = ["tiempos_anio_pa.csv", "tiempos_deporte_pb.csv", "tiempos_deportista_pc.csv"]
+BOLT_OTRAS = ["tiempos_deportista_pa.csv", "tiempos_deportista_pb.csv"]
+VENTANA_INICIO_S = 8
 PENDIENTE = "[PENDIENTE]"
+ROTADO = re.compile(r"\.\d{8}_\d{6}\.log$")
 
 
 # ------------------------------------------------------------------ utilidades
@@ -57,21 +67,41 @@ def tabla_md(df: pd.DataFrame) -> str:
     return "\n".join([cab, sep] + filas) + "\n"
 
 
-def guardar_tabla(df: pd.DataFrame, nombre: str, titulo: str, nota: str = "") -> str:
+def guardar_tabla(df: pd.DataFrame, nombre: str, titulo: str, nota: str = "") -> None:
     df.to_csv(SALIDA / f"{nombre}.csv", index=False, lineterminator="\n")
-    md = f"# {titulo}\n\n" + (nota + "\n\n" if nota else "") + tabla_md(df)
-    escribir(SALIDA / f"{nombre}.md", md)
-    return md
+    escribir(SALIDA / f"{nombre}.md", f"# {titulo}\n\n" + (nota + "\n\n" if nota else "") + tabla_md(df))
+
+
+def guardar_pendiente(nombre: str, titulo: str, texto: str) -> None:
+    escribir(SALIDA / f"{nombre}.md", f"# {titulo}\n\n{PENDIENTE} {texto}\n")
 
 
 def mb(b) -> float:
     return round(float(b) / 1_000_000, 2)
 
 
+def leer_log(ruta: Path) -> str | None:
+    return ruta.read_text(encoding="utf-8", errors="replace") if ruta.exists() else None
+
+
+def buscar(rx: str, texto: str):
+    m = re.search(rx, texto, re.M)
+    return m.group(1) if m else None
+
+
+def limpiar_salidas() -> None:
+    """Borra solo lo que genera este script, para no dejar resultados viejos."""
+    for patron in ("tabla_*.csv", "tabla_*.md", "ESTADO_CSV.md", "RESUMEN_ANALISIS.md"):
+        for p in SALIDA.glob(patron):
+            p.unlink()
+    for p in GRAFICOS.glob("grafico*.png"):
+        p.unlink()
+
+
 # ------------------------------------------------------------------ validación
 
-def validar(ruta: Path) -> list[str]:
-    """Devuelve la lista de motivos de exclusión (vacía si el CSV es válido)."""
+def validar_formato(ruta: Path) -> list[str]:
+    """Motivos de exclusión por formato (lista vacía si cumple la 4.10)."""
     motivos = []
     crudo = ruta.read_bytes()
     if crudo.startswith(b"\xef\xbb\xbf"):
@@ -79,7 +109,7 @@ def validar(ruta: Path) -> list[str]:
     if b"\r\n" in crudo:
         motivos.append("tiene fin de línea CRLF (la 4.10 pide LF)")
     lineas = crudo.decode("utf-8", errors="replace").replace("\r\n", "\n").rstrip("\n").split("\n")
-    if lineas[0].lstrip("﻿") != ENCABEZADO:
+    if lineas[0].lstrip("\ufeff") != ENCABEZADO:
         motivos.append("el encabezado no es el de 14 columnas de la 4.10")
     if len(lineas) != LINEAS_ESPERADAS:
         motivos.append(f"tiene {len(lineas)} líneas y se esperan {LINEAS_ESPERADAS}")
@@ -98,7 +128,67 @@ def validar(ruta: Path) -> list[str]:
         motivos.append(f"pasos fuera de la 4.10: {sorted(pasos - PASOS_VALIDOS)}")
     if df[["persona", "tipo_carga", "maquina"]].drop_duplicates().shape[0] != 1:
         motivos.append("mezcla más de una persona, tipo de carga o máquina")
+    conteo = df.groupby(["operacion", "etapa"]).size().to_dict()
+    esperado = {("backup_full", "basebackup"): 1, ("backup_incr", "basebackup"): 3,
+                **{("restore", e): 12 for e in ETAPAS + ["total"]}}
+    if conteo != esperado:
+        motivos.append(f"la distribución por operación y etapa no es 1/3/12: {conteo}")
     return motivos
+
+
+def cruzar_logs(df: pd.DataFrame, corrida: str) -> tuple[list[str], int]:
+    """Compara las filas del CSV con los logs actuales de la corrida.
+
+    Devuelve (motivos, logs_rotados). Los logs rotados no se usan para validar,
+    solo se cuentan y se nombran cuando son los únicos que coinciden con una fila.
+    """
+    carpeta = LOGS / corrida
+    if not carpeta.is_dir():
+        return [f"no existe `05_logs/{corrida}/`: no hay logs para verificar las filas"], 0
+    rotados = sorted(p for p in carpeta.glob("*.log") if ROTADO.search(p.name))
+    motivos = []
+    for i, x in enumerate(df.itertuples(), start=2):
+        if x.operacion in ("backup_full", "backup_incr"):
+            nombre = "backup_full" if x.operacion == "backup_full" else f"backup_incr{x.n_cadena}"
+            log = carpeta / f"{corrida}_{x.paso}_{nombre}.log"
+            txt = leer_log(log)
+            if txt is None:
+                motivos.append(f"fila {i}: falta `{log.name}`")
+                continue
+            seg, byt = buscar(r"segundos=([0-9.]+)", txt), buscar(r"bytes=(\d+)", txt)
+            if seg != x.segundos or byt != x.bytes:
+                motivos.append(f"fila {i} ({x.operacion} n={x.n_cadena}): CSV {x.segundos} s y {x.bytes} "
+                               f"bytes; `{log.name}` dice {seg} s y {byt} bytes")
+        elif x.etapa == "total":
+            base = f"{corrida}_{x.paso}_restore_cadena{x.n_cadena}_rep{x.repeticion}"
+            log = carpeta / f"{base}.log"
+            txt = leer_log(log)
+            if txt is None:
+                motivos.append(f"fila {i}: falta `{log.name}`")
+                continue
+            if not coincide_total(txt, x):
+                otros = [p.name for p in rotados if p.name.startswith(base + ".")
+                         and coincide_total(leer_log(p), x)]
+                extra = f"; solo coincide con el log rotado `{otros[0]}`" if otros else ""
+                motivos.append(f"fila {i} (restore n={x.n_cadena} rep {x.repeticion}, total "
+                               f"{x.segundos} s, inicio {x.inicio_iso[11:23]}): no coincide con "
+                               f"`{log.name}` (Total {buscar(r'Total: ([0-9.]+) s', txt)} s, "
+                               f"inicio {inicio_log(txt)}){extra}")
+    return motivos, len(rotados)
+
+
+def inicio_log(txt: str):
+    return buscar(r"=== Inicio de .*?: (\d{4}-\d\d-\d\d \d\d:\d\d:\d\d)", txt)
+
+
+def coincide_total(txt: str, x) -> bool:
+    if buscar(r"Total: ([0-9.]+) s\)", txt) != x.segundos:
+        return False
+    ini = inicio_log(txt)
+    if ini is None:
+        return False
+    csv_ini = dt.datetime.fromisoformat(x.inicio_iso).replace(tzinfo=None)
+    return 0 <= (csv_ini - dt.datetime.fromisoformat(ini)).total_seconds() <= VENTANA_INICIO_S
 
 
 def cargar(ruta: Path) -> pd.DataFrame:
@@ -162,44 +252,41 @@ def tabla_c_bytes(df):
     })
 
 
+def verify_de(log: Path):
+    txt = leer_log(log)
+    v = buscar(r"^pg_verifybackup: ([0-9.]+) s$", txt) if txt else None
+    return float(v) if v else None
+
+
 def tabla_e(df):
-    """Segundos de pg_verifybackup leídos de los logs de restauración."""
-    filas = []
-    t = df[(df["operacion"] == "restore") & (df["etapa"] == "total")]
-    for x in t.itertuples():
-        log = LOGS / x.corrida / f"{x.corrida}_{x.paso}_restore_cadena{x.n_cadena}_rep{x.repeticion}.log"
-        seg = None
-        if log.exists():
-            m = re.search(r"^pg_verifybackup: ([0-9.]+) s$",
-                          log.read_text(encoding="utf-8", errors="replace"), re.M)
-            if m:
-                seg = float(m.group(1))
-        filas.append({"corrida": x.corrida, "n": x.n_cadena, "repeticion": x.repeticion,
-                      "verify_s": seg, "total_s": x.segundos})
-    e = pd.DataFrame(filas)
-    if e.empty or e["verify_s"].isna().any():
-        return None
-    e["pct"] = e["verify_s"] / e["total_s"] * 100
-    res = e.groupby(["corrida", "n"]).agg(verify_mediana_s=("verify_s", "median"),
-                                           total_mediana_s=("total_s", "median"),
-                                           pct_mediana=("pct", "median")).reset_index()
-    return res.round({"verify_mediana_s": 3, "total_mediana_s": 3, "pct_mediana": 1})
+    """pg_verifybackup dentro de total, por corrida. Devuelve (tabla, corridas sin logs)."""
+    partes, sin_logs = [], []
+    for corrida, g in df[(df["operacion"] == "restore") & (df["etapa"] == "total")].groupby("corrida"):
+        filas = []
+        for x in g.itertuples():
+            log = LOGS / corrida / f"{corrida}_{x.paso}_restore_cadena{x.n_cadena}_rep{x.repeticion}.log"
+            filas.append({"corrida": corrida, "n": x.n_cadena, "verify_s": verify_de(log),
+                          "total_s": x.segundos})
+        e = pd.DataFrame(filas)
+        if e["verify_s"].isna().any():
+            sin_logs.append(corrida)
+            continue
+        e["pct"] = e["verify_s"] / e["total_s"] * 100
+        partes.append(e.groupby(["corrida", "n"]).agg(
+            verify_mediana_s=("verify_s", "median"), total_mediana_s=("total_s", "median"),
+            pct_mediana=("pct", "median")).reset_index())
+    tabla = pd.concat(partes, ignore_index=True) if partes else None
+    if tabla is not None:
+        tabla = tabla.round({"verify_mediana_s": 3, "total_mediana_s": 3, "pct_mediana": 1})
+    return tabla, sin_logs
 
 
 def verify_respaldos(df):
     filas = []
-    r = df[df["operacion"].isin(["backup_full", "backup_incr"])]
-    for x in r.itertuples():
+    for x in df[df["operacion"].isin(["backup_full", "backup_incr"])].itertuples():
         nombre = "backup_full" if x.operacion == "backup_full" else f"backup_incr{x.n_cadena}"
-        log = LOGS / x.corrida / f"{x.corrida}_{x.paso}_{nombre}.log"
-        seg = None
-        if log.exists():
-            m = re.search(r"^pg_verifybackup: ([0-9.]+) s$",
-                          log.read_text(encoding="utf-8", errors="replace"), re.M)
-            if m:
-                seg = float(m.group(1))
         filas.append({"corrida": x.corrida, "respaldo": "FULL" if x.n_cadena == 0 else f"INCR {x.n_cadena}",
-                      "verify_s": seg, "basebackup_s": x.segundos})
+                      "verify_s": verify_de(LOGS / x.corrida / f"{x.corrida}_{x.paso}_{nombre}.log")})
     return pd.DataFrame(filas)
 
 
@@ -292,40 +379,29 @@ def grafico4(c, maquinas):
 def main():
     SALIDA.mkdir(parents=True, exist_ok=True)
     GRAFICOS.mkdir(parents=True, exist_ok=True)
+    limpiar_salidas()
 
     estado, validos = [], []
     for ruta in sorted(LOGS.glob("tiempos_*.csv")):
-        motivos = validar(ruta)
-        estado.append((ruta.name, motivos))
+        corrida = ruta.stem.removeprefix("tiempos_")
+        motivos, rotados = validar_formato(ruta), None
+        if not motivos:
+            motivos, rotados = cruzar_logs(pd.read_csv(ruta, dtype=str, keep_default_na=False), corrida)
+        estado.append({"archivo": ruta.name, "corrida": corrida, "motivos": motivos, "rotados": rotados})
         if not motivos:
             validos.append(cargar(ruta))
-    esperados = ["tiempos_anio_pa.csv", "tiempos_deporte_pb.csv", "tiempos_deportista_pc.csv"]
-    presentes = {n for n, _ in estado}
+    presentes = {e["archivo"] for e in estado}
+    faltantes = [n for n in ESPERADOS + BOLT_OTRAS if n not in presentes]
 
-    md = ["# Estado de los CSV de tiempos", "",
-          "Generado por `analizar.py`. Criterios: encabezado de 14 columnas de la sección 4.10, "
-          f"{LINEAS_ESPERADAS} líneas, 14 campos por línea, UTF-8 sin BOM, LF, 0 filas con ALERTA "
-          "y `paso` de dos dígitos leído como texto.", "",
-          "| Archivo | Estado | Motivo |", "|---|---|---|"]
-    for nombre, motivos in estado:
-        md.append(f"| `{nombre}` | {'válido' if not motivos else 'excluido'} | "
-                  f"{'; '.join(motivos) if motivos else ''} |")
-    for nombre in esperados:
-        if nombre not in presentes:
-            md.append(f"| `{nombre}` | no existe | {PENDIENTE} |")
-    escribir(SALIDA / "ESTADO_CSV.md", "\n".join(md) + "\n")
-    print("\n".join(md))
-
+    escribir(SALIDA / "ESTADO_CSV.md", estado_md(estado, faltantes))
+    print(estado_md(estado, faltantes))
     if not validos:
         print("Ningún CSV válido: no se generan tablas ni gráficos.")
         return
     df = pd.concat(validos, ignore_index=True)
 
-    a = tabla_a(df)
-    b = tabla_b(df)
-    c = tabla_c_restore(df)
-    cb = tabla_c_bytes(df)
-    e = tabla_e(df)
+    a, b, c, cb = tabla_a(df), tabla_b(df), tabla_c_restore(df), tabla_c_bytes(df)
+    e, e_sin_logs = tabla_e(df)
     vr = verify_respaldos(df)
     maquinas = sorted(df.loc[df["tipo_carga"] == "deportista", "maquina"].unique())
 
@@ -337,8 +413,7 @@ def main():
                   "La suma de las tres no es igual al `total`: el `total` incluye además "
                   "`pg_verifybackup` y el tiempo entre etapas, y la mediana de una suma no es la "
                   "suma de las medianas.")
-    guardar_tabla(c, "tabla_c1_razon_restauracion",
-                  "Tabla (c1): restore(n) / restore(0)",
+    guardar_tabla(c, "tabla_c1_razon_restauracion", "Tabla (c1): restore(n) / restore(0)",
                   "Solo `etapa == total`, mediana de las repeticiones.")
     guardar_tabla(cb, "tabla_c2_razon_bytes", "Tabla (c2): incr(n).bytes / full.bytes")
     if len(maquinas) > 1:
@@ -346,53 +421,76 @@ def main():
             index="n", columns="maquina", values="razon_vs_n0").reset_index()
         guardar_tabla(d, "tabla_d_maquinas", "Tabla (d): razones de Bolt por máquina")
     else:
-        escribir(SALIDA / "tabla_d_maquinas.md",
-                 "# Tabla (d): razones de Bolt por máquina\n\n"
-                 f"{PENDIENTE} Solo hay una máquina con CSV válido de deportista "
-                 f"({', '.join(maquinas) or 'ninguna'}). Falta `tiempos_deportista_pa.csv` "
-                 "y `tiempos_deportista_pb.csv`.\n")
+        guardar_pendiente("tabla_d_maquinas", "Tabla (d): razones de Bolt por máquina",
+                          f"Solo hay una máquina con corrida válida de deportista ({', '.join(maquinas) or 'ninguna'}). "
+                          "Faltan corridas válidas de `deportista_pa` y `deportista_pb`.")
+    nota_e = ("Segundos leídos de la línea `pg_verifybackup: X s` de cada log de restauración. "
+              "`pct_mediana` es la mediana de verify/total por repetición.")
+    if e_sin_logs:
+        nota_e += f" {PENDIENTE} Sin logs completos: {', '.join(e_sin_logs)}."
     if e is not None:
-        guardar_tabla(e, "tabla_e_pg_verifybackup",
-                      "Tabla (e): peso de pg_verifybackup dentro de total",
-                      "Segundos leídos de la línea `pg_verifybackup: X s` de cada log de "
-                      "restauración. `pct_mediana` es la mediana de verify/total por repetición.")
+        guardar_tabla(e, "tabla_e_pg_verifybackup", "Tabla (e): peso de pg_verifybackup dentro de total", nota_e)
     else:
-        escribir(SALIDA / "tabla_e_pg_verifybackup.md",
-                 f"# Tabla (e): peso de pg_verifybackup\n\n{PENDIENTE} Faltan logs de restauración "
-                 "con la línea `pg_verifybackup: X s`.\n")
+        guardar_pendiente("tabla_e_pg_verifybackup", "Tabla (e): peso de pg_verifybackup",
+                          "Ninguna corrida válida tiene todos sus logs de restauración.")
 
-    g1 = grafico1(b)
-    g2 = grafico2(a)
-    g3 = grafico3(c)
+    g1, g2, g3 = grafico1(b), grafico2(a), grafico3(c)
     g4 = grafico4(c, maquinas) if len(maquinas) > 1 else None
 
     escribir(SALIDA / "RESUMEN_ANALISIS.md",
-             resumen(estado, esperados, presentes, a, b, c, cb, e, vr, maquinas, g1, g2, g3, g4))
+             resumen(estado, faltantes, a, b, c, cb, e, e_sin_logs, vr, maquinas, g1, g2, g3, g4))
     print("\nTablas en", SALIDA)
     print("Gráficos:", ", ".join(p.name for p in g1 + [g2, g3] + ([g4] if g4 else [])))
 
 
-def resumen(estado, esperados, presentes, a, b, c, cb, e, vr, maquinas, g1, g2, g3, g4):
+def estado_md(estado, faltantes):
+    L = ["# Estado de los CSV de tiempos", "",
+         "Generado por `analizar.py`. Un CSV entra al análisis si cumple el formato de la "
+         f"sección 4.10 ({LINEAS_ESPERADAS} líneas, 14 campos por línea, UTF-8 sin BOM, LF, "
+         "0 ALERTA, 1 FULL, 3 INCR y 12 filas por etapa de restauración, `paso` como texto) "
+         "y si sus filas coinciden con los logs actuales de la corrida: `segundos` y `bytes` "
+         "de cada respaldo, y `Total:` y hora de inicio de cada restauración. Los logs rotados "
+         "(`.AAAAMMDD_HHMMSS.log`) no cuentan como respaldo de una fila.", "",
+         "| Archivo | Estado | Logs rotados | Motivo |", "|---|---|---:|---|"]
+    for x in estado:
+        rot = "" if x["rotados"] is None else str(x["rotados"])
+        L.append(f"| `{x['archivo']}` | {'válido' if not x['motivos'] else 'excluido'} | {rot} | "
+                 f"{'<br>'.join(x['motivos'])} |")
+    for n in faltantes:
+        L.append(f"| `{n}` | no existe | | {PENDIENTE} |")
+    return "\n".join(L) + "\n"
+
+
+def resumen(estado, faltantes, a, b, c, cb, e, e_sin_logs, vr, maquinas, g1, g2, g3, g4):
+    corridas = list(a["corrida"].unique())
+    excluidas = [x for x in estado if x["motivos"]]
     L = ["# Resumen del análisis comparativo (sección 4.10)", "",
-         "Generado por `07_documentacion/analisis/analizar.py` a partir de `05_logs/tiempos_*.csv`. "
-         "Todos los números salen de los CSV y de los logs; no hay valores escritos a mano.", "",
+         "Generado por `07_documentacion/analisis/analizar.py` a partir de `05_logs/tiempos_*.csv` "
+         "y de los logs de cada corrida. Todos los números salen de esos archivos; no hay valores "
+         "escritos a mano.", "",
          "## Datos usados", ""]
-    for nombre, motivos in estado:
-        L.append(f"- `{nombre}`: " + ("válido." if not motivos else "excluido: " + "; ".join(motivos) + "."))
-    for nombre in esperados:
-        if nombre not in presentes:
-            L.append(f"- `{nombre}`: no existe. {PENDIENTE}")
+    for x in estado:
+        if not x["motivos"]:
+            L.append(f"- `{x['archivo']}`: válido (formato y cruce con logs).")
+        else:
+            L.append(f"- `{x['archivo']}`: **excluido** ({len(x['motivos'])} motivos, todos en "
+                     f"`ESTADO_CSV.md`). Primero: {x['motivos'][0]}.")
+    for n in faltantes:
+        L.append(f"- `{n}`: no existe. {PENDIENTE}")
     L += ["", "Detalle en `ESTADO_CSV.md`.", "",
           "**Advertencia:** las máquinas del equipo son distintas. Entre máquinas se comparan "
           "razones (por ejemplo restore(n)/restore(0)), no segundos. Los segundos absolutos "
-          "solo sirven dentro de una misma corrida.", "",
-          "## Medido", ""]
+          "solo sirven dentro de una misma corrida.", ""]
+    maq_por_corrida = a.drop_duplicates("corrida").set_index("corrida")["maquina"]
+    if len(corridas) > 1 and maq_por_corrida.nunique() > 1:
+        L += [f"Las corridas válidas ({', '.join(corridas)}) difieren a la vez en el tipo de carga "
+              f"y en la máquina ({', '.join(maq_por_corrida[c] for c in corridas)}). Entre ellas solo "
+              "se comparan razones, y aun así no se puede separar el efecto de la carga del de la máquina.", ""]
 
-    for corrida in a["corrida"].unique():
-        aa = a[a["corrida"] == corrida]
-        bb = b[b["corrida"] == corrida]
-        cc = c[c["corrida"] == corrida]
-        cbb = cb[cb["corrida"] == corrida]
+    L += ["## Medido", ""]
+    for corrida in corridas:
+        aa, bb = a[a["corrida"] == corrida], b[b["corrida"] == corrida]
+        cc, cbb = c[c["corrida"] == corrida], cb[cb["corrida"] == corrida]
         L += [f"### Corrida `{corrida}` (máquina `{aa['maquina'].iloc[0]}`)", "",
               "Respaldos (etapa `basebackup`):", ""]
         for x in aa.itertuples():
@@ -407,76 +505,90 @@ def resumen(estado, esperados, presentes, a, b, c, cb, e, vr, maquinas, g1, g2, 
         L += ["", "Restauración, `total` (mediana) y razón restore(n) / restore(0):", ""]
         for x in cc.itertuples():
             L.append(f"- n={x.n}: {x.total_mediana_s:.3f} s, razón {x.razon_vs_n0:.3f}.")
-        if e is not None:
-            ee = e[e["corrida"] == corrida]
+        ee = e[e["corrida"] == corrida] if e is not None else pd.DataFrame()
+        if len(ee):
             L += ["", "`pg_verifybackup` dentro de `total` (de los logs de restauración):", ""]
             for x in ee.itertuples():
                 L.append(f"- n={x.n}: mediana {x.verify_mediana_s:.3f} s, {x.pct_mediana:.1f} % del total.")
         else:
-            L += ["", f"`pg_verifybackup` en la restauración: {PENDIENTE}"]
+            L += ["", f"`pg_verifybackup` en la restauración: {PENDIENTE} faltan logs."]
         vv = vr[vr["corrida"] == corrida]
-        if vv["verify_s"].notna().all():
+        if len(vv) and vv["verify_s"].notna().all():
             L += ["", "`pg_verifybackup` de los respaldos (fuera del tiempo medido, solo informativo): "
                   + ", ".join(f"{x.respaldo} {x.verify_s:.3f} s" for x in vv.itertuples()) + "."]
         L.append("")
 
     L += ["### Comparación entre máquinas (tabla d, gráfico 4)", ""]
     if len(maquinas) > 1:
-        L.append(f"Máquinas con CSV válido de deportista: {', '.join(maquinas)}. Ver `tabla_d_maquinas.md`.")
+        L.append(f"Máquinas con corrida válida de deportista: {', '.join(maquinas)}. Ver `tabla_d_maquinas.md`.")
     else:
-        L.append(f"{PENDIENTE} Solo hay una máquina con CSV válido de deportista "
-                 f"({', '.join(maquinas)}). La tabla (d) y el gráfico 4 se generan cuando existan "
-                 "`tiempos_deportista_pa.csv` y `tiempos_deportista_pb.csv` válidos.")
+        L.append(f"{PENDIENTE} Solo hay una máquina con corrida válida de deportista "
+                 f"({', '.join(maquinas) or 'ninguna'}). La tabla (d) y el gráfico 4 se generan cuando "
+                 "haya corridas válidas de deportista en otra máquina.")
     L += ["", "### Gráficos", ""]
-    for g in g1 + [g2, g3]:
-        L.append(f"- `graficos/{g.name}`")
+    L += [f"- `graficos/{g.name}`" for g in g1 + [g2, g3]]
     L.append(f"- `graficos/{g4.name}`" if g4 else f"- Gráfico 4 (comparación entre máquinas): {PENDIENTE}")
 
     L += ["", "## Interpretación", "",
           "Esta sección interpreta los números de arriba. No son mediciones nuevas.", ""]
-    if "deportista_pc" in set(a["corrida"]):
-        aa = a[a["corrida"] == "deportista_pc"]
-        cbb = cb[cb["corrida"] == "deportista_pc"]
-        cc = c[c["corrida"] == "deportista_pc"].set_index("n")
-        bb = b[b["corrida"] == "deportista_pc"].set_index("n")
-        L += [
-            f"- **Costo fijo en la carga de Bolt.** Las rondas de Bolt agregan muy pocas filas, "
-            f"pero cada INCR pesa entre {cbb['razon_incr_vs_full'].min():.3f} y "
-            f"{cbb['razon_incr_vs_full'].max():.3f} veces el FULL "
-            f"({aa['MB'].iloc[1:].min():.2f} a {aa['MB'].iloc[1:].max():.2f} MB). La hipótesis de la "
-            "4.10 es que ese tamaño lo domina un piso fijo (al menos un segmento de WAL de 16 MB y "
-            "archivos del sistema) y no los datos nuevos. Falta confirmarlo midiendo `pg_wal` dentro "
-            f"de cada respaldo. {PENDIENTE}",
-            f"- **Restauración.** La cadena completa (n=3) tomó {cc.loc[3, 'razon_vs_n0']:.2f} veces "
-            f"lo que el FULL. `combinar` sube de {bb.loc[0, 'combinar_s']:.3f} s con n=0 a "
-            f"{bb[bb.index > 0]['combinar_s'].min():.3f} a {bb[bb.index > 0]['combinar_s'].max():.3f} s con n=1 a 3, "
-            f"mientras `arranque` baja de {bb.loc[0, 'arranque_s']:.3f} s a "
-            f"{bb[bb.index > 0]['arranque_s'].min():.3f} a {bb[bb.index > 0]['arranque_s'].max():.3f} s. "
-            "Con n=0 `restaurar.sh` copia el FULL con `cp -a`; con n mayor o igual a 1 usa "
-            "`pg_combinebackup`, así que n=0 y n=1 no miden la misma herramienta. Entre n=1 y n=3 el "
-            f"`total` cambia de {cc.loc[1, 'total_mediana_s']:.3f} a {cc.loc[3, 'total_mediana_s']:.3f} s. "
-            "Con tres repeticiones y diferencias de décimas de segundo, no se interpreta la causa de "
-            "la baja de `arranque`.",
-            "- **Alcance.** Con Bolt domina el costo fijo de cada respaldo y de cada restauración: "
-            f"el tiempo medido más largo de la corrida es {max(aa['segundos'].max(), cc['total_mediana_s'].max()):.3f} s "
-            "(respaldos y `total` mediano). Estos números **no** sirven para concluir en "
-            "general si conviene el respaldo incremental o el FULL frecuente: esa comparación necesita "
-            f"las corridas con más volumen (por año y por deporte). {PENDIENTE}",
-            "- **Repeticiones.** Se reporta la mediana de 3 repeticiones. La caché del sistema operativo "
-            "puede favorecer a las repeticiones 2 y 3.",
-        ]
-        if e is not None:
-            ee = e[e["corrida"] == "deportista_pc"]
-            L.append(f"- **pg_verifybackup** pesó entre {ee['pct_mediana'].min():.1f} % y "
-                     f"{ee['pct_mediana'].max():.1f} % del `total` de restauración (mediana por n).")
-    L += ["",
-          "## Pendiente", "",
-          f"- {PENDIENTE} CSV válidos de `anio_pa`, `deporte_pb`, `deportista_pa` y `deportista_pb`.",
-          f"- {PENDIENTE} Tabla (d) y gráfico 4 (requieren más de una máquina).",
-          f"- {PENDIENTE} Recomendación por escenario (FULL, incremental, diferencial): requiere las "
-          "corridas con más volumen.",
-          f"- {PENDIENTE} Tamaño de `pg_wal` dentro de cada respaldo, para confirmar el piso fijo.",
-          ""]
+    for corrida in corridas:
+        aa, cbb = a[a["corrida"] == corrida], cb[cb["corrida"] == corrida]
+        cc = c[c["corrida"] == corrida].set_index("n")
+        bb = b[b["corrida"] == corrida].set_index("n")
+        resto = bb[bb.index > 0]
+        L += [f"### `{corrida}`", ""]
+        tamano = (f"- **Tamaño de los respaldos.** Cada INCR pesa entre {cbb['razon_incr_vs_full'].min():.3f} y "
+                  f"{cbb['razon_incr_vs_full'].max():.3f} veces el FULL "
+                  f"({aa['MB'].iloc[1:].min():.2f} a {aa['MB'].iloc[1:].max():.2f} MB, FULL {aa['MB'].iloc[0]:.2f} MB). ")
+        if corrida.startswith("deportista_"):
+            tamano += ("Las rondas de Bolt agregan muy pocas filas, así que la hipótesis de la 4.10 es que ese "
+                       "tamaño lo domina un piso fijo (al menos un segmento de WAL de 16 MB y archivos del "
+                       "sistema) y no los datos nuevos. ")
+        else:
+            tamano += ("La parte del INCR que corresponde a datos nuevos y la que corresponde al piso fijo "
+                       "(WAL y archivos del sistema) no se pueden separar con estos números. ")
+        L.append(tamano + f"Falta medir `pg_wal` dentro de cada respaldo para confirmarlo. {PENDIENTE}")
+        L.append(
+            f"- **Restauración.** La cadena completa (n=3) tomó {cc.loc[3, 'razon_vs_n0']:.2f} veces lo que el "
+            f"FULL. `combinar` pasa de {bb.loc[0, 'combinar_s']:.3f} s con n=0 a "
+            f"{resto['combinar_s'].min():.3f} a {resto['combinar_s'].max():.3f} s con n=1 a 3, y `arranque` "
+            f"pasa de {bb.loc[0, 'arranque_s']:.3f} s a {resto['arranque_s'].min():.3f} a "
+            f"{resto['arranque_s'].max():.3f} s. Con n=0 `restaurar.sh` copia el FULL con `cp -a`; con n "
+            "mayor o igual a 1 usa `pg_combinebackup`, así que n=0 y n=1 no miden la misma herramienta. "
+            f"Entre n=1 y n=3 el `total` va de {cc.loc[1, 'total_mediana_s']:.3f} a "
+            f"{cc.loc[3, 'total_mediana_s']:.3f} s.")
+        maximo = max(aa["segundos"].max(), cc["total_mediana_s"].max())
+        escala = (f"- **Escala.** El tiempo medido más largo de la corrida es {maximo:.3f} s (respaldos y "
+                  "`total` mediano).")
+        if corrida.startswith("deportista_"):
+            escala += (" Con tan pocas filas por ronda, estos tiempos reflejan sobre todo el costo fijo de "
+                       "cada operación y no sirven para hablar del costo por volumen de datos.")
+        L.append(escala)
+        L.append("")
+    L += ["### Alcance", "",
+          "- Se reporta la mediana de 3 repeticiones. La caché del sistema operativo puede favorecer a las "
+          "repeticiones 2 y 3.",
+          "- Estos números no bastan para concluir en general si conviene el FULL frecuente, el incremental "
+          "o el diferencial: " + (
+              "solo hay una corrida válida." if len(corridas) == 1 else
+              "las corridas válidas difieren en carga y en máquina a la vez, y el piso fijo de cada "
+              "respaldo (`pg_wal`) no está medido.") + f" {PENDIENTE}"]
+    if e is not None:
+        L.append(f"- `pg_verifybackup` pesó entre {e['pct_mediana'].min():.1f} % y {e['pct_mediana'].max():.1f} % "
+                 f"del `total` de restauración (mediana por n) en {', '.join(e['corrida'].unique())}.")
+    L.append("")
+
+    L += ["## Pendiente", ""]
+    for x in excluidas:
+        L.append(f"- {PENDIENTE} Corrida válida de `{x['corrida']}` (excluida; ver `ESTADO_CSV.md`).")
+    for n in faltantes:
+        L.append(f"- {PENDIENTE} `{n}` no existe.")
+    if len(maquinas) <= 1:
+        L.append(f"- {PENDIENTE} Tabla (d) y gráfico 4 (requieren corridas válidas de deportista en más de una máquina).")
+    for corrida in e_sin_logs:
+        L.append(f"- {PENDIENTE} Tabla (e) de `{corrida}`: faltan logs de restauración.")
+    L += [f"- {PENDIENTE} Tamaño de `pg_wal` dentro de cada respaldo, para confirmar el piso fijo.",
+          f"- {PENDIENTE} Recomendación por escenario (FULL, incremental, diferencial).", ""]
     return "\n".join(L)
 
 

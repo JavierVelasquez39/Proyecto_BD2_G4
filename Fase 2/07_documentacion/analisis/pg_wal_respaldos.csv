@@ -1,0 +1,9 @@
+corrida,respaldo,bytes_total,bytes_pg_wal,segmentos_wal
+deportista_pc,full,50006396,16777216,1
+deportista_pc,incr1,21992494,16777216,1
+deportista_pc,incr2,22033700,16777216,1
+deportista_pc,incr3,21820787,16777216,1
+deporte_pc,full,49973476,16777216,1
+deporte_pc,incr1,21730223,16777216,1
+deporte_pc,incr2,21730975,16777216,1
+deporte_pc,incr3,21747383,16777216,1

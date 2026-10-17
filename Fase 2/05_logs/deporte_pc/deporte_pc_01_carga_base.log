@@ -1,0 +1,72 @@
+============================================================
+cargar_ronda.sh  tipo=deporte  persona=pc  carpeta=base  paso=01
+Inicio: 2026-10-17 02:34:32 CST
+Origen: /fase2/02_carga/datos/base
+============================================================
+--- pais ---
+ tabla | en_csv | insertadas 
+-------+--------+------------
+ pais  |    204 |        204
+(1 row)
+
+--- poblacion_pais ---
+     tabla      | en_csv | insertadas 
+----------------+--------+------------
+ poblacion_pais |  13026 |      13026
+(1 row)
+
+--- noc ---
+ tabla | en_csv | insertadas 
+-------+--------+------------
+ noc   |    236 |        236
+(1 row)
+
+--- deporte ---
+  tabla  | en_csv | insertadas 
+---------+--------+------------
+ deporte |     95 |         95
+(1 row)
+
+--- deporte_equivalencia ---
+        tabla         | en_csv | insertadas 
+----------------------+--------+------------
+ deporte_equivalencia |      2 |          2
+(1 row)
+
+--- sincronizar secuencias ---
+ tabla | ultimo_id 
+-------+-----------
+ pais  |       204
+(1 row)
+
+     tabla      | ultimo_id 
+----------------+-----------
+ poblacion_pais |     13026
+(1 row)
+
+  tabla  | ultimo_id 
+---------+-----------
+ deporte |        95
+(1 row)
+
+        tabla         | ultimo_id 
+----------------------+-----------
+ deporte_equivalencia |         2
+(1 row)
+
+
+== Conteos de las 11 tablas despues de la carga ==
+Fecha: 2026-10-17 02:34:32 CST
+pais|204
+poblacion_pais|13026
+noc|236
+sede|0
+edicion_olimpica|0
+deporte|95
+deporte_equivalencia|2
+evento|0
+atleta|0
+participacion|0
+resultado|0
+Fin: 2026-10-17 02:34:32 CST
+CARGA OK

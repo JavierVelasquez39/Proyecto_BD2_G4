@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# RestauraciÃ³n de cadena fÃ­sica PostgreSQL 17 con pg_combinebackup y registro de tiempos
+# Restauración de cadena física PostgreSQL 17 con pg_combinebackup y registro de tiempos
 # Uso: restaurar.sh <tipo> <persona> <n_cadena> [repeticion] [observacion]
 #   n_cadena: 0=FULL, 1=FULL+INCR1, 2=FULL+INCR1+INCR2, 3=Cadena completa
-#   repeticion: 1 a 3 (por defecto 1); cada repeticiÃ³n parte de PGDATA vacÃ­o
+#   repeticion: 1 a 3 (por defecto 1); cada repetición parte de PGDATA vacío
 set -Eeuo pipefail
 
 TIPO=$1
@@ -32,7 +32,7 @@ al_fallar_extra() {
 }
 trap 'alerta_al_fallar $LINENO' ERR
 
-echo "=== Inicio de RestauraciÃ³n Cadena N=$N repeticiÃ³n $REP: $(date '+%F %T %Z') ===" | tee -a "$LOG"
+echo "=== Inicio de Restauración Cadena N=$N repetición $REP: $(date '+%F %T %Z') ===" | tee -a "$LOG"
 
 # 1. Abortar si el servidor sigue corriendo
 if [ -f "$PGDATA/postmaster.pid" ]; then
@@ -67,7 +67,7 @@ t1=$(ahora_seg)
 SEG_COMB=$(segundos_entre "$t0" "$t1")
 BYTES=$(bytes_de "$PGDATA")
 
-# VerificaciÃ³n del directorio combinado, antes de arrancar (queda dentro de total)
+# Verificación del directorio combinado, antes de arrancar (queda dentro de total)
 ETAPA=verificacion; ETAPA_T0=
 v0=$(ahora_seg)
 pg_verifybackup "$PGDATA" 2>&1 | tee -a "$LOG"
@@ -84,7 +84,7 @@ FIN_ARR=$(ahora_iso)
 t3=$(ahora_seg)
 SEG_ARR=$(segundos_entre "$t2" "$t3")
 
-# 5. Etapa VALIDACIÃ“N (validar.sql y comparaciÃ³n de conteos)
+# 5. Etapa VALIDACIÓN (validar.sql y comparación de conteos)
 echo "Etapa 3: Validando datos restaurados..." | tee -a "$LOG"
 ETAPA=validacion; ETAPA_INI=$(ahora_iso); ETAPA_T0=$(ahora_seg)
 INI_VAL=$ETAPA_INI; t4=$ETAPA_T0
@@ -121,7 +121,7 @@ tiempos_fila "$CSV" "$P" "$TIPO" "$MAQUINA" "$PASO_STR" restore "$N" total "$INI
 # Apagar servidor para dejar el entorno listo
 pg_ctl -D "$PGDATA" -m fast stop 2>&1 | tee -a "$LOG"
 
-echo "=== RestauraciÃ³n N=$N repeticiÃ³n $REP finalizada con estado: $STATUS_VAL (Total: ${SEG_TOTAL} s) ===" | tee -a "$LOG"
+echo "=== Restauración N=$N repetición $REP finalizada con estado: $STATUS_VAL (Total: ${SEG_TOTAL} s) ===" | tee -a "$LOG"
 
 if [ "$STATUS_VAL" != "OK" ]; then
   exit 1

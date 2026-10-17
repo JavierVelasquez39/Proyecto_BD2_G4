@@ -11,7 +11,6 @@ Entrega: **sábado 17 de octubre de 2026** (meta interna: viernes 16).
 
 ## Tabla de contenidos
 
-- [0. Cómo usar esta guía con tu IA](#0-cómo-usar-esta-guía-con-tu-ia)
 - [1. Contexto común](#1-contexto-común)
   - [1.1 Qué se pide](#11-qué-se-pide)
   - [1.2 Los 3 tipos de carga y conteos esperados](#12-los-3-tipos-de-carga-y-conteos-esperados)
@@ -33,44 +32,6 @@ Entrega: **sábado 17 de octubre de 2026** (meta interna: viernes 16).
 
 ---
 
-## 0. Cómo usar esta guía con tu IA
-
-1. Copia la **Sección 1 completa** y **tu sección personal** (2, 3 o 4).
-2. Pega primero el prompt inicial de abajo, llenando los huecos, y luego las dos secciones.
-3. Trabaja una tarea a la vez, en el orden de tu tabla de tareas.
-4. Todo lo marcado `[PENDIENTE]` no está verificado: confírmalo en el ensayo o con el equipo antes de darlo por hecho.
-5. Si tu IA propone algo que contradice esta guía, gana la guía; avisa al equipo si crees que la guía está mal.
-
-**Prompt inicial (copiar y llenar):**
-
-```text
-Soy [Kimberly/Katherine/Javier], Persona [A/B/C] del Grupo 4 de Sistemas de Bases de Datos 2 (USAC).
-Trabajo en Windows con Docker Desktop, en mi propia máquina. Hoy es [FECHA].
-Abajo te pego el "Contexto común" de nuestra guía y mi sección personal.
-
-Reglas para ayudarme:
-1. Guíame una tarea a la vez, en el orden de mi tabla de tareas. Antes de cada
-   paso dime qué vamos a hacer y por qué, y espera a que te confirme que terminé
-   (o te pegue la salida) antes de seguir.
-2. Solo respaldos FÍSICOS de PostgreSQL 17 (pg_basebackup, pg_combinebackup).
-   Nunca sugieras pg_dump, pg_dumpall ni pg_restore.
-3. Solo línea de comandos. No sugieras herramientas gráficas (pgAdmin, DBeaver, etc.).
-4. Recuérdame en cada captura que debe verse la fecha y hora del sistema operativo.
-5. Nunca propongas comandos que toquen el contenedor olimpiadas_pg o su volumen
-   (solo SELECT de lectura si mi sección lo pide), ni docker volume prune,
-   docker system prune o docker rm -v.
-6. Si algo está marcado [PENDIENTE] o no estás seguro, dilo y propón cómo
-   verificarlo; no inventes rutas, IDs ni resultados.
-7. Respóndeme en español.
-
-Mi tarea actual es: [TAREA DE MI TABLA].
-
-[PEGAR AQUÍ: Sección 1 completa]
-[PEGAR AQUÍ: Mi sección personal]
-```
-
----
-
 ## 1. Contexto común
 
 ### 1.1 Qué se pide
@@ -88,7 +49,7 @@ Para **cada tipo de carga** (año, deporte, deportista), en una instancia nueva:
 7. Validar después de cada restauración con SELECT y COUNT.
 8. Análisis comparativo de tiempos y conclusión sobre qué estrategia conviene.
 
-Fuente del enunciado: `docs/proyecto_2_respaldo_y_restauracion.md`, secciones 4.2, 6 y 8. Fase 1: `docs/Enunciado_proyecto_1.pdf`. Modelo ER: `docs/Modelo_ER_actualizado.xml` (draw.io). Ponderación: 24 pts. Rúbrica: 100 pts (ver 1.12 y secciones de persona).
+Fuente del enunciado: `Fase 2/docs/proyecto_2_respaldo_y_restauracion.md`, secciones 4.2, 6 y 8. Fase 1: `Fase 2/docs/Enunciado_proyecto_1.pdf`. Modelo ER: `Fase 2/docs/Modelo_ER_actualizado.xml` (draw.io). Ponderación: 24 pts. Rúbrica: 100 pts (ver 1.12 y secciones de persona).
 
 > La interpretación "carga base + 3 rondas = 1 FULL + 3 INCR" es una propuesta del equipo: `[PENDIENTE]` confirmar con el auxiliar (pregunta 1 de la sección 5). Si dice que la carga inicial es la ronda 1, el ciclo queda 1 FULL + 2 INCR y se omite la carga base como paso separado (la base se carga junto con la ronda 1).
 
@@ -407,7 +368,7 @@ El repo tiene las ramas `main` y `develop` (locales y en `origin`); los commits 
 | Hora del log distinta a la de la captura (la imagen usa UTC por defecto; `olimpiadas_pg` está en `Etc/UTC`) | `TZ`, `PGTZ` y `timezone` en el compose; verificar con `SHOW timezone` y `date` en el paso 00 |
 | Cadena de incrementales rota | `summarize_wal=on` desde el arranque; no borrar ni mover respaldos hasta cerrar el miércoles 14; restaurar en orden |
 | Tiempos sin registrar | Los scripts escriben `tiempos_*.csv`; revisar que tenga filas después de cada paso |
-| Uso accidental de `pg_dump` | Prohibido en scripts y prompts; revisión cruzada lo verifica |
+| Uso accidental de `pg_dump` | Prohibido en scripts y en comandos; revisión cruzada lo verifica |
 | ER desalineado con el DDL | Resuelto: ER alineado con el DDL en `Fase 2/07_documentacion/modelo_er/` (ver apéndice 6.1) |
 | `lugar` NULL en todo 2024 | Documentarlo como limitación de la fuente 3 |
 | `ddl.sql` empieza con `DROP SCHEMA ... CASCADE` | Ejecutarlo solo dentro de `fase2_<tipo>` con `docker compose exec` |
@@ -624,14 +585,6 @@ En `05_logs/anio_pa/`: un log por paso con notas `# NOTA:` agregadas a mano. En 
 - Ejecutar los comandos en Git Bash sin `MSYS_NO_PATHCONV=1`: las rutas del contenedor se convierten en rutas de Windows.
 - Cambiar un script después del domingo 11 sin avisar: las 3 corridas dejan de ser comparables.
 
-### 2.9 Preguntas para tu IA
-
-1. "Revisa este docker-compose.yml para PostgreSQL 17 y dime si cumple: volúmenes con nombre, summarize_wal=on, data checksums, zona horaria America/Guatemala y sin puertos publicados."
-2. "Ayúdame a escribir backup_incremental.sh siguiendo el esqueleto de backup_full.sh de mi guía, encadenando cada INCR al backup_manifest del anterior."
-3. "Escribe restaurar.sh con las 3 etapas medidas (combinar, arranque, validación) y que aborte si existe postmaster.pid."
-4. "pg_basebackup me dio este error: [PEGAR]. ¿Es pg_hba, permisos de /backups o summarize_wal?"
-5. "Con esta salida de restaurar.sh [PEGAR], ¿los conteos coinciden con la tabla de conteos esperados para año r2?"
-
 ---
 
 ## 3. Persona B (Katherine): extracción, loader, manual y corrida por deporte
@@ -814,14 +767,6 @@ Validación especial: el evento siempre es 1025 (1 fila en `evento` en las 3 ron
 - Usar `ON CONFLICT DO NOTHING` y no mirar `en_csv` contra `insertadas`: un error de datos quedaría oculto.
 - Copiar los CSV acumulados en lugar de por ronda: los incrementales dejarían de reflejar solo la ronda nueva.
 
-### 3.9 Preguntas para tu IA
-
-1. "Revisa mi exportar_rondas.sh: ¿todas las consultas son de solo lectura y el orden de columnas coincide con el DDL?"
-2. "Escribe cargar_ronda.sh que genere el SQL con staging, ON CONFLICT DO NOTHING y RETURNING para las 11 tablas en este orden: [ORDEN]."
-3. "Mis conteos después de deporte r2 son [PEGAR]; los esperados son [PEGAR]. ¿Qué tabla está mal y por qué?"
-4. "Arma el índice del manual de usuario con base en la rúbrica: comandos específicos, ejemplos, interpretación de logs y validación de integridad."
-5. "Con este log de pg_basebackup [PEGAR], explícame línea por línea qué significa para la sección 'Interpretación de logs' del manual."
-
 ---
 
 ## 4. Persona C (Javier): validación, fragmentación, ER/DDL, análisis, PDF y corrida por deportista
@@ -868,9 +813,9 @@ UNION ALL SELECT 'resultado', count(*) FROM olimpiadas.resultado;
 `04_restauracion/validar.sql`:
 
 1. `SELECT now();` y el prompt con hora.
-2. `\i /fase2/04_restauracion/conteos.sql`.
+2. `\ir conteos.sql` (ruta relativa al directorio de `validar.sql`).
 3. `SELECT * FROM olimpiadas.<tabla> ORDER BY <pk> LIMIT :limite;` para cada una de las 11 tablas. La variable se pasa con `-v limite=10` (captura) o `-v limite=ALL` (log completo); si no se define, vale 10. `[PENDIENTE]` pregunta 4: si el auxiliar exige `SELECT *` sin límite, la salida completa va al log y la captura muestra el inicio y el final.
-4. Consultas de muestra con sentido: Bolt con sus 7 participaciones, el top 3 de 100 m femenino por edición, el medallero por NOC de la edición cargada.
+4. Consultas de muestra con sentido: Bolt con sus 7 participaciones, el podio por medalla del 100 m femenino por edición, el medallero por NOC de la edición cargada.
 5. Opcional: `pg_amcheck -d olimpiadas` (alertas de integridad).
 
 Fragmentación, en dos archivos de una sola consulta cada uno (pensados para `psql --csv`; el SQL y los comandos completos están en `04_restauracion/README_04.md`):
@@ -893,7 +838,7 @@ Verificado el 8 de octubre de 2026 en una instancia temporal de PostgreSQL 17 (v
 
 **C3. ER y DDL + documentación técnica**
 
-1. Hecho: el modelo ER se alineó con el DDL real (el DDL es la fuente de verdad). A partir de `Fase 2/docs/Modelo_ER_actualizado.xml` se generó `Fase 2/07_documentacion/modelo_er/Modelo_ER_fase2.xml` (draw.io); la matriz de diferencias está en `DISCREPANCIAS_ER_DDL.md` y la versión Mermaid en `modelo_er.mmd`, en la misma carpeta. `[PENDIENTE: exportar desde draw.io a PNG/PDF]` el diagrama final hacia `07_documentacion/`.
+1. Hecho: el modelo ER se alineó con el DDL real (el DDL es la fuente de verdad). A partir de `Fase 2/docs/Modelo_ER_actualizado.xml` se generó `Fase 2/07_documentacion/modelo_er/Modelo_ER_fase2.xml` (draw.io); la matriz de diferencias está en `DISCREPANCIAS_ER_DDL.md` y la versión Mermaid en `modelo_er.mmd`, en la misma carpeta. El PNG ya está en `Fase 2/07_documentacion/modelo_er/Modelo_ER_fase2.png`. `[PENDIENTE: exportar a PDF]` si el PDF técnico lo requiere.
 2. `[PENDIENTE]` A aplica en la copia `01_ddl/01_esquema.sql` el texto propuesto para el comentario de `Fase 1/sql/ddl.sql:152-156` (está en `DISCREPANCIAS_ER_DDL.md`). `Fase 1/sql/ddl.sql` no se modifica.
 3. Estructura del PDF (rúbrica 1.1 y entregables 4.4):
    1. Introducción y objetivo.
@@ -959,14 +904,6 @@ C también dirige el **ensayo del sábado 10** (todos corren Bolt en su máquina
 - Medir la fragmentación con las tablas de la carga base vacías y reportarla como "0% de fragmentación" sin explicar por qué.
 - Usar el `SELECT *` sin `ORDER BY`: el orden cambia y la comparación antes/después no se ve.
 - Dejar el ER desalineado con el DDL en el PDF.
-
-### 4.9 Preguntas para tu IA
-
-1. "Revisa mi fragmentacion.sql: ¿pgstattuple y pgstatindex miden lo que el enunciado llama 'nivel de fragmentación'? ¿Cómo lo explico en el PDF?"
-2. "Este es el DDL [PEGAR] y estas son las diferencias con el ER [PEGAR]; ayúdame a decidir qué corregir en el diagrama y qué documentar."
-3. "Con este tiempos.csv [PEGAR], calcula para cada corrida la razón de cada restauración contra la del FULL y arma la tabla comparativa."
-4. "Escribe un script en Python (pandas + matplotlib) que lea tiempos.csv y genere los 4 gráficos de la sección 4.10."
-5. "Con estos resultados [PEGAR], redacta las conclusiones citando números, sin comparar segundos absolutos entre máquinas."
 
 ### 4.10 Análisis comparativo
 
@@ -1097,4 +1034,4 @@ Además se corrigieron `noc.pais_id` y `sede.pais_id` (también admiten NULL), l
 - `[PENDIENTE]` Especificaciones de las máquinas de los otros dos integrantes, y si tienen la BD de la Fase 1 con los mismos IDs.
 - `[PENDIENTE]` Respaldo adicional o migración del volumen anónimo de `olimpiadas_pg` (decisión de Javier, en cuya máquina está).
 - `[PENDIENTE]` Quién hace el merge final `develop` → `main`.
-- Documentos de referencia en `docs/`: `proyecto_2_respaldo_y_restauracion.md` (Fase 2), `Enunciado_proyecto_1.pdf` (Fase 1, solo existe en PDF) y `Modelo_ER_actualizado.xml` (draw.io).
+- Documentos de referencia en `Fase 2/docs/`: `proyecto_2_respaldo_y_restauracion.md` (Fase 2), `Enunciado_proyecto_1.pdf` (Fase 1, solo existe en PDF) y `Modelo_ER_actualizado.xml` (draw.io).

@@ -1,0 +1,18 @@
+# Tabla (f): WAL dentro de cada respaldo
+
+`segmentos_wal_log`: segmentos de 16 MiB entre el punto de inicio y el de fin del WAL que imprime `pg_basebackup -v` en el log del respaldo. `wal_bytes_medido`: tamaño real de `pg_wal` dentro del respaldo (`medir_pg_wal.sh`, volumen montado de solo lectura), solo en las corridas cuyos volúmenes están en la máquina donde se midió. `sin_wal_MB`: tamaño del respaldo sin su WAL.
+
+| corrida | respaldo | bytes | segmentos_wal_log | wal_bytes_log | wal_bytes_medido | pct_wal | sin_wal_MB |
+|---|---|---:|---:|---:|---:|---:|---:|
+| anio_pa | FULL | 49973573 | 1 | 16777216 |  | 33.6 | 33.2 |
+| anio_pa | INCR 1 | 27047530 | 1 | 16777216 |  | 62.0 | 10.27 |
+| anio_pa | INCR 2 | 29153134 | 1 | 16777216 |  | 57.5 | 12.38 |
+| anio_pa | INCR 3 | 29988752 | 1 | 16777216 |  | 55.9 | 13.21 |
+| deporte_pc | FULL | 49973476 | 1 | 16777216 | 16777216 | 33.6 | 33.2 |
+| deporte_pc | INCR 1 | 21730223 | 1 | 16777216 | 16777216 | 77.2 | 4.95 |
+| deporte_pc | INCR 2 | 21730975 | 1 | 16777216 | 16777216 | 77.2 | 4.95 |
+| deporte_pc | INCR 3 | 21747383 | 1 | 16777216 | 16777216 | 77.1 | 4.97 |
+| deportista_pc | FULL | 50006396 | 1 | 16777216 | 16777216 | 33.6 | 33.23 |
+| deportista_pc | INCR 1 | 21992494 | 1 | 16777216 | 16777216 | 76.3 | 5.22 |
+| deportista_pc | INCR 2 | 22033700 | 1 | 16777216 | 16777216 | 76.1 | 5.26 |
+| deportista_pc | INCR 3 | 21820787 | 1 | 16777216 | 16777216 | 76.9 | 5.04 |

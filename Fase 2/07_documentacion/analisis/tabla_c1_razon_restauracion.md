@@ -1,6 +1,6 @@
 # Tabla (c1): restore(n) / restore(0)
 
-Solo `etapa == total`, mediana de las repeticiones.
+Solo `etapa == total`: mediana, mínimo y máximo de las repeticiones.
 
 | corrida | maquina | n | total_mediana_s | total_min_s | total_max_s | razon_vs_n0 |
 |---|---|---:|---:|---:|---:|---:|

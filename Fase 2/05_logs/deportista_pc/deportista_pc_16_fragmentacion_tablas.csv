@@ -1,0 +1,12 @@
+tabla,table_len,tuple_count,tuple_percent,dead_tuple_count,dead_tuple_percent,free_space,free_percent
+atleta,8192,1,1.28,0,0,8048,98.24
+deporte,8192,95,53.97,0,0,2960,36.13
+deporte_equivalencia,8192,2,1.29,0,0,8044,98.19
+edicion_olimpica,8192,3,1.61,0,0,8008,97.75
+evento,8192,3,2.34,0,0,7952,97.07
+noc,16384,236,68.84,0,0,3712,22.66
+pais,16384,204,47.54,0,0,6940,42.36
+participacion,8192,7,5.81,0,0,7632,93.16
+poblacion_pais,679936,13026,91.96,0,0,260,0.04
+resultado,8192,7,4.04,0,0,7760,94.73
+sede,8192,3,1.46,0,0,8032,98.05

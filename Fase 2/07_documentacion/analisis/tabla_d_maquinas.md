@@ -1,3 +1,3 @@
 # Tabla (d): razones de Bolt por máquina
 
-[PENDIENTE] Solo hay una máquina con CSV válido de deportista (pc-laptop). Falta `tiempos_deportista_pa.csv` y `tiempos_deportista_pb.csv`.
+[PENDIENTE] Solo hay una máquina con corrida válida de deportista (pc-laptop). Faltan corridas válidas de `deportista_pa` y `deportista_pb`.

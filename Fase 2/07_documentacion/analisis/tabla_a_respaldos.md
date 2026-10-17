@@ -4,6 +4,10 @@
 
 | corrida | maquina | paso | respaldo | segundos | bytes | MB |
 |---|---|---|---|---:|---:|---:|
+| anio_pa | pa-laptop | 02 | FULL | 1.927 | 49973573 | 49.97 |
+| anio_pa | pa-laptop | 04 | INCR 1 | 1.77 | 27047530 | 27.05 |
+| anio_pa | pa-laptop | 06 | INCR 2 | 1.722 | 29153134 | 29.15 |
+| anio_pa | pa-laptop | 08 | INCR 3 | 1.738 | 29988752 | 29.99 |
 | deportista_pc | pc-laptop | 02 | FULL | 0.975 | 50006396 | 50.01 |
 | deportista_pc | pc-laptop | 04 | INCR 1 | 0.92 | 21992494 | 21.99 |
 | deportista_pc | pc-laptop | 06 | INCR 2 | 0.784 | 22033700 | 22.03 |

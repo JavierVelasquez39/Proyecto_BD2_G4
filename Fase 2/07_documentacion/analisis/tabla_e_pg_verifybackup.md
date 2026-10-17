@@ -4,6 +4,10 @@ Segundos leídos de la línea `pg_verifybackup: X s` de cada log de restauració
 
 | corrida | n | verify_mediana_s | total_mediana_s | pct_mediana |
 |---|---:|---:|---:|---:|
+| anio_pa | 0 | 0.088 | 2.238 | 3.9 |
+| anio_pa | 1 | 0.095 | 3.393 | 2.8 |
+| anio_pa | 2 | 0.098 | 3.447 | 2.8 |
+| anio_pa | 3 | 0.095 | 3.43 | 2.7 |
 | deportista_pc | 0 | 0.055 | 1.267 | 4.3 |
 | deportista_pc | 1 | 0.055 | 1.524 | 3.6 |
 | deportista_pc | 2 | 0.055 | 1.551 | 3.5 |

@@ -1,0 +1,8 @@
+# Override solo para la demo (proyecto fase2_demo). Monta 08_demo/salida
+# encima de /fase2/05_logs, asi los scripts de carga, respaldo y restauracion
+# escriben sus logs y su CSV de tiempos en 08_demo/salida y no en 05_logs.
+# Las rutas relativas se resuelven desde 00_infraestructura (primer archivo -f).
+services:
+  db:
+    volumes:
+      - ../08_demo/salida:/fase2/05_logs

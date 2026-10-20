@@ -1,0 +1,7 @@
+C3 cargar - inicio 2026-10-20 01:35:19 | base olimpiadas_mongo
+deportes: 95 documentos cargados, 0 rechazados por el validador, 0.0 s
+ediciones: 61 documentos cargados, 0 rechazados por el validador, 0.0 s
+paises: 213 documentos cargados, 0 rechazados por el validador, 0.1 s
+participaciones: 319,961 documentos cargados, 0 rechazados por el validador, 13.5 s
+atletas: 153,049 documentos cargados, 0 rechazados por el validador, 17.5 s
+Fin: 2026-10-20 01:35:51 | duracion 31.2 s | rechazados: 0

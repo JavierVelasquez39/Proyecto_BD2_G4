@@ -1,0 +1,1199 @@
+confianza,tipo,id_f3,nombre_f3,id_otro,nombre_otro,nombre_completo_otro,sexo_ok,noc_comun,deporte_comun,anios_f3,anios_otro,fallecido_otro,choque_evento_2024,n_candidatos_del_f3
+ALTA,subconjunto,145520,Mohamed Ismail,130776,Mohamed Ismail Ibrahim,Mohamed Ismail Ibrahim,True,DJI,Athletics,2024,2014|2016,False,,5
+ALTA,subconjunto,145522,Abdi Waiss,130774,Abdi Waiss Mouhyadin,Abdi Waiss Mouhyadin,True,DJI,Athletics,2024,2016,False,,1
+ALTA,subconjunto,145528,Tonatiu Lopez,141691,Jesús Tonatiú López,Jesús Tonatiú López Álvarez,True,MEX,Athletics,2024,2020,False,,1
+ALTA,subconjunto,145531,del Diego,132259,Diego del Real,Diego Alan del Real Galindo,True,MEX,Athletics,2024,2010|2016|2020,False,,1
+ALTA,subconjunto,145558,Alexandre Houssein,138769,Aden-Alexandre Houssein,Aden-Alexandre Houssein,True,DJI,Judo,2024,2020,False,,1
+ALTA,subconjunto,145590,Shazrin Mohamad,128504,Nur Shazrin Binti Mohamad Latif,Nur Shazrin Binti Mohamad Latif,True,MAS,Sailing,2024,2014|2016|2020,False,,1
+ALTA,subconjunto,145605,Manuel Celaya,141722,Juan Manuel Celaya,Juan Manuel Celaya Hernández,True,MEX,Diving (Aquatics),2024,2020,False,,1
+ALTA,subconjunto,145608,Hussein Yaseen,140423,Taha Hussein Yaseen,Taha Hussein Yaseen,True,IRQ,Athletics,2024,2020,False,,1
+ALTA,subconjunto,145622,Yew Loh,142904,Loh Kean Yew,Loh Kean Yew,True,SGP,Badminton,2024,2020,False,,1
+ALTA,subconjunto,145625,Min Yeo,142893,Yeo Jia Min,Yeo Jia Min,True,SGP,Badminton,2024,2020,False,,1
+ALTA,subconjunto,145628,Shanieka Ricketts,128215,Shanieka Thomas-Ricketts,Shanieka Jodian Thomas-Ricketts,True,JAM,Athletics,2024,2016|2020,False,,1
+ALTA,subconjunto,145637,Natacha Ngoye,138183,Natacha Ngoye Akamabi,Natacha Ngoye Akamabi,True,CGO,Athletics,2024,2020,False,,1
+ALTA,subconjunto,145698,Kamal Achanta,106401,Sharath Kamal Achanta,Sharath Kamal Achanta,True,IND,Table Tennis,2024,2004|2008|2016|2020,False,,1
+ALTA,subconjunto,145765,Singh Tomar,140282,Aishwary Pratap Singh Tomar,Aishwary Pratap Singh Tomar,True,IND,Shooting,2024,2020,False,,1
+ALTA,orden_invertido,145780,McNULTY Harry,140404,Harry McNulty,Harry McNulty,True,IRL,Rugby Sevens (Rugby),2024,2020,False,,1
+ALTA,subconjunto,145784,McCORMACK Fionnuala,113147,Fionnuala Britton-McCormack,Fionnuala Britton-McCormack,True,IRL,Athletics,2024,2008|2012|2016|2020,False,,1
+ALTA,subconjunto,145798,Juan Bar,137166,Juan Manuel Bar,Juan Manuel Bar,True,ARG,Handball,2024,2020,False,,1
+ALTA,subconjunto,145836,Edison Rodriguez,130581,John Édison Rodríguez,John Édison Rodríguez Quevedo,True,COL,Fencing,2024,2016,False,,1
+ALTA,subconjunto,145874,Wen Quah,111078,Quah Ting Wen,Quah Ting Wen,True,SGP,Swimming (Aquatics),2024,2008|2016|2020,False,,2
+ALTA,subconjunto,145877,Oumaima El,141600,Oumaima El-Bouchti,Oumaima El-Bouchti,True,MAR,Taekwondo,2024,2020,False,,1
+ALTA,subconjunto,145881,Yasameen Al,143947,Yasameen Al-Raimi,Yasameen Al-Raimi,True,YEM,Shooting,2024,2020,False,,1
+ALTA,subconjunto,145899,Sreejesh Parattu,119068,Sreejesh Parattu Raveendran,Sreejesh Parattu Raveendran,True,IND,Hockey,2024,2012|2016|2020,False,,1
+ALTA,subconjunto,145916,Mahmood Noor,137062,Sha Mahmood Noor Zahi,Sha Mahmood Noor Zahi,True,AFG,Athletics,2024,2020,False,,1
+ALTA,subconjunto,145919,Bachir Sid,137087,Bachir Sid Azara,Bachir Sid Azara,True,ALG,Wrestling,2024,2020,False,,1
+ALTA,subconjunto,145942,Jhancarlos Gonzalez,138552,Luis Jhancarlos González,Luis Jhancarlos González Ortiz,True,COL,Skateboarding (Roller Sports),2024,2020,False,,1
+ALTA,subconjunto,145944,Lucelly Murillo,138531,María Lucelly Murillo,María Lucelly Murillo Murillo,True,COL,Athletics,2024,2020,False,,1
+ALTA,subconjunto,145970,le Pierre,131158,Pierre Le Corre,Pierre Le Corre,True,FRA,Triathlon,2024,2016,False,,3
+ALTA,subconjunto,145993,Anas Yahiya,131617,Mohammad Anas Yahiya,Mohammad Anas Yahiya,True,IND,Athletics,2024,2016|2020,False,,1
+ALTA,subconjunto,145996,Mukund Sable,140249,Avinash Mukund Sable,Avinash Mukund Sable,True,IND,Athletics,2024,2020,False,,1
+ALTA,subconjunto,146002,Singh Toor,140258,Tajinderpal Singh Toor,Tajinderpal Singh Toor,True,IND,Athletics,2024,2020,False,,1
+ALTA,orden_invertido,146049,Chu-han Chang,143218,Chang Chu-Han,Chang Chu-Han,True,TPE,Canoe Slalom (Canoeing),2024,2020,False,,1
+ALTA,subconjunto,146109,Sallah Cisse,130543,Cheick Sallah Cissé,Cheick Sallah Cissé Junior,True,CIV,Taekwondo,2024,2016|2020,False,,1
+ALTA,subconjunto,146162,James Fiti,139470,Scott James Fiti,Scott James Fiti,True,FSM,Athletics,2024,2020,False,,1
+ALTA,subconjunto,146164,Firdaus Sahrom,141631,Shah Firdaus Sahrom,Muhammad Shah Firdaus Sahrom,True,MAS,Cycling Track (Cycling),2024,2020,False,,1
+ALTA,subconjunto,146166,Andrei-vasile Muntean,132754,Andrei Muntean,Andrei Vasile Muntean,True,ROU,Artistic Gymnastics (Gymnastics),2024,2010|2016,False,,1
+ALTA,subconjunto,146188,de Giovanni,131773,Giovanni De Gennaro,Giovanni De Gennaro,True,ITA,Canoe Slalom (Canoeing),2024,2016|2020,False,,5
+ALTA,subconjunto,146228,Khairulnizam Mohd,123303,Khairulnizam Bin Mohd Afendy,Khairulnizam Bin Mohd Afendy,True,MAS,Sailing,2024,2012|2016|2020,False,,1
+ALTA,subconjunto,146229,Kate Foo,128566,Kate Foo Kune,Kate Jessica Kim Lee Foo Kune (-Ludik),True,MRI,Badminton,2024,2010|2016,False,,1
+ALTA,orden_invertido,146232,Chia-ling Lo,143208,Lo Chia-Ling,Lo Chia-Ling,True,TPE,Taekwondo,2024,2020,False,,1
+ALTA,subconjunto,146251,Marcell Jacobs,140627,Lamont Marcell Jacobs,Lamont Marcell Jacobs,True,ITA,Athletics,2024,2020,False,,1
+ALTA,subconjunto,146264,del Federica,140501,Federica Del Buono,Federica Del Buono,True,ITA,Athletics,2024,2020,False,,1
+ALTA,subconjunto,146300,Vera Looser,128574,Vera Adrian-Looser,Vera Adrian-Looser,True,NAM,Cycling Road (Cycling),2024,2016|2020,False,,1
+ALTA,subconjunto,146307,Ann Williams,140732,Stacey-Ann Williams,Stacey-Ann Williams,True,JAM,Athletics,2024,2020,False,,2
+ALTA,subconjunto,146315,Dhabitah Sabri,128501,Nur Dhabitah Sabri,Nur Dhabitah Binti Sabri,True,MAS,Diving (Aquatics),2024,2016|2020,False,,1
+ALTA,subconjunto,146341,Soufiane El,132220,Soufiane El-Bakkali,Soufiane El-Bakkali,True,MAR,Athletics,2024,2016|2020,False,,1
+ALTA,subconjunto,146348,Othmane El,141606,Othmane El-Goumri,Othmane El-Goumri,True,MAR,Athletics,2024,2020,False,,1
+ALTA,subconjunto,146351,Abdelati El,132215,Abdelati El-Guesse,Abdelati El-Guesse,True,MAR,Athletics,2024,2016|2020,False,,1
+ALTA,subconjunto,146356,la Cesar,121521,Julio César la Cruz,Julio César de la Cruz Peraza,True,CUB,Boxing,2024,2012|2016|2020,False,,1
+ALTA,subconjunto,146390,Nabaaha Abdul,141646,Fathimath Nabaaha Abdul Razzaq,Fathimath Nabaaha Abdul Razzaq,True,MDV,Badminton,2024,2020,False,,1
+ALTA,subconjunto,146418,Elodie Ravera,127697,Élodie Ravera-Scaramozzino,Élodie Ravera-Scaramozzino,True,FRA,Rowing,2024,2016|2020,False,,1
+ALTA,subconjunto,146455,Francois Mendy,142885,Louis-François Mendy,Louis-François Mendy,True,SEN,Athletics,2024,2020,False,,1
+ALTA,subconjunto,146457,Maria Naimasi,139173,Ana Maria Naimasi,Ana Maria Naimasi,True,FIJ,Rugby Sevens (Rugby),2024,2020,False,,1
+ALTA,subconjunto,146536,Amr Hussen,138920,Amr Reda Hussen,Amr Reda Ramadan Hussen,True,EGY,Wrestling,2024,2020,False,,1
+ALTA,subconjunto,146617,Enrique Zayas,138620,Luis Enrique Zayas,Luis Enrique Zayas Fernández,True,CUB,Athletics,2024,2020,False,,1
+ALTA,subconjunto,146619,Nguyet Do,143931,Đỗ Thị Ánh Nguyệt,Đỗ Thị Ánh Nguyệt,True,VIE,Archery,2024,2020,False,,1
+ALTA,subconjunto,146651,Pablo Carreno,139122,Pablo Carreño Busta,Pablo Carreño Busta,True,ESP,Tennis,2024,2020,False,,1
+ALTA,subconjunto,146679,Murielle Ahoure-demps,119306,Murielle Ahouré,Murielle Ahouré (-Demps),True,CIV,Athletics,2024,2012|2016|2020,False,,1
+ALTA,subconjunto,146701,Ramon Pelier,138623,José Ramón Pelier,José Ramón Pelier Córdova,True,CUB,Canoe Sprint (Canoeing),2024,2020,False,,1
+ALTA,orden_invertido,146711,Chien-ying Lei,122952,Lei Chien-Ying,Lei Chien-Ying,True,TPE,Archery,2024,2012|2016|2020,False,,1
+ALTA,orden_invertido,146722,Enkhkhuslen Batbayar,141769,Batbayar Enkhkhüslen,Batbayar Enkhkhüslen,True,MGL,Swimming (Aquatics),2024,2020,False,,1
+ALTA,subconjunto,146730,Antoaneta Kostadinova,119804,Antoaneta Boneva-Kostadinova,Antoaneta Nikolaeva Boneva-Kostadinova,True,BUL,Shooting,2024,2012|2016|2020,False,,1
+ALTA,orden_invertido,146774,Chen-ling Lien,129253,Lien Chen-Ling,Lien Chen-Ling,True,TPE,Judo,2024,2016|2020,False,,1
+ALTA,subconjunto,146775,Wei Yang,143223,Yang Yung-Wei,Yang Yung-Wei,True,TPE,Judo,2024,2020,False,,5
+ALTA,orden_invertido,146776,Chen-hao Lin,143222,Lin Chen-Hao,Lin Chen-Hao,True,TPE,Judo,2024,2020,False,,1
+ALTA,subconjunto,146803,Kigen Ozbilen,133198,Kaan Kigen Özbilen,Kaan Kigen (Mike Kipruto-) Özbilen (Kigen-),True,TUR,Athletics,2024,2016,False,,1
+ALTA,subconjunto,146819,Regine Tugade-watson,127982,Regine Tugade,Regine Kate Tugade (-Wilson),True,GUM,Athletics,2024,2016|2020,False,,1
+ALTA,subconjunto,146826,Jia Lee,141629,Lee Zii Jia,Lee Zii Jia,True,MAS,Badminton,2024,2020,False,,1
+ALTA,subconjunto,146829,Essa Barshim,122678,Mutaz Essa Barshim,Mutaz Essa Barshim,True,QAT,Athletics,2024,2012|2016|2020,False,,1
+ALTA,subconjunto,146836,Kubra Ilgun,143292,Hatice Kübra İlgün,Hatice Kübra İlgün,True,TUR,Taekwondo,2024,2020,False,,1
+ALTA,subconjunto,146863,Abzetta Dabonne,127289,Zouleiha Abzetta Dabonne,Zouleiha Abzetta Dabonne,True,CIV,Judo,2024,2016|2020,False,,1
+ALTA,subconjunto,146871,Linh Nguyen,143933,Nguyễn Thùy Linh,Nguyễn Thùy Linh,True,VIE,Badminton,2024,2020,False,,1
+ALTA,subconjunto,146873,Naz Cakiroglu,143278,Buse Naz Çakıroğlu,Buse Naz Çakıroğlu,True,TUR,Boxing,2024,2020,False,,1
+ALTA,subconjunto,146926,Zuzana Rehak,115880,Zuzana Rehák Štefečeková,Zuzana Rehák Štefečeková,True,SVK,Shooting,2024,2008|2012|2020,False,,1
+ALTA,subconjunto,146954,Jair Tjon,143052,Jaïr Tjon En Fa,Jaïr Tjon En Fa,True,SUR,Cycling Track (Cycling),2024,2020,False,,1
+ALTA,orden_invertido,146957,Wen-huei Chen,143211,Chen Wen-Huei,Chen Wen-Huei,True,TPE,Weightlifting,2024,2020,False,,1
+ALTA,orden_invertido,146959,Wan-ling Fang,143212,Fang Wan-Ling,Fang Wan-Ling,True,TPE,Weightlifting,2024,2020,False,,1
+ALTA,subconjunto,146962,Juwon Opeyori,142052,Anuoluwapo Juwon Opeyori,Anuoluwapo Juwon Opeyori,True,NGR,Badminton,2024,2020,False,,1
+ALTA,orden_invertido,146964,Kun-pi Yang,133158,Yang Kun-Pi,Yang Kun-Pi,True,TPE,Shooting,2024,2016|2020,False,,1
+ALTA,subconjunto,146965,Chun Lin,92424,Lin Yi-Chun,Lin Yi-Chun,True,TPE,Shooting,2024,2000|2004|2012|2016,False,,4
+ALTA,subconjunto,146967,Chen Tien,120058,Tien Chia-Chen,Tien Chia-Chen,True,TPE,Shooting,2024,2012|2020,False,,3
+ALTA,subconjunto,146968,Yu Liu,146970,Wan-yu Liu,,True,TPE,Shooting,2024,2024,False,,3
+ALTA,subconjunto,146969,Ying Wu,129255,Wu Chia-Ying,Wu Chia-Ying,True,TPE,Shooting,2024,2016|2020,False,,1
+ALTA,subconjunto,146971,Wen Yu,120059,Yu Ai-Wen,Yu Ai-Wen,True,TPE,Shooting,2024,2012|2016,False,,1
+ALTA,subconjunto,146974,Yik Soh,141630,Soh Wooi Yik,Soh Wooi Yik,True,MAS,Badminton,2024,2020,False,,1
+ALTA,subconjunto,146985,Ying Tai,122960,Tai Tzu-Ying,Tai Tzu-Ying,True,TPE,Badminton,2024,2012|2016|2020,False,,1
+ALTA,subconjunto,146986,Chen Chou,133152,Chou Tien-Chen,Chou Tien-Chen,True,TPE,Badminton,2024,2016|2020,False,,1
+ALTA,orden_invertido,146987,Chi-lin Wang,143216,Wang Chi-Lin,Wang Chi-Lin,True,TPE,Badminton,2024,2020,False,,2
+ALTA,orden_invertido,146988,Yang Lee,143215,Lee Yang,Lee Yang,True,TPE,Badminton,2024,2020,False,,1
+ALTA,subconjunto,147010,de Sarah,141578,Sarah de Nutte,Sarah de Nutte,True,LUX,Table Tennis,2024,2020,False,,1
+ALTA,subconjunto,147012,Lian Ni,93247,Xia Lian Ni,Xia Lian Ni,True,LUX,Table Tennis,2024,2000|2008|2012|2016|2020,False,,1
+ALTA,subconjunto,147014,Eve Paget,139251,Marie-Ève Paget,Marie-Ève Paget,True,FRA,3x3 Basketball (Basketball),2024,2020,False,,1
+ALTA,subconjunto,147025,Alberto Orta,138630,Luis Alberto Orta,Luis Alberto Orta Sánchez,True,CUB,Wrestling,2024,2020,False,,1
+ALTA,subconjunto,147066,Hun An,132114,An Byeong-Hun,An Byeong-Hun,True,KOR,Golf,2024,2016,False,,2
+ALTA,subconjunto,147079,Paul O,131716,Paul O'Donovan,Paul O'Donovan,True,IRL,Rowing,2024,2016|2020,False,,3
+ALTA,subconjunto,147121,Adrianna Sulek-schubert,142303,Adrianna Sułek,Adrianna Sułek,True,POL,Athletics,2024,2020,False,,1
+ALTA,subconjunto,147155,Lindon Victor,133592,Lindon Toussaint-Victor,Lindon Kellon Toussaint-Victor,True,GRN,Athletics,2024,2010|2016|2020,False,,1
+ALTA,subconjunto,147156,Valeriane Ayayi,127636,Valériane Ayayi-Vukosavljević,Valériane Ayayi-Vukosavljević,True,FRA,Basketball (Basketball),2024,2016|2020,False,,1
+ALTA,subconjunto,147164,de Nando,122604,Nando de Colo,Nando Bruno Alfred Andre de Colo,True,FRA,Basketball (Basketball),2024,2012|2016|2020,False,,1
+ALTA,subconjunto,147177,le Nicolas,131169,Nicolas Le Goff,Nicolas Jean-François Emmanuel Le Goff,True,FRA,Volleyball (Volleyball),2024,2016|2020,False,,2
+ALTA,orden_invertido,147196,Chih-yuan Chuang,106408,Chuang Chih-Yuan,Chuang Chih-Yuan,True,TPE,Table Tennis,2024,2004|2008|2012|2016|2020,False,,1
+ALTA,orden_invertido,147198,I-ching Cheng,129260,Cheng I-Ching,Cheng I-Ching,True,TPE,Table Tennis,2024,2016|2020,False,,1
+ALTA,orden_invertido,147199,Szu-yu Chen,120862,Chen Szu-Yu,Chen Szu-Yu,True,TPE,Table Tennis,2024,2012|2016|2020,False,,1
+ALTA,orden_invertido,147201,Chia-hung Tang,143220,Tang Chia-Hung,Tang Chia-Hung,True,TPE,Artistic Gymnastics (Gymnastics),2024,2020,False,,1
+ALTA,orden_invertido,147202,Hua-tien Ting,143204,Ting Hua-Tien,Ting Hua-Tien,True,TPE,Artistic Gymnastics (Gymnastics),2024,2020,False,,1
+ALTA,subconjunto,147206,Nordstad Moen,132471,Sondre Nordstad Moen,Sondre Nordstad Moen,True,NOR,Athletics,2024,2016|2020,False,,1
+ALTA,subconjunto,147212,Bjerkeli Grovdal,119872,Karoline Bjerkeli Grøvdal,Karoline Bjerkeli Grøvdal,True,NOR,Athletics,2024,2012|2016|2020,False,,1
+ALTA,subconjunto,147249,Marit Jacobsen,142074,Marit Røsberg Jacobsen,Marit Røsberg Jacobsen,True,NOR,Handball,2024,2020,False,,1
+ALTA,subconjunto,147250,Katrine Lunde,110785,Katrine Lunde-Haraldsen,"Katrine Lunde-Haraldsen (Lunde-, -Lunde)",True,NOR,Handball,2024,2008|2012|2016|2020,False,,1
+ALTA,subconjunto,147253,Bredal Oftedal,128698,Stine Bredal Oftedal,Stine Bredal Oftedal,True,NOR,Handball,2024,2016|2020,False,,1
+ALTA,subconjunto,147254,Kari Brattset,142072,Kari Brattset Dale,Kari Skaar Brattset Dale,True,NOR,Handball,2024,2020,False,,1
+ALTA,subconjunto,147318,Katarzyna Wasick,115435,Katarzyna Wilk-Wasick,Katarzyna Maria Wilk-Wasick,True,POL,Swimming (Aquatics),2024,2008|2012|2016|2020,False,,1
+ALTA,subconjunto,147355,Estelle Nze,127676,Estelle Nze Minko,Estelle Véronique Nze Minko,True,FRA,Handball,2024,2016|2020,False,,1
+ALTA,subconjunto,147360,Mustafa Bashir,132546,Ghulam Mustafa Bashir,Ghulam Mustafa Bashir,True,PAK,Shooting,2024,2016|2020,False,,1
+ALTA,orden_invertido,147424,Hao-ching Chan,129257,Chan Hao-Ching,Chan Hao-Ching,True,TPE,Tennis,2024,2016|2020,False,,1
+ALTA,orden_invertido,147426,Su-wei Hsieh,121337,Hsieh Su-Wei,Hsieh Su-Wei,True,TPE,Tennis,2024,2012,False,,1
+ALTA,subconjunto,147427,del Maylin,138608,Maylín del Toro,Maylín del Toro Carvajal,True,CUB,Judo,2024,2020,False,,1
+ALTA,subconjunto,147430,Thomas Mlugu,133115,Andrew Thomas Mlugu,Andrew Thomas Mlugu,True,TAN,Judo,2024,2016,False,,1
+ALTA,subconjunto,147448,Ting Lin,143200,Lin Yu-Ting,Lin Yu-Ting,True,TPE,Boxing,2024,2020,False,,1
+ALTA,subconjunto,147449,Yi Wu,143201,Wu Shih-Yi,Wu Shih-Yi,True,TPE,Boxing,2024,2020,False,,2
+ALTA,subconjunto,147450,Chin Chen,129248,Chen Nien-Chin,Chen Nien-Chin,True,TPE,Boxing,2024,2014|2016|2020,False,,6
+ALTA,subconjunto,147452,En Lai,133153,Lai Chu-En,Lai Chu-En,True,TPE,Boxing,2024,2016,False,,1
+ALTA,subconjunto,147453,Zalina Marghieva,113810,Zalina Marghieva-Petrivskaya,Zalina Marghieva-Petrivskaya,True,MDA,Athletics,2024,2008|2012|2016|2020,False,,1
+ALTA,subconjunto,147500,Dimitriana Bezede,128509,Dimitriana Surdu-Bezede,Dimitriana Surdu-Bezede,True,MDA,Athletics,2024,2016|2020,False,,1
+ALTA,orden_invertido,147510,Otgonbold Baatarkhuyag,141777,Baatarkhuyag Otgonbold,Baatarkhuyag Otgonbold,True,MGL,Archery,2024,2020,False,,1
+ALTA,subconjunto,147536,Gilje Nordas,142088,Narve Gilje Nordås,Narve Gilje Nordås,True,NOR,Athletics,2024,2020,False,,1
+ALTA,subconjunto,147544,Nan Yuan,139328,Jia Nan Yuan,Jia Nan Yuan,True,FRA,Table Tennis,2024,2020,False,,1
+ALTA,subconjunto,147559,Lea Friedrich,139797,Lea-Sophie Friedrich,Lea-Sophie Friedrich,True,GER,Cycling Track (Cycling),2024,2020,False,,1
+ALTA,orden_invertido,147603,Zhenzhao Ma,138312,Ma Zhenzhao,Ma Zhenzhao,True,CHN,Judo,2024,2020,False,,1
+ALTA,orden_invertido,147604,Shiyan Xu,138314,Xu Shiyan,Xu Shiyan,True,CHN,Judo,2024,2020,False,,1
+ALTA,subconjunto,147607,Leonie Cysique,139287,Sarah-Léonie Cysique,Sarah-Léonie Cysique,True,FRA,Judo,2024,2020,False,,1
+ALTA,subconjunto,147724,Sanggaard Nielsen,138725,Frida Sanggaard Nielsen,Frida Sanggaard Nielsen,True,DEN,Rowing,2024,2020,False,,1
+ALTA,subconjunto,147731,Udby Erichsen,120952,Fie Udby Erichsen,Fie Udby Erichsen (Graugaard-),True,DEN,Rowing,2024,2012|2016|2020,False,,1
+ALTA,subconjunto,147741,Timna Nelson,140434,Timna Nelson Levy,Timna Nelson Levy,True,ISR,Judo,2024,2020,False,,1
+ALTA,subconjunto,147787,Na Lee,103720,Lee Bo-Na,Lee Bo-Na,True,KOR,Shooting,2024,2004|2008,False,,3
+ALTA,subconjunto,147809,Hegg Duestad,142083,Jeanette Hegg Duestad,Jeanette Hegg Duestad,True,NOR,Shooting,2024,2020,False,,1
+ALTA,subconjunto,147849,Chepchumba Kiprono,141301,Sharon Chepchumba Kiprono,Sharon Chepchumba Kiprono,True,KEN,Volleyball (Volleyball),2024,2020,False,,1
+ALTA,subconjunto,147886,Rasmus Lauge,123139,Rasmus Lauge Schmidt,Rasmus Lauge Schmidt,True,DEN,Handball,2024,2012,False,,1
+ALTA,subconjunto,147946,Pauline Ferrand,122883,Pauline Ferrand-Prévot,Pauline Ferrand-Prévot,True,FRA,Cycling Mountain Bike (Cycling),2024,2012|2016|2020,False,,1
+ALTA,subconjunto,147950,le Marie,139260,Marie Le Net,Marie Le Net,True,FRA,Cycling Track (Cycling),2024,2020,False,,5
+ALTA,subconjunto,148005,Yuki Baig,141105,Adam Yuki Baig,Adam Yuki Baig,True,JPN,Handball,2024,2020,False,,1
+ALTA,subconjunto,148136,Felix Simbu,133113,Alphonce Felix Simbu,Alphonce Felix Simbu,True,TAN,Athletics,2024,2016|2020,False,,1
+ALTA,subconjunto,148162,Andre Ordemann,142120,Richard André Ordemann,Richard André Konopka Ordemann,True,NOR,Taekwondo,2024,2020,False,,1
+ALTA,orden_invertido,148164,Chen Xue,111258,Xue Chen,Xue Chen,True,CHN,Beach Volleyball (Volleyball),2024,2008|2012|2020,False,,1
+ALTA,orden_invertido,148165,Xinyi Xia,138262,Xia Xinyi,Xia Xinyi,True,CHN,Beach Volleyball (Volleyball),2024,2020,False,,1
+ALTA,orden_invertido,148203,Hollie Pearne-webb,127770,Hollie Webb-Pearne,Hollie Webb-Pearne,True,GBR,Hockey,2024,2016|2020,False,,1
+ALTA,subconjunto,148308,Andrea Spendolini,139517,Andrea Spendolini Sirieix,Andrea Spendolini Sirieix,True,GBR,Diving (Aquatics),2024,2020,False,,1
+ALTA,subconjunto,148325,Mathilda Hodgkins,139582,Mathilda Hodgkins Byrne,Mathilda Kathryn R. Hodgkins Byrne,True,GBR,Rowing,2024,2020,False,,1
+ALTA,orden_invertido,148328,McKELLAR Rowan,139705,Rowan McKellar,Rowan McKellar,True,GBR,Rowing,2024,2020,False,,1
+ALTA,orden_invertido,148350,Yuxi Chen,138275,Chen Yuxi,Chen Yuxi,True,CHN,Diving (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,148351,Hongchan Quan,138276,Quan Hongchan,Quan Hongchan,True,CHN,Diving (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,148352,Zongyuan Wang,138439,Wang Zongyuan,Wang Zongyuan,True,CHN,Diving (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,148353,Siyi Xie,138440,Xie Siyi,Xie Siyi,True,CHN,Diving (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,148357,Yuan Cao,120399,Cao Yuan,Cao Yuan,True,CHN,Diving (Aquatics),2024,2012|2016|2020,False,,1
+ALTA,subconjunto,148359,de Bethania,120350,Bethania de la Cruz,Bethania de la Cruz de Peña,True,DOM,Volleyball (Volleyball),2024,2012|2020,False,,1
+ALTA,orden_invertido,148387,Jiyuan Wan,138256,Wan Jiyuan,Wan Jiyuan,True,CHN,3x3 Basketball (Basketball),2024,2020,False,,1
+ALTA,orden_invertido,148389,Zhiting Zhang,138259,Zhang Zhiting,Zhang Zhiting,True,CHN,3x3 Basketball (Basketball),2024,2020,False,,1
+ALTA,orden_invertido,148390,Lili Wang,138257,Wang Lili,Wang Lili,True,CHN,3x3 Basketball (Basketball),2024,2020,False,,1
+ALTA,orden_invertido,148391,Siyu Wang,138246,Wang Siyu,Wang Siyu,True,CHN,Basketball (Basketball),2024,2020,False,,1
+ALTA,orden_invertido,148392,Xu Han,138241,Han Xu,Han Xu,True,CHN,Basketball (Basketball),2024,2018|2020,False,,1
+ALTA,orden_invertido,148393,Sijing Huang,127140,Huang Sijing,Huang Sijing,True,CHN,Basketball (Basketball),2024,2016|2020,False,,1
+ALTA,orden_invertido,148394,Meng Li,138242,Li Meng,Li Meng,True,CHN,Basketball (Basketball),2024,2020,False,,1
+ALTA,orden_invertido,148395,Yueru Li,138244,Li Yueru,Li Yueru,True,CHN,Basketball (Basketball),2024,2020,False,,1
+ALTA,orden_invertido,148397,Tongtong Wu,138247,Wu Tongtong,Wu Tongtong,True,CHN,Basketball (Basketball),2024,2020,False,,1
+ALTA,orden_invertido,148398,Liwei Yang,138248,Yang Liwei,Yang Liwei,True,CHN,Basketball (Basketball),2024,2020,False,,1
+ALTA,orden_invertido,148400,Ru Zhang,138249,Zhang Ru,Zhang Ru,True,CHN,Basketball (Basketball),2024,2020,False,,1
+ALTA,orden_invertido,148401,Mengran Sun,127138,Sun Mengran,Sun Mengran,True,CHN,Basketball (Basketball),2024,2016|2020,False,,1
+ALTA,subconjunto,148418,Deok Kim,141425,Kim Je-Deok,Kim Je-Deok,True,KOR,Archery,2024,2020,False,,6
+ALTA,subconjunto,148425,Gerald Geay,143154,Gabriel Gerald Geay,Gabriel Gerald Geay,True,TAN,Athletics,2024,2020,False,,1
+ALTA,orden_invertido,148427,Long Ma,120076,Ma Long,Ma Long,True,CHN,Table Tennis,2024,2012|2016|2020,False,,1
+ALTA,orden_invertido,148429,Meng Chen,138385,Chen Meng,Chen Meng,True,CHN,Table Tennis,2024,2020,False,,1
+ALTA,orden_invertido,148431,Manyu Wang,138386,Wang Manyu,Wang Manyu,True,CHN,Table Tennis,2024,2020,False,,1
+ALTA,orden_invertido,148439,Haiwei Chen,130486,Chen Haiwei,Chen Haiwei,True,CHN,Fencing,2024,2016,False,,1
+ALTA,orden_invertido,148451,Zijie Wang,138451,Wang Zijie,Wang Zijie,True,CHN,Fencing,2024,2020,False,,1
+ALTA,orden_invertido,148453,Qingyuan Chen,138279,Chen Qingyuan,Chen Qingyuan,True,CHN,Fencing,2024,2020,False,,1
+ALTA,orden_invertido,148457,Yiwen Sun,127167,Sun Yiwen,Sun Yiwen,True,CHN,Fencing,2024,2016|2020,False,,1
+ALTA,subconjunto,148470,Aiperi Medet,141331,Aiperi Medet Kyzy,Aiperi Medet Kyzy,True,KGZ,Wrestling,2024,2020,False,,1
+ALTA,subconjunto,148502,van Wout,137647,Wout Van Aert,Wout Van Aert,True,BEL,Cycling Road (Cycling),2024,2020,False,,3
+ALTA,subconjunto,148517,de Manon,137613,Manon De Roey,Manon De Roey,True,BEL,Golf,2024,2020,False,,1
+ALTA,subconjunto,148527,de Arthur,137652,Arthur De Sloover,Arthur Anne-Marie Thierry De Sloover,True,BEL,Hockey,2024,2020,False,,2
+ALTA,subconjunto,148538,van Florent,124132,Florent Van Aubel,Florent Van Aubel,True,BEL,Hockey,2024,2012|2016|2020,False,,1
+ALTA,subconjunto,148562,Samir Ait,131098,Samir Aït Saïd,Samir Aït Saïd,True,FRA,Artistic Gymnastics (Gymnastics),2024,2016|2020,False,,1
+ALTA,subconjunto,148563,de Melanie,139275,Mélanie de Jésus dos Santos,Mélanie Johanna de Jésus dos Santos,True,FRA,Artistic Gymnastics (Gymnastics),2024,2020,False,,2
+ALTA,orden_invertido,148652,McINTOSH Seonaid,139591,Seonaid McIntosh,Seonaid McIntosh,True,GBR,Shooting,2024,2020,False,,1
+ALTA,subconjunto,148676,Ana Peleteiro-compaore,138956,Ana Peleteiro,Ana Peleteiro Brión,True,ESP,Athletics,2024,2020,False,,1
+ALTA,subconjunto,148677,Isabel Perez,138967,María Isabel Pérez,María Isabel Pérez Rodríguez,True,ESP,Athletics,2024,2020,False,,1
+ALTA,subconjunto,148684,Belen Toimil,138966,María Belén Toimil,María Belén Toimil Fernández,True,ESP,Athletics,2024,2020,False,,1
+ALTA,subconjunto,148787,de Luciano,122284,Luciano De Cecco,Luciano De Cecco,True,ARG,Volleyball (Volleyball),2024,2012|2016|2020,False,,3
+ALTA,subconjunto,148797,Natalia Santos,110763,Natália Bernardo-Santos,Natália Maria Bernardo-Santos,True,ANG,Handball,2024,2008|2012|2016|2020,False,,1
+ALTA,orden_invertido,148836,Hengyu Yang,138282,Yang Hengyu,Yang Hengyu,True,CHN,Fencing,2024,2020,False,,1
+ALTA,orden_invertido,148866,Yu Feng,138368,Feng Yu,Feng Yu,True,CHN,Artistic Swimming (Aquatics),2024,2020,False,,2
+ALTA,orden_invertido,148872,Qianyi Wang,138369,Wang Qianyi,Wang Qianyi,True,CHN,Artistic Swimming (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,148873,Yanning Xiao,138370,Xiao Yanning,Xiao Yanning,True,CHN,Artistic Swimming (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,148878,Wenhui Zeng,138366,Zeng Wenhui,Zeng Wenhui,True,CHN,Skateboarding (Roller Sports),2024,2020,False,,1
+ALTA,orden_invertido,148906,Wei-ling Hsu,143202,Hsu Wei-Ling,Hsu Wei-Ling,True,TPE,Golf,2024,2020,False,,1
+ALTA,subconjunto,148962,Nicholas Kipkorir,141314,Nicholas Kipkorir Kimeli,Nicholas Kipkorir Kimeli,True,KEN,Athletics,2024,2020,False,,1
+ALTA,orden_invertido,148976,McILROY Rory,140395,Rory McIlroy,Rory McIlroy,True,IRL,Golf,2024,2020,False,,1
+ALTA,subconjunto,148977,Amr Hassan,138872,Mostafa Amr Hassan,Mostafa Amr Hassan,True,EGY,Athletics,2024,2020,False,,1
+ALTA,subconjunto,149070,Mickael Zeze,131049,Mickaël-Méba Zézé,Mickaël-Méba Zézé,True,FRA,Athletics,2024,2016|2020,False,,1
+ALTA,orden_invertido,149123,McLEOD Carey,140738,Carey McLeod,Carey McLeod,True,JAM,Athletics,2024,2020,False,,1
+ALTA,orden_invertido,149129,Yechun Yuan,138453,Yuan Yechun,Yuan Yechun,True,CHN,Golf,2024,2020,False,,1
+ALTA,orden_invertido,149139,Xiaolei Yang,138229,Yang Xiaolei,Yang Xiaolei,True,CHN,Archery,2024,2020,False,,1
+ALTA,subconjunto,149167,Arif Pangestu,140210,Arif Dwi Pangestu,Arif Dwi Pangestu,True,INA,Archery,2024,2020,False,,1
+ALTA,orden_invertido,149169,Xia Ding,127265,Ding Xia,Ding Xia,True,CHN,Volleyball (Volleyball),2024,2016|2020,False,,1
+ALTA,orden_invertido,149171,Xiangyu Gong,127266,Gong Xiangyu,Gong Xiangyu,True,CHN,Volleyball (Volleyball),2024,2016|2020,False,,1
+ALTA,orden_invertido,149172,Yingying Li,138482,Li Yingying,Li Yingying,True,CHN,Volleyball (Volleyball),2024,2020,False,,1
+ALTA,orden_invertido,149173,Mengjie Wang,138388,Wang Mengjie,Wang Mengjie,True,CHN,Volleyball (Volleyball),2024,2020,False,,1
+ALTA,orden_invertido,149175,Xinyue Yuan,127268,Yuan Xinyue,Yuan Xinyue,True,CHN,Volleyball (Volleyball),2024,2016|2020,False,,1
+ALTA,orden_invertido,149176,Changning Zhang,127260,Zhang Changning,Zhang Changning,True,CHN,Volleyball (Volleyball),2024,2016|2020,False,,1
+ALTA,orden_invertido,149178,Yuanyuan Wang,138389,Wang Yuanyuan,Wang Yuanyuan,True,CHN,Volleyball (Volleyball),2024,2020,False,,2
+ALTA,orden_invertido,149180,Ting Zhu,127264,Zhu Ting,Zhu Ting,True,CHN,Volleyball (Volleyball),2024,2016|2020,False,,2
+ALTA,orden_invertido,149207,Lihao Sheng,138469,Sheng Lihao,Sheng Lihao,True,CHN,Shooting,2024,2020,False,,1
+ALTA,orden_invertido,149209,Bowen Zhang,138472,Zhang Bowen,Zhang Bowen,True,CHN,Shooting,2024,2020,False,,1
+ALTA,orden_invertido,149210,Yuehong Li,130510,Li Yuehong,Li Yuehong,True,CHN,Shooting,2024,2016|2020,False,,1
+ALTA,orden_invertido,149214,Haicheng Yu,138471,Yu Haicheng,Yu Haicheng,True,CHN,Shooting,2024,2020,False,,1
+ALTA,orden_invertido,149217,Ranxin Jiang,138357,Jiang Ranxin,Jiang Ranxin,True,CHN,Shooting,2024,2020,False,,1
+ALTA,orden_invertido,149225,Meng Wei,127225,Wei Meng,Wei Meng,True,CHN,Shooting,2024,2016|2020,False,,1
+ALTA,orden_invertido,149227,Shuhuan Li,138457,Li Shuhuan,Li Shuhuan,True,CHN,Modern Pentathlon,2024,2020,False,,1
+ALTA,orden_invertido,149228,Shuai Luo,138458,Luo Shuai,Luo Shuai,True,CHN,Modern Pentathlon,2024,2020,False,,1
+ALTA,orden_invertido,149229,Mingyu Zhang,138317,Zhang Mingyu,Zhang Mingyu,True,CHN,Modern Pentathlon,2024,2020,False,,1
+ALTA,subconjunto,149259,de Mauro,140683,Mauro De Filippis,Mauro De Filippis,True,ITA,Shooting,2024,2020,False,,2
+ALTA,subconjunto,149261,Eid Naser,126963,Salwa Eid Naser,Salwa Eid Naser,True,BRN,Athletics,2024,2014|2016,False,,1
+ALTA,subconjunto,149263,van Naomi,137591,Naomi van den Broeck,Naomi van den Broeck,True,BEL,Athletics,2024,2020,False,,2
+ALTA,subconjunto,149265,van Julie,137607,Julie Van de Velde,Julie Van de Velde,True,BEL,Cycling Road (Cycling),2024,2020,False,,1
+ALTA,subconjunto,149273,van Arthur,130027,Arthur Van Doren,Arthur Van Doren,True,BEL,Hockey,2024,2010|2016|2020,False,,1
+ALTA,subconjunto,149277,Marten Van,130043,Marten Van Riel,Marten Van Riel,True,BEL,Triathlon,2024,2016|2020,False,,1
+ALTA,subconjunto,149297,Auriane Mallo-breton,127650,Auriane Mallo,Auriane Mallo (-Breton),True,FRA,Fencing,2024,2016,False,,1
+ALTA,subconjunto,149345,Jordan Larson,124352,Jordan Larson-Burbach,Jordan Quinn Larson-Burbach,True,USA,Volleyball (Volleyball),2024,2012|2016|2020,False,,1
+ALTA,orden_invertido,149385,Fabin Li,138484,Li Fabin,Li Fabin,True,CHN,Weightlifting,2024,2020,False,,1
+ALTA,orden_invertido,149387,Wenwen Li,138398,Li Wenwen,Li Wenwen,True,CHN,Weightlifting,2024,2020,False,,1
+ALTA,orden_invertido,149388,Zhihui Hou,138397,Hou Zhihui,Hou Zhihui,True,CHN,Weightlifting,2024,2020,False,,1
+ALTA,orden_invertido,149390,Zhiyu Liu,138460,Liu Zhiyu,Liu Zhiyu,True,CHN,Rowing,2024,2020,False,,1
+ALTA,orden_invertido,149393,Shiyu Lu,138342,Lu Shiyu,Lu Shiyu,True,CHN,Rowing,2024,2020,False,,1
+ALTA,orden_invertido,149394,Zifeng Wang,138346,Wang Zifeng,Wang Zifeng,True,CHN,Rowing,2024,2020,False,,1
+ALTA,orden_invertido,149396,Yunxia Chen,138333,Chen Yunxia,Chen Yunxia,True,CHN,Rowing,2024,2020,False,,1
+ALTA,orden_invertido,149397,Xiaotong Cui,138334,Cui Xiaotong,Cui Xiaotong,True,CHN,Rowing,2024,2020,False,,1
+ALTA,orden_invertido,149399,Ling Zhang,127213,Zhang Ling,Zhang Ling,True,CHN,Rowing,2024,2016|2020,False,,2
+ALTA,orden_invertido,149401,Shuangmei Shen,138344,Shen Shuangmei,Shen Shuangmei,True,CHN,Rowing,2024,2020,False,,1
+ALTA,orden_invertido,149402,Xiaoxin Liu,138341,Liu Xiaoxin,Liu Xiaoxin,True,CHN,Rowing,2024,2020,False,,1
+ALTA,orden_invertido,149436,Yang Liu,130495,Liu Yang,Liu Yang,True,CHN,Artistic Gymnastics (Gymnastics),2024,2016|2020,False,,4
+ALTA,orden_invertido,149438,Ruoteng Xiao,138455,Xiao Ruoteng,Xiao Ruoteng,True,CHN,Artistic Gymnastics (Gymnastics),2024,2020,False,,1
+ALTA,orden_invertido,149440,Jingyuan Zou,138456,Zou Jingyuan,Zou Jingyuan,True,CHN,Artistic Gymnastics (Gymnastics),2024,2020,False,,1
+ALTA,orden_invertido,149442,Yushan Ou,138302,Ou Yushan,Ou Yushan,True,CHN,Artistic Gymnastics (Gymnastics),2024,2020,False,,1
+ALTA,orden_invertido,149451,Zhenye Xie,118493,Xie Zhenye,Xie Zhenye,True,CHN,Athletics,2024,2010|2012|2016|2020,False,,1
+ALTA,orden_invertido,149453,Zhiqiang Wu,138414,Wu Zhiqiang,Wu Zhiqiang,True,CHN,Athletics,2024,2020,False,,1
+ALTA,orden_invertido,149454,Haibin Yan,138415,Yan Haibin,Yan Haibin,True,CHN,Athletics,2024,2020,False,,1
+ALTA,orden_invertido,149455,Manqi Ge,127124,Ge Manqi,Ge Manqi,True,CHN,Athletics,2024,2016|2020,False,,1
+ALTA,orden_invertido,149456,Yuting Li,138233,Li Yuting,Li Yuting,True,CHN,Athletics,2024,2020,False,,1
+ALTA,orden_invertido,149461,Jiayu Yang,138238,Yang Jiayu,Yang Jiayu,True,CHN,Athletics,2024,2020,False,,1
+ALTA,orden_invertido,149463,Hong Liu,115599,Liu Hong,Liu Hong,True,CHN,Athletics,2024,2008|2012|2016|2020,False,,2
+ALTA,orden_invertido,149464,Shijie Qieyang,120596,Qieyang Shijie,Qieyang Shijie,True,CHN,Athletics,2024,2012|2016|2020,False,,1
+ALTA,orden_invertido,149473,Jiayuan Song,138236,Song Jiayuan,Song Jiayuan,True,CHN,Athletics,2024,2020,False,,1
+ALTA,orden_invertido,149474,Bin Feng,127120,Feng Bin,Feng Bin,True,CHN,Athletics,2024,2016|2020,False,,1
+ALTA,orden_invertido,149477,Zheng Wang,113807,Wang Zheng,Wang Zheng,True,CHN,Athletics,2024,2008|2016|2020,False,,2
+ALTA,orden_invertido,149481,Lijiao Gong,113491,Gong Lijiao,Gong Lijiao,True,CHN,Athletics,2024,2008|2012|2016|2020,False,,1
+ALTA,orden_invertido,149484,Shaohui Yang,138416,Yang Shaohui,Yang Shaohui,True,CHN,Athletics,2024,2020,False,,1
+ALTA,orden_invertido,149487,Deshun Zhang,138239,Zhang Deshun,Zhang Deshun,True,CHN,Athletics,2024,2020,False,,1
+ALTA,orden_invertido,149488,Li Bai,138230,Bai Li,Bai Li,True,CHN,Athletics,2024,2020,False,,1
+ALTA,orden_invertido,149490,Shuangshuang Xu,138237,Xu Shuangshuang,Xu Shuangshuang,True,CHN,Athletics,2024,2020,False,,1
+ALTA,subconjunto,149507,Genki Dean,119077,Roderick Genki Dean,Roderick Genki Dean,True,JPN,Athletics,2024,2012,False,,1
+ALTA,orden_invertido,149524,Zhiwei Deng,130540,Deng Zhiwei,Deng Zhiwei,True,CHN,Wrestling,2024,2016|2020,False,,1
+ALTA,orden_invertido,149526,Qianyu Pang,138402,Pang Qianyu,Pang Qianyu,True,CHN,Wrestling,2024,2020,False,,1
+ALTA,orden_invertido,149528,Feng Zhou,127283,Zhou Feng,Zhou Feng,True,CHN,Wrestling,2024,2016|2020,False,,1
+ALTA,subconjunto,149534,Paul Bredau,139860,Jean Paul Bredau,Jean Paul Bredau,True,GER,Athletics,2024,2020,False,,1
+ALTA,subconjunto,149545,Felicitas Krause,123543,Gesa Felicitas Krause,Gesa Felicitas Krause,True,GER,Athletics,2024,2012|2016|2020,False,,1
+ALTA,subconjunto,149546,Marie Kwayie,139772,Lisa-Marie Kwayie,Lisa-Marie Kwayie,True,GER,Athletics,2024,2020,False,,1
+ALTA,subconjunto,149547,Kanda Lita,139855,Bo Kanda Lita Baehre,Bo Kanda Lita Baehre,True,GER,Athletics,2024,2020,False,,1
+ALTA,orden_invertido,149591,Shanju Bao,138272,Bao Shanju,Bao Shanju,True,CHN,Cycling Track (Cycling),2024,2020,False,,1
+ALTA,orden_invertido,149599,Jiali Liu,138273,Liu Jiali,Liu Jiali,True,CHN,Cycling Track (Cycling),2024,2020,False,,1
+ALTA,orden_invertido,149609,Yaming Zhu,138418,Zhu Yaming,Zhu Yaming,True,CHN,Athletics,2024,2020,False,,1
+ALTA,orden_invertido,149610,Yaoqing Fang,138408,Fang Yaoqing,Fang Yaoqing,True,CHN,Athletics,2024,2020,False,,1
+ALTA,orden_invertido,149612,Jie Yao,130451,Yao Jie,Yao Jie,True,CHN,Athletics,2024,2016,False,,1
+ALTA,orden_invertido,149613,Bokai Huang,130447,Huang Bokai,Huang Bokai,True,CHN,Athletics,2024,2016|2020,False,,1
+ALTA,orden_invertido,149615,Zhen Wang,120578,Wang Zhen,Wang Zhen,True,CHN,Athletics,2024,2012|2016,False,,2
+ALTA,subconjunto,149636,Hakim Sani,140974,Abdul Hakim Sani Brown,Abdul Hakim Sani Brown,True,JPN,Athletics,2024,2020,False,,1
+ALTA,subconjunto,149649,de Monica,124894,Monica De Gennaro,Monica De Gennaro (-Santarelli),True,ITA,Volleyball (Volleyball),2024,2012|2016|2020,False,,1
+ALTA,subconjunto,149670,Matea Parlov,138576,Matea Parlov Koštro,Matea Parlov Koštro,True,CRO,Athletics,2024,2020,False,,1
+ALTA,subconjunto,149688,Elisa Longo,128140,Elisa Longo Borghini,Elisa Longo Borghini (-Mosca),True,ITA,Cycling Road (Cycling),2024,2016|2020,False,,1
+ALTA,subconjunto,149707,Holly Bradshaw,122019,Holly Bleasdale-Bradshaw,Holly Bethan Bleasdale-Bradshaw,True,GBR,Athletics,2024,2012|2016|2020,False,,1
+ALTA,subconjunto,149724,Imani Lansiquot,139487,Imani-Lara Lansiquot,Imani-Lara Lansiquot,True,GBR,Athletics,2024,2020,False,,1
+ALTA,orden_invertido,149725,McCOLGAN Eilish,122035,Eilish McColgan,Eilish McColgan,True,GBR,Athletics,2024,2012|2016|2020,False,,1
+ALTA,subconjunto,149757,Lam Tam,140079,Tam Hoi Lam,Tam Hoi Lam,True,HKG,Swimming (Aquatics),2024,2020,False,,1
+ALTA,subconjunto,149760,Man Tang,140083,Tang Chun Man,Tang Chun Man,True,HKG,Badminton,2024,2020,False,,2
+ALTA,subconjunto,149762,Suet Tse,122476,Tse Ying Suet,Tse Ying Suet,True,HKG,Badminton,2024,2012|2016|2020,False,,1
+ALTA,subconjunto,149780,Sarah Jodoin,140536,Sarah Jodoin Di Maria,Sarah Jodoin Di Maria,True,ITA,Diving (Aquatics),2024,2020,False,,1
+ALTA,subconjunto,149786,del Marco,131840,Marco Del Lungo,Marco Del Lungo,True,ITA,Water Polo (Aquatics),2024,2016|2020,False,,2
+ALTA,subconjunto,149787,di Francesco,131839,Francesco Di Fulvio,Francesco Di Fulvio,True,ITA,Water Polo (Aquatics),2024,2016|2020,False,,1
+ALTA,subconjunto,149860,Mariska Tunjung,140202,Gregoria Mariska Tunjung,Gregoria Mariska Tunjung Cahyaningsih,True,INA,Badminton,2024,2020,False,,1
+ALTA,subconjunto,149890,van Nicole,142173,Nicole Van Der Kaay,Nicole Van Der Kaay,True,NZL,Triathlon,2024,2020,False,,3
+ALTA,subconjunto,149900,Sarah Hirini,128745,Sarah Goss-Hirini,Sarah Goss-Hirini,True,NZL,Rugby Sevens (Rugby),2024,2016|2020,False,,1
+ALTA,subconjunto,149906,Tone Ng,142222,Tone Ng Shiu,Tone Ng Shiu,True,NZL,Rugby Sevens (Rugby),2024,2020,False,,1
+ALTA,orden_invertido,149909,McGARVEY-BLACK Ngarohi,142221,Ngarohi McGarvey-Black,Ngarohi McGarvey-Black,True,NZL,Rugby Sevens (Rugby),2024,2020,False,,1
+ALTA,orden_invertido,149915,McCARTNEY Eliza,128709,Eliza McCartney,Eliza McCartney,True,NZL,Athletics,2024,2016,False,,1
+ALTA,subconjunto,149925,Firdaus Ar-rasyid,137932,Muhd Noor Firdaus Ar Rasyid,Muhd Noor Firdaus Ar Rasyid,True,BRU,Athletics,2024,2020,False,,1
+ALTA,orden_invertido,149926,Jianan Wang,133677,Wang Jianan,Wang Jianan,True,CHN,Athletics,2024,2016|2020,False,,1
+ALTA,orden_invertido,149931,Qian Li,127147,Li Qian,Li Qian,True,CHN,Boxing,2024,2016|2020,False,,2
+ALTA,orden_invertido,149938,Tanglatihan Tuohetaerbieke,138429,Tuohetaerbieke Tanglatihan,Tuohetaerbieke Tanglatihan,True,CHN,Boxing,2024,2020,False,,1
+ALTA,orden_invertido,149939,Yi Chen,138304,Chen Yi,Chen Yi,True,CHN,Hockey,2024,2020,False,,4
+ALTA,orden_invertido,149942,Bingfeng Gu,138305,Gu Bingfeng,Gu Bingfeng,True,CHN,Hockey,2024,2020,False,,1
+ALTA,orden_invertido,149946,Zixia Ou,127198,Ou Zixia,Ou Zixia,True,CHN,Hockey,2024,2016|2020,False,,1
+ALTA,orden_invertido,149948,Wenyu Xu,138308,Xu Wenyu,Xu Wenyu,True,CHN,Hockey,2024,2020,False,,1
+ALTA,orden_invertido,149952,Ying Zhang,138309,Zhang Ying,Zhang Ying,True,CHN,Hockey,2024,2020,False,,4
+ALTA,orden_invertido,149985,Keyi Chen,138318,Chen Keyi,Chen Keyi,True,CHN,Rugby Sevens (Rugby),2024,2020,False,,1
+ALTA,orden_invertido,149987,Yaoyao Gu,138319,Gu Yaoyao,Gu Yaoyao,True,CHN,Rugby Sevens (Rugby),2024,2020,False,,1
+ALTA,orden_invertido,149991,Hongting Ruan,138320,Ruan Hongting,Ruan Hongting,True,CHN,Rugby Sevens (Rugby),2024,2020,False,,1
+ALTA,subconjunto,149998,Jenjira Srisa,143170,Jenjira Srisa-Ard,Jenjira Srisa-Ard,True,THA,Swimming (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,149999,Wanyu Wang,138322,Wang Wanyu,Wang Wanyu,True,CHN,Rugby Sevens (Rugby),2024,2020,False,,1
+ALTA,orden_invertido,150001,Xiao Chen,138391,Chen Xiao,Chen Xiao,True,CHN,Water Polo (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,150002,Zewen Deng,138392,Deng Zewen,Deng Zewen,True,CHN,Water Polo (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,150004,Yiwen Lu,138393,Lu Yiwen,Lu Yiwen,True,CHN,Water Polo (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,150006,Yineng Shen,138394,Shen Yineng,Shen Yineng,True,CHN,Water Polo (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,150007,Huan Wang,138395,Wang Huan,Wang Huan,True,CHN,Water Polo (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,150009,Dunhan Xiong,127270,Xiong Dunhan,Xiong Dunhan,True,CHN,Water Polo (Aquatics),2024,2016|2020,False,,1
+ALTA,orden_invertido,150012,Jing Zhang,127272,Zhang Jing,Zhang Jing,True,CHN,Water Polo (Aquatics),2024,2016|2020,False,,2
+ALTA,orden_invertido,150015,Xin Quan,138432,Quan Xin,Quan Xin,True,CHN,Canoe Slalom (Canoeing),2024,2020,False,,1
+ALTA,orden_invertido,150018,Wenjun Lin,138266,Lin Wenjun,Lin Wenjun,True,CHN,Canoe Sprint (Canoeing),2024,2020,False,,1
+ALTA,orden_invertido,150019,Shixiao Xu,138269,Xu Shixiao,Xu Shixiao,True,CHN,Canoe Sprint (Canoeing),2024,2020,False,,1
+ALTA,orden_invertido,150020,Mengya Sun,138267,Sun Mengya,Sun Mengya,True,CHN,Canoe Sprint (Canoeing),2024,2020,False,,1
+ALTA,orden_invertido,150022,Hao Liu,138431,Liu Hao,Liu Hao,True,CHN,Canoe Sprint (Canoeing),2024,2020,False,,2
+ALTA,orden_invertido,150023,Mengdie Yin,138270,Yin Mengdie,Yin Mengdie,True,CHN,Canoe Sprint (Canoeing),2024,2020,False,,1
+ALTA,orden_invertido,150024,Nan Wang,138268,Wang Nan,Wang Nan,True,CHN,Canoe Sprint (Canoeing),2024,2020,False,,6
+ALTA,orden_invertido,150025,Dongyin Li,138264,Li Dongyin,Li Dongyin,True,CHN,Canoe Sprint (Canoeing),2024,2020,False,,1
+ALTA,orden_invertido,150029,Dong Zhang,138435,Zhang Dong,Zhang Dong,True,CHN,Canoe Sprint (Canoeing),2024,2020,False,,1
+ALTA,orden_invertido,150030,Congkang Wang,138433,Wang Congkang,Wang Congkang,True,CHN,Canoe Sprint (Canoeing),2024,2020,False,,1
+ALTA,orden_invertido,150031,Tingkai Bu,138430,Bu Tingkai,Bu Tingkai,True,CHN,Canoe Sprint (Canoeing),2024,2020,False,,1
+ALTA,orden_invertido,150035,Qiqi Guo,138328,Guo Qiqi,Guo Qiqi,True,CHN,Rhythmic Gymnastics (Gymnastics),2024,2020,False,,1
+ALTA,orden_invertido,150036,Ting Hao,138329,Hao Ting,Hao Ting,True,CHN,Rhythmic Gymnastics (Gymnastics),2024,2020,False,,1
+ALTA,orden_invertido,150037,Zhangjiayang Huang,138330,Huang Zhangjiayang,Huang Zhangjiayang,True,CHN,Rhythmic Gymnastics (Gymnastics),2024,2020,False,,1
+ALTA,orden_invertido,150066,Shuai Zhang,120409,Zhang Shuai,Zhang Shuai,True,CHN,Tennis,2024,2012|2016,False,,1
+ALTA,subconjunto,150080,Hung Shek,122486,Shek Wai Hung,Shek Wai Hung,True,HKG,Artistic Gymnastics (Gymnastics),2024,2012|2020,False,,1
+ALTA,orden_invertido,150136,McKEE Anton,124099,Anton McKee,Anton Sveinn McKee,True,ISL,Swimming (Aquatics),2024,2010|2012|2016|2020,False,,1
+ALTA,subconjunto,150147,Dee Vargas,138214,Mary Dee Vargas,Mary Dee Vargas Ley,True,CHI,Judo,2024,2020,False,,1
+ALTA,subconjunto,150153,Vito Dell,140706,Vito Dell'Aquila,Vito Dell'Aquila,True,ITA,Taekwondo,2024,2020,False,,1
+ALTA,subconjunto,150179,le Eugenie,122857,Eugénie Le Sommer,Eugénie Anne Claudine Le Sommer,True,FRA,Football (Football),2024,2012|2016,False,,1
+ALTA,subconjunto,150329,Nadine Szollosi-schatzl,140135,Nadine Schatzl,Nadine Schatzl,True,HUN,Handball,2024,2020,False,,1
+ALTA,subconjunto,150332,Okon George,128678,Patience Okon George,Patience Okon George,True,NGR,Athletics,2024,2016|2020,False,,1
+ALTA,subconjunto,150361,Olga Safronova,124200,Olga Bludova-Safronova,Olga Yevgenyevna Bludova-Safronova,True,KAZ,Athletics,2024,2012|2016|2020,False,,1
+ALTA,subconjunto,150384,Maria Basterra,139101,José María Basterra,José María Basterra Ochoa,True,ESP,Hockey,2024,2020,False,,1
+ALTA,subconjunto,150400,van Lucas,138173,Lucas Van Berkel,Lucas Joshua Van Berkel,True,CAN,Volleyball (Volleyball),2024,2020,False,,1
+ALTA,subconjunto,150463,Ana Rendon,110273,Ana María Rendón,Ana María Rendón Martínez,True,COL,Archery,2024,2008|2012|2016,False,,1
+ALTA,subconjunto,150469,Luz Andia,142257,Mary Luz Andia,Mary Luz Andia Arotaipe,True,PER,Athletics,2024,2020,False,,1
+ALTA,subconjunto,150525,Thuzar Thet,141843,Thet Htar Thuzar,Thet Htar Thuzar,True,MYA,Badminton,2024,2020,False,,1
+ALTA,subconjunto,150532,Muhammad Zohri,140211,Lalu Muhammad Zohri,Lalu Muhammad Zohri,True,INA,Athletics,2024,2020,False,,1
+ALTA,subconjunto,150589,Paulina Vega,106395,María Paulina Vega,María Paulina Vega Magaña,True,CHI,Table Tennis,2024,2004|2020,False,,1
+ALTA,subconjunto,150678,Genevieve Gregson,124786,Genevieve LaCaze-Gregson,Genevieve LaCaze-Gregson,True,AUS,Athletics,2024,2012|2016|2020,False,,1
+ALTA,subconjunto,150683,Kelsey-lee Barber,126583,Kelsey-Lee Roberts-Barber,Kelsey-Lee Roberts-Barber,True,AUS,Athletics,2024,2016|2020,False,,1
+ALTA,orden_invertido,150690,McDONALD Morgan,137372,Morgan McDonald,Morgan McDonald,True,AUS,Athletics,2024,2020,False,,1
+ALTA,orden_invertido,150697,McSWEYN Stewart,137375,Stewart McSweyn,Stewart McSweyn,True,AUS,Athletics,2024,2020,False,,1
+ALTA,subconjunto,150728,de Moira,123381,Moira De Villiers,Moira De Villiers,True,NZL,Judo,2024,2012,False,,1
+ALTA,subconjunto,150758,Alyce Wood,126605,Alyce Burnett-Wood,Alyce Burnett-Wood,True,AUS,Canoe Sprint (Canoeing),2024,2016|2020,False,,1
+ALTA,subconjunto,150762,van Jean,137391,Jean van der Westhuyzen,Jean van der Westhuyzen,True,AUS,Canoe Sprint (Canoeing),2024,2020,False,,17
+ALTA,subconjunto,150829,van Emily,126622,Emily Van Egmond,Emily Louise Van Egmond,True,AUS,Football (Football),2024,2016|2020,False,,1
+ALTA,subconjunto,150848,Eko Irawan,114977,Eko Yuli Irawan,Eko Yuli Irawan,True,INA,Weightlifting,2024,2008|2012|2016|2020,False,,1
+ALTA,subconjunto,150886,Karem Ben,133188,Karem Ben Hnia,Karem Ben Hnia,True,TUN,Weightlifting,2024,2010|2016|2020,False,,1
+ALTA,subconjunto,150944,Candice Lill,121909,Candice Neethling-Lill,Candice Neethling-Lill,True,RSA,Cycling Mountain Bike (Cycling),2024,2012|2020,False,,1
+ALTA,subconjunto,150946,Ashleigh Moolman,120339,Ashleigh Moolman-Pasio,Ashleigh Moolman-Pasio,True,RSA,Cycling Road (Cycling),2024,2012|2016|2020,False,,1
+ALTA,subconjunto,151059,Katie Bowen,128722,Katie Bowen-Duncan,"Kate Elizabeth ""Katie"" Bowen-Duncan",True,NZL,Football (Football),2024,2012|2016|2020,False,,1
+ALTA,orden_invertido,151082,Yufei Zhang,127244,Zhang Yufei,Zhang Yufei,True,CHN,Swimming (Aquatics),2024,2014|2016|2020,False,,1
+ALTA,orden_invertido,151084,Haiyang Qin,138478,Qin Haiyang,Qin Haiyang,True,CHN,Swimming (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,151085,Jiayu Xu,120439,Xu Jiayu,Xu Jiayu,True,CHN,Swimming (Aquatics),2024,2012|2016|2020,False,,1
+ALTA,orden_invertido,151090,Xinjie Ji,138477,Ji Xinjie,Ji Xinjie,True,CHN,Swimming (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,151095,Xueer Wang,127238,Wang Xueer,Wang Xueer,True,CHN,Swimming (Aquatics),2024,2016,False,,1
+ALTA,orden_invertido,151098,Yiting Yu,138378,Yu Yiting,Yu Yiting,True,CHN,Swimming (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,151100,Bingjie Li,138372,Li Bingjie,Li Bingjie,True,CHN,Swimming (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,151102,Shun Wang,120437,Wang Shun,Wang Shun,True,CHN,Swimming (Aquatics),2024,2012|2016|2020,False,,1
+ALTA,orden_invertido,151103,Qianting Tang,138374,Tang Qianting,Tang Qianting,True,CHN,Swimming (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,151106,Qingfeng Wu,138376,Wu Qingfeng,Wu Qingfeng,True,CHN,Swimming (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,151110,Yaxin Liu,127241,Liu Yaxin,Liu Yaxin,True,CHN,Swimming (Aquatics),2024,2016|2020,False,,1
+ALTA,orden_invertido,151111,Muhan Tang,138373,Tang Muhan,Tang Muhan,True,CHN,Swimming (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,151112,Yujie Cheng,138371,Cheng Yujie,Cheng Yujie,True,CHN,Swimming (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,151144,McINTYRE Annabelle,137291,Annabelle McIntyre,Annabelle McIntyre,True,AUS,Rowing,2024,2020,False,,1
+ALTA,orden_invertido,151216,McEVOY Cameron,123940,Cameron McEvoy,Cameron James McEvoy,True,AUS,Swimming (Aquatics),2024,2012|2016|2020,False,,1
+ALTA,orden_invertido,151219,McKEON Emma,126684,Emma McKeon,Emma Jennifer McKeon,True,AUS,Swimming (Aquatics),2024,2010|2016|2020,False,,1
+ALTA,subconjunto,151238,Katinka Battai,144036,Sugár Katinka Battai,Sugár Katinka Battai,True,HUN,Fencing,2024,2020,False,,1
+ALTA,subconjunto,151314,Julio Enciso,102119,Julio César Enciso,Julio César Enciso Ferreira,True,PAR,Football (Football),2024,2004,False,,1
+ALTA,particulas,151315,Khouloud Hlimi,143245,Khouloud Al-Hlimi,Khouloud Al-Hlimi (-Moulahi),True,TUN,Boxing,2024,2020,False,,1
+ALTA,subconjunto,151339,Lina Muze-sirma,121682,Līna Mūze,Līna Mūze,True,LAT,Athletics,2024,2012|2020,False,,1
+ALTA,subconjunto,151347,Maria Gutierrez,138990,Jennifer María Gutiérrez,Jennifer María Gutiérrez Bermejo,True,ESP,Handball,2024,2020,False,,1
+ALTA,subconjunto,151365,Milica Novakovic,129111,Milica Starović-Novaković,Milica Starović-Novaković,True,SRB,Canoe Sprint (Canoeing),2024,2016|2020,False,,1
+ALTA,subconjunto,151402,Amy Wilson,127782,Amy Wilson-Hardy,Amy Alexandra Wilson-Hardy,True,GBR,Rugby Sevens (Rugby),2024,2016,False,,1
+ALTA,subconjunto,151437,Victoria Schutzmeier,141852,María Victoria Schutzmeier,María Victoria Schutzmeier,True,NCA,Swimming (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,151466,McNAY Stu,116470,Stu McNay,"Stuart ""Stu"" McNay",True,USA,Sailing,2024,2008|2012|2016|2020,False,,1
+ALTA,subconjunto,151504,Silina Pha,141531,Silina Pha Aphay,Silina Pha Aphay,True,LAO,Athletics,2024,2020,False,,1
+ALTA,subconjunto,151514,Marie-josee Ta,127287,Marie-Josée Ta Lou,Gonezie Marie-Josée Dominique Ta Lou,True,CIV,Athletics,2024,2016|2020,False,,1
+ALTA,subconjunto,151520,Marcela Cunha,114687,Ana Marcela Cunha,Ana Marcela de Jesus Soares da Cunha,True,BRA,Marathon Swimming (Aquatics),2024,2008|2016|2020,False,,1
+ALTA,subconjunto,151534,Carolina Azevedo,137742,Ana Carolina Azevedo,Ana Carolina de Jesus Azevedo,True,BRA,Athletics,2024,2020,False,,1
+ALTA,subconjunto,151537,dos Alison,137815,Alison dos Santos,Alison Brendom Alves dos Santos,True,BRA,Athletics,2024,2020,False,,1
+ALTA,subconjunto,151539,da Chayenne,137743,Chayenne da Silva,Chayenne Pereira da Silva,True,BRA,Athletics,2024,2020,False,,1
+ALTA,subconjunto,151543,de Maria,65009,Maria de Souza,Maria Aparecida de Souza de Lima,True,BRA,Athletics,2024,1996,False,,14
+ALTA,subconjunto,151586,Paula Vergutz,126855,Ana Paula Vergutz,Ana Paula Vergutz,True,BRA,Canoe Sprint (Canoeing),2024,2016,False,,1
+ALTA,subconjunto,151593,Alejandro Barrondo,140045,José Alejandro Barrondo,José Alejandro Barrondo Xuc,True,GUA,Athletics,2024,2020,False,,1
+ALTA,subconjunto,151602,Yazan Al,142295,Yazan Al-Bawwab,Yazan Al-Bawwab,True,PLE,Swimming (Aquatics),2024,2020,False,,1
+ALTA,subconjunto,151635,Arthur Mariano,130179,Arthur Nory Mariano,Arthur Nory Oyakawa Mariano,True,BRA,Artistic Gymnastics (Gymnastics),2024,2010|2016|2020,False,,1
+ALTA,subconjunto,151725,Stylianos Argyropoulos,140033,Stylianos Argyropoulos Kanakakis,Stylianos Argyropoulos Kanakakis,True,GRE,Water Polo (Aquatics),2024,2020,False,,1
+ALTA,subconjunto,151784,de Miguel,139133,Miguel De Toro,Miguel De Toro Domínguez,True,ESP,Water Polo (Aquatics),2024,2020,False,,8
+ALTA,orden_invertido,151810,McNULTY Brandon,143752,Brandon McNulty,Brandon Alexander McNulty,True,USA,Cycling Road (Cycling),2024,2020,False,,1
+ALTA,subconjunto,151814,Alise Willoughby,124451,Alise Post-Willoughby,Alise Rose Post-Willoughby,True,USA,Cycling BMX Racing (Cycling),2024,2012|2016|2020,False,,1
+ALTA,subconjunto,151845,Jennifer Mucino,143441,Jennifer Mucino-Fernandez,Jennifer Mucino-Fernandez,True,USA,Archery,2024,2020,False,,1
+ALTA,subconjunto,151998,Pierre Brol,121277,Jean-Pierre Brol,Jean-Pierre Brol Cárdenas,True,GUA,Shooting,2024,2012,False,,1
+ALTA,orden_invertido,152001,McKAY Caeli,138006,Caeli McKay,Caeli Sierra McKay,True,CAN,Diving (Aquatics),2024,2020,False,,1
+ALTA,subconjunto,152002,Waleska Soto,140042,Ana Waleska Soto,Ana Waleska Soto Abril,True,GUA,Shooting,2024,2020,False,,1
+ALTA,subconjunto,152007,Diego Botin,130941,Diego Botín Sanz de Sautuola,Diego Botín Sanz de Sautuola Le Chever,True,ESP,Sailing,2024,2016|2020,False,,1
+ALTA,subconjunto,152048,Elle St.,143453,Elle Purrier St. Pierre,"Elinor ""Elle"" Purrier St. Pierre",True,USA,Athletics,2024,2020,False,,1
+ALTA,subconjunto,152051,Lynna Irby-jackson,143468,Lynna Irby,Lynna Irby (-Jackson),True,USA,Athletics,2024,2020,False,,1
+ALTA,subconjunto,152154,Paraskevi Spanaki,140009,Ariadne Paraskevi Spanaki,Ariadne Paraskevi Spanaki,True,GRE,Sailing,2024,2020,False,,1
+ALTA,subconjunto,152174,Chun Chiu,131533,Chiu Hin Chun,Chiu Hin Chun,True,HKG,Rowing,2024,2016,False,,1
+ALTA,orden_invertido,152178,Zangjun Xu,130504,Xu Zangjun,Xu Zangjun,True,CHN,Sailing,2024,2016|2020,False,,1
+ALTA,subconjunto,152195,Ato Plodzicki-,142877,Ato Plodzicki-Faoagali,Ato Leau Plodzicki-Faoagali,True,SAM,Boxing,2024,2020,False,,1
+ALTA,subconjunto,152201,Ting Wong,131536,Wong Chun Ting,Wong Chun Ting,True,HKG,Table Tennis,2024,2016|2020,False,,1
+ALTA,subconjunto,152202,Kem Doo,128000,Doo Hoi Kem,Doo Hoi Kem,True,HKG,Table Tennis,2024,2014|2016|2020,False,,1
+ALTA,subconjunto,152203,Ching Lee,122488,Lee Ho Ching,Lee Ho Ching,True,HKG,Table Tennis,2024,2012|2016|2020,False,,1
+ALTA,subconjunto,152211,le Chad,119877,Chad le Clos,Chad Guy Bertrand le Clos,True,RSA,Swimming (Aquatics),2024,2010|2012|2016|2020,False,,1
+ALTA,subconjunto,152268,da Carolina,137806,Ana Carolina da Silva,Ana Carolina da Silva,True,BRA,Volleyball (Volleyball),2024,2020,False,,1
+ALTA,orden_invertido,152305,McTAVISH Simon,138113,Simon McTavish,Simon Alexander Francois Bollinger McTavish,True,CAN,Canoe Sprint (Canoeing),2024,2020,False,,1
+ALTA,subconjunto,152316,Benjamin Azamati,139995,Benjamin Azamati-Kwaku,Benjamin Azamati-Kwaku,True,GHA,Athletics,2024,2020,False,,1
+ALTA,subconjunto,152347,Leonard Korir,133315,Leonard Essau Korir,Leonard Essau Korir,True,USA,Athletics,2024,2016,False,,1
+ALTA,orden_invertido,152352,McEWEN Shelby,143698,Shelby McEwen,Shelby McEwen,True,USA,Athletics,2024,2020,False,,1
+ALTA,subconjunto,152374,de Roos,141927,Roos de Jong,Roos de Jong,True,NED,Rowing,2024,2020,False,,2
+ALTA,subconjunto,152378,van Gert-jan,38722,Gert Jan van Woudenberg,Gert Jan van Woudenberg,True,NED,Rowing,2024,1976,False,,1
+ALTA,subconjunto,152385,van Simon,142002,Simon van Dorp,Simon Hendrik van Dorp,True,NED,Rowing,2024,2020,False,,4
+ALTA,subconjunto,152386,de Sander,142001,Sander de Graaf,Sander Josephus de Graaf,True,NED,Rowing,2024,2020,False,,2
+ALTA,subconjunto,152392,Paul Amoah,139998,Joseph Paul Amoah,Joseph Paul Amoah,True,GHA,Athletics,2024,2020,False,,1
+ALTA,subconjunto,152464,van Sanne,141921,Sanne van Dijke,Sanne van Dijke,True,NED,Judo,2024,2020,False,,4
+ALTA,subconjunto,152468,de Frank,132404,Frank de Wit,Frank Jacobus de Wit,True,NED,Judo,2024,2014|2016|2020,False,,1
+ALTA,subconjunto,152469,van Noel,132405,Noël van 't End,Noël van 't End,True,NED,Judo,2024,2016|2020,False,,1
+ALTA,orden_invertido,152492,McINTOSH Summer,138069,Summer McIntosh,Summer McIntosh,True,CAN,Swimming (Aquatics),2024,2020,False,,1
+ALTA,subconjunto,152511,la Shae,138089,Shae La Roche,Shae Chantal La Roche (Fournier-),True,CAN,Water Polo (Aquatics),2024,2020,False,,1
+ALTA,orden_invertido,152513,McKELVEY Hayley,138083,Hayley McKelvey,Hayley Ann McKelvey,True,CAN,Water Polo (Aquatics),2024,2020,False,,1
+ALTA,subconjunto,152594,van Simone,141948,Simone van de Kraats,Simone van de Kraats,True,NED,Water Polo (Aquatics),2024,2020,False,,1
+ALTA,subconjunto,152596,van Sabrina,141947,Sabrina van der Sloot,"Catharina Hendrica ""Sabrina"" van der Sloot",True,NED,Water Polo (Aquatics),2024,2020,False,,1
+ALTA,subconjunto,152602,van Ellen,119963,Ellen van Dijk,"Eleonora Maria ""Ellen"" van Dijk",True,NED,Cycling Road (Cycling),2024,2012|2016,False,,3
+ALTA,subconjunto,152612,van Dylan,141975,Dylan van Baarle,Dylan van Baarle,True,NED,Cycling Road (Cycling),2024,2020,False,,1
+ALTA,subconjunto,152617,van Willem,132382,Jan-Willem van Schip,Jan-Willem van Schip,True,NED,Cycling Track (Cycling),2024,2016|2020,False,,13
+ALTA,subconjunto,152619,van Roy,141973,Roy van den Berg,Roy Reinier van den Berg,True,NED,Cycling Track (Cycling),2024,2020,False,,4
+ALTA,subconjunto,152642,Mazoon Al,128769,Mazoon Al-Alawi,Mazoon Khalfan Saleh Al-Alawi,True,OMA,Athletics,2024,2014|2016|2020,False,,1
+ALTA,subconjunto,152655,van Laura,128612,Laura van der Heijden,Laura van der Heijden,True,NED,Handball,2024,2016|2020,False,,2
+ALTA,subconjunto,152661,van Bo,141906,Bo van Wetering,Bo van Wetering,True,NED,Handball,2024,2020,False,,1
+ALTA,subconjunto,152681,van Dimeo,141968,Dimeo van der Horst,Dimeo van der Horst,True,NED,3x3 Basketball (Basketball),2024,2020,False,,1
+ALTA,subconjunto,152702,van Seve,132403,Seve van Ass,"Severiano Boris ""Seve"" van Ass",True,NED,Hockey,2024,2016|2020,False,,1
+ALTA,subconjunto,152707,van Thijs,141987,Thijs van Dam,Thijs Johannes Reinier van Dam,True,NED,Hockey,2024,2020,False,,2
+ALTA,subconjunto,152710,de Jonas,141982,Jonas de Geus,Jonas de Geus,True,NED,Hockey,2024,2020,False,,1
+ALTA,subconjunto,152727,de Xan,128624,Xan de Waard,Xan Gerdien de Waard,True,NED,Hockey,2024,2016|2020,False,,1
+ALTA,subconjunto,152739,van Diane,141859,Diane van Es,Diane van Es,True,NED,Athletics,2024,2020,False,,2
+ALTA,subconjunto,152741,van Marije,141869,Marije van Hunenstijn,Marije van Hunenstijn,True,NED,Athletics,2024,2020,False,,1
+ALTA,subconjunto,152744,van Jorinde,141866,Jorinde van Klinken,Jorinde van Klinken,True,NED,Athletics,2024,2020,False,,1
+ALTA,subconjunto,152750,Ryan Julius,142837,Ryan Cowen Julius,Ryan Cowen Julius,True,RSA,Hockey,2024,2020,False,,1
+ALTA,subconjunto,152773,de Lisanne,128581,Lisanne de Witte,Lisanne de Witte,True,NED,Athletics,2024,2016|2020,False,,2
+ALTA,subconjunto,152793,de Noortje,141933,Noortje de Brouwer,Noortje de Brouwer,True,NED,Artistic Swimming (Aquatics),2024,2020,False,,1
+ALTA,subconjunto,152794,de Bregje,141932,Bregje de Brouwer,Bregje Maria de Brouwer,True,NED,Artistic Swimming (Aquatics),2024,2020,False,,1
+ALTA,subconjunto,152835,van Maximilien,130363,Maximilien Van Haaster,Maximilien Hugo Van Haaster,True,CAN,Fencing,2024,2016|2020,False,,1
+ALTA,subconjunto,152842,Scarlett Mew,139520,Scarlett Mew Jensen,Scarlett Bee Mew Jensen,True,GBR,Diving (Aquatics),2024,2020,False,,1
+ALTA,subconjunto,152843,van Anne,141905,Anne van Dam,Anne van Dam,True,NED,Golf,2024,2020,False,,8
+ALTA,subconjunto,152871,De Andre,130329,Andre De Grasse,Andre De Grasse,True,CAN,Athletics,2024,2016|2020,False,,8
+ALTA,subconjunto,152938,Jose Palacios,138825,María José Palacios,María José Palacios Espinoza,True,ECU,Boxing,2024,2020,False,,1
+ALTA,subconjunto,153127,Rae Kim,128865,Kim Mi-Rae,Kim Mi-Rae,True,PRK,Diving (Aquatics),2024,2016,False,,4
+ALTA,subconjunto,153138,Gyong Choe,118525,Choe Un-Gyong,Choe Un-Gyong,True,PRK,Wrestling,2024,2012,False,,2
+ALTA,subconjunto,153182,van Wayde,132786,Wayde van Niekerk,Wayde van Niekerk,True,RSA,Athletics,2024,2016|2020,False,,1
+ALTA,subconjunto,153188,van Irvette,124578,Irvette van Blerk-van Zyl,Irvette van Blerk-van Zyl,True,RSA,Athletics,2024,2012|2016|2020,False,,1
+ALTA,subconjunto,153303,Irina-camelia Begu,119880,Irina Begu,Irina Camelia Begu,True,ROU,Tennis,2024,2012|2016,False,,1
+ALTA,orden_invertido,153354,Saisai Zheng,127254,Zheng Saisai,Zheng Saisai,True,CHN,Tennis,2024,2010|2016|2020,False,,1
+MEDIA,subconjunto,145670,Said Al,132543,Hamed Said Al-Khatri,Hamed Said Al-Khatri,True,OMA,Shooting,2024,2016|2020,False,,7
+MEDIA,subconjunto,145670,Said Al,43258,Said Al-Khatry,Said Mubarak Marhoon Al-Khatry,True,OMA,Shooting,2024,1984,False,,7
+MEDIA,subconjunto,145769,Singh Cheema,106958,Palwinder Singh Cheema,Palwinder Singh Cheema,True,IND,,2024,2004,False,,1
+MEDIA,subconjunto,146103,de Linda,109065,Linda De Rocco,Linda De Rocco,True,ITA,,2024,2006,False,,1
+MEDIA,orden_invertido,146721,Mohamed Hamdy,151945,Hamdy Mohamed,,True,EGY,,2024,2024,False,,1
+MEDIA,subconjunto,147011,Nicolas Wagner,141582,Nicolas Wagner Ehlinger,Nicolas Wagner Ehlinger,True,LUX,,2024,2020,False,,1
+MEDIA,subconjunto,147069,Young Ko,116567,Ko Young-Eun,Ko Young-Eun,True,KOR,,2024,2008,False,,1
+MEDIA,subconjunto,147618,Jin Jeon,4333,Jeon Jin-Cheol,Jeon Jin-Cheol,True,KOR,,2024,1988|1992,False,,1
+MEDIA,subconjunto,147619,Eun Jeong,906,Sim Eun-Jeong,Sim Eun-Jeong,True,KOR,Badminton,2024,1992,False,,18
+MEDIA,subconjunto,147619,Eun Jeong,121539,Jeong Gyeong-Eun,Jeong Gyeong-Eun,True,KOR,Badminton,2024,2012|2016,False,,18
+MEDIA,subconjunto,147619,Eun Jeong,111612,Ha Jeong-Eun,Ha Jeong-Eun,True,KOR,Badminton,2024,2008|2012,False,,18
+MEDIA,subconjunto,147622,Yeong Kim,141362,Kim So-Yeong,Kim So-Yeong,True,KOR,Badminton,2024,2020,False,,47
+MEDIA,subconjunto,147622,Yeong Kim,893,Kim Sin-Yeong,Kim Sin-Yeong,True,KOR,Badminton,2024,1996,False,,47
+MEDIA,subconjunto,147625,Hee Lee,80988,Lee Eun-Hee,Lee Eun-Hee,True,KOR,,2024,1992,False,,1
+MEDIA,subconjunto,147626,Jae Seo,30420,Seo Jae-Gyu,Seo Jae-Gyu,True,KOR,,2024,1964,False,,1
+MEDIA,subconjunto,148143,Ramzy Al,11462,Ramzy Al-Duhami,Ramzy Hamad Al-Duhami,True,KSA,,2024,1996|2000|2004|2008|2012,False,,1
+MEDIA,subconjunto,148278,Yvonne Losos,127436,Yvonne Losos de Muñiz,Yvonne Losos de Muñiz,True,DOM,,2024,2016|2020,False,,1
+MEDIA,subconjunto,148361,Jae Cho,84073,Cho Jae-Hyung,Cho Jae-Hyung,True,KOR,,2024,1984,False,,1
+MEDIA,orden_invertido,148399,Shuyu Yang,138258,Yang Shuyu,Yang Shuyu,True,CHN,,2024,2020,False,,1
+MEDIA,orden_invertido,148455,Yuting Wang,144388,Wang Yuting,Wang Yuting,True,CHN,,2024,2022,False,,1
+MEDIA,subconjunto,148611,Diego Garcia,11940,Juan Diego García-Trevijano,Juan Diego García-Trevijano Chouraki,True,ESP,,2024,1988,False,,1
+MEDIA,subconjunto,148613,Mario Garcia,112897,Mario José García,Mario José García Rodríguez,True,ESP,,2024,2008|2012,False,,1
+MEDIA,subconjunto,148920,le Yann,104111,Yann le Pennec,Yann le Pennec,True,FRA,,2024,2004,False,,1
+MEDIA,orden_invertido,149141,Zhe Feng,120240,Feng Zhe,Feng Zhe,True,CHN,,2024,2012,False,,1
+MEDIA,orden_invertido,149170,Yi Gao,104146,Gao Yi,Gao Yi,True,CHN,,2024,2004,False,,1
+MEDIA,orden_invertido,149186,Peng Wu,102219,Wu Peng,Wu Peng,True,CHN,,2024,2004|2008|2012,False,,1
+MEDIA,orden_invertido,149187,Yafei Zhou,102313,Zhou Yafei,Zhou Yafei,True,CHN,,2024,2004|2008,False,,1
+MEDIA,subconjunto,149248,von Jessica,139805,Jessica von Bredow-Werndl,Jessica von Bredow-Werndl,True,GER,,2024,2020,False,,1
+MEDIA,orden_invertido,149386,Zhiyong Shi,102602,Shi Zhiyong,Shi Zhiyong,True,CHN,Weightlifting,2024,2004|2008,False,,2
+MEDIA,orden_invertido,149386,Zhiyong Shi,133642,Shi Zhiyong,Shi Zhiyong (Lei-),True,CHN,Weightlifting,2024,2016|2020,False,,2
+MEDIA,orden_invertido,149459,Jun Zhang,120592,Zhang Jun,Zhang Jun,True,CHN,Athletics,2024,2012,False,,3
+MEDIA,orden_invertido,149459,Jun Zhang,138417,Zhang Jun,Zhang Jun,True,CHN,Athletics,2024,2020,False,,3
+MEDIA,orden_invertido,149529,Juan Wang,111360,Wang Juan,Wang Juan,True,CHN,,2024,2008,False,,1
+MEDIA,orden_invertido,149531,Xinyu Lin,138339,Lin Xinyu,Lin Xinyu,True,CHN,,2024,2020,False,,1
+MEDIA,orden_invertido,149945,Ning Ma,105430,Ma Ning,Ma Ning,True,CHN,,2024,2004,False,,1
+MEDIA,orden_invertido,150008,Xuan Wang,144337,Wang Xuan,Wang Xuan,True,CHN,,2024,2022,False,,1
+MEDIA,orden_invertido,150011,Jing Yan,20425,Yan Jing,Yan Jing,True,CHN,,2024,1996,False,,1
+MEDIA,orden_invertido,150059,Huadong Sun,138444,Sun Huadong,Sun Huadong,True,CHN,,2024,2020,False,,1
+MEDIA,subconjunto,150091,Jin Kim,132125,Kim Won-Jin,Kim Won-Jin,True,KOR,Judo,2024,2016|2020,False,,44
+MEDIA,subconjunto,150091,Jin Kim,111512,Kim Ju-Jin,Kim Ju-Jin,True,KOR,Judo,2024,2008,False,,44
+MEDIA,orden_invertido,150283,Mohamed Tarek,151949,Tarek Mohamed,,True,EGY,,2024,2024,False,,1
+MEDIA,subconjunto,150486,Ana Perez,107736,Ana Raquel Pérez,Ana Raquel Pérez Galindo,True,ESP,,2024,2004,False,,1
+MEDIA,subconjunto,150602,Katarzyna Milczarek,120294,Katarzyna Milczarek-Jasińska,Katarzyna Milczarek-Jasińska,True,POL,,2024,2012,False,,1
+MEDIA,subconjunto,150647,Jonelle Price,124005,Jonelle Richards-Price,Jonelle Richards-Price,True,NZL,,2024,2012|2016|2020,False,,1
+MEDIA,orden_invertido,150790,McNAB Kevin,144119,Kevin McNab,Kevin McNab,True,AUS,,2024,2020,False,,1
+MEDIA,subconjunto,150925,Joao Fernando,39151,João Fernando Santos,João Fernando Santos,True,POR,,2024,1992,False,,1
+MEDIA,subconjunto,151660,Manuel Ochoa,85005,Juan Manuel Fernández Ochoa,Juan Manuel Fernández Ochoa,True,ESP,,2024,1976,False,,1
+MEDIA,subconjunto,151927,Miloslav Prihoda,138687,"Miloslav Příhoda, Jr.","Miloslav Příhoda, Jr.",True,CZE,,2024,2020,False,,1
+MEDIA,particulas,152288,Fernanda Silva,122085,Fernanda da Silva,Fernanda França da Silva,True,BRA,,2024,2012|2016,False,,1
+MEDIA,subconjunto,152384,van Jan,141994,Jan van der Bij,Jan van der Bij,True,NED,Rowing,2024,2020,False,,30
+MEDIA,subconjunto,152384,van Jan,38697,Jan van de Graaff,Jan van de Graaff,True,NED,Rowing,2024,1964,False,,30
+MEDIA,subconjunto,152384,van Jan,38700,Jan van der Horst,"Johannes Clemens Maria ""Jan"" van der Horst",True,NED,Rowing,2024,1976,False,,30
+MEDIA,subconjunto,152384,van Jan,38705,Jan van der Vliet,Jan Johan van der Vliet,True,NED,Rowing,2024,1972,False,,30
+MEDIA,subconjunto,152384,van Jan,38714,Jan van Laarhoven,Jan Thomas Johannes Adrianus van Laarhoven,True,NED,Rowing,2024,1968,False,,30
+MEDIA,subconjunto,152384,van Jan,38722,Gert Jan van Woudenberg,Gert Jan van Woudenberg,True,NED,Rowing,2024,1976,False,,30
+MEDIA,subconjunto,152384,van Jan,38723,Jan-Willem van Woudenberg,"Jan Willem ""Jan-Willem"" van Woudenberg",True,NED,Rowing,2024,1972,False,,30
+MEDIA,subconjunto,152614,van Mathieu,141976,Mathieu van der Poel,Mathieu van der Poel,True,NED,,2024,2020,False,,1
+MEDIA,subconjunto,152660,van Judith,112253,Judith van Kampen,Judith van Kampen,True,NED,,2024,2008,False,,1
+MEDIA,orden_invertido,152687,McEWEN Tom,139668,Tom McEwen,Tom McEwen,True,GBR,,2024,2020,False,,1
+MEDIA,subconjunto,152796,van Sharon,123522,Sharon van Rouwendaal,Sharon van Rouwendaal,True,NED,,2024,2012|2016|2020,False,,1
+MEDIA,subconjunto,152915,Naima Moreira,138011,Naïma Moreira Laliberté,Naïma Moreira Laliberté,True,CAN,,2024,2020,False,,1
+MEDIA,subconjunto,153011,van Dinja,141881,Dinja van Liere,Dinja van Liere,True,NED,,2024,2020,False,,1
+MEDIA,subconjunto,153012,Peter Minderhoud,115334,Hans Peter Minderhoud,Hans Peter Francois Minderhoud,True,NED,,2024,2008|2016|2020,False,,1
+MEDIA,subconjunto,153014,van Maikel,123496,Maikel van der Vleuten,Maikel Leonardus van der Vleuten,True,NED,,2024,2012|2016|2020,False,,1
+MEDIA,subconjunto,153128,Mi Jo,124618,Jo Yun-Mi,Jo Yun-Mi,True,PRK,,2024,2012,False,,1
+MEDIA,subconjunto,153136,Yong Kim,116115,Kim Mi-Yong,Kim Mi-Yong,True,PRK,Table Tennis,2024,2008,False,,23
+MEDIA,subconjunto,153136,Yong Kim,2470,Kim Hye-Yong,Kim Hye-Yong,True,PRK,Table Tennis,2024,1992,False,,23
+MEDIA,subconjunto,153139,Gum Pak,81364,Pak Gum-Hyon,Pak Gum-Hyon,True,PRK,,2024,1984,False,,1
+MEDIA,subconjunto,153436,van Anne,73217,Anne van Schuppen,"Antje Elisabeth ""Anne"" van Schuppen",True,NED,Athletics,2024,1996,False,,8
+MEDIA,subconjunto,153436,van Anne,141858,Anne van de Wiel,Anne van de Wiel,True,NED,Athletics,2024,2020,False,,8
+BAJA,orden_invertido,145505,McKENZIE Ashley,121025,Ashley McKenzie,Ashley McKenzie,True,,Judo,2024,2012|2016|2020,False,,1
+BAJA,subconjunto,145520,Mohamed Ismail,6286,Mohamed Al-Sayid Ismail,Mohamed 'Assam Abdulhamid Al-Sayid Ismail,True,,,2024,1988,False,,5
+BAJA,subconjunto,145520,Mohamed Ismail,74512,Mohamed Ismail Youssef,Mohamed Ismail Youssef,True,,Athletics,2024,1988|1992,False,,5
+BAJA,subconjunto,145520,Mohamed Ismail,130297,Mohamed Fakhri Ismail,Mohamed Fakhri Ismail,True,,Athletics,2024,2016,False,,5
+BAJA,subconjunto,145520,Mohamed Ismail,75091,Ahmed Mohamed Ismail,Ahmed Mohamed Ismail,True,,Athletics,2024,1984|1988,False,,5
+BAJA,subconjunto,145576,Aziz Al,142483,Abdul Aziz Al-Obaidly,Abdul Aziz Al-Obaidly,True,,,2024,2020,False,,3
+BAJA,subconjunto,145576,Aziz Al,32196,Abdel Aziz Al-Anjri,Abdel Aziz Khalid Al-Anjri,True,,,2024,1980,False,,3
+BAJA,subconjunto,145576,Aziz Al,26102,Abdul Aziz Al-Marzoug,Abdul Aziz Al-Marzoug,True,,,2024,1996,False,,3
+BAJA,subconjunto,145646,de Rachelle,116537,Rachelle De Jong-Viinberg,Rachelle De Jong-Viinberg,True,,,2024,2008|2012,False,,1
+BAJA,subconjunto,145650,Luis Fernandez,85006,Luis Fernández Ochoa,Luis Carlos Fernández Ochoa,True,,,2024,1984|1988,False,,1
+BAJA,subconjunto,145670,Said Al,43520,Said Al-Karbi,Said Al-Hussain Al-Karbi,True,,Shooting,2024,1984,False,,7
+BAJA,subconjunto,145670,Said Al,72465,Said Farouk Al-Turki,Said Farouk Al-Turki,True,,,2024,1972,False,,7
+BAJA,subconjunto,145670,Said Al,87649,Mohamed Said Al-Maskary,Mohamed Said Al-Maskary,True,OMA,,2024,2000,False,,7
+BAJA,subconjunto,145670,Said Al,72438,Bilal Said Al-Azma,Bilal Said Mabrouk Al-Azma,True,,,2024,1972,False,,7
+BAJA,subconjunto,145670,Said Al,72445,Said Khalil Al-Dosari,Said Khalil Al-Dosari,True,,,2024,1972,False,,7
+BAJA,subconjunto,145671,Hamed Al,87497,Hamed Al-Bishi,Hamed Hamadan Al-Bishi,True,,,2024,2000|2004,False,,4
+BAJA,subconjunto,145671,Hamed Al,42710,Ali Hamed Al-Awasa,Ali Hamed Al-Awasa,True,,,2024,1984,False,,4
+BAJA,subconjunto,145671,Hamed Al,72440,Mohamed Hamed Al-Bishi,Mohamed Hamed Al-Bishi,True,,,2024,1996|2000,False,,4
+BAJA,subconjunto,145671,Hamed Al,132543,Hamed Said Al-Khatri,Hamed Said Al-Khatri,True,OMA,,2024,2016|2020,False,,4
+BAJA,subconjunto,145778,di Maria,110181,Ángel Di María,Ángel Fabián Di María Hernández,True,ARG,,2024,2008,False,,3
+BAJA,subconjunto,145871,da Ana,137806,Ana Carolina da Silva,Ana Carolina da Silva,True,,,2024,2020,False,,1
+BAJA,subconjunto,145920,Nhat Nguyen,122137,Nguyễn Tiến Nhật,Nguyễn Tiến Nhật,True,,,2024,2012,False,,1
+BAJA,subconjunto,145948,Cesar Herrera,89623,Julio César Herrera,Julio César Herrera Cabrera,True,,,2024,2000|2004,False,,1
+BAJA,subconjunto,145970,le Pierre,131138,Pierre Le Coq,Pierre Le Coq,True,FRA,,2024,2016,False,,3
+BAJA,subconjunto,145970,le Pierre,36712,Jean-Pierre Le Lain,Jean-Pierre Le Lain,True,FRA,,2024,1992,False,,3
+BAJA,subconjunto,146037,Hoang Nguyen,143940,Nguyễn Hoàng Phi Vũ,Nguyễn Hoàng Phi Vũ,True,VIE,,2024,2020,False,,2
+BAJA,subconjunto,146187,Nicolae Craciun,84221,Cornel Nicolae Crăciun,Cornel Nicolae Crăciun,True,,,2024,1948|1952,False,,1
+BAJA,subconjunto,146188,de Giovanni,71401,Giovanni De Benedictis,Giovanni De Benedictis,True,ITA,,2024,1988|1992|1996|2000|2004,False,,5
+BAJA,subconjunto,146307,Ann Williams,128221,Toni-Ann Williams,Toni-Ann Natasha Williams,True,JAM,,2024,2016,False,,2
+BAJA,orden_invertido,146539,Gamal Mohamed,24554,Mohamed Gamal,Mohamed Ezz-el-Din Gamal,True,EGY,,2024,1928,False,,3
+BAJA,subconjunto,146539,Gamal Mohamed,18294,Gamal Fawzi Mohamed,Gamal Fawzi Mohamed,True,EGY,,2024,1992,False,,3
+BAJA,subconjunto,146539,Gamal Mohamed,108285,Mohamed Gamal-el-Din,Mohamed Gamal-el-Din,True,EGY,,2024,2004,False,,3
+BAJA,orden_invertido,146571,Mahmoud Abdelrahman,137912,Abdelrahman Mahmoud,Abdelrahman Mahmoud,True,,,2024,2020,False,,1
+BAJA,subconjunto,146775,Wei Yang,136869,Yang Po-Wei,Yang Po-Wei,True,TPE,,2024,2020,False,,5
+BAJA,orden_invertido,146775,Wei Yang,90554,Yang Wei,Yang Wei,True,,,2024,2000|2004|2008,False,,5
+BAJA,subconjunto,146775,Wei Yang,123377,Wei Chen-Yang,Wei Chen-Yang,True,TPE,,2024,2012,False,,5
+BAJA,subconjunto,146882,Huong Nguyen,93284,Nguyễn Thị Hương,Nguyễn Thị Hương,True,VIE,,2024,2000,False,,2
+BAJA,orden_invertido,146928,Yang Wang,112883,Wang Yang,Wang Yang,True,,,2024,2008,False,,2
+BAJA,orden_invertido,146928,Yang Wang,144121,Wang Yang,Wang Yang,True,,,2024,2020,False,,2
+BAJA,subconjunto,146965,Chun Lin,78978,Lin Chun-Yu,Lin Chun-Yu,True,TPE,,2024,1968|1972,False,,4
+BAJA,subconjunto,146965,Chun Lin,136326,Huang Chun-Lin,Huang Chun-Lin,True,TPE,,2024,2020,False,,4
+BAJA,subconjunto,146968,Yu Liu,2150,Liu Pi-Yu,Liu Pi-Yu,True,TPE,,2024,1988|1992|2000,False,,3
+BAJA,subconjunto,147066,Hun An,13305,An Byeong-Hun,An Byeong-Hun,True,KOR,,2024,1964,False,,2
+BAJA,subconjunto,147079,Paul O,100792,Paul O'Connor,Paul O'Connor,True,IRL,,2024,2002,False,,3
+BAJA,subconjunto,147079,Paul O,90009,Paul O'Brien,Paul Glen O'Brien,True,,,2024,2000,False,,3
+BAJA,subconjunto,147132,Maher Ben,90138,Maher Ben Aziza,Maher Ben Aziza,True,,,2024,2000|2004,False,,2
+BAJA,orden_invertido,147132,Maher Ben,115370,Ben Maher,"Benjamin Richard ""Ben"" Maher",True,,,2024,2008|2012|2016|2020|2024,False,,2
+BAJA,subconjunto,147177,le Nicolas,103082,Nicolas le Berre,Nicolas le Berre,True,FRA,,2024,2004,False,,2
+BAJA,subconjunto,147439,Ahmed Al,132150,Tariq Ahmed Al-Amri,Tariq Ahmed Al-Amri,True,,,2024,2016,False,,16
+BAJA,subconjunto,147439,Ahmed Al,73811,Ahmed Al-Moamari Bashir,Ahmed Hadib Al-Moamari Bashir,True,,,2024,1992,False,,16
+BAJA,subconjunto,147439,Ahmed Al,22672,Ahmed Al-Arbeed,Ahmed Abdulrahman Al-Arbeed,True,,,2024,1976,False,,16
+BAJA,subconjunto,147439,Ahmed Al,92427,Ahmed Al-Maktoum,Ahmed bin Hasher Al-Maktoum,True,UAE,,2024,2000|2004|2008,False,,16
+BAJA,subconjunto,147439,Ahmed Al,60686,Ahmed Al-Saie,Ahmed Al-Saie,True,,,2024,1996,False,,16
+BAJA,subconjunto,147439,Ahmed Al,33142,Ahmed Al-Shiekh,Ahmed Yahya Al-Shiekh,True,,,2024,1992,False,,16
+BAJA,subconjunto,147439,Ahmed Al,123402,Ahmed Al-Hatmi,Ahmed bin Saalim Al-Hatmi,True,,,2024,2012,False,,16
+BAJA,subconjunto,147439,Ahmed Al,34378,Ahmed Al-Doseri,Ahmed Al-Doseri,True,,,2024,1988,False,,16
+BAJA,subconjunto,147439,Ahmed Al,143948,Ahmed Al-Yaari,Ahmed Abdullah Al-Yaari,True,,,2024,2020,False,,16
+BAJA,subconjunto,147439,Ahmed Al,27266,Ahmed Al-Sghaier,Ahmed Mohieddine Al-Sghaier,True,,,2024,1960,False,,16
+BAJA,subconjunto,147439,Ahmed Al,87710,Ahmed Al-Imam,Ahmed H. Al-Imam,True,,,2024,2000,False,,16
+BAJA,subconjunto,147439,Ahmed Al,137917,Ahmed Al-Maqabi,Ahmed Jassim Al-Maqabi,True,,,2024,2020,False,,16
+BAJA,subconjunto,147439,Ahmed Al,113396,Ali Ahmed Al-Amri,Ali Ahmed Al-Amri,True,,,2024,2008|2012,False,,16
+BAJA,subconjunto,147439,Ahmed Al,72467,Ahmed Al-Assiri,Ahmed Mahmoud Al-Assiri,True,,,2024,1976,False,,16
+BAJA,subconjunto,147439,Ahmed Al,13243,Jamal Ahmed Al-Doseri,Jamal Ahmed Youssuf Al-Doseri,True,,,2024,1992,False,,16
+BAJA,subconjunto,147439,Ahmed Al,13248,Ahmed Al-Saleh,Ahmed Issa Al-Saleh,True,,,2024,1984,False,,16
+BAJA,subconjunto,147446,Wen Huang,107988,Huang Hui-Wen,Huang Hui-Wen,True,TPE,,2024,2004|2008,False,,2
+BAJA,subconjunto,147450,Chin Chen,2670,Chen Li-Chin,Chen Li-Chin,True,TPE,,2024,1996|2000,False,,6
+BAJA,subconjunto,147619,Eun Jeong,110622,Kim Jeong-Eun,Kim Jeong-Eun,True,KOR,,2024,2008|2020,False,,18
+BAJA,subconjunto,147619,Eun Jeong,5405,Park Jeong-Eun,Park Jeong-Eun,True,KOR,,2024,1996|2000|2004|2008,False,,18
+BAJA,subconjunto,147619,Eun Jeong,5168,Jeong Eun-Sun,Jeong Eun-Sun,True,KOR,,2024,1996|2000,False,,18
+BAJA,subconjunto,147619,Eun Jeong,133680,Lee Jeong-Eun,Lee Jeong-Eun,True,KOR,,2024,2016,False,,18
+BAJA,subconjunto,147619,Eun Jeong,134470,Go Eun-Jeong,Go Eun-Jeong,True,KOR,,2024,2018,False,,18
+BAJA,subconjunto,147619,Eun Jeong,134479,Kim Eun-Jeong,Kim Eun-Jeong,True,KOR,,2024,2018|2022,False,,18
+BAJA,subconjunto,147619,Eun Jeong,88164,Jeong Eun-Hui,Jeong Eun-Hui,True,KOR,,2024,2000,False,,18
+BAJA,subconjunto,147619,Eun Jeong,19338,Jang Eun-Jeong,Jang Eun-Jeong,True,KOR,,2024,1988|1992|1996,False,,18
+BAJA,subconjunto,147619,Eun Jeong,19339,Jo Eun-Jeong,Jo Eun-Jeong,True,KOR,,2024,1996,False,,18
+BAJA,subconjunto,147619,Eun Jeong,19344,Jeong Eun-Gyeong,Jeong Eun-Gyeong,True,KOR,,2024,1988,False,,18
+BAJA,subconjunto,147619,Eun Jeong,128424,Seo Jeong-Eun,Seo Jeong-Eun,True,KOR,,2024,2016,False,,18
+BAJA,subconjunto,147619,Eun Jeong,5301,Gwon Eun-Jeong,Gwon Eun-Jeong,True,KOR,,2024,1996,False,,18
+BAJA,subconjunto,147619,Eun Jeong,93375,Jeong Jae-Eun,Jeong Jae-Eun,True,KOR,,2024,2000,False,,18
+BAJA,subconjunto,147619,Eun Jeong,104390,Lee Eun-Jeong,Lee Eun-Jeong,True,KOR,,2024,2004|2008,False,,18
+BAJA,subconjunto,147619,Eun Jeong,48585,Kim Eun-Jeong,Kim Eun-Jeong,True,KOR,,2024,1988,False,,18
+BAJA,subconjunto,147621,Eun Kim,52249,Kim Eun-Hui,Kim Eun-Hui,True,KOR,,2024,1972,False,,27
+BAJA,subconjunto,147621,Eun Kim,110622,Kim Jeong-Eun,Kim Jeong-Eun,True,KOR,,2024,2008|2020,False,,27
+BAJA,subconjunto,147621,Eun Kim,125732,Kim Eun-Ji,Kim Eun-Ji,True,KOR,,2024,2014,False,,27
+BAJA,subconjunto,147621,Eun Kim,134479,Kim Eun-Jeong,Kim Eun-Jeong,True,KOR,,2024,2018|2022,False,,27
+BAJA,subconjunto,147621,Eun Kim,112730,Kim Eun-Sil,Kim Eun-Sil,True,KOR,,2024,2008,False,,27
+BAJA,subconjunto,147621,Eun Kim,106588,Kim Seong-Eun,Kim Seong-Eun,True,KOR,,2024,2004,False,,27
+BAJA,subconjunto,147621,Eun Kim,112733,Kim Jong-Eun,Kim Jong-Eun,True,KOR,,2024,2008|2012|2016,False,,27
+BAJA,subconjunto,147621,Eun Kim,134490,Kim Gyeong-Eun,Kim Gyeong-Eun,True,KOR,,2024,2018,False,,27
+BAJA,subconjunto,147621,Eun Kim,134496,Kim Gyu-Eun,Kim Gyu-Eun,True,KOR,,2024,2018,False,,27
+BAJA,subconjunto,147621,Eun Kim,32118,Kim Eun-Mi,Kim Eun-Mi,True,KOR,,2024,1996,False,,27
+BAJA,subconjunto,147621,Eun Kim,895,Kim Eun-Ha,Kim Eun-Ha,True,KOR,,2024,1996,False,,27
+BAJA,subconjunto,147621,Eun Kim,5280,Kim Eun-Suk,Kim Eun-Suk,True,KOR,,2024,1984,False,,27
+BAJA,subconjunto,147621,Eun Kim,144893,Kim Eun-Ji,Kim Eun-Ji,True,KOR,,2024,2022,False,,27
+BAJA,subconjunto,147621,Eun Kim,128431,Kim Eun-Hye,Kim Eun-Hye,True,KOR,,2024,2016,False,,27
+BAJA,subconjunto,147621,Eun Kim,28599,Kim Eun-Mi,Kim Eun-Mi,True,KOR,,2024,1988,False,,27
+BAJA,subconjunto,147621,Eun Kim,32967,Kim Eun-Hui,Kim Eun-Hui,True,KOR,,2024,1992,False,,27
+BAJA,subconjunto,147621,Eun Kim,144071,Kim Bo-Eun,Kim Bo-Eun,True,KOR,,2024,2014|2020,False,,27
+BAJA,subconjunto,147621,Eun Kim,48584,Kim Eun-Hui,Kim Eun-Hui,True,KOR,,2024,1988,False,,27
+BAJA,subconjunto,147621,Eun Kim,48585,Kim Eun-Jeong,Kim Eun-Jeong,True,KOR,,2024,1988,False,,27
+BAJA,subconjunto,147621,Eun Kim,91096,Kim Eun-Jin,Kim Eun-Jin,True,KOR,,2024,2000,False,,27
+BAJA,subconjunto,147621,Eun Kim,91098,Kim Seong-Eun,Kim Seong-Eun,True,KOR,,2024,2000|2004,False,,27
+BAJA,particulas,147621,Eun Kim,144889,Kim Da-Eun,Kim Da-Eun,True,KOR,,2024,2022,False,,27
+BAJA,subconjunto,147621,Eun Kim,122366,Kim Seong-Eun,Kim Seong-Eun,True,KOR,,2024,2012,False,,27
+BAJA,subconjunto,147622,Yeong Kim,52258,Kim Yeong-Ja,Kim Yeong-Ja,True,KOR,,2024,1968|1972,False,,47
+BAJA,subconjunto,147622,Yeong Kim,108088,Kim Se-Yeong,Kim Se-Yeong,True,KOR,,2024,2004,False,,47
+BAJA,subconjunto,147622,Yeong Kim,122439,Kim Seo-Yeong,Kim Seo-Yeong,True,KOR,,2024,2012|2016|2020,False,,47
+BAJA,subconjunto,147622,Yeong Kim,112727,Kim Yeong-Ran,Kim Yeong-Ran,True,KOR,,2024,2008|2012,False,,47
+BAJA,subconjunto,147622,Yeong Kim,102122,Kim Yeong-Ok,Kim Yeong-Ok,True,KOR,,2024,2004|2008,False,,47
+BAJA,subconjunto,147622,Yeong Kim,13076,Kim Jin-Yeong,Kim Jin-Yeong,True,KOR,,2024,1988,False,,47
+BAJA,subconjunto,147622,Yeong Kim,111399,Kim Yeong-Ran,Kim Yeong-Ran,True,KOR,,2024,2008,False,,47
+BAJA,subconjunto,147622,Yeong Kim,111405,Kim Na-Yeong,Kim Na-Yeong,True,KOR,,2024,2008|2012,False,,47
+BAJA,subconjunto,147622,Yeong Kim,125753,Kim Hyeon-Yeong,Kim Hyeon-Yeong,True,KOR,,2024,2014|2018|2022,False,,47
+BAJA,subconjunto,147622,Yeong Kim,42818,Kim Hye-Yeong,Kim Hye-Yeong,True,KOR,,2024,1984,False,,47
+BAJA,subconjunto,147622,Yeong Kim,42820,Kim Yeong-Mi,Kim Yeong-Mi,True,KOR,,2024,1984|1988,False,,47
+BAJA,subconjunto,147622,Yeong Kim,134481,Kim Seon-Yeong,Kim Seon-Yeong,True,KOR,,2024,2018|2022,False,,47
+BAJA,subconjunto,147622,Yeong Kim,134482,Kim Yeong-Mi,Kim Yeong-Mi,True,KOR,,2024,2018|2022,False,,47
+BAJA,subconjunto,147622,Yeong Kim,19357,Kim Yeong-Suk,Kim Yeong-Suk,True,KOR,,2024,1988,False,,47
+BAJA,subconjunto,147622,Yeong Kim,128411,Kim Se-Yeong,Kim Se-Yeong,True,KOR,,2024,2016|2020,False,,47
+BAJA,subconjunto,147622,Yeong Kim,48589,Kim Yeo-Yeong,Kim Yeo-Yeong,True,KOR,,2024,1996,False,,47
+BAJA,subconjunto,147622,Yeong Kim,80851,Kim Yeong-Hui,Kim Yeong-Hui,True,KOR,,2024,1980,False,,47
+BAJA,subconjunto,147622,Yeong Kim,38385,Kim Yeong-Hui,Kim Yeong-Hui,True,KOR,,2024,1984,False,,47
+BAJA,subconjunto,147622,Yeong Kim,91633,Kim Seon-Yeong,Kim Seon-Yeong,True,KOR,,2024,2000,False,,47
+BAJA,subconjunto,147623,Ho Kim,52314,Kim Ho-Cheol,Kim Ho-Cheol,True,KOR,,2024,1984|1988,False,,19
+BAJA,subconjunto,147623,Ho Kim,14956,Kim Ho-Sun,Kim Ho-Sun,True,KOR,,2024,1952|1956,False,,19
+BAJA,subconjunto,147623,Ho Kim,22642,Kim Yeong-Ho,Kim Yeong-Ho,True,KOR,,2024,1992|1996|2000,False,,19
+BAJA,subconjunto,147623,Ho Kim,141449,Kim Jun-Ho,Kim Jun-Ho,True,KOR,,2024,2020,False,,19
+BAJA,subconjunto,147623,Ho Kim,62140,Kim Ho-Gon,Kim Ho-Gon,True,KOR,,2024,1996|2000|2004,False,,19
+BAJA,subconjunto,147623,Ho Kim,87249,Kim Gwang-Ho,Kim Gwang-Ho,True,,,2024,1992,False,,19
+BAJA,subconjunto,147623,Ho Kim,6372,Kim Yun-Ho,Kim Yun-Ho,True,KOR,,2024,1988,False,,19
+BAJA,subconjunto,147623,Ho Kim,4360,Kim Tae-Ho,Kim Tae-Ho,True,KOR,,2024,1972,False,,19
+BAJA,subconjunto,147623,Ho Kim,118033,Kim Ho-Jun,Kim Ho-Jun,True,KOR,,2024,2010|2014|2018,False,,19
+BAJA,subconjunto,147623,Ho Kim,125758,Kim Jun-Ho,Kim Jun-Ho,True,KOR,,2024,2014|2018|2022,False,,19
+BAJA,subconjunto,147623,Ho Kim,134475,Kim Eun-Ho,Kim Eun-Ho,True,KOR,,2024,2018,False,,19
+BAJA,subconjunto,147623,Ho Kim,34662,Kim In-Ho,Kim In-Ho,True,KOR,,2024,1992,False,,19
+BAJA,subconjunto,147623,Ho Kim,34665,Kim Seong-Ho,Kim Seong-Ho,True,KOR,,2024,1988,False,,19
+BAJA,subconjunto,147623,Ho Kim,58761,Kim Chun-Ho,Kim Chun-Ho,True,KOR,,2024,1992,False,,19
+BAJA,subconjunto,147623,Ho Kim,43469,Kim Gyong-Ho,Kim Gyong-Ho,True,,,2024,1976|1980,False,,19
+BAJA,subconjunto,147623,Ho Kim,43472,Kim Jun-Ho,Kim Jun-Ho,True,,,2024,1980,False,,19
+BAJA,subconjunto,147629,von Henrik,119819,Henrik von Eckermann,Henrik Claes Edvard von Eckermann,True,SWE,,2024,2012|2016|2020,False,,2
+BAJA,subconjunto,147629,von Henrik,125206,Henrik von Appen,Henrik von Appen Piedrabuena,True,,,2024,2014|2018|2022,False,,2
+BAJA,subconjunto,147718,de David,123454,David de Gea,David de Gea Quintana,True,,,2024,2012,False,,1
+BAJA,subconjunto,147776,Marcos Rojas,142273,Marcos Antonio Rojas,Marcos Antonio Rojas Concha,True,,,2024,2020,False,,1
+BAJA,subconjunto,147787,Na Lee,136664,Lee Na-Yun,Lee Na-Yun,True,KOR,,2024,2020|2022,False,,3
+BAJA,subconjunto,147787,Na Lee,106458,Lee Na-Rae,Lee Na-Rae,True,KOR,,2024,2004,False,,3
+BAJA,subconjunto,147842,Yahya Al,72437,Ibrahim Al-Asiri Yahya,Ibrahim Dahman Al-Asiri Yahya,True,,,2024,1996,False,,1
+BAJA,subconjunto,147950,le Marie,127699,Marie Le Nepvou,Marie Le Nepvou,True,FRA,,2024,2016,False,,5
+BAJA,subconjunto,148127,van Erik,19694,Erik van Rossem,Erik van Rossem,True,,,2024,1964,False,,1
+BAJA,subconjunto,148198,Sophie Hamilton,126338,Sophie Caldwell-Hamilton,Sophie Caldwell-Hamilton,True,,,2024,2014|2018,False,,1
+BAJA,subconjunto,148418,Deok Kim,4352,Kim Deok-Pal,Kim Deok-Pal,True,KOR,,2024,1964,False,,6
+BAJA,subconjunto,148418,Deok Kim,26056,Kim Deok-Jung,Kim Deok-Jung,True,KOR,,2024,1964,False,,6
+BAJA,subconjunto,148418,Deok Kim,30412,Kim Gwang-Deok,Kim Gwang-Deok,True,KOR,,2024,1964,False,,6
+BAJA,subconjunto,148418,Deok Kim,113727,Kim Deok-Hyeon,Kim Deok-Hyeon,True,KOR,,2024,2008|2012|2016,False,,6
+BAJA,subconjunto,148502,van Wout,12831,Wout-Jan van der Schans,Wout-Jan van der Schans,True,,,2024,1988,False,,3
+BAJA,subconjunto,148502,van Wout,144973,Jens van 't Wout,Jens van 't Wout,True,,,2024,2022,False,,3
+BAJA,subconjunto,148509,de Pierre,84403,Jean-Pierre De Petro,Jean-Pierre De Petro,True,,,2024,1968,False,,8
+BAJA,subconjunto,148509,de Pierre,61310,Pierre de Boulogne,Pierre de Boulogne,True,,,2024,1900,False,,8
+BAJA,subconjunto,148515,de Lara,123660,Lara Grangeon de Villèle,Lara Grangeon de Villèle,True,,,2024,2012|2016|2020,False,,3
+BAJA,subconjunto,148515,de Lara,137610,Lara de Liedekerke-Meier,Lara de Liedekerke-Meier,True,BEL,,2024,2020,False,,3
+BAJA,subconjunto,148544,de William,11783,William de Rham,William-Guy Pierre de Rham,True,,,2024,,False,,1
+BAJA,subconjunto,148563,de Melanie,99425,Melanie de Lange,Melanie de Lange,True,,,2024,1998,False,,2
+BAJA,orden_invertido,148579,McMILLAN Jack,140420,Jack McMillan,Jack McMillan,True,,Swimming (Aquatics),2024,2020,False,,1
+BAJA,subconjunto,148787,de Luciano,84401,Luciano De Paolis,Luciano De Paolis,True,,,2024,1968|1972,False,,3
+BAJA,subconjunto,148866,Yu Feng,93265,Yu Feng-Yun,Yu Feng-Yun,True,,,2024,2000,False,,2
+BAJA,subconjunto,148934,Ahmed Omar,4304,Omar Ahmed Rajab,Omar Ahmed Rajab,True,,,2024,1996,False,,1
+BAJA,subconjunto,148968,Mohamed Khalifa,73105,Mohamed Ould Khalifa,Mohamed Ould Khalifa,True,,Athletics,2024,1988|1992,False,,2
+BAJA,subconjunto,148968,Mohamed Khalifa,72561,Mohamed Asswai Khalifa,Mohamed Souai Asswai Khalifa,True,,Athletics,2024,1968,False,,2
+BAJA,subconjunto,148975,Moustafa Mahmoud,58443,Mohammed Moustafa Mahmoud,Mohammed Moustafa Mahmoud,True,,,2024,1980,False,,1
+BAJA,orden_invertido,149143,Feng Li,66017,Li Feng,Li Feng,True,CHN,,2024,1988,False,,2
+BAJA,subconjunto,149151,Fei Chen,93263,Chen-Tong Fei-Ming,Chen-Tong Fei-Ming,True,,,2024,2000,False,,2
+BAJA,orden_invertido,149151,Fei Chen,120609,Chen Fei,Chen Fei,True,CHN,,2024,2012,False,,2
+BAJA,subconjunto,149155,Shu Liu,105393,Liu Shu-Yun,Liu Shu-Yun,True,,,2024,2004,False,,1
+BAJA,subconjunto,149164,de Jean,84377,Jean de Crawhez,Jean Waillet de Crawhez,True,,,2024,1964,False,,24
+BAJA,subconjunto,149164,de Jean,84403,Jean-Pierre De Petro,Jean-Pierre De Petro,True,,,2024,1968,False,,24
+BAJA,subconjunto,149164,de Jean,463,Jean-Louis de la Croix,Jean-Louis S. de la Croix,True,,,2024,1908,False,,24
+BAJA,subconjunto,149164,de Jean,41808,"Jean, Baron de Lareinty de Tholozan",Sosthène Guillaume Jean de Baillardel de Lareinty de Tholozan,True,,,2024,1920,False,,24
+BAJA,subconjunto,149164,de Jean,111726,Jean de Dieu Soloniaina,Jean de Dieu Soloniaina Razanadrakoto,True,,,2024,2008,False,,24
+BAJA,subconjunto,149164,de Jean,34003,Jean de Dieu Razafimahatratra,Jean de Dieu Razafimahatratra,True,,,2024,1972,False,,24
+BAJA,subconjunto,149164,de Jean,53109,Jean De Backer,Jean De Backer,True,,,2024,1900,False,,24
+BAJA,subconjunto,149164,de Jean,61317,Jean-Max de Chavigny,Jean-Max de Chavigny,True,,Sailing,2024,1996,False,,24
+BAJA,subconjunto,149257,Mohamed Hassan,101544,Hussain Mohamed Hassan,Hussain Mohamed Hassan,True,,,2024,1992,False,,4
+BAJA,subconjunto,149257,Mohamed Hassan,130808,Hassan Mohamed Mahmoud,Hassan Mohamed Mahmoud Abdulgawad,True,EGY,,2024,2016,False,,4
+BAJA,subconjunto,149257,Mohamed Hassan,18290,Hussain Mohamed Hassan,Hussain Mohamed Hassan,True,EGY,,2024,1992,False,,4
+BAJA,subconjunto,149259,de Mauro,14008,Mauro De Pellegrin,Mauro De Pellegrin,True,ITA,,2024,1980,False,,2
+BAJA,subconjunto,149263,van Naomi,112740,Naomi van As,Naomi Frances van As,True,,,2024,2008|2012|2016,False,,2
+BAJA,subconjunto,149276,van Niels,54174,Niels van der Kolk,"Gerardus Cornelis ""Niels"" van der Kolk",True,,,2024,1996,False,,4
+BAJA,subconjunto,149276,van Niels,38706,Niels van der Zwan,"Cornelis Pieter ""Niels"" van der Zwan",True,,Rowing,2024,1992|1996|2000,False,,4
+BAJA,subconjunto,149276,van Niels,38717,Niels van Steenis,Niels Henning van Steenis,True,,Rowing,2024,1996,False,,4
+BAJA,subconjunto,149276,van Niels,16866,Niels van der Steen,Niels van der Steen,True,,,2024,1992,False,,4
+BAJA,subconjunto,149313,Jose Torres,66808,Juan José Torres,Juan José Torres Díaz,True,,,2024,1984,False,,1
+BAJA,orden_invertido,149399,Ling Zhang,127206,Zhang Ling,Zhang Ling,True,CHN,,2024,2016,False,,2
+BAJA,orden_invertido,149436,Yang Liu,104626,Liu Yang,Liu Yang,True,CHN,,2024,2004,False,,4
+BAJA,orden_invertido,149459,Jun Zhang,82049,Zhang Jun,Zhang Jun,True,CHN,,2024,2000|2004,False,,3
+BAJA,orden_invertido,149475,Yue Sun,51785,Sun Yue,Sun Yue,True,CHN,,2024,1992|1996|2000,False,,2
+BAJA,subconjunto,149611,Wen Su,76301,Su Wen-Ho,Su Wen-Ho,True,,Athletics,2024,1968|1972,False,,2
+BAJA,orden_invertido,149615,Zhen Wang,130483,Wang Zhen,Wang Zhen,True,CHN,,2024,2016,False,,2
+BAJA,subconjunto,149748,Jose Rodriguez,43014,José Reyes Rodríguez,José Reyes Rodríguez Mireles,True,,,2024,1948|1952,False,,6
+BAJA,subconjunto,149748,Jose Rodriguez,130583,Arley José Rodríguez,Arley José Rodríguez Henry,True,,,2024,2016,False,,6
+BAJA,subconjunto,149748,Jose Rodriguez,36442,José Antonio Rodríguez,José Antonio Rodríguez Martínez,True,,,2024,1992,False,,6
+BAJA,subconjunto,149748,Jose Rodriguez,53416,José Antonio Rodríguez,José Antonio Rodríguez Pérez,True,,,2024,1988,False,,6
+BAJA,subconjunto,149748,Jose Rodriguez,35009,Ricardo José Rodríguez,Ricardo José Rodríguez,True,,,2024,1972,False,,6
+BAJA,subconjunto,149748,Jose Rodriguez,130431,José Luis Rodríguez,José Luis Rodríguez Aguilar,True,,,2024,2016,False,,6
+BAJA,subconjunto,149749,Jose Montero,6657,José Antonio Montero,José Antonio Montero Botanch,True,,,2024,1988,False,,1
+BAJA,subconjunto,149760,Man Tang,16676,Tang Kam Man,Tang Kam Man,True,HKG,,2024,1976,False,,2
+BAJA,subconjunto,149786,del Marco,48153,Marco Del Prete,Marco Del Prete,True,ITA,,2024,1984,False,,2
+BAJA,subconjunto,149794,de Luca,119569,Riccardo De Luca,Riccardo De Luca,True,ITA,,2024,2012|2016,False,,8
+BAJA,subconjunto,149794,de Luca,115020,Giorgio De Luca,Giorgio De Luca,True,ITA,,2024,2008,False,,8
+BAJA,subconjunto,149794,de Luca,125570,Luca De Aliprandini,Luca De Aliprandini,True,ITA,,2024,2014|2018|2022,False,,8
+BAJA,subconjunto,149794,de Luca,56258,Sergio De Luca,Sergio De Luca,True,,,2024,1980,False,,8
+BAJA,subconjunto,149794,de Luca,114131,Marco De Luca,Marco De Luca,True,ITA,,2024,2008|2012|2016|2020,False,,8
+BAJA,subconjunto,149794,de Luca,92146,Daniele De Luca,Daniele De Luca,True,ITA,,2024,2000,False,,8
+BAJA,subconjunto,149795,de Marco,36400,José María de Marco,José María de Marco Pérez,True,,,2024,1992|1996,False,,4
+BAJA,subconjunto,149795,de Marco,92346,Marco De Nicolo,Marco Alessandro De Nicolo,True,ITA,,2024,2000|2004|2008|2012|2016|2020,False,,4
+BAJA,subconjunto,149795,de Marco,53173,Marco Antônio de Viçoso,Marco Antônio de Viçoso Jardim,True,,,2024,1968,False,,4
+BAJA,subconjunto,149795,de Marco,114131,Marco De Luca,Marco De Luca,True,ITA,,2024,2008|2012|2016|2020,False,,4
+BAJA,subconjunto,149890,van Nicole,126570,Nicole van der Velden,Nicole van der Velden,True,,,2024,2010|2016,False,,3
+BAJA,subconjunto,149890,van Nicole,88565,Nicole van Hooren,Nicole Gerarda Everdina van Hooren,True,,,2024,2000,False,,3
+BAJA,orden_invertido,149931,Qian Li,103233,Li Qian,Li Qian,True,CHN,,2024,2004,False,,2
+BAJA,subconjunto,149936,Yu Wu,76276,Wu Yu-Chih,Wu Yu-Chih,True,,,2024,1972,False,,1
+BAJA,subconjunto,149939,Yi Chen,89799,Chen Chiung-Yi,Chen Chiung-Yi,True,,,2024,2000,False,,4
+BAJA,subconjunto,149939,Yi Chen,107989,Chen Miao-Yi,Chen Miao-Yi,True,,,2024,2004|2008,False,,4
+BAJA,orden_invertido,149952,Ying Zhang,104960,Zhang Ying,Zhang Ying,True,CHN,,2024,2004,False,,4
+BAJA,orden_invertido,149952,Ying Zhang,45774,Zhang Ying,Zhang Ying,True,CHN,,2024,1988,False,,4
+BAJA,orden_invertido,149952,Ying Zhang,101739,Zhang Ying,Zhang Ying,True,CHN,,2024,2004|2008,False,,4
+BAJA,orden_invertido,149955,Yang Chen,127134,Chen Yang,Chen Yang,True,CHN,,2024,2016|2020,False,,3
+BAJA,subconjunto,149955,Yang Chen,13194,Yang Hsiu-Chen,Yang Hsiu-Chen,True,,,2024,1988,False,,3
+BAJA,subconjunto,149978,Mi Kang,106112,Kang Yun-Mi,Kang Yun-Mi,True,,,2024,2004,False,,1
+BAJA,orden_invertido,149993,Yue Sun,51785,Sun Yue,Sun Yue,True,CHN,,2024,1992|1996|2000,False,,2
+BAJA,subconjunto,149994,Xiao Wang,93202,Wen Xiao Wang,Wen Xiao Wang,True,,,2024,2000,False,,2
+BAJA,subconjunto,149994,Xiao Wang,2453,Xiao-Ming Wang-Dréchou,Xiao-Ming Wang-Dréchou,True,,,2024,1992|1996,False,,2
+BAJA,orden_invertido,149996,Yan Zhou,117440,Zhou Yan,Zhou Yan,True,CHN,,2024,2010|2014|2018,False,,2
+BAJA,orden_invertido,149996,Yan Zhou,92483,Zhou Yan,Zhou Yan,True,CHN,,2024,2000,False,,2
+BAJA,orden_invertido,150012,Jing Zhang,99592,Zhang Jing,Zhang Jing,True,CHN,,2024,1998|2002,False,,2
+BAJA,orden_invertido,150022,Hao Liu,130480,Liu Hao,Liu Hao,True,CHN,,2024,2016,False,,2
+BAJA,orden_invertido,150024,Nan Wang,93209,Wang Nan,Wang Nan,True,CHN,,2024,2000|2004|2008,False,,6
+BAJA,subconjunto,150081,Ahmed Adel,26879,Adel Ahmed Malalla,Adel Ahmed Malalla,True,,,2024,1984,False,,1
+BAJA,subconjunto,150091,Jin Kim,123395,Kim Yeong-Jin,Kim Yeong-Jin,True,KOR,,2024,2012,False,,44
+BAJA,subconjunto,150091,Jin Kim,116806,Kim Won-Jin,Kim Won-Jin,True,KOR,,2024,2008,False,,44
+BAJA,subconjunto,150091,Jin Kim,122949,Kim Jin-Hyeok,Kim Jin-Hyeok,True,KOR,,2024,2012,False,,44
+BAJA,subconjunto,150091,Jin Kim,52316,Kim Jin-Hui,Kim Jin-Hui,True,KOR,,2024,1964,False,,44
+BAJA,subconjunto,150091,Jin Kim,52321,Kim Se-Jin,Kim Se-Jin,True,KOR,,2024,1992|1996|2000,False,,44
+BAJA,subconjunto,150091,Jin Kim,141461,Kim Jin-Gyu,Kim Jin-Gyu,True,KOR,,2024,2020,False,,44
+BAJA,subconjunto,150091,Jin Kim,141462,Kim Jin-Ya,Kim Jin-Ya,True,KOR,,2024,2020,False,,44
+BAJA,subconjunto,150091,Jin Kim,118424,Kim Jin-Cheol,Kim Jin-Cheol,True,KOR,,2024,2012,False,,44
+BAJA,subconjunto,150091,Jin Kim,110242,Kim Jin-Gyu,Kim Jin-Gyu,True,KOR,,2024,2008,False,,44
+BAJA,subconjunto,150091,Jin Kim,92845,Jin-Woo Kim,Jin-Woo Kim,True,,,2024,2000,False,,44
+BAJA,subconjunto,150091,Jin Kim,72386,Kim Jin-Tae,Kim Jin-Tae,True,KOR,,2024,1988,False,,44
+BAJA,subconjunto,150091,Jin Kim,87252,Kim Jin-Hae,Kim Jin-Hae,True,KOR,,2024,1984,False,,44
+BAJA,subconjunto,150091,Jin Kim,144104,Kim Jin-Uk,Kim Jin-Uk,True,KOR,,2024,2020,False,,44
+BAJA,subconjunto,150091,Jin Kim,98562,Kim Jin-Su,Kim Jin-Su,True,KOR,,2024,1998,False,,44
+BAJA,subconjunto,150091,Jin Kim,54032,Kim Jin-Tae,Kim Jin-Tae,True,KOR,,2024,1988,False,,44
+BAJA,subconjunto,150091,Jin Kim,125740,Kim Gwang-Jin,Kim Gwang-Jin,True,KOR,,2024,2012|2014,False,,44
+BAJA,subconjunto,150091,Jin Kim,115001,Kim Chol-Jin,Kim Chol-Jin,True,,,2024,2008,False,,44
+BAJA,subconjunto,150091,Jin Kim,42855,Kim Yeong-Jin,Kim Yeong-Jin,True,KOR,,2024,1984,False,,44
+BAJA,subconjunto,150091,Jin Kim,58767,Kim Jin-Su,Kim Jin-Su,True,KOR,,2024,1996|2000,False,,44
+BAJA,subconjunto,150091,Jin Kim,2477,Kim Jin-Myong,Kim Jin-Myong,True,,,2024,1992,False,,44
+BAJA,subconjunto,150091,Jin Kim,111536,Kim Kyong-Jin,Kim Kyong-Jin,True,,Judo,2024,2008,False,,44
+BAJA,subconjunto,150091,Jin Kim,101820,Kim Dong-Jin,Kim Dong-Jin,True,KOR,,2024,2004|2008,False,,44
+BAJA,subconjunto,150091,Jin Kim,30677,Kim Gwang-Jin,Kim Gwang-Jin,True,,,2024,1980,False,,44
+BAJA,subconjunto,150091,Jin Kim,132076,Kim Wu-Jin,Kim Wu-Jin,True,KOR,,2024,2016|2020,False,,44
+BAJA,subconjunto,150091,Jin Kim,144882,Kim Jin-Su,Kim Jin-Su,True,KOR,,2024,2022,False,,44
+BAJA,subconjunto,150167,de Elisa,11370,Elisa Pérez de las Heras,Elisa Fernández Pérez de las Heras (Fernández-),True,,,2024,1972,False,,1
+BAJA,subconjunto,150196,di Marco,102460,Marco di Carli,Marco di Carli,True,,,2024,2004|2012,False,,3
+BAJA,subconjunto,150196,di Marco,131804,Marco Di Costanzo,Marco Di Costanzo,True,,,2024,2010|2016|2020,False,,3
+BAJA,subconjunto,150440,de Ronaldo,35549,Ronaldo de Carvalho,Ronaldo Esteves de Carvalho,True,,,2024,1980|1984|1988,False,,1
+BAJA,subconjunto,150565,Mohamed Amer,76454,Mohamed Amer Al-Nahdi,Mohamed Ahmed Amer Al-Nahdi,True,,,2024,1992,False,,1
+BAJA,subconjunto,150616,Diego Gomez,88596,Diego Aguirre Gómez Corta,Diego Aguirre Gómez Corta,True,,,2024,2000,False,,1
+BAJA,subconjunto,150747,Ben O'connor,139618,Ben Connor,"Benjamin ""Ben"" Connor",True,,,2024,2020,False,,1
+BAJA,subconjunto,150762,van Jean,16847,Jean Van Benthem,Jean Van Benthem,True,,,2024,1908,False,,17
+BAJA,subconjunto,150762,van Jean,16897,Jean-Paul van Poppel,Jean-Paul van Poppel,True,,,2024,1984,False,,17
+BAJA,subconjunto,150762,van Jean,16908,Jean-Pierre van Zyl,Jean-Pierre van Zyl,True,,,2024,1996,False,,17
+BAJA,subconjunto,150762,van Jean,17614,Jean Van Der Straeten,Jean Van Der Straeten,True,,,2024,1928,False,,17
+BAJA,subconjunto,150762,van Jean,17617,Jean Van Nérom,Jean Prosper Charles Léon Marie Edouard Van Nérom,True,,,2024,1920,False,,17
+BAJA,subconjunto,150762,van Jean,97750,Jean Van Der Wouwer,Jean Van Der Wouwer,True,,,2024,1928,False,,17
+BAJA,subconjunto,150762,van Jean,54865,Jean-Pierre Van Lerberghe,Jean-Pierre Van Lerberghe,True,,,2024,1968|1976,False,,17
+BAJA,subconjunto,150764,van Pierre,7240,Pierre Van Basselaere,Pierre François Van Basselaere,True,,,2024,1936,False,,7
+BAJA,subconjunto,150764,van Pierre,335,Pierre Van Tilt,Pierre Van Tilt,True,,,2024,1920,False,,7
+BAJA,subconjunto,150764,van Pierre,16908,Jean-Pierre van Zyl,Jean-Pierre van Zyl,True,,,2024,1996,False,,7
+BAJA,subconjunto,150764,van Pierre,54865,Jean-Pierre Van Lerberghe,Jean-Pierre Van Lerberghe,True,,,2024,1968|1976,False,,7
+BAJA,subconjunto,150764,van Pierre,21166,Pierre Van Houdt,Pierre Albert Georges Van Houdt,True,,,2024,1952,False,,7
+BAJA,subconjunto,150977,Miguel Perez,122264,José Miguel Pérez,José Miguel Pérez Martínez,True,,,2024,2012,False,,2
+BAJA,subconjunto,150977,Miguel Perez,23025,José Miguel Pérez,José Miguel Pérez,True,,,2024,1968,False,,2
+BAJA,subconjunto,151151,Jean Mitchell,73877,Jean Holmes-Mitchell,Jean Winnifred Holmes-Mitchell,True,,,2024,1960|1964,False,,1
+BAJA,subconjunto,151451,Jose Gonzalez,14442,José Antonio González-Linares,José Antonio González-Linares Gutiérrez,True,,,2024,1968,False,,5
+BAJA,subconjunto,151451,Jose Gonzalez,66719,José Luis González,José Luis González Sánchez,True,,Athletics,2024,1980|1984|1992,False,,5
+BAJA,subconjunto,151451,Jose Gonzalez,129784,José Luis González,José Luis González,True,,,2024,2016,False,,5
+BAJA,subconjunto,151451,Jose Gonzalez,106300,José Antonio González,José Antonio González Cobacho,True,,Athletics,2024,2004,False,,5
+BAJA,subconjunto,151543,de Maria,112699,María López de Eguilaz,María López de Eguilaz Zubiria,True,,,2024,2008|2016,False,,14
+BAJA,subconjunto,151543,de Maria,46144,María Dolores Sáez de Ibarra,María Dolores Sáez de Ibarra García,True,,,2024,1996|2000|2004,False,,14
+BAJA,subconjunto,151543,de Maria,5186,María de los Santos,María de los Santos Iglesias,True,,,2024,1980,False,,14
+BAJA,subconjunto,151543,de Maria,106119,María José de la Fuente,María José de la Fuente Parada,True,,,2024,2004,False,,14
+BAJA,subconjunto,151543,de Maria,102085,María de Jesús Castillo,María de Jesús Castillo Nicasio,True,,,2024,2004,False,,14
+BAJA,subconjunto,151761,de Maria,112699,María López de Eguilaz,María López de Eguilaz Zubiria,True,ESP,,2024,2008|2016,False,,14
+BAJA,subconjunto,151761,de Maria,46144,María Dolores Sáez de Ibarra,María Dolores Sáez de Ibarra García,True,ESP,,2024,1996|2000|2004,False,,14
+BAJA,subconjunto,151761,de Maria,5186,María de los Santos,María de los Santos Iglesias,True,,,2024,1980,False,,14
+BAJA,subconjunto,151761,de Maria,65009,Maria de Souza,Maria Aparecida de Souza de Lima,True,,,2024,1996,False,,14
+BAJA,subconjunto,151761,de Maria,106119,María José de la Fuente,María José de la Fuente Parada,True,,,2024,2004,False,,14
+BAJA,subconjunto,151761,de Maria,102085,María de Jesús Castillo,María de Jesús Castillo Nicasio,True,,,2024,2004,False,,14
+BAJA,subconjunto,151771,de Sergio,65074,Sérgio de Menezes,Sérgio Matias Franco de Menezes,True,,,2024,1988|1992,False,,4
+BAJA,subconjunto,151771,de Sergio,11675,Caio Sérgio de Carvalho,Caio Sérgio José de Carvalho,True,,,2024,1984,False,,4
+BAJA,subconjunto,151771,de Sergio,56258,Sergio De Luca,Sergio De Luca,True,,,2024,1980,False,,4
+BAJA,subconjunto,151784,de Miguel,24683,Miguel de Andrés,Miguel de Andrés Barace,True,ESP,,2024,1980,False,,8
+BAJA,subconjunto,151784,de Miguel,66687,Miguel de los Santos,Miguel de los Santos Vilches,True,ESP,,2024,1996,False,,8
+BAJA,subconjunto,151784,de Miguel,18364,Miguel de Paz,Miguel de Paz Plá,True,ESP,,2024,1980|1984|1988,False,,8
+BAJA,subconjunto,151784,de Miguel,89075,Ignacio de Miguel,Ignacio de Miguel Villa,True,ESP,,2024,2000,False,,8
+BAJA,subconjunto,152183,Min Gu,93813,Gu Min-Jeong,Gu Min-Jeong,True,,,2024,2000|2004,False,,1
+BAJA,subconjunto,152197,de Antoine,29197,Antoine De Buck,Antoine De Buck,True,,,2024,1908,False,,1
+BAJA,subconjunto,152226,Hang Ho,30674,Ho Yun-Hang,Ho Yun-Hang,True,,,2024,1972,False,,1
+BAJA,subconjunto,152320,van Steven,38712,Steven van Groningen,Steven Cornelis van Groningen,True,NED,,2024,1984,False,,2
+BAJA,subconjunto,152320,van Steven,20297,Steven van Randwijck,Steven Rutger Jules van Randwijck,True,,,2024,1996,False,,2
+BAJA,subconjunto,152384,van Jan,63519,Jan Willem van den Hondel,"Johannes Willem ""Jan Willem"" van den Hondel",True,NED,,2024,1980,False,,30
+BAJA,subconjunto,152384,van Jan,59427,Jan van Rensburg,Jan Joseph van Rensburg,True,,,2024,1920,False,,30
+BAJA,subconjunto,152384,van Jan,16879,Dirk Jan van Hameren,"Theodorus Johannes Antonius Maria ""Dirk Jan"" van Hameren",True,NED,,2024,1992|1996,False,,30
+BAJA,subconjunto,152384,van Jan,12831,Wout-Jan van der Schans,Wout-Jan van der Schans,True,NED,,2024,1988,False,,30
+BAJA,subconjunto,152384,van Jan,4720,Jan van Ispelen,Jan van Ispelen,True,NED,,2024,1968,False,,30
+BAJA,subconjunto,152384,van Jan,19685,Jan Willem van Erven Dorens,Jan Willem van Erven Dorens,True,NED,,2024,1960,False,,30
+BAJA,subconjunto,152384,van Jan,132382,Jan-Willem van Schip,Jan-Willem van Schip,True,NED,,2024,2016|2020,False,,30
+BAJA,subconjunto,152384,van Jan,103836,Jan-Cor van der Greef,"Cornelis Huig Jan ""Jan-Cor"" van der Greef",True,NED,,2024,2004,False,,30
+BAJA,subconjunto,152384,van Jan,89688,Jan van Eijden,Jan van Eijden,True,,,2024,2000,False,,30
+BAJA,subconjunto,152384,van Jan,108157,Dirk-Jan van Gendt,"Hendrik Theodorus Petrus ""Dirk-Jan"" van Gendt",True,NED,,2024,2004,False,,30
+BAJA,subconjunto,152385,van Simon,100918,Simon Van Vossel,Simon Van Vossel,True,,,2024,2002,False,,4
+BAJA,subconjunto,152385,van Simon,123963,Simon van Velthooven,Simon van Velthooven,True,,,2024,2012,False,,4
+BAJA,subconjunto,152386,de Sander,122770,Sander de Wijn,Sander Sebastiaan Robert de Wijn,True,NED,,2024,2012|2016|2020,False,,2
+BAJA,subconjunto,152440,Bilal El,4421,Bilal El-Masri,Bilal El-Masri,True,,,2024,1988,False,,1
+BAJA,subconjunto,152464,van Sanne,128617,Sanne van Olphen,Sanne van Olphen,True,NED,,2024,2016,False,,4
+BAJA,subconjunto,152464,van Sanne,108942,Sanne van der Star,Sanne Martha van der Star,True,NED,,2024,2006,False,,4
+BAJA,subconjunto,152464,van Sanne,118231,Sanne van Kerkhof,Sanne Cora van Kerkhof,True,NED,,2024,2010|2014,False,,4
+BAJA,subconjunto,152561,Andres Torres,92294,Andrés Felipe Torres,Andrés Felipe Torres Vidal,True,,,2024,2000,False,,1
+BAJA,subconjunto,152602,van Ellen,93926,Ellen van der Weijden-Bast,"Eleonora Johanna ""Ellen"" van der Weijden-Bast",True,NED,,2024,2000,False,,3
+BAJA,subconjunto,152602,van Ellen,73214,Ellen van Langen,Ellen Gezina Maria van Langen,True,NED,,2024,1992,False,,3
+BAJA,subconjunto,152617,van Willem,63519,Jan Willem van den Hondel,"Johannes Willem ""Jan Willem"" van den Hondel",True,NED,,2024,1980,False,,13
+BAJA,subconjunto,152617,van Willem,63536,Willem van Walt Meijer,Willem Scato van Walt Meijer,True,NED,,2024,1980|1984,False,,13
+BAJA,subconjunto,152617,van Willem,38723,Jan-Willem van Woudenberg,"Jan Willem ""Jan-Willem"" van Woudenberg",True,NED,,2024,1972,False,,13
+BAJA,subconjunto,152617,van Willem,10584,Willem van Riet,Willem Frederik van Riet,True,,,2024,1992,False,,13
+BAJA,subconjunto,152617,van Willem,130013,Willem Van Schuerbeeck,Willem Van Schuerbeeck,True,,,2024,2016,False,,13
+BAJA,subconjunto,152617,van Willem,19685,Jan Willem van Erven Dorens,Jan Willem van Erven Dorens,True,NED,,2024,1960,False,,13
+BAJA,subconjunto,152640,Ali Al,104546,Ali Al-Zinkawi,Ali Mohamed Gharib Al-Zinkawi,True,,Athletics,2024,2004|2008|2012,False,,25
+BAJA,subconjunto,152640,Ali Al,105583,Ali Mohamed Al-Balooshi,Ali Mohamed Al-Balooshi,True,,Athletics,2024,2004,False,,25
+BAJA,subconjunto,152640,Ali Al,41097,Ali Al-Khalifa,Ali Al-Khalifa,True,,,2024,1984,False,,25
+BAJA,subconjunto,152640,Ali Al,22677,Ali Al-Khawajah,Ali Muhammad Al-Khawajah,True,,,2024,1976|1980,False,,25
+BAJA,subconjunto,152640,Ali Al,141508,Ali Al-Hassan,Ali bin Sadiq bin Nasser Al-Hassan,True,,,2024,2020,False,,25
+BAJA,subconjunto,152640,Ali Al,104649,Saeed Ali Al-Adhreai,Saeed Ali Al-Adhreai,True,,Athletics,2024,2004,False,,25
+BAJA,subconjunto,152640,Ali Al,141522,Ali Al-Khadrawi,Ali Al-Khadrawi,True,,,2024,2020,False,,25
+BAJA,subconjunto,152640,Ali Al,26869,Abdul Nasser Ali Al-Obaidly,Abdul Nasser Ali Al-Obaidly,True,,,2024,1992,False,,25
+BAJA,subconjunto,152640,Ali Al,26870,Ali Al-Sadah,Ali Al-Sadah,True,,,2024,1984,False,,25
+BAJA,subconjunto,152640,Ali Al,43254,Ali Al-Ghafiri,Ali Sultan Al-Ghafiri,True,OMA,,2024,1984,False,,25
+BAJA,subconjunto,152640,Ali Al,88346,Ali Khamis Rashid Al-Neyadi,Ali Khamis Rashid Al-Neyadi,True,,Athletics,2024,2000,False,,25
+BAJA,subconjunto,152640,Ali Al,4396,Ali Al-Baluchi,Ali Al-Baluchi,True,,,2024,1988,False,,25
+BAJA,subconjunto,152640,Ali Al,141614,Ali Al-Ahrach,Ali Al-Ahrach,True,,,2024,2020,False,,25
+BAJA,subconjunto,152640,Ali Al,32184,Mishal Al-Ali,Mishal Al-Ali,True,,,2024,1996,False,,25
+BAJA,subconjunto,152640,Ali Al,87498,Ali Saleh Al-Jadani,Ali Saleh Al-Jadani,True,,Athletics,2024,2000,False,,25
+BAJA,subconjunto,152640,Ali Al,48644,Ali Al-Hasan,Ali Al-Hasan,True,,,2024,1996,False,,25
+BAJA,subconjunto,152640,Ali Al,26128,Ali Al-Hadiyah,Ali Al-Hadiyah,True,,,2024,1992,False,,25
+BAJA,subconjunto,152640,Ali Al,132723,Ali Al-Rumaihi,Ali Yousef Al-Rumaihi,True,,,2024,2016,False,,25
+BAJA,subconjunto,152640,Ali Al,132726,Sheikh Ali Al-Thani,Sheikh Ali bin Khalid Al-Thani,True,,,2024,2016,False,,25
+BAJA,subconjunto,152640,Ali Al,42710,Ali Hamed Al-Awasa,Ali Hamed Al-Awasa,True,,,2024,1984,False,,25
+BAJA,subconjunto,152640,Ali Al,113396,Ali Ahmed Al-Amri,Ali Ahmed Al-Amri,True,,Athletics,2024,2008|2012,False,,25
+BAJA,subconjunto,152640,Ali Al,72451,Mohamed Ali Al-Malky,Mohamed Ali Al-Malky,True,,Athletics,2024,1976,False,,25
+BAJA,subconjunto,152640,Ali Al,78746,Ali Al-Ghadi,Ali Saleh Al-Ghadi,True,,Athletics,2024,1984,False,,25
+BAJA,subconjunto,152640,Ali Al,13241,Ali Al-Abed,Ali Al-Abed,True,,,2024,1988|1992,False,,25
+BAJA,subconjunto,152640,Ali Al,13246,Ali Al-Ghazawi,Ali Sulaiman Al-Ghazawi,True,,,2024,1984,False,,25
+BAJA,subconjunto,152655,van Laura,106133,Laura van Leeuwen,Laura Antoinette van Leeuwen,True,NED,,2024,2004,False,,2
+BAJA,subconjunto,152670,van Floris,138134,Floris van Son,Floris Frederik van Son,True,,,2024,2020,False,,2
+BAJA,subconjunto,152698,de Jose,49536,José-Ricardo de Jesús,José-Ricardo de Jesús,True,,,2024,1976,False,,34
+BAJA,subconjunto,152698,de Jose,43438,José de Matos,José Marques Figueira de Matos,True,,,2024,1972,False,,34
+BAJA,subconjunto,152698,de Jose,51630,José De Palma,José Esteban De Palma,True,,,2024,1984|1988,False,,34
+BAJA,subconjunto,152698,de Jose,22976,José de Albuquerque,José Carlos Dargent de Albuquerque,True,,,2024,1960,False,,34
+BAJA,subconjunto,152698,de Jose,8780,José de la Cruz,José de la Cruz Guzmán,True,,,2024,1992,False,,34
+BAJA,subconjunto,152698,de Jose,33389,José Maria de Jesús,José Maria de Jesús,True,,,2024,1992,False,,34
+BAJA,subconjunto,152698,de Jose,74370,José Prata de Lima,José Artur Prata Rebelo de Lima,True,,,2024,1928,False,,34
+BAJA,subconjunto,152698,de Jose,74456,José de Jesús,José Elías de Jesús,True,,,2024,1976,False,,34
+BAJA,subconjunto,152698,de Jose,29536,José de la Casa,Juan José de la Casa García,True,,,2024,1976|1980,False,,34
+BAJA,subconjunto,152698,de Jose,15227,José Carlos de Lima,José Carlos de Lima,True,,,2024,1980,False,,34
+BAJA,subconjunto,152698,de Jose,23448,José Julián de la Fuente,José Julián Regino de la Fuente Vázquez,True,,,2024,1936,False,,34
+BAJA,subconjunto,152698,de Jose,3286,José Luís de Almeida,José Luís de Almeida,True,,,2024,1980,False,,34
+BAJA,subconjunto,152698,de Jose,64858,José de Souza,José Maurice de Souza Brice,True,,,2024,1988,False,,34
+BAJA,subconjunto,152698,de Jose,122252,José Reynaldo Bencosme de Leon,José Reynaldo Bencosme de Leon,True,,,2024,2012,False,,34
+BAJA,subconjunto,152698,de Jose,93675,José de Armas,José Antonio de Armas,True,,,2024,2000,False,,34
+BAJA,subconjunto,152698,de Jose,114176,José de Souza,José Telles de Souza,True,,,2024,2008,False,,34
+BAJA,subconjunto,152698,de Jose,36400,José María de Marco,José María de Marco Pérez,True,,,2024,1992|1996,False,,34
+BAJA,subconjunto,152698,de Jose,18360,José María de Caralt,José María de Caralt Mas,True,,,2024,1928,False,,34
+BAJA,subconjunto,152698,de Jose,42981,José de la Torre,José Guadalupe de la Torre González,True,,,2024,1948,False,,34
+BAJA,subconjunto,152707,van Thijs,102279,Thijs van Valkengoed,Thijs Maarten van Valkengoed,True,NED,,2024,2004|2008,False,,2
+BAJA,subconjunto,152739,van Diane,49049,Diane van der Plaats,"Adriana ""Diane"" van der Plaats",True,NED,,2024,1988|1992,False,,2
+BAJA,subconjunto,152773,de Lisanne,107781,Lisanne de Roever,Lisanne Freya de Roever,True,NED,,2024,2004|2008,False,,2
+BAJA,orden_invertido,152833,Jia Guo,107943,Guo Jia,Guo Jia,True,,,2024,2004|2008,False,,1
+BAJA,subconjunto,152843,van Anne,73217,Anne van Schuppen,"Antje Elisabeth ""Anne"" van Schuppen",True,NED,,2024,1996,False,,8
+BAJA,subconjunto,152843,van Anne,141858,Anne van de Wiel,Anne van de Wiel,True,NED,,2024,2020,False,,8
+BAJA,subconjunto,152843,van Anne,11321,Anne Jensen-van Olst,Anne Jensen-van Olst,True,,,2024,1988|1992|2000|2008|2012,False,,8
+BAJA,subconjunto,152843,van Anne,45133,Anne Van Parijs,Anne Van Parijs,True,,,2024,1960,False,,8
+BAJA,subconjunto,152843,van Anne,64643,Anne-Marie Van Nuffel,Anne-Marie Van Nuffel,True,,,2024,1976|1980,False,,8
+BAJA,subconjunto,152843,van Anne,124139,Anne-Sophie Van Regemortel,Anne-Sophie Van Regemortel,True,,,2024,2012,False,,8
+BAJA,subconjunto,152843,van Anne,105936,Marlies Anne van Baalen,Marlies Anne van Baalen,True,NED,,2024,2004|2020,False,,8
+BAJA,subconjunto,152845,van Laura,128612,Laura van der Heijden,Laura van der Heijden,True,NED,,2024,2016|2020,False,,2
+BAJA,subconjunto,152845,van Laura,106133,Laura van Leeuwen,Laura Antoinette van Leeuwen,True,NED,,2024,2004,False,,2
+BAJA,subconjunto,152871,De Andre,3008,André de Souza,André Manuel de Souza,True,,,2024,1956,False,,8
+BAJA,subconjunto,152917,von Chris,138125,Chris von Martels,"Christopher ""Chris"" von Martels",True,CAN,,2024,2020,False,,2
+BAJA,particulas,153127,Rae Kim,112731,Kim Da-Rae,Kim Da-Rae,True,,,2024,2008|2012,False,,4
+BAJA,subconjunto,153127,Rae Kim,106396,Kim Bok-Rae,Kim Bok-Rae,True,,,2024,2004,False,,4
+BAJA,subconjunto,153130,Ryong Han,58749,Han Sang-Ryong,Han Sang-Ryong,True,,,2024,1948,False,,1
+BAJA,subconjunto,153134,Hui Mun,107691,Mun Pil-Hui,Mun Pil-Hui,True,,,2024,2004|2008,False,,5
+BAJA,subconjunto,153134,Hui Mun,112728,Mun Yeong-Hui,Mun Yeong-Hui,True,,,2024,2008|2012,False,,5
+BAJA,subconjunto,153134,Hui Mun,141401,Park Hui-Mun,Park Hui-Mun,True,,,2024,2020,False,,5
+BAJA,subconjunto,153134,Hui Mun,109916,Mun Seon-Hui,Mun Seon-Hui,True,,,2024,1988,False,,5
+BAJA,subconjunto,153134,Hui Mun,117104,Mun Ji-Hui,Mun Ji-Hui,True,,,2024,2010|2014|2018,False,,5
+BAJA,subconjunto,153136,Yong Kim,13078,Kim Yong-Mi,Kim Yong-Mi,True,,,2024,1996|2004,False,,23
+BAJA,subconjunto,153136,Yong Kim,93992,Kim Yong-Ok,Kim Yong-Ok,True,PRK,,2024,2000,False,,23
+BAJA,subconjunto,153136,Yong Kim,109663,Kim Yong-Suk,Kim Yong-Suk,True,PRK,,2024,2006,False,,23
+BAJA,subconjunto,153136,Yong Kim,114798,Kim Yong-Mi,Kim Yong-Mi,True,PRK,,2024,2008,False,,23
+BAJA,subconjunto,153136,Yong Kim,110037,Kim Yong-Ae,Kim Yong-Ae,True,PRK,,2024,2008,False,,23
+BAJA,subconjunto,153138,Gyong Choe,124627,Choe Mi-Gyong,Choe Mi-Gyong,True,PRK,,2024,2012,False,,2
+BAJA,orden_invertido,153280,Alizadeh Kimia,128079,Kimia Alizadeh,Kimia Alizadeh Zenoorin,True,,Taekwondo,2024,2014|2016|2020,False,,1
+BAJA,subconjunto,153436,van Anne,11321,Anne Jensen-van Olst,Anne Jensen-van Olst,True,,,2024,1988|1992|2000|2008|2012,False,,8
+BAJA,subconjunto,153436,van Anne,45133,Anne Van Parijs,Anne Van Parijs,True,,,2024,1960,False,,8
+BAJA,subconjunto,153436,van Anne,141905,Anne van Dam,Anne van Dam,True,NED,,2024,2020,False,,8
+BAJA,subconjunto,153436,van Anne,64643,Anne-Marie Van Nuffel,Anne-Marie Van Nuffel,True,,Athletics,2024,1976|1980,False,,8
+BAJA,subconjunto,153436,van Anne,124139,Anne-Sophie Van Regemortel,Anne-Sophie Van Regemortel,True,,,2024,2012,False,,8
+BAJA,subconjunto,153436,van Anne,105936,Marlies Anne van Baalen,Marlies Anne van Baalen,True,NED,,2024,2004|2020,False,,8
+DESCARTADO,subconjunto,145778,di Maria,140499,Elisa Maria di Lazzaro,Elisa Maria di Lazzaro,False,,,2024,2020,False,,3
+DESCARTADO,subconjunto,145778,di Maria,140536,Sarah Jodoin Di Maria,Sarah Jodoin Di Maria,False,,,2024,2020,False,,3
+DESCARTADO,subconjunto,145874,Wen Quah,119854,Quah Zheng Wen,Quah Zheng Wen,False,SGP,Swimming (Aquatics),2024,2012|2016|2020,False,,2
+DESCARTADO,subconjunto,146037,Hoang Nguyen,78711,Nguyễn Thị Hoàng Na,Nguyễn Thị Hoàng Na,False,VIE,,2024,1980,False,,2
+DESCARTADO,subconjunto,146188,de Giovanni,102797,Agustina De Giovanni,Agustina De Giovanni,False,,,2024,2004|2008,False,,5
+DESCARTADO,subconjunto,146188,de Giovanni,84398,Giovanni De Martin,Giovanni De Martin,True,ITA,,2024,1956,True,,5
+DESCARTADO,subconjunto,146188,de Giovanni,25845,Giovanni De Prà,Giovanni Luigi Cecilio De Prà,True,ITA,,2024,1924|1928,True,,5
+DESCARTADO,subconjunto,146720,Ming-yang Peng,120215,Peng Yang,Peng Yang,False,,,2024,2012|2016|2020,False,,1
+DESCARTADO,orden_invertido,146744,Abbas Mohammed,102530,Mohammed Abbas,Mohammed Abbas Sabih,False,,,2024,2004,False,,1
+DESCARTADO,subconjunto,146768,Yu-tang Lin,91530,Tang Lin,Tang Lin,False,,,2024,2000,False,,1
+DESCARTADO,orden_invertido,146775,Wei Yang,88542,Yang Wei,Yang Wei,False,,,2024,2000|2004|2008,False,,5
+DESCARTADO,orden_invertido,146824,Jie Chen,127228,Chen Jie,Chen Jie,False,,,2024,2016|2020,False,,1
+DESCARTADO,subconjunto,146825,Wei Goh,132236,Goh Wei Shem,Goh Wei Shem,False,MAS,Badminton,2024,2016,False,,1
+DESCARTADO,subconjunto,146882,Huong Nguyen,60400,Nguyễn Kim Hương,Nguyễn Kim Hương,False,VIE,,2024,1988,False,,2
+DESCARTADO,subconjunto,146965,Chun Lin,50252,Lin Chun-Hong,Lin Chun-Hong,False,TPE,,2024,1984,False,,4
+DESCARTADO,subconjunto,146967,Chen Tien,133152,Chou Tien-Chen,Chou Tien-Chen,False,TPE,,2024,2016|2020,False,,3
+DESCARTADO,subconjunto,146967,Chen Tien,88324,Chen Tien-Wen,Chen Tien-Wen,False,TPE,,2024,2000,False,,3
+DESCARTADO,orden_invertido,146968,Yu Liu,102637,Liu Yu,Liu Yu,False,,,2024,2004,False,,3
+DESCARTADO,subconjunto,146987,Chi-lin Wang,50242,Wang Chi,Wang Chi,False,TPE,,2024,1988,False,,2
+DESCARTADO,subconjunto,147067,Joo Kim,72379,Kim Bok-Joo,Kim Bok-Joo,False,KOR,,2024,1984,False,,1
+DESCARTADO,subconjunto,147423,David Young,34535,David Turquand-Young,David Turquand-Young,True,,,2024,1924|1928,True,,1
+DESCARTADO,subconjunto,147446,Wen Huang,3195,Huang Wen-Po,Huang Wen-Po,False,TPE,,2024,1992,False,,2
+DESCARTADO,subconjunto,147449,Yi Wu,2158,Wu Tsung-Yi,Wu Tsung-Yi,False,TPE,,2024,1996,False,,2
+DESCARTADO,subconjunto,147450,Chin Chen,107268,Chen Chin-Feng,Chen Chin-Feng,False,TPE,,2024,2004|2008,False,,6
+DESCARTADO,subconjunto,147450,Chin Chen,84045,Chen Chin-San,Chen Chin-San,False,TPE,,2024,1984|1988|1992|2002,False,,6
+DESCARTADO,subconjunto,147450,Chin Chen,84046,Chen Chin-Sen,Chen Chin-Sen,False,TPE,,2024,1988|1992,False,,6
+DESCARTADO,subconjunto,147450,Chin Chen,76280,Chen Chin-Long,Chen Chin-Long,False,TPE,,2024,1972|1976,False,,6
+DESCARTADO,subconjunto,147621,Eun Kim,4359,Kim Seong-Eun,Kim Seong-Eun,False,KOR,,2024,1968,True,,27
+DESCARTADO,subconjunto,147621,Eun Kim,54035,Kim Seong-Eun,Kim Seong-Eun,False,KOR,,2024,1988,False,,27
+DESCARTADO,subconjunto,147621,Eun Kim,134475,Kim Eun-Ho,Kim Eun-Ho,False,KOR,,2024,2018,False,,27
+DESCARTADO,subconjunto,147621,Eun Kim,106157,Kim Dae-Eun,Kim Dae-Eun,False,KOR,,2024,2004|2008,False,,27
+DESCARTADO,subconjunto,147622,Yeong Kim,121347,Kim Yeong-Gwon,Kim Yeong-Gwon,False,KOR,,2024,2012,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,123395,Kim Yeong-Jin,Kim Yeong-Jin,False,KOR,,2024,2012,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,3121,Kim Yeong-Su,Kim Yeong-Su,False,KOR,,2024,1996,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,55866,Kim Seok-Yeong,Kim Seok-Yeong,False,KOR,,2024,1948,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,52324,Kim Yeong-Jun,Kim Yeong-Jun,False,KOR,,2024,1964,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,22642,Kim Yeong-Ho,Kim Yeong-Ho,False,KOR,,2024,1992|1996|2000,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,141446,Kim Yeong-Nam,Kim Yeong-Nam,False,KOR,,2024,2020,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,141447,Kim Yeong-Taek,Kim Yeong-Taek,False,KOR,,2024,2020,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,5286,Kim Yeong-Hui,Kim Yeong-Hui,True,KOR,,2024,1984,True,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,62139,Kim Dae-Yeong,Kim Dae-Yeong,False,KOR,,2024,1996|2000|2004,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,72396,Kim Yeong-Gil,Kim Yeong-Gil,False,KOR,,2024,1988,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,6374,Kim Yeong-Il,Kim Yeong-Il,False,KOR,,2024,1964|1968,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,6375,Kim Yeong-Gi,Kim Yeong-Gi,False,KOR,,2024,1956|1964,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,6376,Kim Yeong-Su,Kim Yeong-Su,False,KOR,,2024,1956,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,106299,Kim Dong-Yeong,Kim Dong-Yeong,False,KOR,,2024,2004|2008|2012,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,42855,Kim Yeong-Jin,Kim Yeong-Jin,False,KOR,,2024,1984,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,12170,Kim Yeong-Ro,Kim Yeong-Ro,False,KOR,,2024,1964,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,58777,Kim Yeong-Il,Kim Yeong-Il,False,KOR,,2024,1996,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,58778,Kim Yeong-Jun,Kim Yeong-Jun,False,KOR,,2024,1972,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,58779,Kim Yeong-Nam,Kim Yeong-Nam,False,KOR,,2024,1984|1988,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,101813,Kim Yeong-Gwang,Kim Yeong-Gwang,False,KOR,,2024,2004|2012,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,19394,Kim Yeong-Jun,Kim Yeong-Jun,False,KOR,,2024,1988,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,19395,Kim Yeong-Gwi,Kim Yeong-Gwi,False,KOR,,2024,1996,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,26066,Kim Yeong-Bae,Kim Yeong-Bae,False,KOR,,2024,1964,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,132079,Kim Guk-Yeong,Kim Guk-Yeong,False,KOR,,2024,2016,False,,47
+DESCARTADO,subconjunto,147622,Yeong Kim,94201,Kim Yeong-Tae,Kim Yeong-Tae,False,KOR,,2024,2000,False,,47
+DESCARTADO,subconjunto,147623,Ho Kim,2072,Kim Ho-Gyu,Kim Ho-Gyu,False,,,2024,1972,False,,19
+DESCARTADO,subconjunto,147623,Ho Kim,9951,Ho Kim Fai,Ho Kim Fai,False,,,2024,1984|1992,False,,19
+DESCARTADO,subconjunto,147623,Ho Kim,1950,Kim Jin-Ho,Kim Jin-Ho,False,KOR,,2024,1984,False,,19
+DESCARTADO,subconjunto,147790,Jin Oh,55844,Jin Oh-Hyeon,Jin Oh-Hyeon,False,KOR,,2024,1960,False,,2
+DESCARTADO,subconjunto,147790,Jin Oh,122320,Oh Jin-Hyeok,Oh Jin-Hyeok,False,KOR,,2024,2012|2020,False,,2
+DESCARTADO,subconjunto,147950,le Marie,79681,Jean-Marie le Bourvelec,Joseph Jean-Marie le Bourvelec,False,FRA,,2024,1900,True,,5
+DESCARTADO,subconjunto,147950,le Marie,41863,Henri le Marié,Henri Auguste Marie le Marié,False,FRA,,2024,1912,True,,5
+DESCARTADO,subconjunto,147950,le Marie,62271,Jean-Marie le Guillou,Jean-Marie le Guillou,False,FRA,,2024,1972,False,,5
+DESCARTADO,subconjunto,148180,da Oscar,12704,Oscar da Silva,Oscar Sotero da Silva,True,,,2024,1960,True,,1
+DESCARTADO,orden_invertido,148355,Hao Yang,108015,Yang Hao,Yang Hao,False,CHN,,2024,2004|2008,False,,1
+DESCARTADO,orden_invertido,148383,Ning Zhang,104879,Zhang Ning,Zhang Ning,False,CHN,,2024,2004|2008,False,,1
+DESCARTADO,subconjunto,148418,Deok Kim,19356,Kim Sun-Deok,Kim Sun-Deok,False,KOR,,2024,1988,False,,6
+DESCARTADO,subconjunto,148509,de Pierre,11555,Pierre Bertran de Balanda,Pierre Louis Marie Bertran de Balanda,True,,,2024,1928,True,,8
+DESCARTADO,subconjunto,148509,de Pierre,17734,Pierre de Jumilhac,Pierre Antoine Clément Marie de Chapelle de Jumilhac,True,,,2024,1924,True,,8
+DESCARTADO,subconjunto,148509,de Pierre,11778,Pierre de Muralt,Pierre de Muralt,True,,,2024,1928,True,,8
+DESCARTADO,subconjunto,148509,de Pierre,11812,Pierre de Maupeou d'Ableiges,Pierre de Maupeou d'Ableiges,True,,,2024,1948,True,,8
+DESCARTADO,subconjunto,148509,de Pierre,41792,Pierre Coquelin de Lisle,Henri Pierre Coquelin de Lisle,True,,,2024,1924,True,,8
+DESCARTADO,subconjunto,148509,de Pierre,61337,Pierre de Montaut,Pierre Edmond Louis Marie de Montaut,True,,,2024,1936,True,,8
+DESCARTADO,subconjunto,148515,de Lara,21515,Jesús López de Lara,Jesús López de Lara Mallor,False,,,2024,1924,False,,3
+DESCARTADO,subconjunto,148527,de Arthur,64687,Arthur De Laender,Arthur De Laender,True,BEL,,2024,1920,True,,2
+DESCARTADO,subconjunto,148787,de Luciano,55726,Luciano De Genova,Luciano De Genova di Pettinengo,True,,,2024,1956|1960,True,,3
+DESCARTADO,orden_invertido,148867,Hao Chang,116434,Chang Hao,Chang Hao,False,,,2024,2008|2012|2016,False,,1
+DESCARTADO,orden_invertido,149137,Yan Wang,138293,Wang Yan,Wang Yan,False,CHN,,2024,2020,False,,5
+DESCARTADO,orden_invertido,149137,Yan Wang,13183,Wang Yan,Wang Yan,False,CHN,,2024,1992|1996|2000,False,,5
+DESCARTADO,orden_invertido,149137,Yan Wang,65963,Wang Yan,Wang Yan,False,CHN,,2024,1996,False,,5
+DESCARTADO,orden_invertido,149137,Yan Wang,82350,Wang Yan,Wang Yan,False,CHN,,2024,1992,False,,5
+DESCARTADO,orden_invertido,149137,Yan Wang,127187,Wang Yan,Wang Yan,False,CHN,,2024,2014|2016,False,,5
+DESCARTADO,subconjunto,149143,Feng Li,94022,Li Feng-Ying,Li Feng-Ying,False,,,2024,2000,False,,2
+DESCARTADO,subconjunto,149149,Ping Huang,76288,Huang Hsin-Ping,Huang Hsin-Ping,False,,,2024,1996,False,,1
+DESCARTADO,subconjunto,149164,de Jean,61593,Jean Frain de la Gaulayrie,Jean Michel Jules Marguerite Marie Frain de la Gaulayrie,True,,Sailing,2024,1948|1952,True,,24
+DESCARTADO,subconjunto,149164,de Jean,12479,Jean Peïtevin de Saint-André,Jean Joseph Henri Peïtevin de Saint-André,True,,,2024,1952,True,,24
+DESCARTADO,subconjunto,149164,de Jean,84422,"Jean, Marquis de Suarez d'Aulan",Marie Quenin Félix Ghislain Foulques Jean de la Croix Harouard de Suarez d’Aulan,True,,,2024,1924|1928|1936,True,,24
+DESCARTADO,subconjunto,149164,de Jean,35399,Jean De Rode,Jean De Rode,True,,,2024,1936,True,,24
+DESCARTADO,subconjunto,149164,de Jean,41799,"Jean, Comte de Beaumont",Jean Robert Maurice Bonin de la Boninière de Beaumont,True,,,2024,1924|1928,True,,24
+DESCARTADO,subconjunto,149164,de Jean,21659,Jean de Mas Latrie,Jean Marie Pierre Xavier de Mas Latrie,True,,,2024,1908|1912,True,,24
+DESCARTADO,subconjunto,149164,de Jean,7485,Jean De Schryver,Jean Philippe De Schryver,True,,,2024,1936,True,,24
+DESCARTADO,subconjunto,149164,de Jean,23909,Jean De Bie,Jean Baptiste De Bie,True,,,2024,1920|1924|1928,True,,24
+DESCARTADO,subconjunto,149164,de Jean,17844,"Jean, Comte De Madre",Jean Pierre Marie Joseph De Madre De Loos,True,,,2024,1900,True,,24
+DESCARTADO,subconjunto,149164,de Jean,11760,Jean de Croutte de Saint Martin,Jean Marie Lagroy de Croutte de Saint Martin,True,,,2024,1964,True,,24
+DESCARTADO,subconjunto,149164,de Jean,11780,"Jean, Baron de Neuflize",Jean Frédéric André Poupart de Neuflize,True,,,2024,1900,True,,24
+DESCARTADO,subconjunto,149164,de Jean,11792,Jean de Tilière,Jean Félix Marie Taupinart de Tilière,True,,,2024,1936,True,,24
+DESCARTADO,subconjunto,149164,de Jean,56879,Jean de Feu,"Joannes Jacobus ""Jean"" de Feu",True,,,2024,1936,True,,24
+DESCARTADO,subconjunto,149164,de Jean,61316,"Jean, Comte de Chabannes la Palice",Jean Alfred Octave de Chabannes la Palice,True,,Sailing,2024,1900,True,,24
+DESCARTADO,subconjunto,149164,de Jean,61336,Jean De Meulemeester,Jean Lucien Camille Marie Ghislain De Meulemeester,True,,Sailing,2024,1952,True,,24
+DESCARTADO,subconjunto,149164,de Jean,61381,Jean d'Estournelles de Constant,Louis Etienne Jean Léonce Balluet d'Estournelles de Constant de Rebecque,True,,Sailing,2024,1900,True,,24
+DESCARTADO,orden_invertido,149178,Yuanyuan Wang,106945,Wang Yuanyuan,Wang Yuanyuan,False,CHN,,2024,2004,False,,2
+DESCARTADO,orden_invertido,149180,Ting Zhu,112392,Zhu Ting,Zhu Ting,False,CHN,,2024,2008,False,,2
+DESCARTADO,subconjunto,149257,Mohamed Hassan,72824,Mohamed Hassan bin Osman,Mohamed Hassan bin Osman,True,,,2024,1972,True,,4
+DESCARTADO,orden_invertido,149436,Yang Liu,149932,Liu Yang,,False,CHN,,2024,2024,False,,4
+DESCARTADO,orden_invertido,149436,Yang Liu,149949,Liu Yang,,False,CHN,,2024,2024,False,,4
+DESCARTADO,orden_invertido,149463,Hong Liu,15238,Liu Hong,Liu Hong,False,CHN,,2024,1988,False,,2
+DESCARTADO,orden_invertido,149475,Yue Sun,112298,Sun Yue,Sun Yue,False,CHN,,2024,2008|2012,False,,2
+DESCARTADO,orden_invertido,149477,Zheng Wang,103798,Wang Zheng,Wang Zheng,False,CHN,,2024,2004,False,,2
+DESCARTADO,subconjunto,149522,Feng Lu,106386,Lu Yun-Feng,Lu Yun-Feng,False,,,2024,2004,False,,1
+DESCARTADO,orden_invertido,149595,Yu Zhou,120070,Zhou Yu,Zhou Yu,False,CHN,,2024,2012|2016|2020,False,,1
+DESCARTADO,subconjunto,149611,Wen Su,116000,Su Li-Wen,Su Li-Wen,False,,,2024,2008,False,,2
+DESCARTADO,subconjunto,149793,Paolo Conte,22584,"Paolo, Conte Thaon Di Revel",Paolo Ignazio Maria Thaon Di Revel,True,ITA,,2024,1920,True,,1
+DESCARTADO,subconjunto,149794,de Luca,61330,Federico De Luca,Federico De Luca,True,ITA,,2024,1936,True,,8
+DESCARTADO,subconjunto,149794,de Luca,61331,Gennaro De Luca,Gennaro De Luca,True,ITA,,2024,1948,True,,8
+DESCARTADO,subconjunto,149939,Yi Chen,102264,Chen Cho-Yi,Chen Cho-Yi,False,,,2024,2004,False,,4
+DESCARTADO,subconjunto,149955,Yang Chen,123377,Wei Chen-Yang,Wei Chen-Yang,False,,,2024,2012,False,,3
+DESCARTADO,orden_invertido,149993,Yue Sun,112298,Sun Yue,Sun Yue,False,CHN,,2024,2008|2012,False,,2
+DESCARTADO,orden_invertido,150024,Nan Wang,34258,Wang Nan,Wang Nan,False,CHN,,2024,1992,False,,6
+DESCARTADO,orden_invertido,150024,Nan Wang,112089,Wang Nan,Wang Nan,False,CHN,,2024,2008,False,,6
+DESCARTADO,orden_invertido,150024,Nan Wang,118175,Wang Nan,Wang Nan,False,CHN,,2024,2010,False,,6
+DESCARTADO,orden_invertido,150024,Nan Wang,115942,Wang Nan,Wang Nan,False,CHN,,2024,2008,False,,6
+DESCARTADO,subconjunto,150091,Jin Kim,114739,Kim Jin-Ok,Kim Jin-Ok,False,,,2024,2008|2012,False,,44
+DESCARTADO,subconjunto,150091,Jin Kim,108086,Kim Mi-Jin,Kim Mi-Jin,False,KOR,,2024,2004,False,,44
+DESCARTADO,subconjunto,150091,Jin Kim,122438,Kim Hye-Jin,Kim Hye-Jin,False,KOR,,2024,2010|2012,False,,44
+DESCARTADO,subconjunto,150091,Jin Kim,88168,Kim Jin-Sun,Kim Jin-Sun,False,KOR,,2024,2000,False,,44
+DESCARTADO,subconjunto,150091,Jin Kim,20682,Kim Jin-Sun,Kim Jin-Sun,False,KOR,,2024,1988|1992,False,,44
+DESCARTADO,subconjunto,150091,Jin Kim,121574,Kim Hui-Jin,Kim Hui-Jin,False,KOR,,2024,2012|2016|2020,False,,44
+DESCARTADO,subconjunto,150091,Jin Kim,107764,Kim Jin-Gyeong,Kim Jin-Gyeong,False,KOR,,2024,2004|2008,False,,44
+DESCARTADO,subconjunto,150091,Jin Kim,13076,Kim Jin-Yeong,Kim Jin-Yeong,False,KOR,,2024,1988,False,,44
+DESCARTADO,subconjunto,150091,Jin Kim,125741,Kim Hae-Jin,Kim Hae-Jin,False,KOR,,2024,2014,False,,44
+DESCARTADO,subconjunto,150091,Jin Kim,1950,Kim Jin-Ho,Kim Jin-Ho,False,KOR,,2024,1984,False,,44
+DESCARTADO,subconjunto,150091,Jin Kim,128414,Kim Jin-I,Kim Jin-I,False,KOR,,2024,2016|2020,False,,44
+DESCARTADO,subconjunto,150091,Jin Kim,134565,Kim Ye-Jin,Kim Ye-Jin,False,KOR,,2024,2018,False,,44
+DESCARTADO,subconjunto,150091,Jin Kim,48586,Kim Jin-Suk,Kim Jin-Suk,False,KOR,,2024,1984,False,,44
+DESCARTADO,subconjunto,150091,Jin Kim,48587,Kim Mi-Jin-Su,Kim Mi-Jin-Su,False,KOR,,2024,1988,False,,44
+DESCARTADO,subconjunto,150091,Jin Kim,48588,Kim Su-Jin,Kim Su-Jin,False,KOR,,2024,1988,False,,44
+DESCARTADO,subconjunto,150091,Jin Kim,80843,Kim Gwi-Jin,Kim Gwi-Jin,False,KOR,,2024,1964|1968,False,,44
+DESCARTADO,subconjunto,150091,Jin Kim,91096,Kim Eun-Jin,Kim Eun-Jin,False,KOR,,2024,2000,False,,44
+DESCARTADO,subconjunto,150196,di Marco,93577,Magali Di Marco,Magali Di Marco Messmer (Chopard-),False,,,2024,2000|2008,False,,3
+DESCARTADO,subconjunto,150323,Eduardo Marques,101619,"Eduardo, Marqués Aznar",Eduardo Aznar Coste,True,,Sailing,2024,1948,True,,1
+DESCARTADO,subconjunto,150333,Carlos Diaz,40781,Carlos Enrique Díaz Sáenz Valiente,Carlos Enrique Díaz Sáenz Valiente Bachman,True,,,2024,1948|1952,True,,1
+DESCARTADO,subconjunto,150389,de Eduard,43288,Eduard de Atzel,G. Eduard de Atzel Gyulay,True,,,2024,1960|1964,True,,1
+DESCARTADO,subconjunto,150762,van Jean,16851,Jean Van Buggenhout,Jean Van Buggenhout,True,,,2024,1928,True,,17
+DESCARTADO,subconjunto,150762,van Jean,16859,Jean Van Den Bosch,Jean Van Den Bosch,True,,,2024,1924,True,,17
+DESCARTADO,subconjunto,150762,van Jean,16911,Jean-François Van Der Motte,Jean-François Van Der Motte,True,,,2024,1936,True,,17
+DESCARTADO,subconjunto,150762,van Jean,12828,Jean-Claude Van Geenberghe,Jean-Claude Van Geenberghe,True,,,2024,1988|1992|2008,True,,17
+DESCARTADO,subconjunto,150762,van Jean,35482,Jean Van Silfhout,"Joannes Jacob ""Jean"" Van Silfhout",True,,,2024,1920|1924,True,,17
+DESCARTADO,subconjunto,150762,van Jean,54190,Jean van Silfhout,Jean Baptiste van Silfhout,True,,,2024,1920|1924|1928,True,,17
+DESCARTADO,subconjunto,150762,van Jean,17615,Jean Van Leer,Jean Marcel Maurice Van Leer,True,,,2024,1952|1956,True,,17
+DESCARTADO,subconjunto,150762,van Jean,85247,"Walter Jean, Vicomte Ganshof van der Meersch",Walter Jean Ganshof van der Meersch,True,,,2024,1928,True,,17
+DESCARTADO,subconjunto,150762,van Jean,11610,Jean Breuls van Tiecken,Jean Ghislian Marie Joseph Lucien Breuls van Tiecken,True,,,2024,1924,True,,17
+DESCARTADO,subconjunto,150764,van Pierre,63522,Pierre Van Der Haeghen,Pierre Édouard Armand Van Der Haeghen,True,,,2024,1948,True,,7
+DESCARTADO,subconjunto,150764,van Pierre,97763,Pierre Van Reysschoot,Pierre Emile Van Reysschoot,True,,,2024,1928|1936,True,,7
+DESCARTADO,orden_invertido,151046,Mackenzie Barry,91300,Barry MacKenzie,John Barry MacKenzie,False,,,2024,1964|1968,False,,1
+DESCARTADO,subconjunto,151443,Jose Lopez,101973,José Luis López,José Luis López Ramírez,False,,,2024,2004,False,,3
+DESCARTADO,subconjunto,151443,Jose Lopez,9445,José Ramón López,José Ramón López Díaz-Flor,False,,,2024,1976,False,,3
+DESCARTADO,subconjunto,151443,Jose Lopez,15269,José Manuel López,José Manuel López Rodríguez,False,,,2024,1964,False,,3
+DESCARTADO,subconjunto,151451,Jose Gonzalez,26354,José Luis González,José Luis Guerrero González Davila,True,,,2024,1964,True,,5
+DESCARTADO,subconjunto,151543,de Maria,84396,Mariano de María,Mariano José de María Sala,False,,,2024,1928,False,,14
+DESCARTADO,subconjunto,151543,de Maria,33389,José Maria de Jesús,José Maria de Jesús,False,,,2024,1992,False,,14
+DESCARTADO,subconjunto,151543,de Maria,41591,"José María, Marqués de Palleja",José María de Palleja Ferrer Vidal,False,,,2024,1924,True,,14
+DESCARTADO,subconjunto,151543,de Maria,103573,Enrico De Maria,Enrico De Maria,False,,,2024,2004|2008|2012,False,,14
+DESCARTADO,subconjunto,151543,de Maria,60762,"José María, Conde de Arteche",José María de Arteche Olabarria,False,,,2024,1928,True,,14
+DESCARTADO,subconjunto,151543,de Maria,38444,María Fernanda de la Fuente,María Fernanda de la Fuente Tello,True,,,2024,1980|1984,True,,14
+DESCARTADO,subconjunto,151543,de Maria,36400,José María de Marco,José María de Marco Pérez,False,,,2024,1992|1996,False,,14
+DESCARTADO,subconjunto,151543,de Maria,18360,José María de Caralt,José María de Caralt Mas,False,,,2024,1928,False,,14
+DESCARTADO,subconjunto,151761,de Maria,84396,Mariano de María,Mariano José de María Sala,False,,,2024,1928,False,,14
+DESCARTADO,subconjunto,151761,de Maria,33389,José Maria de Jesús,José Maria de Jesús,False,,,2024,1992,False,,14
+DESCARTADO,subconjunto,151761,de Maria,41591,"José María, Marqués de Palleja",José María de Palleja Ferrer Vidal,False,ESP,,2024,1924,True,,14
+DESCARTADO,subconjunto,151761,de Maria,103573,Enrico De Maria,Enrico De Maria,False,,,2024,2004|2008|2012,False,,14
+DESCARTADO,subconjunto,151761,de Maria,60762,"José María, Conde de Arteche",José María de Arteche Olabarria,False,ESP,,2024,1928,True,,14
+DESCARTADO,subconjunto,151761,de Maria,38444,María Fernanda de la Fuente,María Fernanda de la Fuente Tello,True,,,2024,1980|1984,True,,14
+DESCARTADO,subconjunto,151761,de Maria,36400,José María de Marco,José María de Marco Pérez,False,ESP,,2024,1992|1996,False,,14
+DESCARTADO,subconjunto,151761,de Maria,18360,José María de Caralt,José María de Caralt Mas,False,ESP,,2024,1928,False,,14
+DESCARTADO,subconjunto,151771,de Sergio,48149,Sergio De Gregorio,Sergio De Gregorio,True,,Swimming (Aquatics),2024,1964,True,,4
+DESCARTADO,subconjunto,151784,de Miguel,66683,Miguel de la Quadra-Salcedo,Miguel de la Quadra-Salcedo Gayarre,True,ESP,,2024,1960,True,,8
+DESCARTADO,subconjunto,151784,de Miguel,31389,Juan Pedro de Miguel,Juan Pedro de Miguel Rubio,True,ESP,,2024,1980|1984,True,,8
+DESCARTADO,subconjunto,151784,de Miguel,23509,Miguel de Capriles,Miguel Angel de Capriles,True,,,2024,1932|1936|1948,True,,8
+DESCARTADO,subconjunto,152359,Carlos Diaz,40781,Carlos Enrique Díaz Sáenz Valiente,Carlos Enrique Díaz Sáenz Valiente Bachman,True,,,2024,1948|1952,True,,1
+DESCARTADO,subconjunto,152366,van Jacob,22817,Jacob van Geuns,Jacob Eliza Catrinus van Geuns,True,NED,,2024,1912,True,,4
+DESCARTADO,subconjunto,152366,van Jacob,43114,Jacob van der Kop,Jacob van der Kop,True,NED,,2024,1908,True,,4
+DESCARTADO,subconjunto,152366,van Jacob,59036,Jacob van Moppes,Jacob van Moppes,True,NED,,2024,1908,True,,4
+DESCARTADO,subconjunto,152366,van Jacob,59038,Jacob van Westrop,Jacob van Westrop,True,NED,,2024,1908,True,,4
+DESCARTADO,subconjunto,152374,de Roos,19599,Aat de Roos,"Agathon ""Aat"" de Roos",False,NED,,2024,1936,True,,2
+DESCARTADO,subconjunto,152384,van Jan,59426,Jan van der Merwe,Jan Stephanus Jacobus van der Merwe,True,,,2024,1936,True,,30
+DESCARTADO,subconjunto,152384,van Jan,63521,Piet Jan van der Giessen,"Pieter Jan ""Piet Jan"" van der Giessen",True,NED,,2024,1952,True,,30
+DESCARTADO,subconjunto,152384,van Jan,43108,Jan van Balkum,Jan Willem van Balkum,True,NED,,2024,1924,True,,30
+DESCARTADO,subconjunto,152384,van Jan,22815,Jan van der Wiel,Jan van der Wiel,True,NED,,2024,1920|1924|1928,True,,30
+DESCARTADO,subconjunto,152384,van Jan,12842,Jan van Reede,Jan Hermanus van Reede,True,NED,,2024,1924|1928,True,,30
+DESCARTADO,subconjunto,152384,van Jan,29233,Jan Van Guysse,"Joannes Camillus ""Jan"" Van Guysse",True,,,2024,1908|1920,True,,30
+DESCARTADO,subconjunto,152384,van Jan,54184,Jan van Heteren,Jan Hijko van Heteren,True,NED,,2024,1936,True,,30
+DESCARTADO,subconjunto,152384,van Jan,52436,Jan van der Hoek,"Johannes ""Jan"" van der Hoek",True,NED,,2024,1964,True,,30
+DESCARTADO,subconjunto,152384,van Jan,19686,Jan van Gooswilligen,Jan Cornelis van Gooswilligen,True,NED,,2024,1960|1964,True,,30
+DESCARTADO,subconjunto,152384,van Jan,26500,Jan van Breda Kolff,Jan Gualtherus van Breda Kolff,True,NED,,2024,1912,True,,30
+DESCARTADO,subconjunto,152384,van Jan,26504,Jan van der Sluis,Jan van der Sluis,True,NED,,2024,1912,True,,30
+DESCARTADO,subconjunto,152384,van Jan,26506,Jan van Dort,Jan Leendert van Dort,True,NED,,2024,1920,True,,30
+DESCARTADO,subconjunto,152384,van Jan,26510,Jan van Roessel,"Johannes Cornelis Christianus ""Jan"" van Roessel",True,NED,,2024,1952,True,,30
+DESCARTADO,subconjunto,152385,van Simon,16896,Simon van Poelgeest,Simon van Poelgeest,True,NED,,2024,1924,True,,4
+DESCARTADO,subconjunto,152546,de Alex,105212,Alex de Jesús,"Alexander ""Alex"" de Jesús",True,,,2024,2004,True,,1
+DESCARTADO,subconjunto,152617,van Willem,22790,Willem Hubert van Blijenburgh,Willem Peter Hubert van Blijenburgh,True,NED,,2024,1908|1912|1920|1924,True,,13
+DESCARTADO,subconjunto,152617,van Willem,34708,Willem van Rhijn,Willem Johannes van Rhijn,True,NED,,2024,1928|1932,True,,13
+DESCARTADO,subconjunto,152617,van Willem,22814,Willem van den Berg,Willem van den Berg,True,NED,,2024,1948,True,,13
+DESCARTADO,subconjunto,152617,van Willem,17978,Willem van Loon,Willem van Loon,True,NED,,2024,1920,True,,13
+DESCARTADO,subconjunto,152617,van Willem,56009,Willem van Nimwegen,"Wilhelmus Hendrik ""Willem"" van Nimwegen",True,NED,,2024,1920,True,,13
+DESCARTADO,subconjunto,152617,van Willem,73330,Willem van der Steen,Willem Frederik van der Steen,True,NED,,2024,1928,True,,13
+DESCARTADO,subconjunto,152619,van Roy,27906,Albertine Van Roy-Moens,Albertine Van Roy-Moens (Van Roy-),False,,,2024,1948,True,,4
+DESCARTADO,subconjunto,152619,van Roy,41020,Gaston Van Roy,Gaston Léon Henri Julien Van Roy,True,,,2024,1952,True,,4
+DESCARTADO,subconjunto,152619,van Roy,64645,Bernadette Van Roy,Bernadette Van Roy (-Verlinden),False,,,2024,1976,False,,4
+DESCARTADO,subconjunto,152670,van Floris,2014,Carry van Gool-Floris,"Catharina Cornelia Adriana Maria ""Carry"" van Gool-Floris",False,NED,,2024,1980|1984,False,,2
+DESCARTADO,subconjunto,152698,de Jose,12395,José Mouzinho de Albuquerque,José Paulino Marecos Mouzinho de Albuquerque,True,,,2024,1924|1928,True,,34
+DESCARTADO,subconjunto,152698,de Jose,23003,José de Castro,José Lobo de Almeida Melo de Castro,True,,,2024,1948,True,,34
+DESCARTADO,subconjunto,152698,de Jose,33388,José Luis de Frutos,José Luis de Frutos Molinero,True,,,2024,1976,True,,34
+DESCARTADO,subconjunto,152698,de Jose,41591,"José María, Marqués de Palleja",José María de Palleja Ferrer Vidal,True,,,2024,1924,True,,34
+DESCARTADO,subconjunto,152698,de Jose,35587,José de Campos,José Pichler de Campos,True,,,2024,1932|1936,True,,34
+DESCARTADO,subconjunto,152698,de Jose,11475,"José, Marqués Álvarez de Bohórquez",José María Álvarez de las Asturias Bohorques y Goyeneche,True,,,2024,1924|1928,True,,34
+DESCARTADO,subconjunto,152698,de Jose,17688,"José, Conde de Figueroa",José María de Figueroa y Alonso-Martínez,True,,,2024,1920,True,,34
+DESCARTADO,subconjunto,152698,de Jose,60762,"José María, Conde de Arteche",José María de Arteche Olabarria,True,,,2024,1928,True,,34
+DESCARTADO,subconjunto,152698,de Jose,65062,José de Almeida,José Xavier de Almeida,True,,,2024,1932|1936,True,,34
+DESCARTADO,subconjunto,152698,de Jose,38496,Marie-José de Groot,"Josephina Maria Allegonda ""Marie-José"" de Groot",False,,,2024,1992,False,,34
+DESCARTADO,subconjunto,152698,de Jose,106119,María José de la Fuente,María José de la Fuente Parada,False,,,2024,2004,False,,34
+DESCARTADO,subconjunto,152698,de Jose,79671,José de Amézola,José de Amézola y Aspizúa,True,,,2024,1900,True,,34
+DESCARTADO,subconjunto,152698,de Jose,61319,Pedro José de Galíndez,Pedro José de Galíndez Vallejo,True,,,2024,1928,True,,34
+DESCARTADO,subconjunto,152698,de Jose,18361,José de Caralt,José de Caralt Vidal,True,,,2024,1928,True,,34
+DESCARTADO,subconjunto,152698,de Jose,18362,José de Chávarri,José Manuel de Chávarri Rodríguez Avial,True,,,2024,1928,True,,34
+DESCARTADO,subconjunto,152719,de Joe,23508,Joe de Capriles,"José Raoul ""Joe"" de Capriles",True,,,2024,1936|1948|1952,True,,1
+DESCARTADO,subconjunto,152871,De Andre,21663,André de Romilly,Michel Louis André Worms de Romilly,True,,,2024,1900,True,,8
+DESCARTADO,subconjunto,152871,De Andre,12479,Jean Peïtevin de Saint-André,Jean Joseph Henri Peïtevin de Saint-André,True,,,2024,1952,True,,8
+DESCARTADO,subconjunto,152871,De Andre,84428,André De Wulf,André De Wulf,True,,,2024,1952,True,,8
+DESCARTADO,subconjunto,152871,De Andre,11771,André de la Simone,André l'Eleu de la Simone,True,,,2024,1952,True,,8
+DESCARTADO,subconjunto,152871,De Andre,21162,André Van De Werve De Vorsselaer,André Léon Ghislain Marie Joseph Van De Werve De Vorsselaer,True,,,2024,1936|1948,True,,8
+DESCARTADO,subconjunto,152871,De Andre,41812,"André, Baron de Schonen",Jean Jacques Joseph André de Schonen,True,,,2024,1900|1924,True,,8
+DESCARTADO,subconjunto,152917,von Chris,50867,Chris von Saltza,"Susan Christina ""Chris"" von Saltza (-Olmstead)",False,,,2024,1960,False,,2
+DESCARTADO,subconjunto,153127,Rae Kim,87256,Kim Kwang-Rae,Kim Kwang-Rae,False,,,2024,1992,False,,4
+DESCARTADO,subconjunto,153136,Yong Kim,4358,Kim Sa-Yong,Kim Sa-Yong,False,,,2024,1968,True,,23
+DESCARTADO,subconjunto,153136,Yong Kim,90386,Kim Yong-Dae,Kim Yong-Dae,False,,,2024,2000,False,,23
+DESCARTADO,subconjunto,153136,Yong Kim,112412,Kim Seung-Yong,Kim Seung-Yong,False,,,2024,2008,False,,23
+DESCARTADO,subconjunto,153136,Yong Kim,42854,Kim Yong-Bae,Kim Yong-Bae,False,,,2024,1968,False,,23
+DESCARTADO,subconjunto,153136,Yong Kim,56168,Kim Yong-Chol,Kim Yong-Chol,False,PRK,,2024,1992,False,,23
+DESCARTADO,subconjunto,153136,Yong Kim,22641,Kim Yong-Guk,Kim Yong-Guk,False,,,2024,1988|1996,False,,23
+DESCARTADO,subconjunto,153136,Yong Kim,33663,Kim Yong-Ik,Kim Yong-Ik,False,PRK,,2024,1972,False,,23
+DESCARTADO,subconjunto,153136,Yong Kim,104834,Kim Yong-Hyeon,Kim Yong-Hyeon,False,,,2024,2004,False,,23
+DESCARTADO,subconjunto,153136,Yong Kim,59301,Kim Yong-Sik,Kim Yong-Sik,False,PRK,,2024,1992,False,,23
+DESCARTADO,subconjunto,153136,Yong Kim,12973,Kim Yong-Gyu,Kim Yong-Gyu,False,,,2024,1988|1992,False,,23
+DESCARTADO,subconjunto,153136,Yong Kim,19392,Kim Yong-Bae,Kim Yong-Bae,False,,,2024,1996|2000|2004|2008,False,,23
+DESCARTADO,subconjunto,153136,Yong Kim,72395,Kim I-Yong,Kim I-Yong,False,,,2024,1996|2008,False,,23
+DESCARTADO,subconjunto,153136,Yong Kim,26064,Kim Yong-Se,Kim Yong-Se,False,,,2024,1988,False,,23
+DESCARTADO,subconjunto,153136,Yong Kim,26065,Kim Yong-Sik,Kim Yong-Sik,False,,,2024,1936|1948,True,,23
+DESCARTADO,subconjunto,153136,Yong Kim,122328,Kim Dong-Yong,Kim Dong-Yong,False,,,2024,2012|2016,False,,23
+DESCARTADO,subconjunto,153136,Yong Kim,87260,Kim Yong-Woon,Kim Yong-Woon,False,,,2024,1988,False,,23

@@ -1,0 +1,40 @@
+estrato,tipo,id_f3,nombre_f3,id_otro,nombre_otro,noc,deporte,anios_otro,edad_2024,apellido_comun
+AP_COMUN_INV,orden_invertido,146776,Chen-hao Lin,143222,Lin Chen-Hao,TPE,Judo,2020,27,chen
+AP_COMUN_INV,orden_invertido,150030,Congkang Wang,138433,Wang Congkang,CHN,Canoe Sprint (Canoeing),2020,28,wang
+AP_COMUN_INV,orden_invertido,151100,Bingjie Li,138372,Li Bingjie,CHN,Swimming (Aquatics),2020,22,li
+AP_COMUN_INV,orden_invertido,150007,Huan Wang,138395,Wang Huan,CHN,Water Polo (Aquatics),2020,27,wang
+AP_COMUN_INV,orden_invertido,149396,Yunxia Chen,138333,Chen Yunxia,CHN,Rowing,2020,29,chen
+AP_COMUN_INV,orden_invertido,149985,Keyi Chen,138318,Chen Keyi,CHN,Rugby Sevens (Rugby),2020,29,chen
+AP_COMUN_INV,orden_invertido,149615,Zhen Wang,120578,Wang Zhen,CHN,Athletics,2012|2016,33,wang
+AP_COMUN_INV,orden_invertido,148390,Lili Wang,138257,Wang Lili,CHN,3x3 Basketball (Basketball),2020,32,wang
+AP_COMUN_INV,orden_invertido,150029,Dong Zhang,138435,Zhang Dong,CHN,Canoe Sprint (Canoeing),2020,28,zhang
+AP_COMUN_INV,orden_invertido,149178,Yuanyuan Wang,138389,Wang Yuanyuan,CHN,Volleyball (Volleyball),2020,27,wang
+SUB_AP_COMUN,subconjunto,151998,Pierre Brol,121277,Jean-Pierre Brol,GUA,Shooting,2012,42,jean|pierre
+SUB_AP_COMUN,subconjunto,151437,Victoria Schutzmeier,141852,María Victoria Schutzmeier,NCA,Swimming (Aquatics),2020,25,maria
+SUB_AP_COMUN,subconjunto,146617,Enrique Zayas,138620,Luis Enrique Zayas,CUB,Athletics,2020,27,luis
+SUB_AP_COMUN,subconjunto,152385,van Simon,142002,Simon van Dorp,NED,Rowing,2020,27,simon
+SUB_AP_COMUN,subconjunto,149534,Paul Bredau,139860,Jean Paul Bredau,GER,Athletics,2020,25,jean|paul
+SUB_AP_COMUN,subconjunto,151543,de Maria,65009,Maria de Souza,BRA,Athletics,1996,53,maria
+SUB_AP_COMUN,subconjunto,153127,Rae Kim,128865,Kim Mi-Rae,PRK,Diving (Aquatics),2016,23,kim
+SUB_AP_COMUN,subconjunto,147430,Thomas Mlugu,133115,Andrew Thomas Mlugu,TAN,Judo,2016,29,andrew|thomas
+SUB_AP_COMUN,subconjunto,145798,Juan Bar,137166,Juan Manuel Bar,ARG,Handball,2020,37,juan|manuel
+SUB_EQUIPO,subconjunto,151402,Amy Wilson,127782,Amy Wilson-Hardy,GBR,Rugby Sevens (Rugby),2016,33,
+SUB_EQUIPO,subconjunto,147177,le Nicolas,131169,Nicolas Le Goff,FRA,Volleyball (Volleyball),2016|2020,32,
+SUB_EQUIPO,subconjunto,150179,le Eugenie,122857,Eugénie Le Sommer,FRA,Football (Football),2012|2016,35,
+SUB_EQUIPO,subconjunto,149649,de Monica,124894,Monica De Gennaro,ITA,Volleyball (Volleyball),2012|2016|2020,37,
+SUB_EQUIPO,subconjunto,151059,Katie Bowen,128722,Katie Bowen-Duncan,NZL,Football (Football),2012|2016|2020,30,
+SUB_EQUIPO,subconjunto,147250,Katrine Lunde,110785,Katrine Lunde-Haraldsen,NOR,Handball,2008|2012|2016|2020,44,
+SUB_EQUIPO,subconjunto,150400,van Lucas,138173,Lucas Van Berkel,CAN,Volleyball (Volleyball),2020,33,
+SUB_EQUIPO,subconjunto,147886,Rasmus Lauge,123139,Rasmus Lauge Schmidt,DEN,Handball,2012,33,
+SUB_EQUIPO,subconjunto,148538,van Florent,124132,Florent Van Aubel,BEL,Hockey,2012|2016|2020,33,
+SUB_EQUIPO,subconjunto,152750,Ryan Julius,142837,Ryan Cowen Julius,RSA,Hockey,2020,29,
+SUB_2012_2016,subconjunto,151586,Paula Vergutz,126855,Ana Paula Vergutz,BRA,Canoe Sprint (Canoeing),2016,35,
+SUB_2012_2016,subconjunto,152602,van Ellen,119963,Ellen van Dijk,NED,Cycling Road (Cycling),2012|2016,37,
+SUB_2012_2016,subconjunto,146166,Andrei-vasile Muntean,132754,Andrei Muntean,ROU,Artistic Gymnastics (Gymnastics),2010|2016,31,
+SUB_2012_2016,subconjunto,150728,de Moira,123381,Moira De Villiers,NZL,Judo,2012,34,
+SUB_2012_2016,subconjunto,152174,Chun Chiu,131533,Chiu Hin Chun,HKG,Rowing,2016,30,
+SUB_2012_2016,subconjunto,146965,Chun Lin,92424,Lin Yi-Chun,TPE,Shooting,2000|2004|2012|2016,43,
+SUB_2012_2016,subconjunto,145836,Edison Rodriguez,130581,John Édison Rodríguez,COL,Fencing,2016,33,john
+SUB_2012_2016,subconjunto,153303,Irina-camelia Begu,119880,Irina Begu,ROU,Tennis,2012|2016,34,
+SUB_FILTRO_B,subconjunto,152378,van Gert-jan,38722,Gert Jan van Woudenberg,NED,Rowing,1976,73,jan
+SUB_FILTRO_B,subconjunto,147012,Lian Ni,93247,Xia Lian Ni,LUX,Table Tennis,2000|2008|2012|2016|2020,61,

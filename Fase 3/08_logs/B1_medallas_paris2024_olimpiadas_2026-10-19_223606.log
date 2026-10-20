@@ -1,0 +1,15 @@
+Correccion B1_medallas_paris2024.sql sobre base 'olimpiadas' - inicio 2026-10-19 22:36:06
+Respaldo previo: olimpiadas_pre_B1_medallas_paris2024_2026-10-19_223606.dump (9,176,525 bytes)
+--- salida psql ---
+SET
+BEGIN
+CREATE TABLE
+COPY 25
+DO
+UPDATE 14
+INSERT 0 11
+INSERT 0 11
+DO
+COMMIT
+Resultado: OK
+Fin: 2026-10-19 22:36:10 | duracion 3.1 s

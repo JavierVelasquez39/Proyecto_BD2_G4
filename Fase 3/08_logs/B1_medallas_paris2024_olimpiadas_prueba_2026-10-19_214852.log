@@ -1,0 +1,14 @@
+Correccion B1_medallas_paris2024.sql sobre base 'olimpiadas_prueba' - inicio 2026-10-19 21:48:52
+--- salida psql ---
+SET
+BEGIN
+CREATE TABLE
+COPY 25
+DO
+UPDATE 14
+INSERT 0 11
+INSERT 0 11
+DO
+COMMIT
+Resultado: OK
+Fin: 2026-10-19 21:48:53 | duracion 0.8 s

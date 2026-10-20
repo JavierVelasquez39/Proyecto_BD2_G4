@@ -1,0 +1,26 @@
+atleta_id,atleta,evento_id,evento,medalla,lugar,noc,accion,url_verificacion,fecha_consulta,nota
+151806,Kristen Faulkner,1949,Women's Road Race,Oro,1,USA,ACTUALIZAR,https://en.wikipedia.org/wiki/Cycling_at_the_2024_Summer_Olympics,2026-10-19,Atleta con deporte compuesto en fuente 3
+126762,Lotte Kopecky,1949,Women's Road Race,Bronce,3,BEL,ACTUALIZAR,https://en.wikipedia.org/wiki/Cycling_at_the_2024_Summer_Olympics,2026-10-19,
+133658,Filippo Ganna,279,"Individual Time Trial, Men (Olympic)",Plata,2,ITA,ACTUALIZAR,https://en.wikipedia.org/wiki/Cycling_at_the_2024_Summer_Olympics,2026-10-19,
+129451,Chloe Dygert,255,"Individual Time Trial, Women (Olympic)",Bronce,3,USA,ACTUALIZAR,https://en.wikipedia.org/wiki/Cycling_at_the_2024_Summer_Olympics,2026-10-19,
+149095,Thomas Pidcock,285,"Cross-Country, Men (Olympic)",Oro,1,GBR,ACTUALIZAR,https://en.wikipedia.org/wiki/Cycling_at_the_2024_Summer_Olympics,2026-10-19,
+140417,Daniel Wiffen,1584,"800 metres Freestyle, Men (Olympic)",Oro,1,IRL,ACTUALIZAR,https://en.wikipedia.org/wiki/Swimming_at_the_2024_Summer_Olympics_%E2%80%93_Men%27s_800_metre_freestyle,2026-10-19,
+122213,Gregorio Paltrinieri,1584,"800 metres Freestyle, Men (Olympic)",Bronce,3,ITA,ACTUALIZAR,https://en.wikipedia.org/wiki/Swimming_at_the_2024_Summer_Olympics_%E2%80%93_Men%27s_800_metre_freestyle,2026-10-19,
+122213,Gregorio Paltrinieri,2015,Men's 1500m Freestyle,Plata,2,ITA,ACTUALIZAR,https://en.wikipedia.org/wiki/Swimming_at_the_2024_Summer_Olympics,2026-10-19,Resultados de 1500 m libres en el resumen de medallas de la pagina de natacion
+140417,Daniel Wiffen,2015,Men's 1500m Freestyle,Bronce,3,IRL,ACTUALIZAR,https://en.wikipedia.org/wiki/Swimming_at_the_2024_Summer_Olympics,2026-10-19,
+148777,Oliver Klemet,1971,Men's 10km,Plata,2,GER,ACTUALIZAR,https://en.wikipedia.org/wiki/Swimming_at_the_2024_Summer_Olympics_%E2%80%93_Men%27s_marathon_10_kilometre,2026-10-19,
+148434,David Betlehem,1971,Men's 10km,Bronce,3,HUN,ACTUALIZAR,https://en.wikipedia.org/wiki/Swimming_at_the_2024_Summer_Olympics_%E2%80%93_Men%27s_marathon_10_kilometre,2026-10-19,
+151139,Moesha Johnson,1972,Women's 10km,Plata,2,AUS,ACTUALIZAR,https://en.wikipedia.org/wiki/Swimming_at_the_2024_Summer_Olympics_%E2%80%93_Women%27s_marathon_10_kilometre,2026-10-19,
+149826,Ginevra Taddeucci,1972,Women's 10km,Bronce,3,ITA,ACTUALIZAR,https://en.wikipedia.org/wiki/Swimming_at_the_2024_Summer_Olympics_%E2%80%93_Women%27s_marathon_10_kilometre,2026-10-19,
+143625,Katie Grimes,795,"400 metres Individual Medley, Women (Olympic)",Plata,2,USA,ACTUALIZAR,https://en.wikipedia.org/wiki/Swimming_at_the_2024_Summer_Olympics_%E2%80%93_Women%27s_400_metre_individual_medley,2026-10-19,Confirmada el 2026-10-19: plata 4:33.40
+146429,Tim Hellwig,1474,"Relay, Mixed (Olympic)",Oro,1,GER,INSERTAR,https://en.wikipedia.org/wiki/Triathlon_at_the_2024_Summer_Olympics_%E2%80%93_Mixed_relay,2026-10-19,Relevo mixto; la fuente 3 no trae el evento
+146431,Lisa Tertsch,1474,"Relay, Mixed (Olympic)",Oro,1,GER,INSERTAR,https://en.wikipedia.org/wiki/Triathlon_at_the_2024_Summer_Olympics_%E2%80%93_Mixed_relay,2026-10-19,
+127937,Laura Lindemann,1474,"Relay, Mixed (Olympic)",Oro,1,GER,INSERTAR,https://en.wikipedia.org/wiki/Triathlon_at_the_2024_Summer_Olympics_%E2%80%93_Mixed_relay,2026-10-19,
+150224,Seth Rider,1474,"Relay, Mixed (Olympic)",Plata,2,USA,INSERTAR,https://en.wikipedia.org/wiki/Triathlon_at_the_2024_Summer_Olympics_%E2%80%93_Mixed_relay,2026-10-19,
+150225,Taylor Spivey,1474,"Relay, Mixed (Olympic)",Plata,2,USA,INSERTAR,https://en.wikipedia.org/wiki/Triathlon_at_the_2024_Summer_Olympics_%E2%80%93_Mixed_relay,2026-10-19,
+143831,Morgan Pearson,1474,"Relay, Mixed (Olympic)",Plata,2,USA,INSERTAR,https://en.wikipedia.org/wiki/Triathlon_at_the_2024_Summer_Olympics_%E2%80%93_Mixed_relay,2026-10-19,
+143637,Taylor Knibb,1474,"Relay, Mixed (Olympic)",Plata,2,USA,INSERTAR,https://en.wikipedia.org/wiki/Triathlon_at_the_2024_Summer_Olympics_%E2%80%93_Mixed_relay,2026-10-19,Plata tras revision de foto-finish
+139729,Alex Yee,1474,"Relay, Mixed (Olympic)",Bronce,3,GBR,INSERTAR,https://en.wikipedia.org/wiki/Triathlon_at_the_2024_Summer_Olympics_%E2%80%93_Mixed_relay,2026-10-19,
+139610,Georgia Taylor-Brown,1474,"Relay, Mixed (Olympic)",Bronce,3,GBR,INSERTAR,https://en.wikipedia.org/wiki/Triathlon_at_the_2024_Summer_Olympics_%E2%80%93_Mixed_relay,2026-10-19,
+127728,Beth Potter,1474,"Relay, Mixed (Olympic)",Bronce,3,GBR,INSERTAR,https://en.wikipedia.org/wiki/Triathlon_at_the_2024_Summer_Olympics_%E2%80%93_Mixed_relay,2026-10-19,
+148632,Samuel Dickinson,1474,"Relay, Mixed (Olympic)",Bronce,3,GBR,INSERTAR,https://en.wikipedia.org/wiki/Sam_Dickinson_(triathlete),2026-10-19,"Mismo atleta que Sam Dickinson: hombre, UK, triatlon, GBR, solo 2024; unico Dickinson triatleta en la base"

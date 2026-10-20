@@ -2,3 +2,12 @@
 .claude/
 .vscode/
 .idea/
+
+# Fase 3: respaldos de Postgres (pesados, no van al repo)
+Fase 3/00_infraestructura/backups/
+Fase 3/02_exportar/data/
+Fase 3/entrega/
+
+# Python
+__pycache__/
+*.pyc

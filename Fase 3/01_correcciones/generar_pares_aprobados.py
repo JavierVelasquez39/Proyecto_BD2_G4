@@ -23,6 +23,9 @@ def toks(r):
     return set(re.sub(r"[^a-z ]", " ", (r["nombre_f3"] + " " + r["nombre_otro"]).lower()).split())
 
 
+# Excepciones verificadas individualmente despues del cierre de las fases 1 y 2: se fusionan en la fase 3
+EXCEPCIONES_FASE3 = {"151102"}  # Shun Wang -> Wang Shun (re-verificado el 2026-10-20)
+
 salida = []
 for r in clas:
     if int(r["id_otro"]) > 145500:
@@ -43,6 +46,8 @@ for r in clas:
             continue
         tipo, fase = "SUBCONJUNTO", 2
     ev = a["evidencia"] if a else GEN[r["tipo"]]
+    if r["id_f3"] in EXCEPCIONES_FASE3:
+        fase = 3
     salida.append((fase, r["id_f3"], r["id_otro"], tipo, "ALTA", ev, r["nombre_f3"], r["nombre_otro"]))
 
 # Pares verificados individualmente que los filtros automaticos dejaron fuera

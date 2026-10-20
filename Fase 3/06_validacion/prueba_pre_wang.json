@@ -1,0 +1,60 @@
+{
+  "generado": "2026-10-20T01:33:19",
+  "tablas": {
+    "pais": 204,
+    "poblacion_pais": 13026,
+    "noc": 236,
+    "sede": 47,
+    "atleta": 153050,
+    "edicion_olimpica": 61,
+    "deporte": 95,
+    "deporte_equivalencia": 2,
+    "evento": 2103,
+    "participacion": 319961,
+    "resultado": 320476
+  },
+  "medallero": {
+    "Germany": {
+      "Oro": 1357,
+      "Bronce": 1331,
+      "Plata": 1303
+    },
+    "Russian Federation": {
+      "Oro": 1575,
+      "Bronce": 1158,
+      "Plata": 1135
+    }
+  },
+  "sedes": {
+    "United States": 8,
+    "France": 6,
+    "Guatemala": 0
+  },
+  "discrepancias": [],
+  "referencia": {
+    "tablas": {
+      "atleta": 153050,
+      "participacion": 319961,
+      "resultado": 320476
+    },
+    "medallero": {
+      "Germany": {
+        "Oro": 1357,
+        "Plata": 1303,
+        "Bronce": 1331
+      },
+      "Russian Federation": {
+        "Oro": 1575,
+        "Plata": 1135,
+        "Bronce": 1158
+      }
+    },
+    "sedes": {
+      "United States": 8,
+      "France": 6,
+      "Guatemala": 0
+    }
+  },
+  "coincide": true,
+  "duracion_s": 2.51
+}

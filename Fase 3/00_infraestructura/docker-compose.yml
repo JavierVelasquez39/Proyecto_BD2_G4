@@ -1,0 +1,22 @@
+# MongoDB para la Fase 3 (migracion de la base de olimpiadas).
+# Puerto propio 57017 (no choca con Postgres en 55433 ni con un mongod local en 27017).
+# Los datos viven en el volumen con nombre "olimpiadas_mongo_data": sobreviven a
+# "docker compose down"; solo se pierden con "docker compose down -v".
+services:
+  mongo:
+    image: mongo:7
+    container_name: olimpiadas_mongo
+    restart: unless-stopped
+    ports:
+      - "57017:27017"
+    volumes:
+      - olimpiadas_mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  olimpiadas_mongo_data:
+    name: olimpiadas_mongo_data   # nombre fijo, independiente de la carpeta

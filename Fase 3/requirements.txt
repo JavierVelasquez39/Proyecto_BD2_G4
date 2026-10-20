@@ -1,0 +1,4 @@
+pymongo
+psycopg2-binary
+text-unidecode
+pandas

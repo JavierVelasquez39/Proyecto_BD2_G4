@@ -1,0 +1,15 @@
+B2 candidatos a duplicado - inicio 2026-10-19 21:50:10 (solo lectura)
+Atletas leidos: 153,443; nuevos de fuente 3 (id > 145500): 7,943
+Pares candidatos: 1,198 (detalle en b2_pares_candidatos.csv)
+  ALTA        orden_invertido    184
+  ALTA        particulas           1
+  ALTA        subconjunto        274
+  MEDIA       orden_invertido     20
+  MEDIA       particulas           1
+  MEDIA       subconjunto         49
+  BAJA        orden_invertido     28
+  BAJA        particulas           2
+  BAJA        subconjunto        388
+  DESCARTADO  orden_invertido     26
+  DESCARTADO  subconjunto        225
+Fin: 2026-10-19 21:50:16 | duracion 5.4 s

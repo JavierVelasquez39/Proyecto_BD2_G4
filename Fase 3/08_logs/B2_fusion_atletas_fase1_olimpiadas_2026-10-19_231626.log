@@ -1,0 +1,23 @@
+Correccion B2_fusion_atletas.sql sobre base 'olimpiadas' - inicio 2026-10-19 23:16:26
+Respaldo previo: olimpiadas_pre_B2_fusion_atletas_fase1_2026-10-19_231626.dump (9,176,871 bytes)
+--- salida psql ---
+SET
+BEGIN
+CREATE TABLE
+CREATE INDEX
+CREATE TABLE
+CREATE TABLE
+COPY 393
+ set_config 
+------------
+ 1
+(1 row)
+
+SELECT 1
+DO
+DO
+COMMIT
+psql:B2_fusion_atletas.sql:107: NOTICE:  B2 fase 1: pares en CSV 178, ya aplicados 0, excluidos por colision 0, fusionados 178
+psql:B2_fusion_atletas.sql:122: NOTICE:  B2 verificacion OK: atletas 153443 -> 153265, participaciones 319961, resultados 320476
+Resultado: OK
+Fin: 2026-10-19 23:16:29 | duracion 3.5 s

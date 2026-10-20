@@ -1,0 +1,41 @@
+estrato,tipo,id_f3,nombre_f3,id_otro,nombre_otro,nombre_completo_otro,fecha_nac_otro,pais_nac_otro,noc,deporte,anios_otro,eventos_2024_f3,equipo_f3
+orden_invertido,orden_invertido,148203,Hollie Pearne-webb,127770,Hollie Webb-Pearne,Hollie Webb-Pearne,1990-09-19,UK,GBR,Hockey,2016|2020,Women,Great Britain
+orden_invertido,orden_invertido,149999,Wanyu Wang,138322,Wang Wanyu,Wang Wanyu,1997-02-14,China,CHN,Rugby Sevens (Rugby),2020,Women,China
+orden_invertido,orden_invertido,149456,Yuting Li,138233,Li Yuting,Li Yuting,2002-05-03,,CHN,Athletics,2020,"200 metres, Women (Olympic)",China
+orden_invertido,orden_invertido,147604,Shiyan Xu,138314,Xu Shiyan,Xu Shiyan,1997-03-15,,CHN,Judo,2020,Women +78 kg,China
+orden_invertido,orden_invertido,148906,Wei-ling Hsu,143202,Hsu Wei-Ling,Hsu Wei-Ling,1994-10-20,,TPE,Golf,2020,Women's Individual Stroke Play,Chinese Taipei
+orden_invertido,orden_invertido,148453,Qingyuan Chen,138279,Chen Qingyuan,Chen Qingyuan,1997-02-15,,CHN,Fencing,2020,"Foil, Individual, Women (Olympic) | Foil, Team, Women (Olympic)",China
+orden_invertido,orden_invertido,149484,Shaohui Yang,138416,Yang Shaohui,Yang Shaohui,1992-07-09,,CHN,Athletics,2020,"Marathon, Men (Olympic)",China
+orden_invertido,orden_invertido,150024,Nan Wang,138268,Wang Nan,Wang Nan,2000-09-25,,CHN,Canoe Sprint (Canoeing),2020,Women's Kayak Four 500m | Women's Kayak Single 500m,China
+orden_invertido,orden_invertido,149394,Zifeng Wang,138346,Wang Zifeng,Wang Zifeng,1997-09-12,,CHN,Rowing,2020,Women's Four,China
+orden_invertido,orden_invertido,148652,McINTOSH Seonaid,139591,Seonaid McIntosh,Seonaid McIntosh,1996-03-15,UK,GBR,Shooting,2020,10m Air Rifle Mixed Team | 10m Air Rifle Women | 50m Rifle 3 Positions Women,Great Britain
+particulas/otros,particulas,151315,Khouloud Hlimi,143245,Khouloud Al-Hlimi,Khouloud Al-Hlimi (-Moulahi),1990-02-05,,TUN,Boxing,2020,Women's 57kg,Tunisia
+particulas/otros,subconjunto,148563,de Melanie,139275,Mélanie de Jésus dos Santos,Mélanie Johanna de Jésus dos Santos,2000-03-05,France,FRA,Artistic Gymnastics (Gymnastics),2020,"Balance Beam, Women (Olympic) | Floor Exercise, Women (Olympic) | Uneven Bars, Women (Olympic) | Women | Women's All-Around | Women's Team | Women's Vault",France
+particulas/otros,subconjunto,152211,le Chad,119877,Chad le Clos,Chad Guy Bertrand le Clos,1992-04-12,South Africa,RSA,Swimming (Aquatics),2010|2012|2016|2020,"100 metres Butterfly, Men (Olympic)",South Africa
+particulas/otros,subconjunto,147427,del Maylin,138608,Maylín del Toro,Maylín del Toro Carvajal,1994-10-22,Cuba,CUB,Judo,2020,Women -63 kg,Cuba
+particulas/otros,subconjunto,149263,van Naomi,137591,Naomi van den Broeck,Naomi van den Broeck,1996-01-03,,BEL,Athletics,2020,"400 metres Hurdles, Women (Olympic) | 4 x 400m Relay Mixed | Women's 4 x 400m Relay",Belgium
+subconjunto,subconjunto,146679,Murielle Ahoure-demps,119306,Murielle Ahouré,Murielle Ahouré (-Demps),1987-08-23,Ivory Coast,CIV,Athletics,2012|2016|2020,Women's 4 x 100m Relay,Côte d'Ivoire
+subconjunto,subconjunto,151314,Julio Enciso,102119,Julio César Enciso,Julio César Enciso Ferreira,1974-08-05,Paraguay,PAR,Football (Football),2004,Men,Paraguay
+subconjunto,subconjunto,152642,Mazoon Al,128769,Mazoon Al-Alawi,Mazoon Khalfan Saleh Al-Alawi,1997-11-14,,OMA,Athletics,2014|2016|2020,"100 metres, Women (Olympic)",Oman
+subconjunto,subconjunto,147500,Dimitriana Bezede,128509,Dimitriana Surdu-Bezede,Dimitriana Surdu-Bezede,1994-04-12,Moldova,MDA,Athletics,2016|2020,"Shot Put, Women (Olympic)",Republic of Moldova
+subconjunto,subconjunto,146836,Kubra Ilgun,143292,Hatice Kübra İlgün,Hatice Kübra İlgün,1993-01-01,,TUR,Taekwondo,2020,Women -57kg,Türkiye
+subconjunto,subconjunto,149670,Matea Parlov,138576,Matea Parlov Koštro,Matea Parlov Koštro,1992-06-02,Croatia,CRO,Athletics,2020,"Marathon, Women (Olympic)",Croatia
+subconjunto,subconjunto,145919,Bachir Sid,137087,Bachir Sid Azara,Bachir Sid Azara,1996-03-03,,ALG,Wrestling,2020,Men's Greco-Roman 87kg,Algeria
+subconjunto,subconjunto,147809,Hegg Duestad,142083,Jeanette Hegg Duestad,Jeanette Hegg Duestad,1999-01-11,Norway,NOR,Shooting,2020,10m Air Rifle Mixed Team | 10m Air Rifle Women | 50m Rifle 3 Positions Women,Norway
+subconjunto,subconjunto,148425,Gerald Geay,143154,Gabriel Gerald Geay,Gabriel Gerald Geay,1996-09-10,Tanzania,TAN,Athletics,2020,"Marathon, Men (Olympic)",Tanzania
+subconjunto,subconjunto,150332,Okon George,128678,Patience Okon George,Patience Okon George,1991-11-25,Nigeria,NGR,Athletics,2016|2020,4 x 400m Relay Mixed,Nigeria
+subconjunto,subconjunto,147849,Chepchumba Kiprono,141301,Sharon Chepchumba Kiprono,Sharon Chepchumba Kiprono,1998-10-26,,KEN,Volleyball (Volleyball),2020,Women,Kenya
+subconjunto,subconjunto,150683,Kelsey-lee Barber,126583,Kelsey-Lee Roberts-Barber,Kelsey-Lee Roberts-Barber,1991-09-20,South Africa,AUS,Athletics,2016|2020,"Javelin Throw, Women (Olympic)",Australia
+subconjunto,subconjunto,149277,Marten Van,130043,Marten Van Riel,Marten Van Riel,1992-12-15,Belgium,BEL,Triathlon,2016|2020,Men's Individual,Belgium
+subconjunto,subconjunto,146164,Firdaus Sahrom,141631,Shah Firdaus Sahrom,Muhammad Shah Firdaus Sahrom,1995-11-26,,MAS,Cycling Track (Cycling),2020,"Keirin, Men (Olympic) | Sprint, Men (Olympic)",Malaysia
+subconjunto,subconjunto,145520,Mohamed Ismail,130776,Mohamed Ismail Ibrahim,Mohamed Ismail Ibrahim,1997-01-01,,DJI,Athletics,2014|2016,Men's 5000m,Djibouti
+subconjunto,subconjunto,151514,Marie-josee Ta,127287,Marie-Josée Ta Lou,Gonezie Marie-Josée Dominique Ta Lou,1988-11-18,Ivory Coast,CIV,Athletics,2016|2020,"100 metres, Women (Olympic) | 200 metres, Women (Olympic) | Women's 4 x 100m Relay",Côte d'Ivoire
+subconjunto,subconjunto,151339,Lina Muze-sirma,121682,Līna Mūze,Līna Mūze,1992-12-04,Latvia,LAT,Athletics,2012|2020,"Javelin Throw, Women (Olympic)",Latvia
+subconjunto,subconjunto,147453,Zalina Marghieva,113810,Zalina Marghieva-Petrivskaya,Zalina Marghieva-Petrivskaya,1988-02-05,Russia,MDA,Athletics,2008|2012|2016|2020,"Hammer Throw, Women (Olympic)",Republic of Moldova
+subconjunto,subconjunto,147212,Bjerkeli Grovdal,119872,Karoline Bjerkeli Grøvdal,Karoline Bjerkeli Grøvdal,1990-06-14,Norway,NOR,Athletics,2012|2016|2020,Women's 5000m,Norway
+subconjunto,subconjunto,147787,Na Lee,103720,Lee Bo-Na,Lee Bo-Na,1981-07-22,South Korea,KOR,Shooting,2004|2008,Trap Women,Korea
+subconjunto,subconjunto,151504,Silina Pha,141531,Silina Pha Aphay,Silina Pha Aphay,1996-03-29,,LAO,Athletics,2020,"100 metres, Women (Olympic)",Lao PDR
+subconjunto,subconjunto,145605,Manuel Celaya,141722,Juan Manuel Celaya,Juan Manuel Celaya Hernández,1998-09-01,Mexico,MEX,Diving (Aquatics),2020,Men's Synchronised 3m Springboard,Mexico
+subconjunto,subconjunto,147025,Alberto Orta,138630,Luis Alberto Orta,Luis Alberto Orta Sánchez,1994-08-22,,CUB,Wrestling,2020,Men's Greco-Roman 67kg,Cuba
+subconjunto,subconjunto,145881,Yasameen Al,143947,Yasameen Al-Raimi,Yasameen Al-Raimi,1985-11-26,,YEM,Shooting,2020,10m Air Pistol Women,Yemen
+subconjunto,subconjunto,149546,Marie Kwayie,139772,Lisa-Marie Kwayie,Lisa-Marie Kwayie,1996-10-27,Ghana,GER,Athletics,2020,Women's 4 x 400m Relay,Germany

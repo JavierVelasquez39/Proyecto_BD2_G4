@@ -1,0 +1,19 @@
+Línea base Fase 1 - inicio: 2026-10-20 01:34:42
+  pais: 204
+  poblacion_pais: 13,026
+  noc: 236
+  sede: 47
+  atleta: 153,049
+  edicion_olimpica: 61
+  deporte: 95
+  deporte_equivalencia: 2
+  evento: 2,103
+  participacion: 319,961
+  resultado: 320,476
+  medallero Germany: {'Oro': 1357, 'Bronce': 1331, 'Plata': 1303}
+  medallero Russian Federation: {'Oro': 1575, 'Bronce': 1158, 'Plata': 1135}
+  sedes United States: 8 (1904 Verano St. Louis, 1932 Invierno Lake Placid, 1932 Verano Los Angeles, 1960 Invierno Squaw Valley, 1980 Invierno Lake Placid, 1984 Verano Los Angeles, 1996 Verano Atlanta, 2002 Invierno Salt Lake City)
+  sedes France: 6 (1900 Verano Paris, 1924 Invierno Chamonix, 1924 Verano Paris, 1968 Invierno Grenoble, 1992 Invierno Albertville, 2024 Verano Paris)
+  sedes Guatemala: 0 (NUNCA_SEDE)
+COINCIDE con la referencia
+Fin: 2026-10-20 01:34:45 | duración 2.23 s

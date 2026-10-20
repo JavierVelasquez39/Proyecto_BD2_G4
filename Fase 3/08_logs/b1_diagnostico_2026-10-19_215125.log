@@ -1,0 +1,16 @@
+B1 diagnostico Paris 2024 - inicio 2026-10-19 21:51:25 (solo lectura)
+1) Base 2024 Verano: participaciones 14,892, resultados 14,892, medallas por atleta oro/plata/bronce 743/744/794
+   Fuente 3 2024: filas 14,892, medallas 743/744/794
+   Filas con Sport compuesto en fuente 3: 89 (32 atletas), medallas en ellas: 0
+2) Eventos que solo existen en 2024: 199
+3) Medallas por evento en la base: {'Oro': 325, 'Plata': 324, 'Bronce': 378} (oficial: Oro 329, Plata 330, Bronce 385; sin AIN contado aparte)
+   NOC con diferencia contra el oficial: 8
+     United States (USA): oficial (40, 44, 42), base (39, 42, 41)
+     Australia (AUS): oficial (18, 19, 16), base (18, 18, 16)
+     Great Britain (GBR): oficial (14, 22, 29), base (13, 22, 28)
+     Italy (ITA): oficial (12, 13, 15), base (12, 11, 13)
+     Germany (GER): oficial (12, 13, 8), base (11, 12, 8)
+     Hungary (HUN): oficial (6, 7, 6), base (6, 7, 5)
+     Ireland (IRL): oficial (4, 0, 3), base (3, 0, 2)
+     Belgium (BEL): oficial (3, 1, 6), base (3, 1, 5)
+Fin: 2026-10-19 21:51:26 | duracion 0.5 s

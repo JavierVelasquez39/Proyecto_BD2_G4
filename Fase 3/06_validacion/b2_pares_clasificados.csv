@@ -1,0 +1,460 @@
+confianza,tipo,id_f3,nombre_f3,id_otro,nombre_otro,nombre_completo_otro,sexo_ok,noc_comun,deporte_comun,anios_f3,anios_otro,fallecido_otro,choque_evento_2024,n_candidatos_del_f3,ultimo_anio,edad_2024,filtro_a,filtro_b,filtro_c_no_equipo,filtro_d_disciplina,en_bloque,apellido_comun
+ALTA,subconjunto,145520,Mohamed Ismail,130776,Mohamed Ismail Ibrahim,Mohamed Ismail Ibrahim,True,DJI,Athletics,2024,2014|2016,False,,5,2016,27,True,True,True,True,True,mohamed
+ALTA,subconjunto,145522,Abdi Waiss,130774,Abdi Waiss Mouhyadin,Abdi Waiss Mouhyadin,True,DJI,Athletics,2024,2016,False,,1,2016,28,True,True,True,True,True,
+ALTA,subconjunto,145528,Tonatiu Lopez,141691,Jesús Tonatiú López,Jesús Tonatiú López Álvarez,True,MEX,Athletics,2024,2020,False,,1,2020,27,True,True,True,True,True,
+ALTA,subconjunto,145531,del Diego,132259,Diego del Real,Diego Alan del Real Galindo,True,MEX,Athletics,2024,2010|2016|2020,False,,1,2020,30,True,True,True,True,True,
+ALTA,subconjunto,145558,Alexandre Houssein,138769,Aden-Alexandre Houssein,Aden-Alexandre Houssein,True,DJI,Judo,2024,2020,False,,1,2020,26,True,True,True,True,True,
+ALTA,subconjunto,145590,Shazrin Mohamad,128504,Nur Shazrin Binti Mohamad Latif,Nur Shazrin Binti Mohamad Latif,True,MAS,Sailing,2024,2014|2016|2020,False,,1,2020,26,True,True,True,True,True,
+ALTA,subconjunto,145605,Manuel Celaya,141722,Juan Manuel Celaya,Juan Manuel Celaya Hernández,True,MEX,Diving (Aquatics),2024,2020,False,,1,2020,26,True,True,True,True,True,juan|manuel
+ALTA,subconjunto,145608,Hussein Yaseen,140423,Taha Hussein Yaseen,Taha Hussein Yaseen,True,IRQ,Athletics,2024,2020,False,,1,2020,26,True,True,True,True,True,
+ALTA,subconjunto,145622,Yew Loh,142904,Loh Kean Yew,Loh Kean Yew,True,SGP,Badminton,2024,2020,False,,1,2020,27,True,True,True,True,True,
+ALTA,subconjunto,145625,Min Yeo,142893,Yeo Jia Min,Yeo Jia Min,True,SGP,Badminton,2024,2020,False,,1,2020,25,True,True,True,True,True,
+ALTA,subconjunto,145628,Shanieka Ricketts,128215,Shanieka Thomas-Ricketts,Shanieka Jodian Thomas-Ricketts,True,JAM,Athletics,2024,2016|2020,False,,1,2020,32,True,True,True,True,True,thomas
+ALTA,subconjunto,145637,Natacha Ngoye,138183,Natacha Ngoye Akamabi,Natacha Ngoye Akamabi,True,CGO,Athletics,2024,2020,False,,1,2020,31,True,True,True,True,True,
+ALTA,subconjunto,145698,Kamal Achanta,106401,Sharath Kamal Achanta,Sharath Kamal Achanta,True,IND,Table Tennis,2024,2004|2008|2016|2020,False,,1,2020,42,True,True,True,True,True,
+ALTA,subconjunto,145765,Singh Tomar,140282,Aishwary Pratap Singh Tomar,Aishwary Pratap Singh Tomar,True,IND,Shooting,2024,2020,False,,1,2020,23,True,True,True,True,True,singh
+ALTA,orden_invertido,145780,McNULTY Harry,140404,Harry McNulty,Harry McNulty,True,IRL,Rugby Sevens (Rugby),2024,2020,False,,1,2020,31,True,True,False,True,True,harry
+ALTA,subconjunto,145784,McCORMACK Fionnuala,113147,Fionnuala Britton-McCormack,Fionnuala Britton-McCormack,True,IRL,Athletics,2024,2008|2012|2016|2020,False,,1,2020,40,True,True,True,True,True,
+ALTA,subconjunto,145798,Juan Bar,137166,Juan Manuel Bar,Juan Manuel Bar,True,ARG,Handball,2024,2020,False,,1,2020,37,True,True,False,True,False,juan|manuel
+ALTA,subconjunto,145836,Edison Rodriguez,130581,John Édison Rodríguez,John Édison Rodríguez Quevedo,True,COL,Fencing,2024,2016,False,,1,2016,33,True,True,True,True,True,john
+ALTA,subconjunto,145874,Wen Quah,111078,Quah Ting Wen,Quah Ting Wen,True,SGP,Swimming (Aquatics),2024,2008|2016|2020,False,,2,2020,32,True,True,True,True,True,
+ALTA,subconjunto,145877,Oumaima El,141600,Oumaima El-Bouchti,Oumaima El-Bouchti,True,MAR,Taekwondo,2024,2020,False,,1,2020,24,True,True,True,True,True,
+ALTA,subconjunto,145881,Yasameen Al,143947,Yasameen Al-Raimi,Yasameen Al-Raimi,True,YEM,Shooting,2024,2020,False,,1,2020,39,True,True,True,True,True,
+ALTA,subconjunto,145899,Sreejesh Parattu,119068,Sreejesh Parattu Raveendran,Sreejesh Parattu Raveendran,True,IND,Hockey,2024,2012|2016|2020,False,,1,2020,36,True,True,False,True,False,
+ALTA,subconjunto,145916,Mahmood Noor,137062,Sha Mahmood Noor Zahi,Sha Mahmood Noor Zahi,True,AFG,Athletics,2024,2020,False,,1,2020,33,True,True,True,True,True,
+ALTA,subconjunto,145919,Bachir Sid,137087,Bachir Sid Azara,Bachir Sid Azara,True,ALG,Wrestling,2024,2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,subconjunto,145942,Jhancarlos Gonzalez,138552,Luis Jhancarlos González,Luis Jhancarlos González Ortiz,True,COL,Skateboarding (Roller Sports),2024,2020,False,,1,2020,27,True,True,True,True,True,gonzalez|luis
+ALTA,subconjunto,145944,Lucelly Murillo,138531,María Lucelly Murillo,María Lucelly Murillo Murillo,True,COL,Athletics,2024,2020,False,,1,2020,33,True,True,True,True,True,maria
+ALTA,subconjunto,145970,le Pierre,131158,Pierre Le Corre,Pierre Le Corre,True,FRA,Triathlon,2024,2016,False,,3,2016,34,True,True,True,True,True,pierre
+ALTA,subconjunto,145993,Anas Yahiya,131617,Mohammad Anas Yahiya,Mohammad Anas Yahiya,True,IND,Athletics,2024,2016|2020,False,,1,2020,30,True,True,True,True,True,
+ALTA,subconjunto,145996,Mukund Sable,140249,Avinash Mukund Sable,Avinash Mukund Sable,True,IND,Athletics,2024,2020,False,,1,2020,30,True,True,True,True,True,
+ALTA,subconjunto,146002,Singh Toor,140258,Tajinderpal Singh Toor,Tajinderpal Singh Toor,True,IND,Athletics,2024,2020,False,,1,2020,30,True,True,True,True,True,singh
+ALTA,orden_invertido,146049,Chu-han Chang,143218,Chang Chu-Han,Chang Chu-Han,True,TPE,Canoe Slalom (Canoeing),2024,2020,False,,1,2020,31,True,True,True,True,True,
+ALTA,subconjunto,146109,Sallah Cisse,130543,Cheick Sallah Cissé,Cheick Sallah Cissé Junior,True,CIV,Taekwondo,2024,2016|2020,False,,1,2020,31,True,True,True,True,True,
+ALTA,subconjunto,146162,James Fiti,139470,Scott James Fiti,Scott James Fiti,True,FSM,Athletics,2024,2020,False,,1,2020,29,True,True,True,True,True,james|scott
+ALTA,subconjunto,146164,Firdaus Sahrom,141631,Shah Firdaus Sahrom,Muhammad Shah Firdaus Sahrom,True,MAS,Cycling Track (Cycling),2024,2020,False,,1,2020,29,True,True,True,True,True,
+ALTA,subconjunto,146166,Andrei-vasile Muntean,132754,Andrei Muntean,Andrei Vasile Muntean,True,ROU,Artistic Gymnastics (Gymnastics),2024,2010|2016,False,,1,2016,31,True,True,True,True,True,
+ALTA,subconjunto,146188,de Giovanni,131773,Giovanni De Gennaro,Giovanni De Gennaro,True,ITA,Canoe Slalom (Canoeing),2024,2016|2020,False,,5,2020,32,True,True,True,True,True,
+ALTA,subconjunto,146228,Khairulnizam Mohd,123303,Khairulnizam Bin Mohd Afendy,Khairulnizam Bin Mohd Afendy,True,MAS,Sailing,2024,2012|2016|2020,False,,1,2020,31,True,True,True,True,True,
+ALTA,subconjunto,146229,Kate Foo,128566,Kate Foo Kune,Kate Jessica Kim Lee Foo Kune (-Ludik),True,MRI,Badminton,2024,2010|2016,False,,1,2016,31,True,True,True,True,True,
+ALTA,orden_invertido,146232,Chia-ling Lo,143208,Lo Chia-Ling,Lo Chia-Ling,True,TPE,Taekwondo,2024,2020,False,,1,2020,23,True,True,True,True,True,
+ALTA,subconjunto,146251,Marcell Jacobs,140627,Lamont Marcell Jacobs,Lamont Marcell Jacobs,True,ITA,Athletics,2024,2020,False,,1,2020,30,True,True,True,True,True,
+ALTA,subconjunto,146264,del Federica,140501,Federica Del Buono,Federica Del Buono,True,ITA,Athletics,2024,2020,False,,1,2020,30,True,True,True,True,True,
+ALTA,subconjunto,146300,Vera Looser,128574,Vera Adrian-Looser,Vera Adrian-Looser,True,NAM,Cycling Road (Cycling),2024,2016|2020,False,,1,2020,31,True,True,True,True,True,
+ALTA,subconjunto,146307,Ann Williams,140732,Stacey-Ann Williams,Stacey-Ann Williams,True,JAM,Athletics,2024,2020,False,,2,2020,25,True,True,True,True,True,williams
+ALTA,subconjunto,146315,Dhabitah Sabri,128501,Nur Dhabitah Sabri,Nur Dhabitah Binti Sabri,True,MAS,Diving (Aquatics),2024,2016|2020,False,,1,2020,25,True,True,True,True,True,
+ALTA,subconjunto,146341,Soufiane El,132220,Soufiane El-Bakkali,Soufiane El-Bakkali,True,MAR,Athletics,2024,2016|2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,subconjunto,146348,Othmane El,141606,Othmane El-Goumri,Othmane El-Goumri,True,MAR,Athletics,2024,2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,subconjunto,146351,Abdelati El,132215,Abdelati El-Guesse,Abdelati El-Guesse,True,MAR,Athletics,2024,2016|2020,False,,1,2020,31,True,True,True,True,True,
+ALTA,subconjunto,146356,la Cesar,121521,Julio César la Cruz,Julio César de la Cruz Peraza,True,CUB,Boxing,2024,2012|2016|2020,False,,1,2020,35,True,True,True,True,True,
+ALTA,subconjunto,146390,Nabaaha Abdul,141646,Fathimath Nabaaha Abdul Razzaq,Fathimath Nabaaha Abdul Razzaq,True,MDV,Badminton,2024,2020,False,,1,2020,25,True,True,True,True,True,
+ALTA,subconjunto,146418,Elodie Ravera,127697,Élodie Ravera-Scaramozzino,Élodie Ravera-Scaramozzino,True,FRA,Rowing,2024,2016|2020,False,,1,2020,29,True,True,True,True,True,
+ALTA,subconjunto,146455,Francois Mendy,142885,Louis-François Mendy,Louis-François Mendy,True,SEN,Athletics,2024,2020,False,,1,2020,25,True,True,True,True,True,louis
+ALTA,subconjunto,146457,Maria Naimasi,139173,Ana Maria Naimasi,Ana Maria Naimasi,True,FIJ,Rugby Sevens (Rugby),2024,2020,False,,1,2020,30,True,True,False,True,False,maria
+ALTA,subconjunto,146536,Amr Hussen,138920,Amr Reda Hussen,Amr Reda Ramadan Hussen,True,EGY,Wrestling,2024,2020,False,,1,2020,27,True,True,True,True,True,
+ALTA,subconjunto,146617,Enrique Zayas,138620,Luis Enrique Zayas,Luis Enrique Zayas Fernández,True,CUB,Athletics,2024,2020,False,,1,2020,27,True,True,True,True,True,luis
+ALTA,subconjunto,146619,Nguyet Do,143931,Đỗ Thị Ánh Nguyệt,Đỗ Thị Ánh Nguyệt,True,VIE,Archery,2024,2020,False,,1,2020,23,True,True,True,True,True,
+ALTA,subconjunto,146651,Pablo Carreno,139122,Pablo Carreño Busta,Pablo Carreño Busta,True,ESP,Tennis,2024,2020,False,,1,2020,33,True,True,True,True,True,
+ALTA,subconjunto,146679,Murielle Ahoure-demps,119306,Murielle Ahouré,Murielle Ahouré (-Demps),True,CIV,Athletics,2024,2012|2016|2020,False,,1,2020,37,True,True,True,True,True,
+ALTA,subconjunto,146701,Ramon Pelier,138623,José Ramón Pelier,José Ramón Pelier Córdova,True,CUB,Canoe Sprint (Canoeing),2024,2020,False,,1,2020,23,True,True,True,True,True,jose
+ALTA,orden_invertido,146711,Chien-ying Lei,122952,Lei Chien-Ying,Lei Chien-Ying,True,TPE,Archery,2024,2012|2016|2020,False,,1,2020,34,True,True,True,True,True,
+ALTA,orden_invertido,146722,Enkhkhuslen Batbayar,141769,Batbayar Enkhkhüslen,Batbayar Enkhkhüslen,True,MGL,Swimming (Aquatics),2024,2020,False,,1,2020,23,True,True,True,True,True,
+ALTA,subconjunto,146730,Antoaneta Kostadinova,119804,Antoaneta Boneva-Kostadinova,Antoaneta Nikolaeva Boneva-Kostadinova,True,BUL,Shooting,2024,2012|2016|2020,False,,1,2020,38,True,True,True,True,True,
+ALTA,orden_invertido,146774,Chen-ling Lien,129253,Lien Chen-Ling,Lien Chen-Ling,True,TPE,Judo,2024,2016|2020,False,,1,2020,36,True,True,True,True,True,chen
+ALTA,subconjunto,146775,Wei Yang,143223,Yang Yung-Wei,Yang Yung-Wei,True,TPE,Judo,2024,2020,False,,5,2020,27,True,True,True,True,True,
+ALTA,orden_invertido,146776,Chen-hao Lin,143222,Lin Chen-Hao,Lin Chen-Hao,True,TPE,Judo,2024,2020,False,,1,2020,27,True,True,True,True,True,chen
+ALTA,subconjunto,146803,Kigen Ozbilen,133198,Kaan Kigen Özbilen,Kaan Kigen (Mike Kipruto-) Özbilen (Kigen-),True,TUR,Athletics,2024,2016,False,,1,2016,38,True,True,True,True,True,
+ALTA,subconjunto,146819,Regine Tugade-watson,127982,Regine Tugade,Regine Kate Tugade (-Wilson),True,GUM,Athletics,2024,2016|2020,False,,1,2020,26,True,True,True,True,True,
+ALTA,subconjunto,146826,Jia Lee,141629,Lee Zii Jia,Lee Zii Jia,True,MAS,Badminton,2024,2020,False,,1,2020,26,True,True,True,True,True,lee
+ALTA,subconjunto,146829,Essa Barshim,122678,Mutaz Essa Barshim,Mutaz Essa Barshim,True,QAT,Athletics,2024,2012|2016|2020,False,,1,2020,33,True,True,True,True,True,
+ALTA,subconjunto,146836,Kubra Ilgun,143292,Hatice Kübra İlgün,Hatice Kübra İlgün,True,TUR,Taekwondo,2024,2020,False,,1,2020,31,True,True,True,True,True,
+ALTA,subconjunto,146863,Abzetta Dabonne,127289,Zouleiha Abzetta Dabonne,Zouleiha Abzetta Dabonne,True,CIV,Judo,2024,2016|2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,subconjunto,146871,Linh Nguyen,143933,Nguyễn Thùy Linh,Nguyễn Thùy Linh,True,VIE,Badminton,2024,2020,False,,1,2020,27,True,True,True,True,True,
+ALTA,subconjunto,146873,Naz Cakiroglu,143278,Buse Naz Çakıroğlu,Buse Naz Çakıroğlu,True,TUR,Boxing,2024,2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,subconjunto,146926,Zuzana Rehak,115880,Zuzana Rehák Štefečeková,Zuzana Rehák Štefečeková,True,SVK,Shooting,2024,2008|2012|2020,False,,1,2020,40,True,True,True,True,True,
+ALTA,subconjunto,146954,Jair Tjon,143052,Jaïr Tjon En Fa,Jaïr Tjon En Fa,True,SUR,Cycling Track (Cycling),2024,2020,False,,1,2020,31,True,True,True,True,True,
+ALTA,orden_invertido,146957,Wen-huei Chen,143211,Chen Wen-Huei,Chen Wen-Huei,True,TPE,Weightlifting,2024,2020,False,,1,2020,27,True,True,True,True,True,chen
+ALTA,orden_invertido,146959,Wan-ling Fang,143212,Fang Wan-Ling,Fang Wan-Ling,True,TPE,Weightlifting,2024,2020,False,,1,2020,25,True,True,True,True,True,
+ALTA,subconjunto,146962,Juwon Opeyori,142052,Anuoluwapo Juwon Opeyori,Anuoluwapo Juwon Opeyori,True,NGR,Badminton,2024,2020,False,,1,2020,27,True,True,True,True,True,
+ALTA,orden_invertido,146964,Kun-pi Yang,133158,Yang Kun-Pi,Yang Kun-Pi,True,TPE,Shooting,2024,2016|2020,False,,1,2020,26,True,True,True,True,True,
+ALTA,subconjunto,146965,Chun Lin,92424,Lin Yi-Chun,Lin Yi-Chun,True,TPE,Shooting,2024,2000|2004|2012|2016,False,,4,2016,43,True,True,True,True,True,
+ALTA,subconjunto,146967,Chen Tien,120058,Tien Chia-Chen,Tien Chia-Chen,True,TPE,Shooting,2024,2012|2020,False,,3,2020,41,True,True,True,True,True,chen
+ALTA,subconjunto,146968,Yu Liu,146970,Wan-yu Liu,,True,TPE,Shooting,2024,2024,False,,3,2024,,True,True,True,True,True,liu|yu
+ALTA,subconjunto,146969,Ying Wu,129255,Wu Chia-Ying,Wu Chia-Ying,True,TPE,Shooting,2024,2016|2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,subconjunto,146971,Wen Yu,120059,Yu Ai-Wen,Yu Ai-Wen,True,TPE,Shooting,2024,2012|2016,False,,1,2016,29,True,True,True,True,True,yu
+ALTA,subconjunto,146974,Yik Soh,141630,Soh Wooi Yik,Soh Wooi Yik,True,MAS,Badminton,2024,2020,False,,1,2020,26,True,True,True,True,True,
+ALTA,subconjunto,146985,Ying Tai,122960,Tai Tzu-Ying,Tai Tzu-Ying,True,TPE,Badminton,2024,2012|2016|2020,False,,1,2020,30,True,True,True,True,True,
+ALTA,subconjunto,146986,Chen Chou,133152,Chou Tien-Chen,Chou Tien-Chen,True,TPE,Badminton,2024,2016|2020,False,,1,2020,34,True,True,True,True,True,chen
+ALTA,orden_invertido,146987,Chi-lin Wang,143216,Wang Chi-Lin,Wang Chi-Lin,True,TPE,Badminton,2024,2020,False,,2,2020,29,True,True,True,True,True,wang
+ALTA,orden_invertido,146988,Yang Lee,143215,Lee Yang,Lee Yang,True,TPE,Badminton,2024,2020,False,,1,2020,29,True,True,True,True,True,lee
+ALTA,subconjunto,147010,de Sarah,141578,Sarah de Nutte,Sarah de Nutte,True,LUX,Table Tennis,2024,2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,subconjunto,147012,Lian Ni,93247,Xia Lian Ni,Xia Lian Ni,True,LUX,Table Tennis,2024,2000|2008|2012|2016|2020,False,,1,2020,61,True,False,True,True,False,
+ALTA,subconjunto,147014,Eve Paget,139251,Marie-Ève Paget,Marie-Ève Paget,True,FRA,3x3 Basketball (Basketball),2024,2020,False,,1,2020,30,True,True,False,True,False,marie
+ALTA,subconjunto,147025,Alberto Orta,138630,Luis Alberto Orta,Luis Alberto Orta Sánchez,True,CUB,Wrestling,2024,2020,False,,1,2020,30,True,True,True,True,True,alberto|luis
+ALTA,subconjunto,147066,Hun An,132114,An Byeong-Hun,An Byeong-Hun,True,KOR,Golf,2024,2016,False,,2,2016,33,True,True,True,True,True,
+ALTA,subconjunto,147079,Paul O,131716,Paul O'Donovan,Paul O'Donovan,True,IRL,Rowing,2024,2016|2020,False,,3,2020,30,True,True,True,True,True,o|paul
+ALTA,subconjunto,147121,Adrianna Sulek-schubert,142303,Adrianna Sułek,Adrianna Sułek,True,POL,Athletics,2024,2020,False,,1,2020,25,True,True,True,True,True,
+ALTA,subconjunto,147155,Lindon Victor,133592,Lindon Toussaint-Victor,Lindon Kellon Toussaint-Victor,True,GRN,Athletics,2024,2010|2016|2020,False,,1,2020,31,True,True,True,True,True,victor
+ALTA,subconjunto,147156,Valeriane Ayayi,127636,Valériane Ayayi-Vukosavljević,Valériane Ayayi-Vukosavljević,True,FRA,Basketball (Basketball),2024,2016|2020,False,,1,2020,30,True,True,False,True,False,
+ALTA,subconjunto,147164,de Nando,122604,Nando de Colo,Nando Bruno Alfred Andre de Colo,True,FRA,Basketball (Basketball),2024,2012|2016|2020,False,,1,2020,37,True,True,False,True,False,
+ALTA,subconjunto,147177,le Nicolas,131169,Nicolas Le Goff,Nicolas Jean-François Emmanuel Le Goff,True,FRA,Volleyball (Volleyball),2024,2016|2020,False,,2,2020,32,True,True,False,True,False,
+ALTA,orden_invertido,147196,Chih-yuan Chuang,106408,Chuang Chih-Yuan,Chuang Chih-Yuan,True,TPE,Table Tennis,2024,2004|2008|2012|2016|2020,False,,1,2020,43,True,True,True,True,True,
+ALTA,orden_invertido,147198,I-ching Cheng,129260,Cheng I-Ching,Cheng I-Ching,True,TPE,Table Tennis,2024,2016|2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,orden_invertido,147199,Szu-yu Chen,120862,Chen Szu-Yu,Chen Szu-Yu,True,TPE,Table Tennis,2024,2012|2016|2020,False,,1,2020,31,True,True,True,True,True,chen|yu
+ALTA,orden_invertido,147201,Chia-hung Tang,143220,Tang Chia-Hung,Tang Chia-Hung,True,TPE,Artistic Gymnastics (Gymnastics),2024,2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,orden_invertido,147202,Hua-tien Ting,143204,Ting Hua-Tien,Ting Hua-Tien,True,TPE,Artistic Gymnastics (Gymnastics),2024,2020,False,,1,2020,22,True,True,True,True,True,
+ALTA,subconjunto,147206,Nordstad Moen,132471,Sondre Nordstad Moen,Sondre Nordstad Moen,True,NOR,Athletics,2024,2016|2020,False,,1,2020,33,True,True,True,True,True,
+ALTA,subconjunto,147212,Bjerkeli Grovdal,119872,Karoline Bjerkeli Grøvdal,Karoline Bjerkeli Grøvdal,True,NOR,Athletics,2024,2012|2016|2020,False,,1,2020,34,True,True,True,True,True,
+ALTA,subconjunto,147249,Marit Jacobsen,142074,Marit Røsberg Jacobsen,Marit Røsberg Jacobsen,True,NOR,Handball,2024,2020,False,,1,2020,30,True,True,False,True,False,
+ALTA,subconjunto,147250,Katrine Lunde,110785,Katrine Lunde-Haraldsen,"Katrine Lunde-Haraldsen (Lunde-, -Lunde)",True,NOR,Handball,2024,2008|2012|2016|2020,False,,1,2020,44,True,True,False,True,False,
+ALTA,subconjunto,147253,Bredal Oftedal,128698,Stine Bredal Oftedal,Stine Bredal Oftedal,True,NOR,Handball,2024,2016|2020,False,,1,2020,33,True,True,False,True,False,
+ALTA,subconjunto,147254,Kari Brattset,142072,Kari Brattset Dale,Kari Skaar Brattset Dale,True,NOR,Handball,2024,2020,False,,1,2020,33,True,True,False,True,False,
+ALTA,subconjunto,147318,Katarzyna Wasick,115435,Katarzyna Wilk-Wasick,Katarzyna Maria Wilk-Wasick,True,POL,Swimming (Aquatics),2024,2008|2012|2016|2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,subconjunto,147355,Estelle Nze,127676,Estelle Nze Minko,Estelle Véronique Nze Minko,True,FRA,Handball,2024,2016|2020,False,,1,2020,33,True,True,False,True,False,
+ALTA,subconjunto,147360,Mustafa Bashir,132546,Ghulam Mustafa Bashir,Ghulam Mustafa Bashir,True,PAK,Shooting,2024,2016|2020,False,,1,2020,37,True,True,True,True,True,
+ALTA,orden_invertido,147424,Hao-ching Chan,129257,Chan Hao-Ching,Chan Hao-Ching,True,TPE,Tennis,2024,2016|2020,False,,1,2020,31,True,True,True,True,True,
+ALTA,orden_invertido,147426,Su-wei Hsieh,121337,Hsieh Su-Wei,Hsieh Su-Wei,True,TPE,Tennis,2024,2012,False,,1,2012,38,True,True,True,True,True,
+ALTA,subconjunto,147427,del Maylin,138608,Maylín del Toro,Maylín del Toro Carvajal,True,CUB,Judo,2024,2020,False,,1,2020,30,True,True,True,True,True,
+ALTA,subconjunto,147430,Thomas Mlugu,133115,Andrew Thomas Mlugu,Andrew Thomas Mlugu,True,TAN,Judo,2024,2016,False,,1,2016,29,True,True,True,True,True,andrew|thomas
+ALTA,subconjunto,147448,Ting Lin,143200,Lin Yu-Ting,Lin Yu-Ting,True,TPE,Boxing,2024,2020,False,,1,2020,29,True,True,True,True,True,yu
+ALTA,subconjunto,147449,Yi Wu,143201,Wu Shih-Yi,Wu Shih-Yi,True,TPE,Boxing,2024,2020,False,,2,2020,26,True,True,True,True,True,
+ALTA,subconjunto,147450,Chin Chen,129248,Chen Nien-Chin,Chen Nien-Chin,True,TPE,Boxing,2024,2014|2016|2020,False,,6,2020,27,True,True,True,True,True,chen
+ALTA,subconjunto,147452,En Lai,133153,Lai Chu-En,Lai Chu-En,True,TPE,Boxing,2024,2016,False,,1,2016,28,True,True,True,True,True,
+ALTA,subconjunto,147453,Zalina Marghieva,113810,Zalina Marghieva-Petrivskaya,Zalina Marghieva-Petrivskaya,True,MDA,Athletics,2024,2008|2012|2016|2020,False,,1,2020,36,True,True,True,True,True,
+ALTA,subconjunto,147500,Dimitriana Bezede,128509,Dimitriana Surdu-Bezede,Dimitriana Surdu-Bezede,True,MDA,Athletics,2024,2016|2020,False,,1,2020,30,True,True,True,True,True,
+ALTA,orden_invertido,147510,Otgonbold Baatarkhuyag,141777,Baatarkhuyag Otgonbold,Baatarkhuyag Otgonbold,True,MGL,Archery,2024,2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,subconjunto,147536,Gilje Nordas,142088,Narve Gilje Nordås,Narve Gilje Nordås,True,NOR,Athletics,2024,2020,False,,1,2020,26,True,True,True,True,True,
+ALTA,subconjunto,147544,Nan Yuan,139328,Jia Nan Yuan,Jia Nan Yuan,True,FRA,Table Tennis,2024,2020,False,,1,2020,39,True,True,True,True,True,
+ALTA,subconjunto,147559,Lea Friedrich,139797,Lea-Sophie Friedrich,Lea-Sophie Friedrich,True,GER,Cycling Track (Cycling),2024,2020,False,,1,2020,24,True,True,True,True,True,
+ALTA,orden_invertido,147603,Zhenzhao Ma,138312,Ma Zhenzhao,Ma Zhenzhao,True,CHN,Judo,2024,2020,False,,1,2020,26,True,True,True,True,True,
+ALTA,orden_invertido,147604,Shiyan Xu,138314,Xu Shiyan,Xu Shiyan,True,CHN,Judo,2024,2020,False,,1,2020,27,True,True,True,True,True,
+ALTA,subconjunto,147607,Leonie Cysique,139287,Sarah-Léonie Cysique,Sarah-Léonie Cysique,True,FRA,Judo,2024,2020,False,,1,2020,26,True,True,True,True,True,
+ALTA,subconjunto,147724,Sanggaard Nielsen,138725,Frida Sanggaard Nielsen,Frida Sanggaard Nielsen,True,DEN,Rowing,2024,2020,False,,1,2020,26,True,True,True,True,True,
+ALTA,subconjunto,147731,Udby Erichsen,120952,Fie Udby Erichsen,Fie Udby Erichsen (Graugaard-),True,DEN,Rowing,2024,2012|2016|2020,False,,1,2020,39,True,True,True,True,True,
+ALTA,subconjunto,147741,Timna Nelson,140434,Timna Nelson Levy,Timna Nelson Levy,True,ISR,Judo,2024,2020,False,,1,2020,30,True,True,True,True,True,
+ALTA,subconjunto,147787,Na Lee,103720,Lee Bo-Na,Lee Bo-Na,True,KOR,Shooting,2024,2004|2008,False,,3,2008,43,False,True,True,True,False,lee
+ALTA,subconjunto,147809,Hegg Duestad,142083,Jeanette Hegg Duestad,Jeanette Hegg Duestad,True,NOR,Shooting,2024,2020,False,,1,2020,25,True,True,True,True,True,
+ALTA,subconjunto,147849,Chepchumba Kiprono,141301,Sharon Chepchumba Kiprono,Sharon Chepchumba Kiprono,True,KEN,Volleyball (Volleyball),2024,2020,False,,1,2020,26,True,True,False,True,False,
+ALTA,subconjunto,147886,Rasmus Lauge,123139,Rasmus Lauge Schmidt,Rasmus Lauge Schmidt,True,DEN,Handball,2024,2012,False,,1,2012,33,True,True,False,True,False,
+ALTA,subconjunto,147946,Pauline Ferrand,122883,Pauline Ferrand-Prévot,Pauline Ferrand-Prévot,True,FRA,Cycling Mountain Bike (Cycling),2024,2012|2016|2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,subconjunto,147950,le Marie,139260,Marie Le Net,Marie Le Net,True,FRA,Cycling Track (Cycling),2024,2020,False,,5,2020,24,True,True,True,True,True,marie
+ALTA,subconjunto,148005,Yuki Baig,141105,Adam Yuki Baig,Adam Yuki Baig,True,JPN,Handball,2024,2020,False,,1,2020,25,True,True,False,True,False,
+ALTA,subconjunto,148136,Felix Simbu,133113,Alphonce Felix Simbu,Alphonce Felix Simbu,True,TAN,Athletics,2024,2016|2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,subconjunto,148162,Andre Ordemann,142120,Richard André Ordemann,Richard André Konopka Ordemann,True,NOR,Taekwondo,2024,2020,False,,1,2020,30,True,True,True,True,True,andre|richard
+ALTA,orden_invertido,148164,Chen Xue,111258,Xue Chen,Xue Chen,True,CHN,Beach Volleyball (Volleyball),2024,2008|2012|2020,False,,1,2020,35,True,True,False,True,True,chen
+ALTA,orden_invertido,148165,Xinyi Xia,138262,Xia Xinyi,Xia Xinyi,True,CHN,Beach Volleyball (Volleyball),2024,2020,False,,1,2020,27,True,True,False,True,True,
+ALTA,orden_invertido,148203,Hollie Pearne-webb,127770,Hollie Webb-Pearne,Hollie Webb-Pearne,True,GBR,Hockey,2024,2016|2020,False,,1,2020,34,True,True,False,True,True,
+ALTA,subconjunto,148308,Andrea Spendolini,139517,Andrea Spendolini Sirieix,Andrea Spendolini Sirieix,True,GBR,Diving (Aquatics),2024,2020,False,,1,2020,20,True,True,True,True,True,andrea
+ALTA,subconjunto,148325,Mathilda Hodgkins,139582,Mathilda Hodgkins Byrne,Mathilda Kathryn R. Hodgkins Byrne,True,GBR,Rowing,2024,2020,False,,1,2020,30,True,True,True,True,True,
+ALTA,orden_invertido,148328,McKELLAR Rowan,139705,Rowan McKellar,Rowan McKellar,True,GBR,Rowing,2024,2020,False,,1,2020,30,True,True,True,True,True,
+ALTA,orden_invertido,148350,Yuxi Chen,138275,Chen Yuxi,Chen Yuxi,True,CHN,Diving (Aquatics),2024,2020,False,,1,2020,19,True,True,True,True,True,chen
+ALTA,orden_invertido,148351,Hongchan Quan,138276,Quan Hongchan,Quan Hongchan,True,CHN,Diving (Aquatics),2024,2020,False,,1,2020,17,True,True,True,True,True,
+ALTA,orden_invertido,148352,Zongyuan Wang,138439,Wang Zongyuan,Wang Zongyuan,True,CHN,Diving (Aquatics),2024,2020,False,,1,2020,23,True,True,True,True,True,wang
+ALTA,orden_invertido,148353,Siyi Xie,138440,Xie Siyi,Xie Siyi,True,CHN,Diving (Aquatics),2024,2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,orden_invertido,148357,Yuan Cao,120399,Cao Yuan,Cao Yuan,True,CHN,Diving (Aquatics),2024,2012|2016|2020,False,,1,2020,29,True,True,True,True,True,
+ALTA,subconjunto,148359,de Bethania,120350,Bethania de la Cruz,Bethania de la Cruz de Peña,True,DOM,Volleyball (Volleyball),2024,2012|2020,False,,1,2020,37,True,True,False,True,False,
+ALTA,orden_invertido,148387,Jiyuan Wan,138256,Wan Jiyuan,Wan Jiyuan,True,CHN,3x3 Basketball (Basketball),2024,2020,False,,1,2020,22,True,True,False,True,True,
+ALTA,orden_invertido,148389,Zhiting Zhang,138259,Zhang Zhiting,Zhang Zhiting,True,CHN,3x3 Basketball (Basketball),2024,2020,False,,1,2020,29,True,True,False,True,True,zhang
+ALTA,orden_invertido,148390,Lili Wang,138257,Wang Lili,Wang Lili,True,CHN,3x3 Basketball (Basketball),2024,2020,False,,1,2020,32,True,True,False,True,True,wang
+ALTA,orden_invertido,148391,Siyu Wang,138246,Wang Siyu,Wang Siyu,True,CHN,Basketball (Basketball),2024,2020,False,,1,2020,29,True,True,False,True,True,wang
+ALTA,orden_invertido,148392,Xu Han,138241,Han Xu,Han Xu,True,CHN,Basketball (Basketball),2024,2018|2020,False,,1,2020,25,True,True,False,True,True,
+ALTA,orden_invertido,148393,Sijing Huang,127140,Huang Sijing,Huang Sijing,True,CHN,Basketball (Basketball),2024,2016|2020,False,,1,2020,28,True,True,False,True,True,
+ALTA,orden_invertido,148394,Meng Li,138242,Li Meng,Li Meng,True,CHN,Basketball (Basketball),2024,2020,False,,1,2020,29,True,True,False,True,True,li
+ALTA,orden_invertido,148395,Yueru Li,138244,Li Yueru,Li Yueru,True,CHN,Basketball (Basketball),2024,2020,False,,1,2020,25,True,True,False,True,True,li
+ALTA,orden_invertido,148397,Tongtong Wu,138247,Wu Tongtong,Wu Tongtong,True,CHN,Basketball (Basketball),2024,2020,False,,1,2020,30,True,True,False,True,True,
+ALTA,orden_invertido,148398,Liwei Yang,138248,Yang Liwei,Yang Liwei,True,CHN,Basketball (Basketball),2024,2020,False,,1,2020,29,True,True,False,True,True,
+ALTA,orden_invertido,148400,Ru Zhang,138249,Zhang Ru,Zhang Ru,True,CHN,Basketball (Basketball),2024,2020,False,,1,2020,25,True,True,False,True,True,zhang
+ALTA,orden_invertido,148401,Mengran Sun,127138,Sun Mengran,Sun Mengran,True,CHN,Basketball (Basketball),2024,2016|2020,False,,1,2020,32,True,True,False,True,True,
+ALTA,subconjunto,148418,Deok Kim,141425,Kim Je-Deok,Kim Je-Deok,True,KOR,Archery,2024,2020,False,,6,2020,20,True,True,True,True,True,kim
+ALTA,subconjunto,148425,Gerald Geay,143154,Gabriel Gerald Geay,Gabriel Gerald Geay,True,TAN,Athletics,2024,2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,orden_invertido,148427,Long Ma,120076,Ma Long,Ma Long,True,CHN,Table Tennis,2024,2012|2016|2020,False,,1,2020,36,True,True,True,True,True,
+ALTA,orden_invertido,148429,Meng Chen,138385,Chen Meng,Chen Meng,True,CHN,Table Tennis,2024,2020,False,,1,2020,30,True,True,True,True,True,chen
+ALTA,orden_invertido,148431,Manyu Wang,138386,Wang Manyu,Wang Manyu,True,CHN,Table Tennis,2024,2020,False,,1,2020,25,True,True,True,True,True,wang
+ALTA,orden_invertido,148439,Haiwei Chen,130486,Chen Haiwei,Chen Haiwei,True,CHN,Fencing,2024,2016,False,,1,2016,30,True,True,True,True,True,chen
+ALTA,orden_invertido,148451,Zijie Wang,138451,Wang Zijie,Wang Zijie,True,CHN,Fencing,2024,2020,False,,1,2020,28,True,True,True,True,True,wang
+ALTA,orden_invertido,148453,Qingyuan Chen,138279,Chen Qingyuan,Chen Qingyuan,True,CHN,Fencing,2024,2020,False,,1,2020,27,True,True,True,True,True,chen
+ALTA,orden_invertido,148457,Yiwen Sun,127167,Sun Yiwen,Sun Yiwen,True,CHN,Fencing,2024,2016|2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,subconjunto,148470,Aiperi Medet,141331,Aiperi Medet Kyzy,Aiperi Medet Kyzy,True,KGZ,Wrestling,2024,2020,False,,1,2020,25,True,True,True,True,True,
+ALTA,subconjunto,148502,van Wout,137647,Wout Van Aert,Wout Van Aert,True,BEL,Cycling Road (Cycling),2024,2020,False,,3,2020,30,True,True,True,True,True,
+ALTA,subconjunto,148517,de Manon,137613,Manon De Roey,Manon De Roey,True,BEL,Golf,2024,2020,False,,1,2020,33,True,True,True,True,True,
+ALTA,subconjunto,148527,de Arthur,137652,Arthur De Sloover,Arthur Anne-Marie Thierry De Sloover,True,BEL,Hockey,2024,2020,False,,2,2020,27,True,True,False,True,False,
+ALTA,subconjunto,148538,van Florent,124132,Florent Van Aubel,Florent Van Aubel,True,BEL,Hockey,2024,2012|2016|2020,False,,1,2020,33,True,True,False,True,False,
+ALTA,subconjunto,148562,Samir Ait,131098,Samir Aït Saïd,Samir Aït Saïd,True,FRA,Artistic Gymnastics (Gymnastics),2024,2016|2020,False,,1,2020,35,True,True,True,True,True,
+ALTA,subconjunto,148563,de Melanie,139275,Mélanie de Jésus dos Santos,Mélanie Johanna de Jésus dos Santos,True,FRA,Artistic Gymnastics (Gymnastics),2024,2020,False,,2,2020,24,True,True,True,True,True,
+ALTA,orden_invertido,148652,McINTOSH Seonaid,139591,Seonaid McIntosh,Seonaid McIntosh,True,GBR,Shooting,2024,2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,subconjunto,148676,Ana Peleteiro-compaore,138956,Ana Peleteiro,Ana Peleteiro Brión,True,ESP,Athletics,2024,2020,False,,1,2020,29,True,True,True,True,True,
+ALTA,subconjunto,148677,Isabel Perez,138967,María Isabel Pérez,María Isabel Pérez Rodríguez,True,ESP,Athletics,2024,2020,False,,1,2020,31,True,True,True,True,True,maria
+ALTA,subconjunto,148684,Belen Toimil,138966,María Belén Toimil,María Belén Toimil Fernández,True,ESP,Athletics,2024,2020,False,,1,2020,30,True,True,True,True,True,maria
+ALTA,subconjunto,148787,de Luciano,122284,Luciano De Cecco,Luciano De Cecco,True,ARG,Volleyball (Volleyball),2024,2012|2016|2020,False,,3,2020,36,True,True,False,True,False,
+ALTA,subconjunto,148797,Natalia Santos,110763,Natália Bernardo-Santos,Natália Maria Bernardo-Santos,True,ANG,Handball,2024,2008|2012|2016|2020,False,,1,2020,38,True,True,False,True,False,
+ALTA,orden_invertido,148836,Hengyu Yang,138282,Yang Hengyu,Yang Hengyu,True,CHN,Fencing,2024,2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,orden_invertido,148866,Yu Feng,138368,Feng Yu,Feng Yu,True,CHN,Artistic Swimming (Aquatics),2024,2020,False,,2,2020,25,True,True,True,True,True,yu
+ALTA,orden_invertido,148872,Qianyi Wang,138369,Wang Qianyi,Wang Qianyi,True,CHN,Artistic Swimming (Aquatics),2024,2020,False,,1,2020,27,True,True,True,True,True,wang
+ALTA,orden_invertido,148873,Yanning Xiao,138370,Xiao Yanning,Xiao Yanning,True,CHN,Artistic Swimming (Aquatics),2024,2020,False,,1,2020,26,True,True,True,True,True,
+ALTA,orden_invertido,148878,Wenhui Zeng,138366,Zeng Wenhui,Zeng Wenhui,True,CHN,Skateboarding (Roller Sports),2024,2020,False,,1,2020,19,True,True,True,True,True,
+ALTA,orden_invertido,148906,Wei-ling Hsu,143202,Hsu Wei-Ling,Hsu Wei-Ling,True,TPE,Golf,2024,2020,False,,1,2020,30,True,True,True,True,True,
+ALTA,subconjunto,148962,Nicholas Kipkorir,141314,Nicholas Kipkorir Kimeli,Nicholas Kipkorir Kimeli,True,KEN,Athletics,2024,2020,False,,1,2020,26,True,True,True,True,True,
+ALTA,orden_invertido,148976,McILROY Rory,140395,Rory McIlroy,Rory McIlroy,True,IRL,Golf,2024,2020,False,,1,2020,35,True,True,True,True,True,
+ALTA,subconjunto,148977,Amr Hassan,138872,Mostafa Amr Hassan,Mostafa Amr Hassan,True,EGY,Athletics,2024,2020,False,,1,2020,29,True,True,True,True,True,
+ALTA,subconjunto,149070,Mickael Zeze,131049,Mickaël-Méba Zézé,Mickaël-Méba Zézé,True,FRA,Athletics,2024,2016|2020,False,,1,2020,30,True,True,True,True,True,
+ALTA,orden_invertido,149123,McLEOD Carey,140738,Carey McLeod,Carey McLeod,True,JAM,Athletics,2024,2020,False,,1,2020,26,True,True,True,True,True,
+ALTA,orden_invertido,149129,Yechun Yuan,138453,Yuan Yechun,Yuan Yechun,True,CHN,Golf,2024,2020,False,,1,2020,27,True,True,True,True,True,
+ALTA,orden_invertido,149139,Xiaolei Yang,138229,Yang Xiaolei,Yang Xiaolei,True,CHN,Archery,2024,2020,False,,1,2020,24,True,True,True,True,True,
+ALTA,subconjunto,149167,Arif Pangestu,140210,Arif Dwi Pangestu,Arif Dwi Pangestu,True,INA,Archery,2024,2020,False,,1,2020,20,True,True,True,True,True,
+ALTA,orden_invertido,149169,Xia Ding,127265,Ding Xia,Ding Xia,True,CHN,Volleyball (Volleyball),2024,2016|2020,False,,1,2020,34,True,True,False,True,True,
+ALTA,orden_invertido,149171,Xiangyu Gong,127266,Gong Xiangyu,Gong Xiangyu,True,CHN,Volleyball (Volleyball),2024,2016|2020,False,,1,2020,27,True,True,False,True,True,
+ALTA,orden_invertido,149172,Yingying Li,138482,Li Yingying,Li Yingying,True,CHN,Volleyball (Volleyball),2024,2020,False,,1,2020,24,True,True,False,True,True,li
+ALTA,orden_invertido,149173,Mengjie Wang,138388,Wang Mengjie,Wang Mengjie,True,CHN,Volleyball (Volleyball),2024,2020,False,,1,2020,29,True,True,False,True,True,wang
+ALTA,orden_invertido,149175,Xinyue Yuan,127268,Yuan Xinyue,Yuan Xinyue,True,CHN,Volleyball (Volleyball),2024,2016|2020,False,,1,2020,28,True,True,False,True,True,
+ALTA,orden_invertido,149176,Changning Zhang,127260,Zhang Changning,Zhang Changning,True,CHN,Volleyball (Volleyball),2024,2016|2020,False,,1,2020,29,True,True,False,True,True,zhang
+ALTA,orden_invertido,149178,Yuanyuan Wang,138389,Wang Yuanyuan,Wang Yuanyuan,True,CHN,Volleyball (Volleyball),2024,2020,False,,2,2020,27,True,True,False,True,True,wang
+ALTA,orden_invertido,149180,Ting Zhu,127264,Zhu Ting,Zhu Ting,True,CHN,Volleyball (Volleyball),2024,2016|2020,False,,2,2020,30,True,True,False,True,True,
+ALTA,orden_invertido,149207,Lihao Sheng,138469,Sheng Lihao,Sheng Lihao,True,CHN,Shooting,2024,2020,False,,1,2020,20,True,True,True,True,True,
+ALTA,orden_invertido,149209,Bowen Zhang,138472,Zhang Bowen,Zhang Bowen,True,CHN,Shooting,2024,2020,False,,1,2020,28,True,True,True,True,True,zhang
+ALTA,orden_invertido,149210,Yuehong Li,130510,Li Yuehong,Li Yuehong,True,CHN,Shooting,2024,2016|2020,False,,1,2020,35,True,True,True,True,True,li
+ALTA,orden_invertido,149214,Haicheng Yu,138471,Yu Haicheng,Yu Haicheng,True,CHN,Shooting,2024,2020,False,,1,2020,26,True,True,True,True,True,yu
+ALTA,orden_invertido,149217,Ranxin Jiang,138357,Jiang Ranxin,Jiang Ranxin,True,CHN,Shooting,2024,2020,False,,1,2020,24,True,True,True,True,True,
+ALTA,orden_invertido,149225,Meng Wei,127225,Wei Meng,Wei Meng,True,CHN,Shooting,2024,2016|2020,False,,1,2020,35,True,True,True,True,True,
+ALTA,orden_invertido,149227,Shuhuan Li,138457,Li Shuhuan,Li Shuhuan,True,CHN,Modern Pentathlon,2024,2020,False,,1,2020,28,True,True,True,True,True,li
+ALTA,orden_invertido,149228,Shuai Luo,138458,Luo Shuai,Luo Shuai,True,CHN,Modern Pentathlon,2024,2020,False,,1,2020,27,True,True,True,True,True,
+ALTA,orden_invertido,149229,Mingyu Zhang,138317,Zhang Mingyu,Zhang Mingyu,True,CHN,Modern Pentathlon,2024,2020,False,,1,2020,23,True,True,True,True,True,zhang
+ALTA,subconjunto,149259,de Mauro,140683,Mauro De Filippis,Mauro De Filippis,True,ITA,Shooting,2024,2020,False,,2,2020,44,True,True,True,True,True,
+ALTA,subconjunto,149261,Eid Naser,126963,Salwa Eid Naser,Salwa Eid Naser,True,BRN,Athletics,2024,2014|2016,False,,1,2016,26,True,True,True,True,True,
+ALTA,subconjunto,149263,van Naomi,137591,Naomi van den Broeck,Naomi van den Broeck,True,BEL,Athletics,2024,2020,False,,2,2020,28,True,True,True,True,True,
+ALTA,subconjunto,149265,van Julie,137607,Julie Van de Velde,Julie Van de Velde,True,BEL,Cycling Road (Cycling),2024,2020,False,,1,2020,31,True,True,True,True,True,
+ALTA,subconjunto,149273,van Arthur,130027,Arthur Van Doren,Arthur Van Doren,True,BEL,Hockey,2024,2010|2016|2020,False,,1,2020,30,True,True,False,True,False,
+ALTA,subconjunto,149277,Marten Van,130043,Marten Van Riel,Marten Van Riel,True,BEL,Triathlon,2024,2016|2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,subconjunto,149297,Auriane Mallo-breton,127650,Auriane Mallo,Auriane Mallo (-Breton),True,FRA,Fencing,2024,2016,False,,1,2016,31,True,True,True,True,True,
+ALTA,subconjunto,149345,Jordan Larson,124352,Jordan Larson-Burbach,Jordan Quinn Larson-Burbach,True,USA,Volleyball (Volleyball),2024,2012|2016|2020,False,,1,2020,38,True,True,False,True,False,
+ALTA,orden_invertido,149385,Fabin Li,138484,Li Fabin,Li Fabin,True,CHN,Weightlifting,2024,2020,False,,1,2020,31,True,True,True,True,True,li
+ALTA,orden_invertido,149387,Wenwen Li,138398,Li Wenwen,Li Wenwen,True,CHN,Weightlifting,2024,2020,False,,1,2020,24,True,True,True,True,True,li
+ALTA,orden_invertido,149388,Zhihui Hou,138397,Hou Zhihui,Hou Zhihui,True,CHN,Weightlifting,2024,2020,False,,1,2020,27,True,True,True,True,True,
+ALTA,orden_invertido,149390,Zhiyu Liu,138460,Liu Zhiyu,Liu Zhiyu,True,CHN,Rowing,2024,2020,False,,1,2020,31,True,True,True,True,True,liu
+ALTA,orden_invertido,149393,Shiyu Lu,138342,Lu Shiyu,Lu Shiyu,True,CHN,Rowing,2024,2020,False,,1,2020,25,True,True,True,True,True,
+ALTA,orden_invertido,149394,Zifeng Wang,138346,Wang Zifeng,Wang Zifeng,True,CHN,Rowing,2024,2020,False,,1,2020,27,True,True,True,True,True,wang
+ALTA,orden_invertido,149396,Yunxia Chen,138333,Chen Yunxia,Chen Yunxia,True,CHN,Rowing,2024,2020,False,,1,2020,29,True,True,True,True,True,chen
+ALTA,orden_invertido,149397,Xiaotong Cui,138334,Cui Xiaotong,Cui Xiaotong,True,CHN,Rowing,2024,2020,False,,1,2020,30,True,True,True,True,True,
+ALTA,orden_invertido,149399,Ling Zhang,127213,Zhang Ling,Zhang Ling,True,CHN,Rowing,2024,2016|2020,False,,2,2020,27,True,True,True,True,True,zhang
+ALTA,orden_invertido,149401,Shuangmei Shen,138344,Shen Shuangmei,Shen Shuangmei,True,CHN,Rowing,2024,2020,False,,1,2020,26,True,True,True,True,True,
+ALTA,orden_invertido,149402,Xiaoxin Liu,138341,Liu Xiaoxin,Liu Xiaoxin,True,CHN,Rowing,2024,2020,False,,1,2020,27,True,True,True,True,True,liu
+ALTA,orden_invertido,149436,Yang Liu,130495,Liu Yang,Liu Yang,True,CHN,Artistic Gymnastics (Gymnastics),2024,2016|2020,False,,4,2020,30,True,True,True,True,True,liu
+ALTA,orden_invertido,149438,Ruoteng Xiao,138455,Xiao Ruoteng,Xiao Ruoteng,True,CHN,Artistic Gymnastics (Gymnastics),2024,2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,orden_invertido,149440,Jingyuan Zou,138456,Zou Jingyuan,Zou Jingyuan,True,CHN,Artistic Gymnastics (Gymnastics),2024,2020,False,,1,2020,26,True,True,True,True,True,
+ALTA,orden_invertido,149442,Yushan Ou,138302,Ou Yushan,Ou Yushan,True,CHN,Artistic Gymnastics (Gymnastics),2024,2020,False,,1,2020,20,True,True,True,True,True,
+ALTA,orden_invertido,149451,Zhenye Xie,118493,Xie Zhenye,Xie Zhenye,True,CHN,Athletics,2024,2010|2012|2016|2020,False,,1,2020,31,True,True,True,True,True,
+ALTA,orden_invertido,149453,Zhiqiang Wu,138414,Wu Zhiqiang,Wu Zhiqiang,True,CHN,Athletics,2024,2020,False,,1,2020,30,True,True,True,True,True,
+ALTA,orden_invertido,149454,Haibin Yan,138415,Yan Haibin,Yan Haibin,True,CHN,Athletics,2024,2020,False,,1,2020,21,True,True,True,True,True,
+ALTA,orden_invertido,149455,Manqi Ge,127124,Ge Manqi,Ge Manqi,True,CHN,Athletics,2024,2016|2020,False,,1,2020,27,True,True,True,True,True,
+ALTA,orden_invertido,149456,Yuting Li,138233,Li Yuting,Li Yuting,True,CHN,Athletics,2024,2020,False,,1,2020,22,True,True,True,True,True,li
+ALTA,orden_invertido,149461,Jiayu Yang,138238,Yang Jiayu,Yang Jiayu,True,CHN,Athletics,2024,2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,orden_invertido,149463,Hong Liu,115599,Liu Hong,Liu Hong,True,CHN,Athletics,2024,2008|2012|2016|2020,False,,2,2020,37,True,True,True,True,True,liu
+ALTA,orden_invertido,149464,Shijie Qieyang,120596,Qieyang Shijie,Qieyang Shijie,True,CHN,Athletics,2024,2012|2016|2020,False,,1,2020,34,True,True,True,True,True,
+ALTA,orden_invertido,149473,Jiayuan Song,138236,Song Jiayuan,Song Jiayuan,True,CHN,Athletics,2024,2020,False,,1,2020,27,True,True,True,True,True,
+ALTA,orden_invertido,149474,Bin Feng,127120,Feng Bin,Feng Bin,True,CHN,Athletics,2024,2016|2020,False,,1,2020,30,True,True,True,True,True,
+ALTA,orden_invertido,149477,Zheng Wang,113807,Wang Zheng,Wang Zheng,True,CHN,Athletics,2024,2008|2016|2020,False,,2,2020,37,True,True,True,True,True,wang
+ALTA,orden_invertido,149481,Lijiao Gong,113491,Gong Lijiao,Gong Lijiao,True,CHN,Athletics,2024,2008|2012|2016|2020,False,,1,2020,35,True,True,True,True,True,
+ALTA,orden_invertido,149484,Shaohui Yang,138416,Yang Shaohui,Yang Shaohui,True,CHN,Athletics,2024,2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,orden_invertido,149487,Deshun Zhang,138239,Zhang Deshun,Zhang Deshun,True,CHN,Athletics,2024,2020,False,,1,2020,28,True,True,True,True,True,zhang
+ALTA,orden_invertido,149488,Li Bai,138230,Bai Li,Bai Li,True,CHN,Athletics,2024,2020,False,,1,2020,28,True,True,True,True,True,li
+ALTA,orden_invertido,149490,Shuangshuang Xu,138237,Xu Shuangshuang,Xu Shuangshuang,True,CHN,Athletics,2024,2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,subconjunto,149507,Genki Dean,119077,Roderick Genki Dean,Roderick Genki Dean,True,JPN,Athletics,2024,2012,False,,1,2012,33,True,True,True,True,True,
+ALTA,orden_invertido,149524,Zhiwei Deng,130540,Deng Zhiwei,Deng Zhiwei,True,CHN,Wrestling,2024,2016|2020,False,,1,2020,36,True,True,True,True,True,
+ALTA,orden_invertido,149526,Qianyu Pang,138402,Pang Qianyu,Pang Qianyu,True,CHN,Wrestling,2024,2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,orden_invertido,149528,Feng Zhou,127283,Zhou Feng,Zhou Feng,True,CHN,Wrestling,2024,2016|2020,False,,1,2020,31,True,True,True,True,True,
+ALTA,subconjunto,149534,Paul Bredau,139860,Jean Paul Bredau,Jean Paul Bredau,True,GER,Athletics,2024,2020,False,,1,2020,25,True,True,True,True,True,jean|paul
+ALTA,subconjunto,149545,Felicitas Krause,123543,Gesa Felicitas Krause,Gesa Felicitas Krause,True,GER,Athletics,2024,2012|2016|2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,subconjunto,149546,Marie Kwayie,139772,Lisa-Marie Kwayie,Lisa-Marie Kwayie,True,GER,Athletics,2024,2020,False,,1,2020,28,True,True,True,True,True,marie
+ALTA,subconjunto,149547,Kanda Lita,139855,Bo Kanda Lita Baehre,Bo Kanda Lita Baehre,True,GER,Athletics,2024,2020,False,,1,2020,25,True,True,True,True,True,
+ALTA,orden_invertido,149591,Shanju Bao,138272,Bao Shanju,Bao Shanju,True,CHN,Cycling Track (Cycling),2024,2020,False,,1,2020,27,True,True,True,True,True,
+ALTA,orden_invertido,149599,Jiali Liu,138273,Liu Jiali,Liu Jiali,True,CHN,Cycling Track (Cycling),2024,2020,False,,1,2020,30,True,True,True,True,True,liu
+ALTA,orden_invertido,149609,Yaming Zhu,138418,Zhu Yaming,Zhu Yaming,True,CHN,Athletics,2024,2020,False,,1,2020,30,True,True,True,True,True,
+ALTA,orden_invertido,149610,Yaoqing Fang,138408,Fang Yaoqing,Fang Yaoqing,True,CHN,Athletics,2024,2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,orden_invertido,149612,Jie Yao,130451,Yao Jie,Yao Jie,True,CHN,Athletics,2024,2016,False,,1,2016,34,True,True,True,True,True,
+ALTA,orden_invertido,149613,Bokai Huang,130447,Huang Bokai,Huang Bokai,True,CHN,Athletics,2024,2016|2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,orden_invertido,149615,Zhen Wang,120578,Wang Zhen,Wang Zhen,True,CHN,Athletics,2024,2012|2016,False,,2,2016,33,True,True,True,False,False,wang
+ALTA,subconjunto,149636,Hakim Sani,140974,Abdul Hakim Sani Brown,Abdul Hakim Sani Brown,True,JPN,Athletics,2024,2020,False,,1,2020,25,True,True,True,True,True,
+ALTA,subconjunto,149649,de Monica,124894,Monica De Gennaro,Monica De Gennaro (-Santarelli),True,ITA,Volleyball (Volleyball),2024,2012|2016|2020,False,,1,2020,37,True,True,False,True,False,
+ALTA,subconjunto,149670,Matea Parlov,138576,Matea Parlov Koštro,Matea Parlov Koštro,True,CRO,Athletics,2024,2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,subconjunto,149688,Elisa Longo,128140,Elisa Longo Borghini,Elisa Longo Borghini (-Mosca),True,ITA,Cycling Road (Cycling),2024,2016|2020,False,,1,2020,33,True,True,True,True,True,
+ALTA,subconjunto,149707,Holly Bradshaw,122019,Holly Bleasdale-Bradshaw,Holly Bethan Bleasdale-Bradshaw,True,GBR,Athletics,2024,2012|2016|2020,False,,1,2020,33,True,True,True,True,True,
+ALTA,subconjunto,149724,Imani Lansiquot,139487,Imani-Lara Lansiquot,Imani-Lara Lansiquot,True,GBR,Athletics,2024,2020,False,,1,2020,27,True,True,True,True,True,
+ALTA,orden_invertido,149725,McCOLGAN Eilish,122035,Eilish McColgan,Eilish McColgan,True,GBR,Athletics,2024,2012|2016|2020,False,,1,2020,34,True,True,True,True,True,
+ALTA,subconjunto,149757,Lam Tam,140079,Tam Hoi Lam,Tam Hoi Lam,True,HKG,Swimming (Aquatics),2024,2020,False,,1,2020,26,True,True,True,True,True,
+ALTA,subconjunto,149760,Man Tang,140083,Tang Chun Man,Tang Chun Man,True,HKG,Badminton,2024,2020,False,,2,2020,29,True,True,True,True,True,
+ALTA,subconjunto,149762,Suet Tse,122476,Tse Ying Suet,Tse Ying Suet,True,HKG,Badminton,2024,2012|2016|2020,False,,1,2020,33,True,True,True,True,True,
+ALTA,subconjunto,149780,Sarah Jodoin,140536,Sarah Jodoin Di Maria,Sarah Jodoin Di Maria,True,ITA,Diving (Aquatics),2024,2020,False,,1,2020,24,True,True,True,True,True,maria
+ALTA,subconjunto,149786,del Marco,131840,Marco Del Lungo,Marco Del Lungo,True,ITA,Water Polo (Aquatics),2024,2016|2020,False,,2,2020,34,True,True,False,True,False,
+ALTA,subconjunto,149787,di Francesco,131839,Francesco Di Fulvio,Francesco Di Fulvio,True,ITA,Water Polo (Aquatics),2024,2016|2020,False,,1,2020,31,True,True,False,True,False,
+ALTA,subconjunto,149860,Mariska Tunjung,140202,Gregoria Mariska Tunjung,Gregoria Mariska Tunjung Cahyaningsih,True,INA,Badminton,2024,2020,False,,1,2020,25,True,True,True,True,True,
+ALTA,subconjunto,149890,van Nicole,142173,Nicole Van Der Kaay,Nicole Van Der Kaay,True,NZL,Triathlon,2024,2020,False,,3,2020,28,True,True,True,True,True,
+ALTA,subconjunto,149900,Sarah Hirini,128745,Sarah Goss-Hirini,Sarah Goss-Hirini,True,NZL,Rugby Sevens (Rugby),2024,2016|2020,False,,1,2020,32,True,True,False,True,False,
+ALTA,subconjunto,149906,Tone Ng,142222,Tone Ng Shiu,Tone Ng Shiu,True,NZL,Rugby Sevens (Rugby),2024,2020,False,,1,2020,30,True,True,False,True,False,
+ALTA,orden_invertido,149909,McGARVEY-BLACK Ngarohi,142221,Ngarohi McGarvey-Black,Ngarohi McGarvey-Black,True,NZL,Rugby Sevens (Rugby),2024,2020,False,,1,2020,28,True,True,False,True,True,
+ALTA,orden_invertido,149915,McCARTNEY Eliza,128709,Eliza McCartney,Eliza McCartney,True,NZL,Athletics,2024,2016,False,,1,2016,28,True,True,True,True,True,
+ALTA,subconjunto,149925,Firdaus Ar-rasyid,137932,Muhd Noor Firdaus Ar Rasyid,Muhd Noor Firdaus Ar Rasyid,True,BRU,Athletics,2024,2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,orden_invertido,149926,Jianan Wang,133677,Wang Jianan,Wang Jianan,True,CHN,Athletics,2024,2016|2020,False,,1,2020,28,True,True,True,True,True,wang
+ALTA,orden_invertido,149931,Qian Li,127147,Li Qian,Li Qian,True,CHN,Boxing,2024,2016|2020,False,,2,2020,34,True,True,True,True,True,li
+ALTA,orden_invertido,149938,Tanglatihan Tuohetaerbieke,138429,Tuohetaerbieke Tanglatihan,Tuohetaerbieke Tanglatihan,True,CHN,Boxing,2024,2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,orden_invertido,149939,Yi Chen,138304,Chen Yi,Chen Yi,True,CHN,Hockey,2024,2020,False,,4,2020,27,True,True,False,True,True,chen
+ALTA,orden_invertido,149942,Bingfeng Gu,138305,Gu Bingfeng,Gu Bingfeng,True,CHN,Hockey,2024,2020,False,,1,2020,30,True,True,False,True,True,
+ALTA,orden_invertido,149946,Zixia Ou,127198,Ou Zixia,Ou Zixia,True,CHN,Hockey,2024,2016|2020,False,,1,2020,29,True,True,False,True,True,
+ALTA,orden_invertido,149948,Wenyu Xu,138308,Xu Wenyu,Xu Wenyu,True,CHN,Hockey,2024,2020,False,,1,2020,29,True,True,False,True,True,
+ALTA,orden_invertido,149952,Ying Zhang,138309,Zhang Ying,Zhang Ying,True,CHN,Hockey,2024,2020,False,,4,2020,26,True,True,False,True,True,zhang
+ALTA,orden_invertido,149985,Keyi Chen,138318,Chen Keyi,Chen Keyi,True,CHN,Rugby Sevens (Rugby),2024,2020,False,,1,2020,29,True,True,False,True,True,chen
+ALTA,orden_invertido,149987,Yaoyao Gu,138319,Gu Yaoyao,Gu Yaoyao,True,CHN,Rugby Sevens (Rugby),2024,2020,False,,1,2020,29,True,True,False,True,True,
+ALTA,orden_invertido,149991,Hongting Ruan,138320,Ruan Hongting,Ruan Hongting,True,CHN,Rugby Sevens (Rugby),2024,2020,False,,1,2020,29,True,True,False,True,True,
+ALTA,subconjunto,149998,Jenjira Srisa,143170,Jenjira Srisa-Ard,Jenjira Srisa-Ard,True,THA,Swimming (Aquatics),2024,2020,False,,1,2020,29,True,True,True,True,True,
+ALTA,orden_invertido,149999,Wanyu Wang,138322,Wang Wanyu,Wang Wanyu,True,CHN,Rugby Sevens (Rugby),2024,2020,False,,1,2020,27,True,True,False,True,True,wang
+ALTA,orden_invertido,150001,Xiao Chen,138391,Chen Xiao,Chen Xiao,True,CHN,Water Polo (Aquatics),2024,2020,False,,1,2020,25,True,True,False,True,True,chen
+ALTA,orden_invertido,150002,Zewen Deng,138392,Deng Zewen,Deng Zewen,True,CHN,Water Polo (Aquatics),2024,2020,False,,1,2020,27,True,True,False,True,True,
+ALTA,orden_invertido,150004,Yiwen Lu,138393,Lu Yiwen,Lu Yiwen,True,CHN,Water Polo (Aquatics),2024,2020,False,,1,2020,28,True,True,False,True,True,
+ALTA,orden_invertido,150006,Yineng Shen,138394,Shen Yineng,Shen Yineng,True,CHN,Water Polo (Aquatics),2024,2020,False,,1,2020,29,True,True,False,True,True,
+ALTA,orden_invertido,150007,Huan Wang,138395,Wang Huan,Wang Huan,True,CHN,Water Polo (Aquatics),2024,2020,False,,1,2020,27,True,True,False,True,True,wang
+ALTA,orden_invertido,150009,Dunhan Xiong,127270,Xiong Dunhan,Xiong Dunhan,True,CHN,Water Polo (Aquatics),2024,2016|2020,False,,1,2020,26,True,True,False,True,True,
+ALTA,orden_invertido,150012,Jing Zhang,127272,Zhang Jing,Zhang Jing,True,CHN,Water Polo (Aquatics),2024,2016|2020,False,,2,2020,28,True,True,False,True,True,zhang
+ALTA,orden_invertido,150015,Xin Quan,138432,Quan Xin,Quan Xin,True,CHN,Canoe Slalom (Canoeing),2024,2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,orden_invertido,150018,Wenjun Lin,138266,Lin Wenjun,Lin Wenjun,True,CHN,Canoe Sprint (Canoeing),2024,2020,False,,1,2020,27,True,True,True,True,True,
+ALTA,orden_invertido,150019,Shixiao Xu,138269,Xu Shixiao,Xu Shixiao,True,CHN,Canoe Sprint (Canoeing),2024,2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,orden_invertido,150020,Mengya Sun,138267,Sun Mengya,Sun Mengya,True,CHN,Canoe Sprint (Canoeing),2024,2020,False,,1,2020,23,True,True,True,True,True,
+ALTA,orden_invertido,150022,Hao Liu,138431,Liu Hao,Liu Hao,True,CHN,Canoe Sprint (Canoeing),2024,2020,False,,2,2020,31,True,True,True,True,True,liu
+ALTA,orden_invertido,150023,Mengdie Yin,138270,Yin Mengdie,Yin Mengdie,True,CHN,Canoe Sprint (Canoeing),2024,2020,False,,1,2020,27,True,True,True,True,True,
+ALTA,orden_invertido,150024,Nan Wang,138268,Wang Nan,Wang Nan,True,CHN,Canoe Sprint (Canoeing),2024,2020,False,,6,2020,24,True,True,True,True,True,wang
+ALTA,orden_invertido,150025,Dongyin Li,138264,Li Dongyin,Li Dongyin,True,CHN,Canoe Sprint (Canoeing),2024,2020,False,,1,2020,29,True,True,True,True,True,li
+ALTA,orden_invertido,150029,Dong Zhang,138435,Zhang Dong,Zhang Dong,True,CHN,Canoe Sprint (Canoeing),2024,2020,False,,1,2020,28,True,True,True,True,True,zhang
+ALTA,orden_invertido,150030,Congkang Wang,138433,Wang Congkang,Wang Congkang,True,CHN,Canoe Sprint (Canoeing),2024,2020,False,,1,2020,28,True,True,True,True,True,wang
+ALTA,orden_invertido,150031,Tingkai Bu,138430,Bu Tingkai,Bu Tingkai,True,CHN,Canoe Sprint (Canoeing),2024,2020,False,,1,2020,29,True,True,True,True,True,
+ALTA,orden_invertido,150035,Qiqi Guo,138328,Guo Qiqi,Guo Qiqi,True,CHN,Rhythmic Gymnastics (Gymnastics),2024,2020,False,,1,2020,26,True,True,True,True,True,
+ALTA,orden_invertido,150036,Ting Hao,138329,Hao Ting,Hao Ting,True,CHN,Rhythmic Gymnastics (Gymnastics),2024,2020,False,,1,2020,23,True,True,True,True,True,
+ALTA,orden_invertido,150037,Zhangjiayang Huang,138330,Huang Zhangjiayang,Huang Zhangjiayang,True,CHN,Rhythmic Gymnastics (Gymnastics),2024,2020,False,,1,2020,24,True,True,True,True,True,
+ALTA,orden_invertido,150066,Shuai Zhang,120409,Zhang Shuai,Zhang Shuai,True,CHN,Tennis,2024,2012|2016,False,,1,2016,35,True,True,True,True,True,zhang
+ALTA,subconjunto,150080,Hung Shek,122486,Shek Wai Hung,Shek Wai Hung,True,HKG,Artistic Gymnastics (Gymnastics),2024,2012|2020,False,,1,2020,33,True,True,True,True,True,
+ALTA,orden_invertido,150136,McKEE Anton,124099,Anton McKee,Anton Sveinn McKee,True,ISL,Swimming (Aquatics),2024,2010|2012|2016|2020,False,,1,2020,31,True,True,True,True,True,
+ALTA,subconjunto,150147,Dee Vargas,138214,Mary Dee Vargas,Mary Dee Vargas Ley,True,CHI,Judo,2024,2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,subconjunto,150153,Vito Dell,140706,Vito Dell'Aquila,Vito Dell'Aquila,True,ITA,Taekwondo,2024,2020,False,,1,2020,24,True,True,True,True,True,
+ALTA,subconjunto,150179,le Eugenie,122857,Eugénie Le Sommer,Eugénie Anne Claudine Le Sommer,True,FRA,Football (Football),2024,2012|2016,False,,1,2016,35,True,True,False,True,False,
+ALTA,subconjunto,150329,Nadine Szollosi-schatzl,140135,Nadine Schatzl,Nadine Schatzl,True,HUN,Handball,2024,2020,False,,1,2020,31,True,True,False,True,False,
+ALTA,subconjunto,150332,Okon George,128678,Patience Okon George,Patience Okon George,True,NGR,Athletics,2024,2016|2020,False,,1,2020,33,True,True,True,True,True,george
+ALTA,subconjunto,150361,Olga Safronova,124200,Olga Bludova-Safronova,Olga Yevgenyevna Bludova-Safronova,True,KAZ,Athletics,2024,2012|2016|2020,False,,1,2020,33,True,True,True,True,True,olga
+ALTA,subconjunto,150384,Maria Basterra,139101,José María Basterra,José María Basterra Ochoa,True,ESP,Hockey,2024,2020,False,,1,2020,27,True,True,False,True,False,jose|maria
+ALTA,subconjunto,150400,van Lucas,138173,Lucas Van Berkel,Lucas Joshua Van Berkel,True,CAN,Volleyball (Volleyball),2024,2020,False,,1,2020,33,True,True,False,True,False,
+ALTA,subconjunto,150463,Ana Rendon,110273,Ana María Rendón,Ana María Rendón Martínez,True,COL,Archery,2024,2008|2012|2016,False,,1,2016,38,True,True,True,True,True,maria
+ALTA,subconjunto,150469,Luz Andia,142257,Mary Luz Andia,Mary Luz Andia Arotaipe,True,PER,Athletics,2024,2020,False,,1,2020,24,True,True,True,True,True,
+ALTA,subconjunto,150525,Thuzar Thet,141843,Thet Htar Thuzar,Thet Htar Thuzar,True,MYA,Badminton,2024,2020,False,,1,2020,25,True,True,True,True,True,
+ALTA,subconjunto,150532,Muhammad Zohri,140211,Lalu Muhammad Zohri,Lalu Muhammad Zohri,True,INA,Athletics,2024,2020,False,,1,2020,24,True,True,True,True,True,
+ALTA,subconjunto,150589,Paulina Vega,106395,María Paulina Vega,María Paulina Vega Magaña,True,CHI,Table Tennis,2024,2004|2020,False,,1,2020,40,True,True,True,True,True,maria
+ALTA,subconjunto,150678,Genevieve Gregson,124786,Genevieve LaCaze-Gregson,Genevieve LaCaze-Gregson,True,AUS,Athletics,2024,2012|2016|2020,False,,1,2020,35,True,True,True,False,False,
+ALTA,subconjunto,150683,Kelsey-lee Barber,126583,Kelsey-Lee Roberts-Barber,Kelsey-Lee Roberts-Barber,True,AUS,Athletics,2024,2016|2020,False,,1,2020,33,True,True,True,True,True,lee
+ALTA,orden_invertido,150690,McDONALD Morgan,137372,Morgan McDonald,Morgan McDonald,True,AUS,Athletics,2024,2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,orden_invertido,150697,McSWEYN Stewart,137375,Stewart McSweyn,Stewart McSweyn,True,AUS,Athletics,2024,2020,False,,1,2020,29,True,True,True,True,True,
+ALTA,subconjunto,150728,de Moira,123381,Moira De Villiers,Moira De Villiers,True,NZL,Judo,2024,2012,False,,1,2012,34,True,True,True,True,True,
+ALTA,subconjunto,150758,Alyce Wood,126605,Alyce Burnett-Wood,Alyce Burnett-Wood,True,AUS,Canoe Sprint (Canoeing),2024,2016|2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,subconjunto,150762,van Jean,137391,Jean van der Westhuyzen,Jean van der Westhuyzen,True,AUS,Canoe Sprint (Canoeing),2024,2020,False,,17,2020,26,True,True,True,True,True,jean
+ALTA,subconjunto,150829,van Emily,126622,Emily Van Egmond,Emily Louise Van Egmond,True,AUS,Football (Football),2024,2016|2020,False,,1,2020,31,True,True,False,True,False,
+ALTA,subconjunto,150848,Eko Irawan,114977,Eko Yuli Irawan,Eko Yuli Irawan,True,INA,Weightlifting,2024,2008|2012|2016|2020,False,,1,2020,35,True,True,True,True,True,
+ALTA,subconjunto,150886,Karem Ben,133188,Karem Ben Hnia,Karem Ben Hnia,True,TUN,Weightlifting,2024,2010|2016|2020,False,,1,2020,30,True,True,True,True,True,ben
+ALTA,subconjunto,150944,Candice Lill,121909,Candice Neethling-Lill,Candice Neethling-Lill,True,RSA,Cycling Mountain Bike (Cycling),2024,2012|2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,subconjunto,150946,Ashleigh Moolman,120339,Ashleigh Moolman-Pasio,Ashleigh Moolman-Pasio,True,RSA,Cycling Road (Cycling),2024,2012|2016|2020,False,,1,2020,39,True,True,True,True,True,
+ALTA,subconjunto,151059,Katie Bowen,128722,Katie Bowen-Duncan,"Kate Elizabeth ""Katie"" Bowen-Duncan",True,NZL,Football (Football),2024,2012|2016|2020,False,,1,2020,30,True,True,False,True,False,
+ALTA,orden_invertido,151082,Yufei Zhang,127244,Zhang Yufei,Zhang Yufei,True,CHN,Swimming (Aquatics),2024,2014|2016|2020,False,,1,2020,26,True,True,True,True,True,zhang
+ALTA,orden_invertido,151084,Haiyang Qin,138478,Qin Haiyang,Qin Haiyang,True,CHN,Swimming (Aquatics),2024,2020,False,,1,2020,25,True,True,True,True,True,
+ALTA,orden_invertido,151085,Jiayu Xu,120439,Xu Jiayu,Xu Jiayu,True,CHN,Swimming (Aquatics),2024,2012|2016|2020,False,,1,2020,29,True,True,True,True,True,
+ALTA,orden_invertido,151090,Xinjie Ji,138477,Ji Xinjie,Ji Xinjie,True,CHN,Swimming (Aquatics),2024,2020,False,,1,2020,27,True,True,True,True,True,
+ALTA,orden_invertido,151095,Xueer Wang,127238,Wang Xueer,Wang Xueer,True,CHN,Swimming (Aquatics),2024,2016,False,,1,2016,26,True,True,True,True,True,wang
+ALTA,orden_invertido,151098,Yiting Yu,138378,Yu Yiting,Yu Yiting,True,CHN,Swimming (Aquatics),2024,2020,False,,1,2020,19,True,True,True,True,True,yu
+ALTA,orden_invertido,151100,Bingjie Li,138372,Li Bingjie,Li Bingjie,True,CHN,Swimming (Aquatics),2024,2020,False,,1,2020,22,True,True,True,True,True,li
+ALTA,orden_invertido,151102,Shun Wang,120437,Wang Shun,Wang Shun,True,CHN,Swimming (Aquatics),2024,2012|2016|2020,False,,1,2020,30,True,True,True,True,True,wang
+ALTA,orden_invertido,151103,Qianting Tang,138374,Tang Qianting,Tang Qianting,True,CHN,Swimming (Aquatics),2024,2020,False,,1,2020,20,True,True,True,True,True,
+ALTA,orden_invertido,151106,Qingfeng Wu,138376,Wu Qingfeng,Wu Qingfeng,True,CHN,Swimming (Aquatics),2024,2020,False,,1,2020,21,True,True,True,True,True,
+ALTA,orden_invertido,151110,Yaxin Liu,127241,Liu Yaxin,Liu Yaxin,True,CHN,Swimming (Aquatics),2024,2016|2020,False,,1,2020,25,True,True,True,True,True,liu
+ALTA,orden_invertido,151111,Muhan Tang,138373,Tang Muhan,Tang Muhan,True,CHN,Swimming (Aquatics),2024,2020,False,,1,2020,21,True,True,True,True,True,
+ALTA,orden_invertido,151112,Yujie Cheng,138371,Cheng Yujie,Cheng Yujie,True,CHN,Swimming (Aquatics),2024,2020,False,,1,2020,19,True,True,True,True,True,
+ALTA,orden_invertido,151144,McINTYRE Annabelle,137291,Annabelle McIntyre,Annabelle McIntyre,True,AUS,Rowing,2024,2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,orden_invertido,151216,McEVOY Cameron,123940,Cameron McEvoy,Cameron James McEvoy,True,AUS,Swimming (Aquatics),2024,2012|2016|2020,False,,1,2020,30,True,True,True,True,True,
+ALTA,orden_invertido,151219,McKEON Emma,126684,Emma McKeon,Emma Jennifer McKeon,True,AUS,Swimming (Aquatics),2024,2010|2016|2020,False,,1,2020,30,True,True,True,True,True,
+ALTA,subconjunto,151238,Katinka Battai,144036,Sugár Katinka Battai,Sugár Katinka Battai,True,HUN,Fencing,2024,2020,False,,1,2020,21,True,True,True,True,True,
+ALTA,subconjunto,151314,Julio Enciso,102119,Julio César Enciso,Julio César Enciso Ferreira,True,PAR,Football (Football),2024,2004,False,,1,2004,50,False,True,False,True,False,
+ALTA,particulas,151315,Khouloud Hlimi,143245,Khouloud Al-Hlimi,Khouloud Al-Hlimi (-Moulahi),True,TUN,Boxing,2024,2020,False,,1,2020,34,True,True,True,True,True,
+ALTA,subconjunto,151339,Lina Muze-sirma,121682,Līna Mūze,Līna Mūze,True,LAT,Athletics,2024,2012|2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,subconjunto,151347,Maria Gutierrez,138990,Jennifer María Gutiérrez,Jennifer María Gutiérrez Bermejo,True,ESP,Handball,2024,2020,False,,1,2020,29,True,True,False,True,False,maria
+ALTA,subconjunto,151365,Milica Novakovic,129111,Milica Starović-Novaković,Milica Starović-Novaković,True,SRB,Canoe Sprint (Canoeing),2024,2016|2020,False,,1,2020,36,True,True,True,True,True,
+ALTA,subconjunto,151402,Amy Wilson,127782,Amy Wilson-Hardy,Amy Alexandra Wilson-Hardy,True,GBR,Rugby Sevens (Rugby),2024,2016,False,,1,2016,33,True,True,False,True,False,
+ALTA,subconjunto,151437,Victoria Schutzmeier,141852,María Victoria Schutzmeier,María Victoria Schutzmeier,True,NCA,Swimming (Aquatics),2024,2020,False,,1,2020,25,True,True,True,True,True,maria
+ALTA,orden_invertido,151466,McNAY Stu,116470,Stu McNay,"Stuart ""Stu"" McNay",True,USA,Sailing,2024,2008|2012|2016|2020,False,,1,2020,43,True,True,True,True,True,
+ALTA,subconjunto,151504,Silina Pha,141531,Silina Pha Aphay,Silina Pha Aphay,True,LAO,Athletics,2024,2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,subconjunto,151514,Marie-josee Ta,127287,Marie-Josée Ta Lou,Gonezie Marie-Josée Dominique Ta Lou,True,CIV,Athletics,2024,2016|2020,False,,1,2020,36,True,True,True,True,True,marie
+ALTA,subconjunto,151520,Marcela Cunha,114687,Ana Marcela Cunha,Ana Marcela de Jesus Soares da Cunha,True,BRA,Marathon Swimming (Aquatics),2024,2008|2016|2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,subconjunto,151534,Carolina Azevedo,137742,Ana Carolina Azevedo,Ana Carolina de Jesus Azevedo,True,BRA,Athletics,2024,2020,False,,1,2020,26,True,True,True,True,True,
+ALTA,subconjunto,151537,dos Alison,137815,Alison dos Santos,Alison Brendom Alves dos Santos,True,BRA,Athletics,2024,2020,False,,1,2020,24,True,True,True,True,True,
+ALTA,subconjunto,151539,da Chayenne,137743,Chayenne da Silva,Chayenne Pereira da Silva,True,BRA,Athletics,2024,2020,False,,1,2020,24,True,True,True,True,True,
+ALTA,subconjunto,151543,de Maria,65009,Maria de Souza,Maria Aparecida de Souza de Lima,True,BRA,Athletics,2024,1996,False,,14,1996,53,False,False,True,True,False,maria
+ALTA,subconjunto,151586,Paula Vergutz,126855,Ana Paula Vergutz,Ana Paula Vergutz,True,BRA,Canoe Sprint (Canoeing),2024,2016,False,,1,2016,35,True,True,True,True,True,
+ALTA,subconjunto,151593,Alejandro Barrondo,140045,José Alejandro Barrondo,José Alejandro Barrondo Xuc,True,GUA,Athletics,2024,2020,False,,1,2020,28,True,True,True,True,True,jose
+ALTA,subconjunto,151602,Yazan Al,142295,Yazan Al-Bawwab,Yazan Al-Bawwab,True,PLE,Swimming (Aquatics),2024,2020,False,,1,2020,25,True,True,True,True,True,
+ALTA,subconjunto,151635,Arthur Mariano,130179,Arthur Nory Mariano,Arthur Nory Oyakawa Mariano,True,BRA,Artistic Gymnastics (Gymnastics),2024,2010|2016|2020,False,,1,2020,31,True,True,True,True,True,
+ALTA,subconjunto,151725,Stylianos Argyropoulos,140033,Stylianos Argyropoulos Kanakakis,Stylianos Argyropoulos Kanakakis,True,GRE,Water Polo (Aquatics),2024,2020,False,,1,2020,28,True,True,False,True,False,
+ALTA,subconjunto,151784,de Miguel,139133,Miguel De Toro,Miguel De Toro Domínguez,True,ESP,Water Polo (Aquatics),2024,2020,False,,8,2020,31,True,True,False,True,False,miguel
+ALTA,orden_invertido,151810,McNULTY Brandon,143752,Brandon McNulty,Brandon Alexander McNulty,True,USA,Cycling Road (Cycling),2024,2020,False,,1,2020,26,True,True,True,True,True,
+ALTA,subconjunto,151814,Alise Willoughby,124451,Alise Post-Willoughby,Alise Rose Post-Willoughby,True,USA,Cycling BMX Racing (Cycling),2024,2012|2016|2020,False,,1,2020,33,True,True,True,True,True,
+ALTA,subconjunto,151845,Jennifer Mucino,143441,Jennifer Mucino-Fernandez,Jennifer Mucino-Fernandez,True,USA,Archery,2024,2020,False,,1,2020,22,True,True,True,True,True,
+ALTA,subconjunto,151998,Pierre Brol,121277,Jean-Pierre Brol,Jean-Pierre Brol Cárdenas,True,GUA,Shooting,2024,2012,False,,1,2012,42,True,True,True,True,True,jean|pierre
+ALTA,orden_invertido,152001,McKAY Caeli,138006,Caeli McKay,Caeli Sierra McKay,True,CAN,Diving (Aquatics),2024,2020,False,,1,2020,25,True,True,True,True,True,
+ALTA,subconjunto,152002,Waleska Soto,140042,Ana Waleska Soto,Ana Waleska Soto Abril,True,GUA,Shooting,2024,2020,False,,1,2020,34,True,True,True,True,True,
+ALTA,subconjunto,152007,Diego Botin,130941,Diego Botín Sanz de Sautuola,Diego Botín Sanz de Sautuola Le Chever,True,ESP,Sailing,2024,2016|2020,False,,1,2020,31,True,True,True,True,True,
+ALTA,subconjunto,152048,Elle St.,143453,Elle Purrier St. Pierre,"Elinor ""Elle"" Purrier St. Pierre",True,USA,Athletics,2024,2020,False,,1,2020,29,True,True,True,True,True,pierre
+ALTA,subconjunto,152051,Lynna Irby-jackson,143468,Lynna Irby,Lynna Irby (-Jackson),True,USA,Athletics,2024,2020,False,,1,2020,26,True,True,True,True,True,
+ALTA,subconjunto,152154,Paraskevi Spanaki,140009,Ariadne Paraskevi Spanaki,Ariadne Paraskevi Spanaki,True,GRE,Sailing,2024,2020,False,,1,2020,23,True,True,True,True,True,
+ALTA,subconjunto,152174,Chun Chiu,131533,Chiu Hin Chun,Chiu Hin Chun,True,HKG,Rowing,2024,2016,False,,1,2016,30,True,True,True,True,True,
+ALTA,orden_invertido,152178,Zangjun Xu,130504,Xu Zangjun,Xu Zangjun,True,CHN,Sailing,2024,2016|2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,subconjunto,152195,Ato Plodzicki-,142877,Ato Plodzicki-Faoagali,Ato Leau Plodzicki-Faoagali,True,SAM,Boxing,2024,2020,False,,1,2020,25,True,True,True,True,True,
+ALTA,subconjunto,152201,Ting Wong,131536,Wong Chun Ting,Wong Chun Ting,True,HKG,Table Tennis,2024,2016|2020,False,,1,2020,33,True,True,True,True,True,
+ALTA,subconjunto,152202,Kem Doo,128000,Doo Hoi Kem,Doo Hoi Kem,True,HKG,Table Tennis,2024,2014|2016|2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,subconjunto,152203,Ching Lee,122488,Lee Ho Ching,Lee Ho Ching,True,HKG,Table Tennis,2024,2012|2016|2020,False,,1,2020,32,True,True,True,True,True,lee
+ALTA,subconjunto,152211,le Chad,119877,Chad le Clos,Chad Guy Bertrand le Clos,True,RSA,Swimming (Aquatics),2024,2010|2012|2016|2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,subconjunto,152268,da Carolina,137806,Ana Carolina da Silva,Ana Carolina da Silva,True,BRA,Volleyball (Volleyball),2024,2020,False,,1,2020,33,True,True,False,True,False,
+ALTA,orden_invertido,152305,McTAVISH Simon,138113,Simon McTavish,Simon Alexander Francois Bollinger McTavish,True,CAN,Canoe Sprint (Canoeing),2024,2020,False,,1,2020,28,True,True,True,True,True,simon
+ALTA,subconjunto,152316,Benjamin Azamati,139995,Benjamin Azamati-Kwaku,Benjamin Azamati-Kwaku,True,GHA,Athletics,2024,2020,False,,1,2020,26,True,True,True,True,True,
+ALTA,subconjunto,152347,Leonard Korir,133315,Leonard Essau Korir,Leonard Essau Korir,True,USA,Athletics,2024,2016,False,,1,2016,38,True,True,True,True,True,
+ALTA,orden_invertido,152352,McEWEN Shelby,143698,Shelby McEwen,Shelby McEwen,True,USA,Athletics,2024,2020,False,,1,2020,28,True,True,True,True,True,
+ALTA,subconjunto,152374,de Roos,141927,Roos de Jong,Roos de Jong,True,NED,Rowing,2024,2020,False,,2,2020,31,True,True,True,True,True,
+ALTA,subconjunto,152378,van Gert-jan,38722,Gert Jan van Woudenberg,Gert Jan van Woudenberg,True,NED,Rowing,2024,1976,False,,1,1976,73,False,False,True,True,False,jan
+ALTA,subconjunto,152385,van Simon,142002,Simon van Dorp,Simon Hendrik van Dorp,True,NED,Rowing,2024,2020,False,,4,2020,27,True,True,True,True,True,simon
+ALTA,subconjunto,152386,de Sander,142001,Sander de Graaf,Sander Josephus de Graaf,True,NED,Rowing,2024,2020,False,,2,2020,29,True,True,True,True,True,
+ALTA,subconjunto,152392,Paul Amoah,139998,Joseph Paul Amoah,Joseph Paul Amoah,True,GHA,Athletics,2024,2020,False,,1,2020,27,True,True,True,True,True,joseph|paul
+ALTA,subconjunto,152464,van Sanne,141921,Sanne van Dijke,Sanne van Dijke,True,NED,Judo,2024,2020,False,,4,2020,29,True,True,True,True,True,
+ALTA,subconjunto,152468,de Frank,132404,Frank de Wit,Frank Jacobus de Wit,True,NED,Judo,2024,2014|2016|2020,False,,1,2020,28,True,True,True,True,True,frank
+ALTA,subconjunto,152469,van Noel,132405,Noël van 't End,Noël van 't End,True,NED,Judo,2024,2016|2020,False,,1,2020,33,True,True,True,True,True,
+ALTA,orden_invertido,152492,McINTOSH Summer,138069,Summer McIntosh,Summer McIntosh,True,CAN,Swimming (Aquatics),2024,2020,False,,1,2020,18,True,True,True,True,True,
+ALTA,subconjunto,152511,la Shae,138089,Shae La Roche,Shae Chantal La Roche (Fournier-),True,CAN,Water Polo (Aquatics),2024,2020,False,,1,2020,32,True,True,False,True,False,
+ALTA,orden_invertido,152513,McKELVEY Hayley,138083,Hayley McKelvey,Hayley Ann McKelvey,True,CAN,Water Polo (Aquatics),2024,2020,False,,1,2020,28,True,True,False,True,True,
+ALTA,subconjunto,152594,van Simone,141948,Simone van de Kraats,Simone van de Kraats,True,NED,Water Polo (Aquatics),2024,2020,False,,1,2020,24,True,True,False,True,False,
+ALTA,subconjunto,152596,van Sabrina,141947,Sabrina van der Sloot,"Catharina Hendrica ""Sabrina"" van der Sloot",True,NED,Water Polo (Aquatics),2024,2020,False,,1,2020,33,True,True,False,True,False,
+ALTA,subconjunto,152602,van Ellen,119963,Ellen van Dijk,"Eleonora Maria ""Ellen"" van Dijk",True,NED,Cycling Road (Cycling),2024,2012|2016,False,,3,2016,37,True,True,True,True,True,
+ALTA,subconjunto,152612,van Dylan,141975,Dylan van Baarle,Dylan van Baarle,True,NED,Cycling Road (Cycling),2024,2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,subconjunto,152617,van Willem,132382,Jan-Willem van Schip,Jan-Willem van Schip,True,NED,Cycling Track (Cycling),2024,2016|2020,False,,13,2020,30,True,True,True,True,True,jan
+ALTA,subconjunto,152619,van Roy,141973,Roy van den Berg,Roy Reinier van den Berg,True,NED,Cycling Track (Cycling),2024,2020,False,,4,2020,36,True,True,True,True,True,
+ALTA,subconjunto,152642,Mazoon Al,128769,Mazoon Al-Alawi,Mazoon Khalfan Saleh Al-Alawi,True,OMA,Athletics,2024,2014|2016|2020,False,,1,2020,27,True,True,True,True,True,
+ALTA,subconjunto,152655,van Laura,128612,Laura van der Heijden,Laura van der Heijden,True,NED,Handball,2024,2016|2020,False,,2,2020,34,True,True,False,True,False,
+ALTA,subconjunto,152661,van Bo,141906,Bo van Wetering,Bo van Wetering,True,NED,Handball,2024,2020,False,,1,2020,25,True,True,False,True,False,
+ALTA,subconjunto,152681,van Dimeo,141968,Dimeo van der Horst,Dimeo van der Horst,True,NED,3x3 Basketball (Basketball),2024,2020,False,,1,2020,33,True,True,False,True,False,
+ALTA,subconjunto,152702,van Seve,132403,Seve van Ass,"Severiano Boris ""Seve"" van Ass",True,NED,Hockey,2024,2016|2020,False,,1,2020,32,True,True,False,True,False,
+ALTA,subconjunto,152707,van Thijs,141987,Thijs van Dam,Thijs Johannes Reinier van Dam,True,NED,Hockey,2024,2020,False,,2,2020,27,True,True,False,True,False,
+ALTA,subconjunto,152710,de Jonas,141982,Jonas de Geus,Jonas de Geus,True,NED,Hockey,2024,2020,False,,1,2020,26,True,True,False,True,False,
+ALTA,subconjunto,152727,de Xan,128624,Xan de Waard,Xan Gerdien de Waard,True,NED,Hockey,2024,2016|2020,False,,1,2020,29,True,True,False,True,False,
+ALTA,subconjunto,152739,van Diane,141859,Diane van Es,Diane van Es,True,NED,Athletics,2024,2020,False,,2,2020,25,True,True,True,True,True,
+ALTA,subconjunto,152741,van Marije,141869,Marije van Hunenstijn,Marije van Hunenstijn,True,NED,Athletics,2024,2020,False,,1,2020,29,True,True,True,True,True,
+ALTA,subconjunto,152744,van Jorinde,141866,Jorinde van Klinken,Jorinde van Klinken,True,NED,Athletics,2024,2020,False,,1,2020,24,True,True,True,True,True,
+ALTA,subconjunto,152750,Ryan Julius,142837,Ryan Cowen Julius,Ryan Cowen Julius,True,RSA,Hockey,2024,2020,False,,1,2020,29,True,True,False,True,False,
+ALTA,subconjunto,152773,de Lisanne,128581,Lisanne de Witte,Lisanne de Witte,True,NED,Athletics,2024,2016|2020,False,,2,2020,32,True,True,True,True,True,
+ALTA,subconjunto,152793,de Noortje,141933,Noortje de Brouwer,Noortje de Brouwer,True,NED,Artistic Swimming (Aquatics),2024,2020,False,,1,2020,25,True,True,True,True,True,
+ALTA,subconjunto,152794,de Bregje,141932,Bregje de Brouwer,Bregje Maria de Brouwer,True,NED,Artistic Swimming (Aquatics),2024,2020,False,,1,2020,25,True,True,True,True,True,
+ALTA,subconjunto,152835,van Maximilien,130363,Maximilien Van Haaster,Maximilien Hugo Van Haaster,True,CAN,Fencing,2024,2016|2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,subconjunto,152842,Scarlett Mew,139520,Scarlett Mew Jensen,Scarlett Bee Mew Jensen,True,GBR,Diving (Aquatics),2024,2020,False,,1,2020,23,True,True,True,True,True,
+ALTA,subconjunto,152843,van Anne,141905,Anne van Dam,Anne van Dam,True,NED,Golf,2024,2020,False,,8,2020,29,True,True,True,True,True,
+ALTA,subconjunto,152871,De Andre,130329,Andre De Grasse,Andre De Grasse,True,CAN,Athletics,2024,2016|2020,False,,8,2020,30,True,True,True,True,True,andre
+ALTA,subconjunto,152938,Jose Palacios,138825,María José Palacios,María José Palacios Espinoza,True,ECU,Boxing,2024,2020,False,,1,2020,26,True,True,True,True,True,jose|maria
+ALTA,subconjunto,153127,Rae Kim,128865,Kim Mi-Rae,Kim Mi-Rae,True,PRK,Diving (Aquatics),2024,2016,False,,4,2016,23,True,True,True,True,True,kim
+ALTA,subconjunto,153138,Gyong Choe,118525,Choe Un-Gyong,Choe Un-Gyong,True,PRK,Wrestling,2024,2012,False,,2,2012,34,True,True,True,True,True,
+ALTA,subconjunto,153182,van Wayde,132786,Wayde van Niekerk,Wayde van Niekerk,True,RSA,Athletics,2024,2016|2020,False,,1,2020,32,True,True,True,True,True,
+ALTA,subconjunto,153188,van Irvette,124578,Irvette van Blerk-van Zyl,Irvette van Blerk-van Zyl,True,RSA,Athletics,2024,2012|2016|2020,False,,1,2020,37,True,True,True,True,True,
+ALTA,subconjunto,153303,Irina-camelia Begu,119880,Irina Begu,Irina Camelia Begu,True,ROU,Tennis,2024,2012|2016,False,,1,2016,34,True,True,True,True,True,
+ALTA,orden_invertido,153354,Saisai Zheng,127254,Zheng Saisai,Zheng Saisai,True,CHN,Tennis,2024,2010|2016|2020,False,,1,2020,30,True,True,True,True,True,

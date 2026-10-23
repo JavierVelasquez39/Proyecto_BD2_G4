@@ -10,7 +10,7 @@ paginado), sin `$lookup` ni agregaciones en tiempo real.
 
 | Carpeta | Contenido |
 |---|---|
-| `00_infraestructura/` | `docker-compose.yml` (MongoDB 7, puerto 57017, volumen persistente), README, respaldos de Postgres con fecha y hora |
+| `00_infraestructura/` | `docker-compose.yml` (MongoDB 7, puerto 57017, volumen persistente), README, `fuente/` (dump de Postgres versionado) y respaldos con fecha y hora (no versionados) |
 | `01_correcciones/` | Scripts SQL idempotentes de las correcciones en Postgres (B1 medallas de Paris 2024, B2 fusion de atletas duplicados), sus CSV de datos, `CAMBIOS_VS_FASE1.md` y `LIMITACIONES_CONOCIDAS.md` |
 | `02_exportar/` | `exportar_postgres.py`: genera `data/*.jsonl` desde Postgres en streaming |
 | `03_colecciones/` | `crear_colecciones.js`: colecciones con validadores `$jsonSchema` |
@@ -32,20 +32,23 @@ python levantar_todo.py --recargar  # rehace exportacion, colecciones, carga e i
 la base, corre los pasos 3 a 7 de abajo o solo `validar.py` y los conteos. Es idempotente (se puede repetir sin efectos
 colaterales), termina con codigo 1 y un mensaje claro si falta algo (Docker apagado, librerias, PostgreSQL sin `.jsonl`) e
 imprime al final comandos de ejemplo. Bitacora con fecha y hora en `08_logs/levantar_todo_*.log`. Si PostgreSQL no responde pero
-los `.jsonl` ya existen, los reutiliza; el paso 0 (PostgreSQL) sigue siendo manual.
+los `.jsonl` ya existen, los reutiliza. Si el contenedor `olimpiadas_pg` no existe, lo crea y restaura el dump versionado
+`00_infraestructura/fuente/olimpiadas_fase3_postgres.dump` (el paso 0 queda automatizado).
+
+Desde un clon limpio basta: `pip install -r requirements.txt` y `python levantar_todo.py` (con Docker Desktop abierto).
 
 ## Orden de ejecucion
 
 Requisitos: Docker, Python 3.11 y `mongosh`. Todos los comandos se ejecutan desde la carpeta `Fase 3/` (la raiz de este README).
 
 ```
-0. Preparacion (una sola vez)
+0. Preparacion (una sola vez; levantar_todo.py lo hace solo)
      pip install -r requirements.txt
-     # PostgreSQL con la base ya corregida (archivo fuente fuente/olimpiadas_fase3_postgres.dump).
-     # Si ya existe el contenedor olimpiadas_pg con la base de la Fase 3, se omite. En Git Bash de Windows el prefijo
+     # PostgreSQL con la base ya corregida: el dump esta versionado en 00_infraestructura/fuente/. Si ya existe el
+     # contenedor olimpiadas_pg con la base de la Fase 3, se omite. En Git Bash de Windows el prefijo
      # MSYS_NO_PATHCONV=1 evita que se reescriban las rutas del contenedor.
      docker run -d --name olimpiadas_pg -e POSTGRES_PASSWORD=olimpiadas -e POSTGRES_DB=olimpiadas -p 55433:5432 postgres:16
-     docker cp fuente/olimpiadas_fase3_postgres.dump olimpiadas_pg:/tmp/olimpiadas_fase3_postgres.dump
+     docker cp 00_infraestructura/fuente/olimpiadas_fase3_postgres.dump olimpiadas_pg:/tmp/olimpiadas_fase3_postgres.dump
      docker exec olimpiadas_pg pg_restore -U postgres -d olimpiadas --no-owner /tmp/olimpiadas_fase3_postgres.dump
      # (esperar unos segundos a que Postgres acepte conexiones antes de restaurar)
      # Nota: la contrasena "olimpiadas" es una credencial de desarrollo local, no reutilizar.
@@ -65,7 +68,7 @@ Requisitos: Docker, Python 3.11 y `mongosh`. Todos los comandos se ejecutan desd
 
 Notas: `ejecutar_correccion.py` (paso 2) usa el contenedor `olimpiadas_pg` y hace un `pg_dump` previo en `00_infraestructura/backups/`.
 `06_validacion/linea_base.py --referencia fase3` reproduce la linea base de Postgres. Este README se ensayo desde cero (carpeta nueva con el zip,
-entorno virtual limpio, `docker compose down -v`, Postgres restaurado del archivo fuente): los conteos y `validar.py` dieron igual.
+entorno virtual limpio, `docker compose down -v`, Postgres restaurado del dump versionado): los conteos y `validar.py` dieron igual.
 Para una demostracion, ver `07_consultas/GUION_CALIFICACION.md`.
 
 Cada paso deja su bitacora en `08_logs/`. El paso 3 genera unos 380 MB de `.jsonl` (no se versionan en git; van en el paquete de entrega).

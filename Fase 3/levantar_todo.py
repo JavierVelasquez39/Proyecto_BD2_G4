@@ -8,7 +8,9 @@ Pasos:
   3. Si la base esta vacia o incompleta, o se pasa --recargar: exportar_postgres.py, crear_colecciones.js, cargar.py,
      crear_indices.js y validar.py. Si ya hay datos: solo validar.py y los conteos.
   4. Imprime comandos de ejemplo.
-El export necesita PostgreSQL (olimpiadas_pg, puerto 55433). Si no responde pero los .jsonl ya existen, se reutilizan.
+El export necesita PostgreSQL (olimpiadas_pg, puerto 55433): si el contenedor no existe se crea y se restaura desde
+00_infraestructura/fuente/olimpiadas_fase3_postgres.dump; si esta detenido se arranca. Si no se logra pero los .jsonl
+ya existen, se reutilizan.
 Si falta algo termina con codigo 1 y un mensaje claro. Bitacora con fecha y hora en 08_logs/levantar_todo_*.log.
 """
 import argparse
@@ -30,6 +32,9 @@ ARCHIVOS_JSONL = [f"{c}.jsonl" for c in COLECCIONES]
 URI = "mongodb://localhost:57017"
 DB = "olimpiadas_mongo"
 PG_PUERTO = 55433
+PG_CONTENEDOR = "olimpiadas_pg"
+PG_IMAGEN = "postgres:16"
+PG_DUMP = RAIZ / "00_infraestructura" / "fuente" / "olimpiadas_fase3_postgres.dump"
 ESPERA_MONGO_S = 90
 LIBRERIAS = [("pymongo", "pymongo"), ("psycopg2", "psycopg2-binary"), ("text_unidecode", "text-unidecode")]
 
@@ -126,6 +131,48 @@ def postgres_disponible():
         return False
 
 
+def docker_salida(*args):
+    r = subprocess.run(["docker", *args], capture_output=True, text=True, env=ENV)
+    return r.returncode, (r.stdout + r.stderr).strip()
+
+
+def esperar_postgres():
+    for _ in range(60):
+        if docker_salida("exec", PG_CONTENEDOR, "pg_isready", "-U", "postgres", "-d", "olimpiadas")[0] == 0:
+            return
+        time.sleep(2)
+    raise Falla(f"PostgreSQL no acepto conexiones en 120 s. Revisar: docker logs {PG_CONTENEDOR}")
+
+
+def asegurar_postgres():
+    """Deja olimpiadas_pg corriendo: lo arranca si esta detenido; si no existe, lo crea y restaura el dump versionado."""
+    codigo, estado = docker_salida("inspect", "-f", "{{.State.Running}}", PG_CONTENEDOR)
+    if codigo == 0 and estado == "true":
+        if not postgres_disponible():
+            raise Falla(f"{PG_CONTENEDOR} corre pero el puerto {PG_PUERTO} no responde (otro mapeo de puertos?)")
+        p(f"  PostgreSQL: {PG_CONTENEDOR} ya corre")
+        return
+    if codigo == 0:
+        p(f"  PostgreSQL: {PG_CONTENEDOR} esta detenido; se arranca")
+        correr(["docker", "start", PG_CONTENEDOR], "docker start " + PG_CONTENEDOR)
+        esperar_postgres()
+        return
+    if not PG_DUMP.exists():
+        raise Falla(f"no existe el contenedor {PG_CONTENEDOR} ni el dump {PG_DUMP.relative_to(RAIZ)}")
+    if postgres_disponible():
+        raise Falla(f"el puerto {PG_PUERTO} esta ocupado por otro servicio; liberarlo para crear {PG_CONTENEDOR}")
+    p(f"  PostgreSQL: se crea {PG_CONTENEDOR} y se restaura el dump versionado")
+    # Credencial de desarrollo local, no reutilizar.
+    correr(["docker", "run", "-d", "--name", PG_CONTENEDOR, "-e", "POSTGRES_PASSWORD=olimpiadas",
+            "-e", "POSTGRES_DB=olimpiadas", "-p", f"{PG_PUERTO}:5432", PG_IMAGEN], "docker run " + PG_CONTENEDOR)
+    esperar_postgres()
+    time.sleep(3)  # la imagen reinicia el servidor una vez tras la inicializacion
+    esperar_postgres()
+    correr(["docker", "cp", str(PG_DUMP), f"{PG_CONTENEDOR}:/tmp/fase3.dump"], "docker cp del dump")
+    correr(["docker", "exec", PG_CONTENEDOR, "pg_restore", "-U", "postgres", "-d", "olimpiadas", "--no-owner",
+            "/tmp/fase3.dump"], "pg_restore del dump")
+
+
 def mongosh(archivo):
     ruta = RAIZ / archivo
     if not ruta.exists():
@@ -141,15 +188,14 @@ def mongosh(archivo):
 def cargar_completo():
     paso(3, "Base vacia o incompleta (o --recargar): exportar, colecciones, carga, indices y validacion")
     p("  3a. Exportar de PostgreSQL a .jsonl")
-    if postgres_disponible():
+    try:
+        asegurar_postgres()
         correr([sys.executable, "02_exportar/exportar_postgres.py"], "exportar_postgres.py")
-    else:
+    except Falla as e:
         faltan = [a for a in ARCHIVOS_JSONL if not (JSONL / a).exists()]
         if faltan:
-            raise Falla(f"PostgreSQL no responde en el puerto {PG_PUERTO} y faltan {', '.join(faltan)} en "
-                        f"02_exportar/data/. Levantar olimpiadas_pg y restaurar fuente/olimpiadas_fase3_postgres.dump "
-                        f"(README, paso 0)")
-        p(f"  PostgreSQL no responde en el puerto {PG_PUERTO}: se reutilizan los .jsonl existentes en 02_exportar/data/")
+            raise Falla(f"{e}. Ademas faltan {', '.join(faltan)} en 02_exportar/data/")
+        p(f"  AVISO: {e}. Se reutilizan los .jsonl existentes en 02_exportar/data/")
     p("  3b. Crear colecciones")
     mongosh("03_colecciones/crear_colecciones.js")
     p("  3c. Cargar")

@@ -1,5 +1,6 @@
 """Fase E2: arma el paquete de entrega entrega_fase3_<fecha>.zip (scripts, .jsonl y respaldo de Postgres como archivo fuente).
 
+Incluye levantar_todo.py (arranque completo con un comando) y falla si falta.
 Exporta un pg_dump nuevo (olimpiadas_fase3_postgres.dump) a entrega/fuente/ y comprime la carpeta Fase 3
 sin respaldos intermedios ni la propia carpeta entrega.
 """
@@ -11,6 +12,10 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent
 ENV = {**os.environ, "MSYS_NO_PATHCONV": "1"}
+OBLIGATORIOS = ["levantar_todo.py", "README.md", "requirements.txt", "00_infraestructura/docker-compose.yml"]
+faltan = [f for f in OBLIGATORIOS if not (RAIZ / f).exists()]
+if faltan:
+    raise SystemExit(f"Faltan archivos obligatorios del paquete: {', '.join(faltan)}")
 destino = RAIZ / "entrega" / "fuente"
 destino.mkdir(parents=True, exist_ok=True)
 dump = destino / "olimpiadas_fase3_postgres.dump"

@@ -18,7 +18,21 @@ paginado), sin `$lookup` ni agregaciones en tiempo real.
 | `05_indices/` | `crear_indices.js`: indices, creados despues de la carga |
 | `06_validacion/` | `validar.py`, `comparar_postgres_mongo.py` y su reporte, linea base (`linea_base_fase1.json`, `linea_base_fase3.json`), auditoria de duplicados |
 | `07_consultas/` | `atleta.py`, `pais.py`, `evidencia_consultas.py` y `GUION_CALIFICACION.md` |
+| `levantar_todo.py` | Arranque completo en un comando (ver "Arranque rapido") |
 | `08_logs/` | Bitacora de cada ejecucion con fecha y hora de inicio y fin, conteos y duracion; evidencia de `--explain` |
+
+## Arranque rapido
+
+```
+python levantar_todo.py             # levanta Docker/MongoDB; carga si la base esta vacia, si no solo valida
+python levantar_todo.py --recargar  # rehace exportacion, colecciones, carga e indices aunque ya haya datos
+```
+
+`levantar_todo.py` verifica que Docker corra, ejecuta `docker compose up -d`, espera el ping de MongoDB y, segun el estado de
+la base, corre los pasos 3 a 7 de abajo o solo `validar.py` y los conteos. Es idempotente (se puede repetir sin efectos
+colaterales), termina con codigo 1 y un mensaje claro si falta algo (Docker apagado, librerias, PostgreSQL sin `.jsonl`) e
+imprime al final comandos de ejemplo. Bitacora con fecha y hora en `08_logs/levantar_todo_*.log`. Si PostgreSQL no responde pero
+los `.jsonl` ya existen, los reutiliza; el paso 0 (PostgreSQL) sigue siendo manual.
 
 ## Orden de ejecucion
 

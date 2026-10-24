@@ -128,6 +128,11 @@ Ver `01_correcciones/CAMBIOS_VS_FASE1.md` (antes y despues de cada correccion) y
 
 ## Fuentes de datos y licencias
 
+**Archivos fuente de esta fase:** la carga a MongoDB parte de los `.jsonl` de `02_exportar/data/` (incluidos en el zip de
+entrega; en git se regeneran con `exportar_postgres.py`) y estos salen del dump de PostgreSQL `00_infraestructura/fuente/olimpiadas_fase3_postgres.dump`.
+Los datasets originales (Olympedia, Kaggle) y el ETL que los llevo a PostgreSQL son los de la Fase 1: estan en `Fase 1/data_raw/` y
+`Fase 1/etl/` del paquete de la Fase 1 y no se duplican aqui.
+
 Heredadas de la Fase 1 (ver su informe): Olympedia via KeithGalli/Olympics-Dataset (MIT), Kaggle "120 years of Olympic history"
 (CC0) y Kaggle "Summer Olympics medals 1896-2024" (CC BY-NC-SA 4.0; el entregable hereda esa licencia y no es de uso comercial).
 Fuente manual declarada en esta fase: resultados oficiales de Paris 2024 segun Wikipedia, consultados el 2026-10-19, usados en

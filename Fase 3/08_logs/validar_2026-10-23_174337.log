@@ -1,0 +1,26 @@
+C5 validar - inicio 2026-10-23 17:43:37 | base olimpiadas_mongo
+  OK   atletas = 153,049 (linea base Fase 3: 153,049)
+  OK   participaciones = 319,961 (linea base Fase 3: 319,961)
+  OK   resultados = 320,476 (linea base Fase 3: 320,476)
+  OK   atleta: Fase 1 153,443 -394 (B1/B2) = 153,049; MongoDB 153,049
+  OK   participacion: Fase 1 319,950 +11 (B1/B2) = 319,961; MongoDB 319,961
+  OK   resultado: Fase 1 320,465 +11 (B1/B2) = 320,476; MongoDB 320,476
+  OK   medallero por atleta Germany (sin YOG) = {'Oro': 1357, 'Plata': 1303, 'Bronce': 1331} (esperado {'Oro': 1357, 'Plata': 1303, 'Bronce': 1331})
+  OK   medallero por atleta Russian Federation (sin YOG) = {'Oro': 1575, 'Plata': 1135, 'Bronce': 1158} (esperado {'Oro': 1575, 'Plata': 1135, 'Bronce': 1158})
+  OK   sedes United States = 8 (esperado 8)
+  OK   sedes France = 6 (esperado 6)
+  OK   sedes Guatemala = 0 (esperado 0)
+  OK   participaciones embebidas 319,961 = coleccion plana 319,961
+  OK   resultados embebidos 320,476 = coleccion plana 320,476
+  OK   suma de n_participaciones 319,961 = 319,961
+  OK   conteo de participaciones por atleta coincide para los 153,049 atletas
+  OK   n_participaciones = tamano del arreglo en todos los atletas (0 diferencias)
+  OK   medallero y medallero_por_evento coinciden con la agregacion en 213 paises/entidades
+  OK   todo NOC con medallas pertenece a algun pais o entidad (sin documento: [])
+  OK   medallas por evento Paris 2024 = {'Oro': 329, 'Plata': 330, 'Bronce': 385} (oficial {'Oro': 329, 'Plata': 330, 'Bronce': 385})
+  OK   alias cargados = 394 (fusiones registradas: 394)
+  OK   'shiyu lu' se resuelve a Lu Shiyu (esperado Lu Shiyu)
+  OK   'van sharon' se resuelve a Sharon van Rouwendaal (esperado Sharon van Rouwendaal)
+  OK   'kate foo' se resuelve a Kate Foo Kune (esperado Kate Foo Kune)
+  OK   'shun wang' se resuelve a Wang Shun (esperado Wang Shun)
+Resultado: OK | fin 2026-10-23 17:43:48 | duracion 11.0 s

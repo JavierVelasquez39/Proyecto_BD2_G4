@@ -1,0 +1,66 @@
+levantar_todo - inicio 2026-10-23 17:43:34 | recargar=False
+
+[1] Verificando requisitos y levantando MongoDB
+  Docker: corriendo
+  Librerias de Python: ok
+  $ docker compose -f C:\Users\javie\OneDrive\Desktop\Segundo Semestre 2026\BASES2\Proyecto\Fase 3\00_infraestructura\docker-compose.yml up -d
+     Container olimpiadas_mongo Running
+
+[2] Esperando a que MongoDB responda en mongodb://localhost:57017
+  ping ok (0 s)
+  Conteos actuales:
+  atletas            153,049
+  participaciones    319,961
+  paises                 213
+  ediciones               61
+  deportes                95
+
+[3] La base ya tiene datos: solo se valida
+  Validar
+  $ C:\Users\javie\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe 06_validacion/validar.py
+    1. Conteos contra la linea base
+      OK   atletas = 153,049 (linea base Fase 3: 153,049)
+      OK   participaciones = 319,961 (linea base Fase 3: 319,961)
+      OK   resultados = 320,476 (linea base Fase 3: 320,476)
+      OK   atleta: Fase 1 153,443 -394 (B1/B2) = 153,049; MongoDB 153,049
+      OK   participacion: Fase 1 319,950 +11 (B1/B2) = 319,961; MongoDB 319,961
+      OK   resultado: Fase 1 320,465 +11 (B1/B2) = 320,476; MongoDB 320,476
+      OK   medallero por atleta Germany (sin YOG) = {'Oro': 1357, 'Plata': 1303, 'Bronce': 1331} (esperado {'Oro': 1357, 'Plata': 1303, 'Bronce': 1331})
+      OK   medallero por atleta Russian Federation (sin YOG) = {'Oro': 1575, 'Plata': 1135, 'Bronce': 1158} (esperado {'Oro': 1575, 'Plata': 1135, 'Bronce': 1158})
+    4. Sedes
+      OK   sedes United States = 8 (esperado 8)
+      OK   sedes France = 6 (esperado 6)
+      OK   sedes Guatemala = 0 (esperado 0)
+    2. atletas.participaciones contra la coleccion participaciones
+      OK   participaciones embebidas 319,961 = coleccion plana 319,961
+      OK   resultados embebidos 320,476 = coleccion plana 320,476
+      OK   suma de n_participaciones 319,961 = 319,961
+      OK   conteo de participaciones por atleta coincide para los 153,049 atletas
+      OK   n_participaciones = tamano del arreglo en todos los atletas (0 diferencias)
+    3. paises.medallero contra agregacion sobre participaciones (todos los paises y entidades)
+      OK   medallero y medallero_por_evento coinciden con la agregacion en 213 paises/entidades
+      OK   todo NOC con medallas pertenece a algun pais o entidad (sin documento: [])
+    5. Paris 2024
+      OK   medallas por evento Paris 2024 = {'Oro': 329, 'Plata': 330, 'Bronce': 385} (oficial {'Oro': 329, 'Plata': 330, 'Bronce': 385})
+    6. Alias de atletas fusionados
+      OK   alias cargados = 394 (fusiones registradas: 394)
+      OK   'shiyu lu' se resuelve a Lu Shiyu (esperado Lu Shiyu)
+      OK   'van sharon' se resuelve a Sharon van Rouwendaal (esperado Sharon van Rouwendaal)
+      OK   'kate foo' se resuelve a Kate Foo Kune (esperado Kate Foo Kune)
+      OK   'shun wang' se resuelve a Wang Shun (esperado Wang Shun)
+    Resultado: OK | fin 2026-10-23 17:43:48 | duracion 11.0 s
+
+  Conteos finales:
+  atletas            153,049
+  participaciones    319,961
+  paises                 213
+  ediciones               61
+  deportes                95
+
+[4] Comandos de ejemplo (desde Fase 3/)
+  python 07_consultas/atleta.py "Summer McIntosh"
+  python 07_consultas/pais.py "Germany"
+  mongosh "mongodb://localhost:57017/olimpiadas_mongo" --eval "db.atletas.findOne({nombre_key: 'usain bolt'})"
+
+LISTO en 14 s
+fin 2026-10-23 17:43:48 | resultado OK

@@ -1,0 +1,166 @@
+levantar_todo - inicio 2026-10-23 20:57:05 | recargar=True
+
+[1] Verificando requisitos y levantando MongoDB
+  Docker: corriendo
+  Librerias de Python: ok
+  $ docker compose -f /home/wade/U/0775_BASES2/0775_Lab/Proyecto_BD2_G4/Fase 3/00_infraestructura/docker-compose.yml up -d
+     Container olimpiadas_mongo Running
+
+[2] Esperando a que MongoDB responda en mongodb://localhost:57017
+  ping ok (0 s)
+  Conteos actuales:
+  atletas            153,049
+  participaciones    319,961
+  paises                 213
+  ediciones               61
+  deportes                95
+
+[3] Base vacia o incompleta (o --recargar): exportar, colecciones, carga, indices y validacion
+  3a. Exportar de PostgreSQL a .jsonl
+  PostgreSQL: olimpiadas_pg ya corre
+  $ /home/wade/U/0775_BASES2/0775_Lab/Proyecto_BD2_G4/Fase 3/.venv/bin/python 02_exportar/exportar_postgres.py
+    Tablas chicas: 204 paises, 236 NOC, 61 ediciones, 95 deportes, 153,049 atletas, 394 alias de fusion
+    NOC atribuidos a un pais: 227; sin pais (entidades): ['AIN', 'COK', 'COR', 'EOR', 'IOA', 'ROC', 'ROT', 'TPE', 'UNK']
+      50,000 participaciones...
+      100,000 participaciones...
+      150,000 participaciones...
+      200,000 participaciones...
+      250,000 participaciones...
+      300,000 participaciones...
+    Participaciones: 319,961 | resultados: 320,476 | atletas: 153,049 (sin participaciones: 886)
+    Paises/entidades: 213
+    Fin: 2026-10-23 20:57:22 | duracion 16.9 s
+      atletas.jsonl: 224.1 MB
+      participaciones.jsonl: 153.0 MB
+      paises.jsonl: 1.8 MB
+      ediciones.jsonl: 0.0 MB
+      deportes.jsonl: 0.0 MB
+  3b. Crear colecciones
+  mongosh local no encontrado; se usa el del contenedor olimpiadas_mongo
+  $ docker exec -i olimpiadas_mongo mongosh olimpiadas_mongo --quiet
+    olimpiadas_mongo>
+    olimpiadas_mongo>
+    olimpiadas_mongo>
+    olimpiadas_mongo>
+    olimpiadas_mongo>
+    olimpiadas_mongo>
+    olimpiadas_mongo>
+    olimpiadas_mongo>
+    olimpiadas_mongo>
+    olimpiadas_mongo> | | |
+    olimpiadas_mongo> | | |
+    olimpiadas_mongo> | | |
+    olimpiadas_mongo> | | | | | | | | |
+    olimpiadas_mongo>
+    olimpiadas_mongo>
+    olimpiadas_mongo> | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+    olimpiadas_mongo>
+    olimpiadas_mongo> | | | | coleccion creada: atletas
+    coleccion creada: participaciones
+    coleccion creada: paises
+    coleccion creada: ediciones
+    coleccion creada: deportes
+    
+    olimpiadas_mongo> Fin: 2026-10-24T02:57:23.646Z (inicio 2026-10-24T02:57:23.064Z)
+    
+    olimpiadas_mongo>
+  3c. Cargar
+  $ /home/wade/U/0775_BASES2/0775_Lab/Proyecto_BD2_G4/Fase 3/.venv/bin/python 04_carga/cargar.py
+    deportes: 95 documentos cargados, 0 rechazados por el validador, 0.0 s
+    ediciones: 61 documentos cargados, 0 rechazados por el validador, 0.0 s
+    paises: 213 documentos cargados, 0 rechazados por el validador, 0.0 s
+    participaciones: 319,961 documentos cargados, 0 rechazados por el validador, 6.0 s
+    atletas: 153,049 documentos cargados, 0 rechazados por el validador, 8.7 s
+    Fin: 2026-10-23 20:57:38 | duracion 14.8 s | rechazados: 0
+  3d. Crear indices
+  mongosh local no encontrado; se usa el del contenedor olimpiadas_mongo
+  $ docker exec -i olimpiadas_mongo mongosh olimpiadas_mongo --quiet
+    olimpiadas_mongo>
+    olimpiadas_mongo>
+    olimpiadas_mongo>
+    olimpiadas_mongo>
+    olimpiadas_mongo>
+    olimpiadas_mongo>
+    olimpiadas_mongo>
+    olimpiadas_mongo>
+    olimpiadas_mongo>
+    olimpiadas_mongo> atletas: nombre_key_1
+    
+    olimpiadas_mongo> atletas: tokens_1
+    
+    olimpiadas_mongo> atletas: participaciones.anio_1_participaciones.deporte_1
+    
+    olimpiadas_mongo> atletas: claves_1
+    
+    olimpiadas_mongo>
+    olimpiadas_mongo> participaciones: atleta_id_1_anio_1
+    
+    olimpiadas_mongo> participaciones: pais_id_1_es_yog_1_anio_1_deporte_1
+    
+    olimpiadas_mongo> participaciones: pais_id_1_medalla_1
+    
+    olimpiadas_mongo> participaciones: noc_1_anio_1
+    
+    olimpiadas_mongo>
+    olimpiadas_mongo> paises: nombre_key_1
+    
+    olimpiadas_mongo> paises: nocs.codigo_1
+    
+    olimpiadas_mongo> paises: tokens_1
+    
+    olimpiadas_mongo>
+    olimpiadas_mongo> deportes: nombre_key_1
+    
+    olimpiadas_mongo> ediciones: anio_1_tipo_1
+    
+    olimpiadas_mongo> Fin: 2026-10-24T02:57:42.600Z (inicio 2026-10-24T02:57:39.214Z)
+    
+    olimpiadas_mongo>
+  Validar
+  $ /home/wade/U/0775_BASES2/0775_Lab/Proyecto_BD2_G4/Fase 3/.venv/bin/python 06_validacion/validar.py
+    1. Conteos contra la linea base
+      OK   atletas = 153,049 (linea base Fase 3: 153,049)
+      OK   participaciones = 319,961 (linea base Fase 3: 319,961)
+      OK   resultados = 320,476 (linea base Fase 3: 320,476)
+      OK   atleta: Fase 1 153,443 -394 (B1/B2) = 153,049; MongoDB 153,049
+      OK   participacion: Fase 1 319,950 +11 (B1/B2) = 319,961; MongoDB 319,961
+      OK   resultado: Fase 1 320,465 +11 (B1/B2) = 320,476; MongoDB 320,476
+      OK   medallero por atleta Germany (sin YOG) = {'Oro': 1357, 'Plata': 1303, 'Bronce': 1331} (esperado {'Oro': 1357, 'Plata': 1303, 'Bronce': 1331})
+      OK   medallero por atleta Russian Federation (sin YOG) = {'Oro': 1575, 'Plata': 1135, 'Bronce': 1158} (esperado {'Oro': 1575, 'Plata': 1135, 'Bronce': 1158})
+    4. Sedes
+      OK   sedes United States = 8 (esperado 8)
+      OK   sedes France = 6 (esperado 6)
+      OK   sedes Guatemala = 0 (esperado 0)
+    2. atletas.participaciones contra la coleccion participaciones
+      OK   participaciones embebidas 319,961 = coleccion plana 319,961
+      OK   resultados embebidos 320,476 = coleccion plana 320,476
+      OK   suma de n_participaciones 319,961 = 319,961
+      OK   conteo de participaciones por atleta coincide para los 153,049 atletas
+      OK   n_participaciones = tamano del arreglo en todos los atletas (0 diferencias)
+    3. paises.medallero contra agregacion sobre participaciones (todos los paises y entidades)
+      OK   medallero y medallero_por_evento coinciden con la agregacion en 213 paises/entidades
+      OK   todo NOC con medallas pertenece a algun pais o entidad (sin documento: [])
+    5. Paris 2024
+      OK   medallas por evento Paris 2024 = {'Oro': 329, 'Plata': 330, 'Bronce': 385} (oficial {'Oro': 329, 'Plata': 330, 'Bronce': 385})
+    6. Alias de atletas fusionados
+      OK   alias cargados = 394 (fusiones registradas: 394)
+      OK   'shiyu lu' se resuelve a Lu Shiyu (esperado Lu Shiyu)
+      OK   'van sharon' se resuelve a Sharon van Rouwendaal (esperado Sharon van Rouwendaal)
+      OK   'kate foo' se resuelve a Kate Foo Kune (esperado Kate Foo Kune)
+      OK   'shun wang' se resuelve a Wang Shun (esperado Wang Shun)
+    Resultado: OK | fin 2026-10-23 20:57:45 | duracion 2.9 s
+
+  Conteos finales:
+  atletas            153,049
+  participaciones    319,961
+  paises                 213
+  ediciones               61
+  deportes                95
+
+[4] Comandos de ejemplo (desde Fase 3/)
+  python 07_consultas/atleta.py "Summer McIntosh"
+  python 07_consultas/pais.py "Germany"
+  mongosh "mongodb://localhost:57017/olimpiadas_mongo" --eval "db.atletas.findOne({nombre_key: 'usain bolt'})"
+
+LISTO en 41 s
+fin 2026-10-23 20:57:45 | resultado OK

@@ -80,7 +80,7 @@ def main():
             print(f"SEDE: {len(sedes)} edicion(es)" + (f" en {f.anio}" if f.anio else "") + ": "
                   + "; ".join(f"{s['anio']} {s['tipo']} ({s['ciudad']})" for s in sedes))
         elif any(es_yog_ok(s["es_yog"]) for s in d["sedes"]):
-            print(f"SEDE: sin sede en {f.anio} (si fue sede en otros anios: " + ", ".join(str(s['anio']) for s in d["sedes"] if es_yog_ok(s['es_yog'])) + ")")
+            print(f"SEDE: sin sede en {f.anio} (si fue sede en otros anios: " + "; ".join(f"{s['anio']} {s['tipo']} ({s['ciudad']})" for s in d["sedes"] if es_yog_ok(s['es_yog'])) + ")")
         else:
             print("NUNCA_SEDE: el pais nunca ha sido sede de unos Juegos" + ("" if f.incluir_yog else " (sin contar Juegos de la Juventud)"))
 

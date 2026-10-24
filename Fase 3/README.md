@@ -83,6 +83,8 @@ python 07_consultas/pais.py "Germany" [--anio N] [--deporte X] [--incluir-yog] [
 - `atleta.py`: modos `CANDIDATO` (varios homonimos, elegir con `--id`), `DETALLE` y `SIN_COINCIDENCIAS`. Busca sin acentos ni
   mayusculas por nombre, nombre completo o alias (nombre con que aparecia un atleta fusionado), luego por palabras en cualquier
   orden y luego por prefijo. El detalle sale de un solo documento.
+  Con varios candidatos, `--pais`, `--deporte` y `--anio` desambiguan: solo se listan los atletas con una participacion que cumpla
+  los filtros (por ejemplo `atleta.py wang --pais China --deporte Swimming --anio 2024` incluye a Wang Shun).
 - `pais.py`: acepta el nombre en ingles (convencion del Banco Mundial, "Russian Federation"), el codigo NOC ("GER") o un
   prefijo. Muestra NOC asociados, sedes (o `NUNCA_SEDE`), medallas, participacion por edicion y por deporte. Con `--detalle`
   pagina las participaciones y resultados.

@@ -8,9 +8,11 @@ Modos (igual que fn_atleta_info de la Fase 1):
   SIN_COINCIDENCIAS  ningun atleta
 La busqueda ignora acentos y mayusculas. Orden de busqueda: nombre usado, nombre completo o alias exacto;
 si no hay, todas las palabras en cualquier orden (coincidencia parcial); si no, prefijo del nombre.
+Con varios candidatos, --pais, --deporte y --anio desambiguan: se listan solo los atletas con alguna participacion que los cumpla.
 El detalle sale de UN solo documento de la coleccion atletas. Por defecto no incluye Juegos de la Juventud (YOG).
 """
 import argparse
+import re
 import sys
 
 from comunes import (ETIQ_ATLETA, Cronometro, conectar, configurar_salida, encabezado, explicar, fold, med_txt,
@@ -30,17 +32,51 @@ def filtros_de_busqueda(texto):
             ("prefijo del nombre", {"nombre_key": {"$regex": "^" + re.escape(k)}})]
 
 
-def buscar(db, texto, cron, explain):
+def clausula_filtros(db, f, cron):
+    """Filtros --pais/--deporte/--anio como $elemMatch sobre una misma participacion (misma semantica que el detalle).
+
+    Devuelve None si no hay filtros. Con un pais inexistente la clausula no coincide con nadie.
+    """
+    if not (f.pais or f.deporte or f.anio):
+        return None
+    cond = {}
+    if not f.incluir_yog:
+        cond["es_yog"] = False
+    if f.anio:
+        cond["anio"] = f.anio
+    if f.deporte:
+        k = fold(f.deporte)
+        nombres = cron.medir(lambda: [d["nombre"] for d in db.deportes.find({"nombre_key": {"$regex": "^" + re.escape(k)}}, {"nombre": 1})])
+        cond["deporte"] = {"$in": nombres}
+    if f.pais:
+        pd = resolver_pais(db, f.pais, cron)
+        cond["noc"] = {"$in": [n["codigo"] for n in pd["nocs"]] if pd else []}
+    return {"participaciones": {"$elemMatch": cond}}
+
+
+def buscar(db, texto, cron, explain, extra=None):
+    """Busca candidatos por nombre. Con filtros (extra), estos desambiguan: se piden los candidatos que los cumplen.
+
+    Si ninguno los cumple y el nombre era inequivoco (un solo atleta), se devuelve ese atleta (el detalle mostrara 0
+    participaciones, como antes). Si el nombre era ambiguo, no se devuelve nada y se marca `ambiguo`.
+    """
     ok = True
     for nombre, filtro in filtros_de_busqueda(texto):
         if filtro is None:
             continue
-        docs = cron.medir(lambda: list(db.atletas.find(filtro, PROY_CANDIDATO).limit(LIMITE_CANDIDATOS + 1)))
+        consulta = {"$and": [filtro, extra]} if extra else filtro
+        docs = cron.medir(lambda: list(db.atletas.find(consulta, PROY_CANDIDATO).limit(LIMITE_CANDIDATOS + 1)))
         if explain:
-            ok &= explicar(db, "atletas", filtro, proyeccion=PROY_CANDIDATO, limit=LIMITE_CANDIDATOS + 1, etiqueta="busqueda por " + nombre)
+            ok &= explicar(db, "atletas", consulta, proyeccion=PROY_CANDIDATO, limit=LIMITE_CANDIDATOS + 1, etiqueta="busqueda por " + nombre)
         if docs:
-            return nombre, docs, ok
-    return None, [], ok
+            return nombre, docs, ok, False
+        if extra:
+            previos = cron.medir(lambda: list(db.atletas.find(filtro, PROY_CANDIDATO).limit(2)))
+            if len(previos) == 1:
+                return nombre, previos, ok, False
+            if previos:
+                return None, [], ok, True
+    return None, [], ok, False
 
 
 def resolver_pais(db, texto, cron):
@@ -145,9 +181,13 @@ def main():
             ok &= explicar(db, "atletas", {"_id": f.id}, etiqueta="busqueda por _id")
         modo_busqueda = "por id"
     else:
-        modo_busqueda, docs, ok = buscar(db, f.nombre, cron, f.explain)
+        modo_busqueda, docs, ok, ambiguo = buscar(db, f.nombre, cron, f.explain, clausula_filtros(db, f, cron))
     if not docs:
-        print("MODO: SIN_COINCIDENCIAS | ningun atleta coincide" + (f" con '{f.nombre}'" if f.nombre else ""))
+        if f.id is None and ambiguo:
+            print(f"MODO: SIN_COINCIDENCIAS | varios atletas coinciden con '{f.nombre}' pero ninguno cumple los filtros "
+                  "(--pais, --deporte, --anio); pruebe sin ellos o con --incluir-yog")
+        else:
+            print("MODO: SIN_COINCIDENCIAS | ningun atleta coincide" + (f" con '{f.nombre}'" if f.nombre else ""))
     elif len(docs) > 1 and f.id is None:
         mostrar_candidatos(docs, modo_busqueda)
     else:
